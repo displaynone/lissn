@@ -1,8 +1,3 @@
-import {
-	DarkTheme,
-	DefaultTheme,
-	ThemeProvider,
-} from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
@@ -27,11 +22,11 @@ export default function RootLayout() {
 	}
 
 	return (
-		<TamaguiProvider config={tamaguiConfig} defaultTheme="light">
-			<ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
+		<TamaguiProvider config={tamaguiConfig} defaultTheme="dark">
+			{/* <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}> */}
 				<AudioLibraryProvider>
 					<MusicProvider>
-						<SafeAreaView style={{ flex: 1 }}>
+						<SafeAreaView style={{ flex: 1, backgroundColor: tamaguiConfig.themes['dark'].background.val }}>
 							<Stack>
 								<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 								<Stack.Screen name="+not-found" />
@@ -40,7 +35,7 @@ export default function RootLayout() {
 						<StatusBar style="auto" />
 					</MusicProvider>
 				</AudioLibraryProvider>
-			</ThemeProvider>
+			{/* </ThemeProvider> */}
 		</TamaguiProvider>
 	);
 }

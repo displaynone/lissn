@@ -1,7 +1,7 @@
 import { Database } from '@nozbe/watermelondb'
 import SQLiteAdapter from '@nozbe/watermelondb/adapters/sqlite'
 
-import { Song } from '@/models/Song'
+import { Album, Artist, Genre, Playlist, PlaylistSong, Song } from '@/models'
 import { mySchema } from './schema'
 
 const adapter = new SQLiteAdapter({
@@ -15,5 +15,5 @@ const adapter = new SQLiteAdapter({
 
 export const database = new Database({
   adapter,
-  modelClasses: [Song],
+  modelClasses: [Artist, Album, Genre, Song, Playlist, PlaylistSong],
 })

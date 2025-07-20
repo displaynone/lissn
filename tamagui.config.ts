@@ -1,7 +1,34 @@
 import { config } from "@tamagui/config/v3";
-import { createTamagui } from "tamagui";
+import { createTamagui, createTokens } from "tamagui";
 
-export const tamaguiConfig = createTamagui(config);
+const tokens = createTokens({
+	...config.tokens,
+	color: {
+		...config.tokens.color,
+		background: "#000000",
+		color: "#ffffff",
+		primary: "#FF6B6B",
+		secondary: "#4ECDC4",
+	},
+});
+
+const themes = {
+	...config.themes,
+	light: {
+		...config.themes.light,
+		background: "#000", //tokens.color.background,
+		color: tokens.color.color,
+		primary: tokens.color.primary,
+	},
+	dark: {
+		...config.themes.dark,
+		background: "#000",
+		color: "#fff",
+		primary: "#FF6B6B",
+	},
+};
+
+export const tamaguiConfig = createTamagui({ ...config, tokens, themes });
 
 export default tamaguiConfig;
 
