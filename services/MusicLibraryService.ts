@@ -158,20 +158,6 @@ export class MusicLibraryService {
 		return excludePattern.test(uri);
 	}
 
-	// Extract title from filename
-	private extractTitleFromFilename(filename: string): string {
-		// Remove file extension
-		const nameWithoutExtension = filename.replace(/\.[^/.]+$/, "");
-
-		// Clean up common patterns in filenames
-		let title = nameWithoutExtension
-			.replace(/^\d+\s*[-.]?\s*/, "") // Remove track numbers at start
-			.replace(/[-_]/g, " ") // Replace dashes and underscores with spaces
-			.trim();
-
-		return title || filename; // Fallback to original filename if empty
-	}
-
 	// Find or create artist
 	private async findOrCreateArtist(name: string): Promise<Artist> {
 		const artists = await database

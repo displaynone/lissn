@@ -3,8 +3,8 @@ import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
 
+import AppContainer from "@/components/AppContainer";
 import { AudioLibraryProvider } from "@/hooks/providers/MediaLibraryProvider";
-import { MusicProvider } from "@/hooks/providers/MusicProvider";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { tamaguiConfig } from "@/tamagui.config";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -24,17 +24,24 @@ export default function RootLayout() {
 	return (
 		<TamaguiProvider config={tamaguiConfig} defaultTheme="dark">
 			{/* <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}> */}
-				<AudioLibraryProvider>
-					<MusicProvider>
-						<SafeAreaView style={{ flex: 1, backgroundColor: tamaguiConfig.themes['dark'].background.val }}>
-							<Stack>
-								<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-								<Stack.Screen name="+not-found" />
-							</Stack>
-						</SafeAreaView>
-						<StatusBar style="auto" />
-					</MusicProvider>
-				</AudioLibraryProvider>
+			<AudioLibraryProvider>
+				<AppContainer>
+					{/* <MusicProvider> */}
+					<SafeAreaView
+						style={{
+							flex: 1,
+							backgroundColor: tamaguiConfig.themes["dark"].background.val,
+						}}
+					>
+						<Stack>
+							<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+							<Stack.Screen name="+not-found" />
+						</Stack>
+					</SafeAreaView>
+					<StatusBar style="auto" />
+					{/* </MusicProvider> */}
+				</AppContainer>
+			</AudioLibraryProvider>
 			{/* </ThemeProvider> */}
 		</TamaguiProvider>
 	);

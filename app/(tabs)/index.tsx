@@ -1,6 +1,8 @@
+import { useGetSongs } from "@/store/songsStore";
 import { ScrollView, Text } from "tamagui";
 
 export default function HomeScreen() {
+	const songs = useGetSongs();
 	return (
 		<ScrollView
 			padding="$2"
@@ -14,7 +16,7 @@ export default function HomeScreen() {
 			}}
 		>
 			<Text fontSize="$6" fontWeight="bold">
-				Mi Título
+				Mi Título = songs {songs.length}
 			</Text>
 		</ScrollView>
 	);
