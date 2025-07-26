@@ -27676,6 +27676,94 @@
           "15": -4,
           "16": -4
         }
+      },
+      "inter": {
+        "family": "Inter, serif",
+        "size": {
+          "4": 10,
+          "5": 12,
+          "6": 15,
+          "7": 18,
+          "8": 20,
+          "9": 24,
+          "10": 32,
+          "12": 40,
+          "14": 48
+        },
+        "transform": {
+          "4": "uppercase",
+          "5": "uppercase",
+          "6": "uppercase",
+          "7": "none",
+          "8": "none",
+          "9": "none",
+          "10": "none",
+          "12": "none",
+          "14": "none"
+        },
+        "weight": {
+          "4": "400",
+          "5": "400",
+          "6": "400",
+          "7": "700",
+          "8": "700",
+          "9": "700",
+          "10": "700",
+          "12": "700",
+          "14": "700"
+        },
+        "color": {
+          "4": "$colorFocus",
+          "5": "$colorFocus",
+          "6": "$colorFocus",
+          "7": "$color",
+          "8": "$color",
+          "9": "$color",
+          "10": "$color",
+          "12": "$color",
+          "14": "$color"
+        },
+        "letterSpacing": {
+          "4": 2,
+          "5": 2,
+          "6": 1,
+          "7": 5,
+          "8": -1,
+          "9": -2,
+          "10": -3,
+          "12": -4,
+          "14": -5,
+          "15": -6
+        },
+        "face": {
+          "100": {
+            "normal": "InterThin"
+          },
+          "200": {
+            "normal": "InterLight"
+          },
+          "300": {
+            "normal": "InterLight"
+          },
+          "400": {
+            "normal": "Inter"
+          },
+          "500": {
+            "normal": "InterBold"
+          },
+          "600": {
+            "normal": "InterBold"
+          },
+          "700": {
+            "normal": "InterBold"
+          },
+          "800": {
+            "normal": "InterBold"
+          },
+          "900": {
+            "normal": "InterBold"
+          }
+        }
       }
     },
     "onlyAllowShorthands": false,

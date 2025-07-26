@@ -2,12 +2,12 @@ import { useMusicLibrary } from "@/hooks/providers/MusicProvider";
 import { Song } from "@/models";
 import React, { useEffect, useState } from "react";
 import {
-  ActivityIndicator,
-  FlatList,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
+	ActivityIndicator,
+	FlatList,
+	Text,
+	TextInput,
+	TouchableOpacity,
+	View,
 } from "react-native";
 
 interface MusicLibraryExampleProps {

@@ -1,48 +1,69 @@
 import { useFonts } from "expo-font";
-import { Stack } from "expo-router";
+import { Slot } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
 
 import AppContainer from "@/components/AppContainer";
 import { AudioLibraryProvider } from "@/hooks/providers/MediaLibraryProvider";
-import { useColorScheme } from "@/hooks/useColorScheme";
 import { tamaguiConfig } from "@/tamagui.config";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Audio, InterruptionModeAndroid, InterruptionModeIOS } from "expo-av";
+import * as SystemUI from "expo-system-ui";
+import { useEffect } from "react";
+import { View } from "react-native";
+import {
+	SafeAreaView,
+	useSafeAreaInsets,
+} from "react-native-safe-area-context";
 import { TamaguiProvider } from "tamagui";
 
 export default function RootLayout() {
-	const colorScheme = useColorScheme();
+	const insets = useSafeAreaInsets();
 	const [loaded] = useFonts({
-		SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+		Inter: require("@tamagui/font-inter/otf/Inter-Regular.otf"),
+		InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
+		InterLight: require("@tamagui/font-inter/otf/Inter-Light.otf"),
+		InterThin: require("@tamagui/font-inter/otf/Inter-Thin.otf"),
 	});
+	console.log(loaded);
 
-	if (!loaded) {
-		// Async font loading only occurs in development.
-		return <></>;
-	}
+	const backgroundColor = tamaguiConfig.themes["dark"].background.val;
 
+	useEffect(() => {
+		SystemUI.setBackgroundColorAsync(backgroundColor);
+	}, [backgroundColor]);
+
+	useEffect(() => {
+		const setAudioMode = async () => {
+			await Audio.setAudioModeAsync({
+				staysActiveInBackground: true,
+				allowsRecordingIOS: false,
+				interruptionModeIOS: InterruptionModeIOS.DoNotMix,
+				playsInSilentModeIOS: true,
+				shouldDuckAndroid: true,
+				interruptionModeAndroid: InterruptionModeAndroid.DoNotMix,
+				playThroughEarpieceAndroid: false,
+			});
+		};
+		setAudioMode();
+	}, []);
+
+	if (!loaded) return null;
+
+	console.log(tamaguiConfig.fonts.body);
 	return (
 		<TamaguiProvider config={tamaguiConfig} defaultTheme="dark">
-			{/* <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}> */}
 			<AudioLibraryProvider>
 				<AppContainer>
-					{/* <MusicProvider> */}
+					<View style={{ height: insets.top, backgroundColor }} />
+					<StatusBar style="light" translucent />
 					<SafeAreaView
-						style={{
-							flex: 1,
-							backgroundColor: tamaguiConfig.themes["dark"].background.val,
-						}}
+						style={{ flex: 1, padding: 10, width: "100%" }}
+						edges={["left", "right", "bottom"]}
 					>
-						<Stack>
-							<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-							<Stack.Screen name="+not-found" />
-						</Stack>
+						<Slot />
 					</SafeAreaView>
-					<StatusBar style="auto" />
-					{/* </MusicProvider> */}
 				</AppContainer>
 			</AudioLibraryProvider>
-			{/* </ThemeProvider> */}
 		</TamaguiProvider>
 	);
 }

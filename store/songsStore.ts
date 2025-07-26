@@ -1,8 +1,8 @@
 import { database } from "@/database";
 import { Album, Artist, Song } from "@/models";
 import {
-  MusicLibraryService,
-  SyncProgress,
+	MusicLibraryService,
+	SyncProgress,
 } from "@/services/MusicLibraryService";
 import { Q } from "@nozbe/watermelondb";
 import { create } from "zustand";
@@ -17,6 +17,7 @@ interface MusicStoreState {
 	syncProgress: SyncProgress | null;
 	isRecovering: boolean;
 	recoveryMessage: string | null;
+	playingSongId?: string;
 
 	refreshSongs: (limit?: number) => Promise<void>;
 	getSongById: (id: string) => Promise<Song | null>;
@@ -33,6 +34,11 @@ interface MusicStoreState {
 	startSync: () => Promise<void>;
 	clearDatabase: () => Promise<void>;
 	getLibraryStats: () => Promise<any>;
+
+	refreshArtists: (limit?: number) => Promise<void>;
+	getArtistById: (id: string) => Promise<Artist | null>;
+
+	setPlayingSongId: (id?: string) => void;
 }
 
 const musicService = MusicLibraryService.getInstance();
@@ -47,6 +53,7 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	syncProgress: null,
 	isRecovering: false,
 	recoveryMessage: null,
+	playingSongId: undefined,
 
 	refreshSongs: async (limit: number = 20) => {
 		const songs = await database
@@ -143,10 +150,36 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	getLibraryStats: async () => {
 		return await musicService.getLibraryStats();
 	},
+
+	refreshArtists: async (limit: number = 20) => {
+		const artists = await database
+			.get<Artist>("artists")
+			.query(Q.sortBy("created_at", Q.desc), Q.take(limit))
+			.fetch();
+		set({ artists, isLoading: false });
+	},
+
+	getArtistById: async (id) => {
+		try {
+			const artist = await database.get<Artist>("artists").find(id);
+			return artist;
+		} catch (e) {
+			console.error("getSongById error", e);
+			return null;
+		}
+	},
+
+	setPlayingSongId: (id) => {
+		set({ playingSongId: id });
+	},
 }));
 
 export const useGetSongs = () => useMusicStore((state) => state.songs);
+export const useGetSongById = (songId: string) =>
+	useMusicStore((state) => state.getSongById(songId));
 export const useGetArtists = () => useMusicStore((state) => state.artists);
+export const useGetArtistById = (artistId: string) =>
+	useMusicStore((state) => state.getArtistById(artistId));
 export const useGetAlbums = () => useMusicStore((state) => state.albums);
 export const useAreSongsLoading = () =>
 	useMusicStore((state) => state.isLoading);
@@ -161,3 +194,5 @@ export const useIsSynced = () => useMusicStore((state) => state.isSynced);
 export const useStartSync = () => useMusicStore((state) => state.startSync);
 export const useRefreshSongs = () =>
 	useMusicStore((state) => state.refreshSongs);
+export const useGetPlayingSongId = () =>
+	useMusicStore((state) => state.playingSongId);

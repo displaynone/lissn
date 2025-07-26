@@ -50,7 +50,16 @@
         }
       ],
       "expo-sqlite",
-      "expo-build-properties"
+      "expo-build-properties",
+      [
+        "react-native-edge-to-edge",
+        {
+          "android": {
+            "parentTheme": "Default",
+            "enforceNavigationBarContrast": false
+          }
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
