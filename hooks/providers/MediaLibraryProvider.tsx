@@ -58,7 +58,6 @@ export const AudioLibraryProvider: React.FC<{ children: React.ReactNode }> = ({
 			setSongs(assets);
 
 			const albumsData = await MusicLibrary.getAlbumsAsync();
-			console.log(albumsData[0]);
 
 			setAlbums(albumsData);
 

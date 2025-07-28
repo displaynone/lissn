@@ -24,7 +24,7 @@ if (status !== 'granted') {
   // Solicitar permisos
   const { status: newStatus } = await MusicLibrary.requestPermissionsAsync();
   if (newStatus !== 'granted') {
-    console.log('Permisos denegados');
+    console.log('Denied permissions');
     return;
   }
 }

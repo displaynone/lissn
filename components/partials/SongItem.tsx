@@ -2,10 +2,9 @@ import { Artist, Song } from "@/models";
 import { useMusicStore } from "@/store/songsStore";
 import { formatSeconds } from "@/utils/formatSeconds";
 import { useEffect, useState } from "react";
-import FastImage from "react-native-fast-image";
-import { Text, View, XStack, YStack } from "tamagui";
-import MissingCoverIcon from "../icons/MissingCoverIcon";
+import { Text, XStack, YStack } from "tamagui";
 import { Loading } from "../ui/Loading";
+import Cover from "./Cover";
 
 type SongItemProps = {
 	song: Song;
@@ -44,26 +43,9 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 	return (
 		<XStack gap="$4" onPress={handlePlay}>
 			{!!song.coverPath && (
-				<View style={{ width: 64, height: 64, borderRadius: 8 }}>
-					<View
-						style={{
-							width: 64,
-							height: 64,
-							borderRadius: 8,
-							position: "absolute",
-							opacity: 0.2,
-						}}
-					>
-						<MissingCoverIcon size={64} />
-					</View>
-					<FastImage
-						style={{ width: 64, height: 64, borderRadius: 8 }}
-						source={{
-							uri: song.coverPath,
-						}}
-						resizeMode={FastImage.resizeMode.cover}
-					/>
-				</View>
+				<Cover
+					coverPath={song.coverPath}
+				/>
 			)}
 			<YStack gap="$1" flex={1}>
 				<Text

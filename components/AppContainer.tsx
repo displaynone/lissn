@@ -4,6 +4,7 @@ import {
 	useRefreshSongs,
 	useStartSync,
 } from "@/store/songsStore";
+import * as NavigationBar from 'expo-navigation-bar';
 import React, { useEffect } from "react";
 import { LinearGradient } from "tamagui/linear-gradient";
 
@@ -14,6 +15,15 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const isSynced = useIsSynced();
 	const isSyncing = useIsSyncing();
 	const refreshSongs = useRefreshSongs();
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			console.log("Hiding navigation bar");
+			NavigationBar.setVisibilityAsync("hidden");
+		}, 500); // o 200ms
+		return () => clearTimeout(timeout);
+	}, []);
+
 	useEffect(() => {
 		if (!isSynced && !isSyncing) {
 			(async () => {

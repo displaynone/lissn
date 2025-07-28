@@ -7,7 +7,7 @@ const tokens = createTokens({
 		...config.tokens.color,
 		background: "#000000",
 		color: "#ffffff",
-		primary: "#FF6B6B",
+		primary: "#afd8ec",
 		secondary: "#4ECDC4",
 	},
 });

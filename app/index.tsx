@@ -2,29 +2,23 @@ import Heading from "@/components/partials/Heading";
 import Player from "@/components/partials/Player";
 import SongItem from "@/components/partials/SongItem";
 import { useGetSongs } from "@/store/songsStore";
-import { ScrollView, YStack } from "tamagui";
+import { FlashList } from "@shopify/flash-list";
+import { View, YStack } from "tamagui";
 
 export default function HomeScreen() {
 	const songs = useGetSongs();
+
 	return (
-		<ScrollView
-			padding="$2"
-			flex={1}
-			contentContainerStyle={{
-				flexGrow: 1,
-				minHeight: "100%",
-				gap: "$8",
-			}}
-		>
+		<YStack flex={1}>
 			<Heading />
-			<YStack
-				gap="$4"
-			>
-				{songs.map((song, i) => (
-					<SongItem key={i} song={song} />
-				))}
-			</YStack>
+			<FlashList
+				data={songs}
+				keyExtractor={(song) => song.id}
+				renderItem={({ item }) => <SongItem song={item} />}
+				ItemSeparatorComponent={() => <View h={"$1"} />}
+				estimatedItemSize={100}
+			/>
 			<Player />
-		</ScrollView>
+		</YStack>
 	);
 }

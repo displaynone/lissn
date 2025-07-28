@@ -27965,7 +27965,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light"
       },
       "dark": {
@@ -28247,7 +28247,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange"
       },
       "light_yellow": {
@@ -28388,7 +28388,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow"
       },
       "light_green": {
@@ -28529,7 +28529,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green"
       },
       "light_blue": {
@@ -28670,7 +28670,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue"
       },
       "light_purple": {
@@ -28811,7 +28811,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple"
       },
       "light_pink": {
@@ -28952,7 +28952,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink"
       },
       "light_red": {
@@ -29093,7 +29093,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red"
       },
       "light_gray": {
@@ -29234,7 +29234,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray"
       },
       "dark_orange": {
@@ -30503,7 +30503,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_alt1"
       },
       "light_alt2": {
@@ -30644,7 +30644,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_alt2"
       },
       "light_active": {
@@ -30785,7 +30785,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active"
       },
       "light_surface3": {
@@ -30926,7 +30926,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_surface3"
       },
       "light_Button": {
@@ -31067,7 +31067,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_Button"
       },
       "light_SliderTrackActive": {
@@ -31208,7 +31208,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_SliderTrackActive"
       },
       "light_active_SliderTrackActive": {
@@ -31349,7 +31349,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_SliderTrackActive"
       },
       "light_surface1": {
@@ -31490,7 +31490,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_surface1"
       },
       "light_ListItem": {
@@ -31631,7 +31631,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_ListItem"
       },
       "light_SelectTrigger": {
@@ -31772,7 +31772,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_SelectTrigger"
       },
       "light_Card": {
@@ -31913,7 +31913,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_Card"
       },
       "light_Progress": {
@@ -32054,7 +32054,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_Progress"
       },
       "light_TooltipArrow": {
@@ -32195,7 +32195,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_TooltipArrow"
       },
       "light_SliderTrack": {
@@ -32336,7 +32336,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_SliderTrack"
       },
       "light_Input": {
@@ -32477,7 +32477,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_Input"
       },
       "light_TextArea": {
@@ -32618,7 +32618,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_TextArea"
       },
       "light_active_ListItem": {
@@ -32759,7 +32759,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_ListItem"
       },
       "light_active_Progress": {
@@ -32900,7 +32900,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_Progress"
       },
       "light_active_TooltipArrow": {
@@ -33041,7 +33041,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_TooltipArrow"
       },
       "light_active_SliderTrack": {
@@ -33182,7 +33182,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_SliderTrack"
       },
       "light_surface2": {
@@ -33323,7 +33323,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_surface2"
       },
       "light_Checkbox": {
@@ -33464,7 +33464,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_Checkbox"
       },
       "light_Switch": {
@@ -33605,7 +33605,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_Switch"
       },
       "light_TooltipContent": {
@@ -33746,7 +33746,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_TooltipContent"
       },
       "light_RadioGroupItem": {
@@ -33887,7 +33887,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_RadioGroupItem"
       },
       "light_surface4": {
@@ -34028,7 +34028,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_surface4"
       },
       "light_active_SelectTrigger": {
@@ -34169,7 +34169,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_SelectTrigger"
       },
       "light_active_Card": {
@@ -34310,7 +34310,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_Card"
       },
       "light_active_Button": {
@@ -34451,7 +34451,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_Button"
       },
       "light_active_Checkbox": {
@@ -34592,7 +34592,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_Checkbox"
       },
       "light_active_Switch": {
@@ -34733,7 +34733,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_Switch"
       },
       "light_active_TooltipContent": {
@@ -34874,7 +34874,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_TooltipContent"
       },
       "light_active_RadioGroupItem": {
@@ -35015,7 +35015,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_RadioGroupItem"
       },
       "light_active_Input": {
@@ -35156,7 +35156,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_Input"
       },
       "light_active_TextArea": {
@@ -35297,7 +35297,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_TextArea"
       },
       "dark_alt1": {
@@ -40373,7 +40373,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_alt1"
       },
       "light_orange_alt2": {
@@ -40514,7 +40514,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_alt2"
       },
       "light_orange_active": {
@@ -40655,7 +40655,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active"
       },
       "light_orange_surface3": {
@@ -40796,7 +40796,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_surface3"
       },
       "light_orange_Button": {
@@ -40937,7 +40937,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_Button"
       },
       "light_orange_SliderTrackActive": {
@@ -41078,7 +41078,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_SliderTrackActive"
       },
       "light_orange_active_SliderTrackActive": {
@@ -41219,7 +41219,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_SliderTrackActive"
       },
       "light_orange_surface1": {
@@ -41360,7 +41360,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_surface1"
       },
       "light_orange_ListItem": {
@@ -41501,7 +41501,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_ListItem"
       },
       "light_orange_SelectTrigger": {
@@ -41642,7 +41642,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_SelectTrigger"
       },
       "light_orange_Card": {
@@ -41783,7 +41783,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_Card"
       },
       "light_orange_Progress": {
@@ -41924,7 +41924,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_Progress"
       },
       "light_orange_TooltipArrow": {
@@ -42065,7 +42065,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_TooltipArrow"
       },
       "light_orange_SliderTrack": {
@@ -42206,7 +42206,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_SliderTrack"
       },
       "light_orange_Input": {
@@ -42347,7 +42347,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_Input"
       },
       "light_orange_TextArea": {
@@ -42488,7 +42488,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_TextArea"
       },
       "light_orange_active_ListItem": {
@@ -42629,7 +42629,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_ListItem"
       },
       "light_orange_active_Progress": {
@@ -42770,7 +42770,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_Progress"
       },
       "light_orange_active_TooltipArrow": {
@@ -42911,7 +42911,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_TooltipArrow"
       },
       "light_orange_active_SliderTrack": {
@@ -43052,7 +43052,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_SliderTrack"
       },
       "light_orange_surface2": {
@@ -43193,7 +43193,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_surface2"
       },
       "light_orange_Checkbox": {
@@ -43334,7 +43334,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_Checkbox"
       },
       "light_orange_Switch": {
@@ -43475,7 +43475,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_Switch"
       },
       "light_orange_TooltipContent": {
@@ -43616,7 +43616,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_TooltipContent"
       },
       "light_orange_RadioGroupItem": {
@@ -43757,7 +43757,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_RadioGroupItem"
       },
       "light_orange_surface4": {
@@ -43898,7 +43898,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_surface4"
       },
       "light_orange_active_SelectTrigger": {
@@ -44039,7 +44039,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_SelectTrigger"
       },
       "light_orange_active_Card": {
@@ -44180,7 +44180,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_Card"
       },
       "light_orange_active_Button": {
@@ -44321,7 +44321,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_Button"
       },
       "light_orange_active_Checkbox": {
@@ -44462,7 +44462,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_Checkbox"
       },
       "light_orange_active_Switch": {
@@ -44603,7 +44603,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_Switch"
       },
       "light_orange_active_TooltipContent": {
@@ -44744,7 +44744,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_TooltipContent"
       },
       "light_orange_active_RadioGroupItem": {
@@ -44885,7 +44885,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_RadioGroupItem"
       },
       "light_orange_active_Input": {
@@ -45026,7 +45026,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_Input"
       },
       "light_orange_active_TextArea": {
@@ -45167,7 +45167,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_TextArea"
       },
       "light_yellow_alt1": {
@@ -45308,7 +45308,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_alt1"
       },
       "light_yellow_alt2": {
@@ -45449,7 +45449,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_alt2"
       },
       "light_yellow_active": {
@@ -45590,7 +45590,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active"
       },
       "light_yellow_surface3": {
@@ -45731,7 +45731,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_surface3"
       },
       "light_yellow_Button": {
@@ -45872,7 +45872,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_Button"
       },
       "light_yellow_SliderTrackActive": {
@@ -46013,7 +46013,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_SliderTrackActive"
       },
       "light_yellow_active_SliderTrackActive": {
@@ -46154,7 +46154,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_SliderTrackActive"
       },
       "light_yellow_surface1": {
@@ -46295,7 +46295,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_surface1"
       },
       "light_yellow_ListItem": {
@@ -46436,7 +46436,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_ListItem"
       },
       "light_yellow_SelectTrigger": {
@@ -46577,7 +46577,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_SelectTrigger"
       },
       "light_yellow_Card": {
@@ -46718,7 +46718,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_Card"
       },
       "light_yellow_Progress": {
@@ -46859,7 +46859,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_Progress"
       },
       "light_yellow_TooltipArrow": {
@@ -47000,7 +47000,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_TooltipArrow"
       },
       "light_yellow_SliderTrack": {
@@ -47141,7 +47141,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_SliderTrack"
       },
       "light_yellow_Input": {
@@ -47282,7 +47282,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_Input"
       },
       "light_yellow_TextArea": {
@@ -47423,7 +47423,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_TextArea"
       },
       "light_yellow_active_ListItem": {
@@ -47564,7 +47564,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_ListItem"
       },
       "light_yellow_active_Progress": {
@@ -47705,7 +47705,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_Progress"
       },
       "light_yellow_active_TooltipArrow": {
@@ -47846,7 +47846,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_TooltipArrow"
       },
       "light_yellow_active_SliderTrack": {
@@ -47987,7 +47987,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_SliderTrack"
       },
       "light_yellow_surface2": {
@@ -48128,7 +48128,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_surface2"
       },
       "light_yellow_Checkbox": {
@@ -48269,7 +48269,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_Checkbox"
       },
       "light_yellow_Switch": {
@@ -48410,7 +48410,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_Switch"
       },
       "light_yellow_TooltipContent": {
@@ -48551,7 +48551,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_TooltipContent"
       },
       "light_yellow_RadioGroupItem": {
@@ -48692,7 +48692,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_RadioGroupItem"
       },
       "light_yellow_surface4": {
@@ -48833,7 +48833,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_surface4"
       },
       "light_yellow_active_SelectTrigger": {
@@ -48974,7 +48974,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_SelectTrigger"
       },
       "light_yellow_active_Card": {
@@ -49115,7 +49115,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_Card"
       },
       "light_yellow_active_Button": {
@@ -49256,7 +49256,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_Button"
       },
       "light_yellow_active_Checkbox": {
@@ -49397,7 +49397,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_Checkbox"
       },
       "light_yellow_active_Switch": {
@@ -49538,7 +49538,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_Switch"
       },
       "light_yellow_active_TooltipContent": {
@@ -49679,7 +49679,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_TooltipContent"
       },
       "light_yellow_active_RadioGroupItem": {
@@ -49820,7 +49820,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_RadioGroupItem"
       },
       "light_yellow_active_Input": {
@@ -49961,7 +49961,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_Input"
       },
       "light_yellow_active_TextArea": {
@@ -50102,7 +50102,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_TextArea"
       },
       "light_green_alt1": {
@@ -50243,7 +50243,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_alt1"
       },
       "light_green_alt2": {
@@ -50384,7 +50384,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_alt2"
       },
       "light_green_active": {
@@ -50525,7 +50525,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active"
       },
       "light_green_surface3": {
@@ -50666,7 +50666,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_surface3"
       },
       "light_green_Button": {
@@ -50807,7 +50807,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_Button"
       },
       "light_green_SliderTrackActive": {
@@ -50948,7 +50948,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_SliderTrackActive"
       },
       "light_green_active_SliderTrackActive": {
@@ -51089,7 +51089,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_SliderTrackActive"
       },
       "light_green_surface1": {
@@ -51230,7 +51230,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_surface1"
       },
       "light_green_ListItem": {
@@ -51371,7 +51371,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_ListItem"
       },
       "light_green_SelectTrigger": {
@@ -51512,7 +51512,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_SelectTrigger"
       },
       "light_green_Card": {
@@ -51653,7 +51653,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_Card"
       },
       "light_green_Progress": {
@@ -51794,7 +51794,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_Progress"
       },
       "light_green_TooltipArrow": {
@@ -51935,7 +51935,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_TooltipArrow"
       },
       "light_green_SliderTrack": {
@@ -52076,7 +52076,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_SliderTrack"
       },
       "light_green_Input": {
@@ -52217,7 +52217,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_Input"
       },
       "light_green_TextArea": {
@@ -52358,7 +52358,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_TextArea"
       },
       "light_green_active_ListItem": {
@@ -52499,7 +52499,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_ListItem"
       },
       "light_green_active_Progress": {
@@ -52640,7 +52640,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_Progress"
       },
       "light_green_active_TooltipArrow": {
@@ -52781,7 +52781,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_TooltipArrow"
       },
       "light_green_active_SliderTrack": {
@@ -52922,7 +52922,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_SliderTrack"
       },
       "light_green_surface2": {
@@ -53063,7 +53063,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_surface2"
       },
       "light_green_Checkbox": {
@@ -53204,7 +53204,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_Checkbox"
       },
       "light_green_Switch": {
@@ -53345,7 +53345,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_Switch"
       },
       "light_green_TooltipContent": {
@@ -53486,7 +53486,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_TooltipContent"
       },
       "light_green_RadioGroupItem": {
@@ -53627,7 +53627,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_RadioGroupItem"
       },
       "light_green_surface4": {
@@ -53768,7 +53768,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_surface4"
       },
       "light_green_active_SelectTrigger": {
@@ -53909,7 +53909,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_SelectTrigger"
       },
       "light_green_active_Card": {
@@ -54050,7 +54050,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_Card"
       },
       "light_green_active_Button": {
@@ -54191,7 +54191,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_Button"
       },
       "light_green_active_Checkbox": {
@@ -54332,7 +54332,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_Checkbox"
       },
       "light_green_active_Switch": {
@@ -54473,7 +54473,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_Switch"
       },
       "light_green_active_TooltipContent": {
@@ -54614,7 +54614,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_TooltipContent"
       },
       "light_green_active_RadioGroupItem": {
@@ -54755,7 +54755,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_RadioGroupItem"
       },
       "light_green_active_Input": {
@@ -54896,7 +54896,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_Input"
       },
       "light_green_active_TextArea": {
@@ -55037,7 +55037,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_TextArea"
       },
       "light_blue_alt1": {
@@ -55178,7 +55178,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_alt1"
       },
       "light_blue_alt2": {
@@ -55319,7 +55319,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_alt2"
       },
       "light_blue_active": {
@@ -55460,7 +55460,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active"
       },
       "light_blue_surface3": {
@@ -55601,7 +55601,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_surface3"
       },
       "light_blue_Button": {
@@ -55742,7 +55742,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_Button"
       },
       "light_blue_SliderTrackActive": {
@@ -55883,7 +55883,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_SliderTrackActive"
       },
       "light_blue_active_SliderTrackActive": {
@@ -56024,7 +56024,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_SliderTrackActive"
       },
       "light_blue_surface1": {
@@ -56165,7 +56165,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_surface1"
       },
       "light_blue_ListItem": {
@@ -56306,7 +56306,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_ListItem"
       },
       "light_blue_SelectTrigger": {
@@ -56447,7 +56447,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_SelectTrigger"
       },
       "light_blue_Card": {
@@ -56588,7 +56588,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_Card"
       },
       "light_blue_Progress": {
@@ -56729,7 +56729,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_Progress"
       },
       "light_blue_TooltipArrow": {
@@ -56870,7 +56870,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_TooltipArrow"
       },
       "light_blue_SliderTrack": {
@@ -57011,7 +57011,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_SliderTrack"
       },
       "light_blue_Input": {
@@ -57152,7 +57152,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_Input"
       },
       "light_blue_TextArea": {
@@ -57293,7 +57293,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_TextArea"
       },
       "light_blue_active_ListItem": {
@@ -57434,7 +57434,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_ListItem"
       },
       "light_blue_active_Progress": {
@@ -57575,7 +57575,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_Progress"
       },
       "light_blue_active_TooltipArrow": {
@@ -57716,7 +57716,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_TooltipArrow"
       },
       "light_blue_active_SliderTrack": {
@@ -57857,7 +57857,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_SliderTrack"
       },
       "light_blue_surface2": {
@@ -57998,7 +57998,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_surface2"
       },
       "light_blue_Checkbox": {
@@ -58139,7 +58139,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_Checkbox"
       },
       "light_blue_Switch": {
@@ -58280,7 +58280,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_Switch"
       },
       "light_blue_TooltipContent": {
@@ -58421,7 +58421,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_TooltipContent"
       },
       "light_blue_RadioGroupItem": {
@@ -58562,7 +58562,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_RadioGroupItem"
       },
       "light_blue_surface4": {
@@ -58703,7 +58703,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_surface4"
       },
       "light_blue_active_SelectTrigger": {
@@ -58844,7 +58844,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_SelectTrigger"
       },
       "light_blue_active_Card": {
@@ -58985,7 +58985,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_Card"
       },
       "light_blue_active_Button": {
@@ -59126,7 +59126,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_Button"
       },
       "light_blue_active_Checkbox": {
@@ -59267,7 +59267,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_Checkbox"
       },
       "light_blue_active_Switch": {
@@ -59408,7 +59408,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_Switch"
       },
       "light_blue_active_TooltipContent": {
@@ -59549,7 +59549,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_TooltipContent"
       },
       "light_blue_active_RadioGroupItem": {
@@ -59690,7 +59690,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_RadioGroupItem"
       },
       "light_blue_active_Input": {
@@ -59831,7 +59831,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_Input"
       },
       "light_blue_active_TextArea": {
@@ -59972,7 +59972,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_TextArea"
       },
       "light_purple_alt1": {
@@ -60113,7 +60113,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_alt1"
       },
       "light_purple_alt2": {
@@ -60254,7 +60254,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_alt2"
       },
       "light_purple_active": {
@@ -60395,7 +60395,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active"
       },
       "light_purple_surface3": {
@@ -60536,7 +60536,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_surface3"
       },
       "light_purple_Button": {
@@ -60677,7 +60677,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_Button"
       },
       "light_purple_SliderTrackActive": {
@@ -60818,7 +60818,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_SliderTrackActive"
       },
       "light_purple_active_SliderTrackActive": {
@@ -60959,7 +60959,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_SliderTrackActive"
       },
       "light_purple_surface1": {
@@ -61100,7 +61100,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_surface1"
       },
       "light_purple_ListItem": {
@@ -61241,7 +61241,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_ListItem"
       },
       "light_purple_SelectTrigger": {
@@ -61382,7 +61382,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_SelectTrigger"
       },
       "light_purple_Card": {
@@ -61523,7 +61523,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_Card"
       },
       "light_purple_Progress": {
@@ -61664,7 +61664,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_Progress"
       },
       "light_purple_TooltipArrow": {
@@ -61805,7 +61805,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_TooltipArrow"
       },
       "light_purple_SliderTrack": {
@@ -61946,7 +61946,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_SliderTrack"
       },
       "light_purple_Input": {
@@ -62087,7 +62087,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_Input"
       },
       "light_purple_TextArea": {
@@ -62228,7 +62228,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_TextArea"
       },
       "light_purple_active_ListItem": {
@@ -62369,7 +62369,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_ListItem"
       },
       "light_purple_active_Progress": {
@@ -62510,7 +62510,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_Progress"
       },
       "light_purple_active_TooltipArrow": {
@@ -62651,7 +62651,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_TooltipArrow"
       },
       "light_purple_active_SliderTrack": {
@@ -62792,7 +62792,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_SliderTrack"
       },
       "light_purple_surface2": {
@@ -62933,7 +62933,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_surface2"
       },
       "light_purple_Checkbox": {
@@ -63074,7 +63074,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_Checkbox"
       },
       "light_purple_Switch": {
@@ -63215,7 +63215,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_Switch"
       },
       "light_purple_TooltipContent": {
@@ -63356,7 +63356,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_TooltipContent"
       },
       "light_purple_RadioGroupItem": {
@@ -63497,7 +63497,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_RadioGroupItem"
       },
       "light_purple_surface4": {
@@ -63638,7 +63638,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_surface4"
       },
       "light_purple_active_SelectTrigger": {
@@ -63779,7 +63779,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_SelectTrigger"
       },
       "light_purple_active_Card": {
@@ -63920,7 +63920,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_Card"
       },
       "light_purple_active_Button": {
@@ -64061,7 +64061,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_Button"
       },
       "light_purple_active_Checkbox": {
@@ -64202,7 +64202,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_Checkbox"
       },
       "light_purple_active_Switch": {
@@ -64343,7 +64343,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_Switch"
       },
       "light_purple_active_TooltipContent": {
@@ -64484,7 +64484,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_TooltipContent"
       },
       "light_purple_active_RadioGroupItem": {
@@ -64625,7 +64625,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_RadioGroupItem"
       },
       "light_purple_active_Input": {
@@ -64766,7 +64766,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_Input"
       },
       "light_purple_active_TextArea": {
@@ -64907,7 +64907,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_TextArea"
       },
       "light_pink_alt1": {
@@ -65048,7 +65048,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_alt1"
       },
       "light_pink_alt2": {
@@ -65189,7 +65189,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_alt2"
       },
       "light_pink_active": {
@@ -65330,7 +65330,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active"
       },
       "light_pink_surface3": {
@@ -65471,7 +65471,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_surface3"
       },
       "light_pink_Button": {
@@ -65612,7 +65612,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_Button"
       },
       "light_pink_SliderTrackActive": {
@@ -65753,7 +65753,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_SliderTrackActive"
       },
       "light_pink_active_SliderTrackActive": {
@@ -65894,7 +65894,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_SliderTrackActive"
       },
       "light_pink_surface1": {
@@ -66035,7 +66035,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_surface1"
       },
       "light_pink_ListItem": {
@@ -66176,7 +66176,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_ListItem"
       },
       "light_pink_SelectTrigger": {
@@ -66317,7 +66317,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_SelectTrigger"
       },
       "light_pink_Card": {
@@ -66458,7 +66458,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_Card"
       },
       "light_pink_Progress": {
@@ -66599,7 +66599,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_Progress"
       },
       "light_pink_TooltipArrow": {
@@ -66740,7 +66740,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_TooltipArrow"
       },
       "light_pink_SliderTrack": {
@@ -66881,7 +66881,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_SliderTrack"
       },
       "light_pink_Input": {
@@ -67022,7 +67022,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_Input"
       },
       "light_pink_TextArea": {
@@ -67163,7 +67163,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_TextArea"
       },
       "light_pink_active_ListItem": {
@@ -67304,7 +67304,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_ListItem"
       },
       "light_pink_active_Progress": {
@@ -67445,7 +67445,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_Progress"
       },
       "light_pink_active_TooltipArrow": {
@@ -67586,7 +67586,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_TooltipArrow"
       },
       "light_pink_active_SliderTrack": {
@@ -67727,7 +67727,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_SliderTrack"
       },
       "light_pink_surface2": {
@@ -67868,7 +67868,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_surface2"
       },
       "light_pink_Checkbox": {
@@ -68009,7 +68009,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_Checkbox"
       },
       "light_pink_Switch": {
@@ -68150,7 +68150,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_Switch"
       },
       "light_pink_TooltipContent": {
@@ -68291,7 +68291,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_TooltipContent"
       },
       "light_pink_RadioGroupItem": {
@@ -68432,7 +68432,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_RadioGroupItem"
       },
       "light_pink_surface4": {
@@ -68573,7 +68573,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_surface4"
       },
       "light_pink_active_SelectTrigger": {
@@ -68714,7 +68714,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_SelectTrigger"
       },
       "light_pink_active_Card": {
@@ -68855,7 +68855,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_Card"
       },
       "light_pink_active_Button": {
@@ -68996,7 +68996,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_Button"
       },
       "light_pink_active_Checkbox": {
@@ -69137,7 +69137,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_Checkbox"
       },
       "light_pink_active_Switch": {
@@ -69278,7 +69278,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_Switch"
       },
       "light_pink_active_TooltipContent": {
@@ -69419,7 +69419,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_TooltipContent"
       },
       "light_pink_active_RadioGroupItem": {
@@ -69560,7 +69560,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_RadioGroupItem"
       },
       "light_pink_active_Input": {
@@ -69701,7 +69701,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_Input"
       },
       "light_pink_active_TextArea": {
@@ -69842,7 +69842,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_TextArea"
       },
       "light_red_alt1": {
@@ -69983,7 +69983,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_alt1"
       },
       "light_red_alt2": {
@@ -70124,7 +70124,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_alt2"
       },
       "light_red_active": {
@@ -70265,7 +70265,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active"
       },
       "light_red_surface3": {
@@ -70406,7 +70406,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_surface3"
       },
       "light_red_Button": {
@@ -70547,7 +70547,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_Button"
       },
       "light_red_SliderTrackActive": {
@@ -70688,7 +70688,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_SliderTrackActive"
       },
       "light_red_active_SliderTrackActive": {
@@ -70829,7 +70829,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_SliderTrackActive"
       },
       "light_red_surface1": {
@@ -70970,7 +70970,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_surface1"
       },
       "light_red_ListItem": {
@@ -71111,7 +71111,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_ListItem"
       },
       "light_red_SelectTrigger": {
@@ -71252,7 +71252,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_SelectTrigger"
       },
       "light_red_Card": {
@@ -71393,7 +71393,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_Card"
       },
       "light_red_Progress": {
@@ -71534,7 +71534,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_Progress"
       },
       "light_red_TooltipArrow": {
@@ -71675,7 +71675,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_TooltipArrow"
       },
       "light_red_SliderTrack": {
@@ -71816,7 +71816,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_SliderTrack"
       },
       "light_red_Input": {
@@ -71957,7 +71957,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_Input"
       },
       "light_red_TextArea": {
@@ -72098,7 +72098,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_TextArea"
       },
       "light_red_active_ListItem": {
@@ -72239,7 +72239,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_ListItem"
       },
       "light_red_active_Progress": {
@@ -72380,7 +72380,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_Progress"
       },
       "light_red_active_TooltipArrow": {
@@ -72521,7 +72521,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_TooltipArrow"
       },
       "light_red_active_SliderTrack": {
@@ -72662,7 +72662,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_SliderTrack"
       },
       "light_red_surface2": {
@@ -72803,7 +72803,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_surface2"
       },
       "light_red_Checkbox": {
@@ -72944,7 +72944,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_Checkbox"
       },
       "light_red_Switch": {
@@ -73085,7 +73085,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_Switch"
       },
       "light_red_TooltipContent": {
@@ -73226,7 +73226,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_TooltipContent"
       },
       "light_red_RadioGroupItem": {
@@ -73367,7 +73367,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_RadioGroupItem"
       },
       "light_red_surface4": {
@@ -73508,7 +73508,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_surface4"
       },
       "light_red_active_SelectTrigger": {
@@ -73649,7 +73649,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_SelectTrigger"
       },
       "light_red_active_Card": {
@@ -73790,7 +73790,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_Card"
       },
       "light_red_active_Button": {
@@ -73931,7 +73931,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_Button"
       },
       "light_red_active_Checkbox": {
@@ -74072,7 +74072,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_Checkbox"
       },
       "light_red_active_Switch": {
@@ -74213,7 +74213,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_Switch"
       },
       "light_red_active_TooltipContent": {
@@ -74354,7 +74354,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_TooltipContent"
       },
       "light_red_active_RadioGroupItem": {
@@ -74495,7 +74495,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_RadioGroupItem"
       },
       "light_red_active_Input": {
@@ -74636,7 +74636,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_Input"
       },
       "light_red_active_TextArea": {
@@ -74777,7 +74777,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_TextArea"
       },
       "light_gray_alt1": {
@@ -74918,7 +74918,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_alt1"
       },
       "light_gray_alt2": {
@@ -75059,7 +75059,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_alt2"
       },
       "light_gray_active": {
@@ -75200,7 +75200,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active"
       },
       "light_gray_surface3": {
@@ -75341,7 +75341,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_surface3"
       },
       "light_gray_Button": {
@@ -75482,7 +75482,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_Button"
       },
       "light_gray_SliderTrackActive": {
@@ -75623,7 +75623,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_SliderTrackActive"
       },
       "light_gray_active_SliderTrackActive": {
@@ -75764,7 +75764,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_SliderTrackActive"
       },
       "light_gray_surface1": {
@@ -75905,7 +75905,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_surface1"
       },
       "light_gray_ListItem": {
@@ -76046,7 +76046,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_ListItem"
       },
       "light_gray_SelectTrigger": {
@@ -76187,7 +76187,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_SelectTrigger"
       },
       "light_gray_Card": {
@@ -76328,7 +76328,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_Card"
       },
       "light_gray_Progress": {
@@ -76469,7 +76469,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_Progress"
       },
       "light_gray_TooltipArrow": {
@@ -76610,7 +76610,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_TooltipArrow"
       },
       "light_gray_SliderTrack": {
@@ -76751,7 +76751,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_SliderTrack"
       },
       "light_gray_Input": {
@@ -76892,7 +76892,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_Input"
       },
       "light_gray_TextArea": {
@@ -77033,7 +77033,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_TextArea"
       },
       "light_gray_active_ListItem": {
@@ -77174,7 +77174,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_ListItem"
       },
       "light_gray_active_Progress": {
@@ -77315,7 +77315,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_Progress"
       },
       "light_gray_active_TooltipArrow": {
@@ -77456,7 +77456,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_TooltipArrow"
       },
       "light_gray_active_SliderTrack": {
@@ -77597,7 +77597,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_SliderTrack"
       },
       "light_gray_surface2": {
@@ -77738,7 +77738,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_surface2"
       },
       "light_gray_Checkbox": {
@@ -77879,7 +77879,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_Checkbox"
       },
       "light_gray_Switch": {
@@ -78020,7 +78020,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_Switch"
       },
       "light_gray_TooltipContent": {
@@ -78161,7 +78161,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_TooltipContent"
       },
       "light_gray_RadioGroupItem": {
@@ -78302,7 +78302,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_RadioGroupItem"
       },
       "light_gray_surface4": {
@@ -78443,7 +78443,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_surface4"
       },
       "light_gray_active_SelectTrigger": {
@@ -78584,7 +78584,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_SelectTrigger"
       },
       "light_gray_active_Card": {
@@ -78725,7 +78725,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_Card"
       },
       "light_gray_active_Button": {
@@ -78866,7 +78866,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_Button"
       },
       "light_gray_active_Checkbox": {
@@ -79007,7 +79007,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_Checkbox"
       },
       "light_gray_active_Switch": {
@@ -79148,7 +79148,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_Switch"
       },
       "light_gray_active_TooltipContent": {
@@ -79289,7 +79289,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_TooltipContent"
       },
       "light_gray_active_RadioGroupItem": {
@@ -79430,7 +79430,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_RadioGroupItem"
       },
       "light_gray_active_Input": {
@@ -79571,7 +79571,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_Input"
       },
       "light_gray_active_TextArea": {
@@ -79712,7 +79712,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_TextArea"
       },
       "dark_orange_alt1": {
@@ -119333,7 +119333,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_SwitchThumb"
       },
       "light_SliderThumb": {
@@ -119474,7 +119474,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_SliderThumb"
       },
       "light_Tooltip": {
@@ -119615,7 +119615,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_Tooltip"
       },
       "light_ProgressIndicator": {
@@ -119756,7 +119756,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_ProgressIndicator"
       },
       "light_SheetOverlay": {
@@ -119897,7 +119897,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_SheetOverlay"
       },
       "light_DialogOverlay": {
@@ -120038,7 +120038,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_DialogOverlay"
       },
       "light_ModalOverlay": {
@@ -120179,7 +120179,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_ModalOverlay"
       },
       "light_orange_SheetOverlay": {
@@ -120320,7 +120320,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_SheetOverlay"
       },
       "light_orange_DialogOverlay": {
@@ -120461,7 +120461,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_DialogOverlay"
       },
       "light_orange_ModalOverlay": {
@@ -120602,7 +120602,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_ModalOverlay"
       },
       "light_yellow_SheetOverlay": {
@@ -120743,7 +120743,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_SheetOverlay"
       },
       "light_yellow_DialogOverlay": {
@@ -120884,7 +120884,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_DialogOverlay"
       },
       "light_yellow_ModalOverlay": {
@@ -121025,7 +121025,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_ModalOverlay"
       },
       "light_green_SheetOverlay": {
@@ -121166,7 +121166,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_SheetOverlay"
       },
       "light_green_DialogOverlay": {
@@ -121307,7 +121307,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_DialogOverlay"
       },
       "light_green_ModalOverlay": {
@@ -121448,7 +121448,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_ModalOverlay"
       },
       "light_blue_SheetOverlay": {
@@ -121589,7 +121589,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_SheetOverlay"
       },
       "light_blue_DialogOverlay": {
@@ -121730,7 +121730,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_DialogOverlay"
       },
       "light_blue_ModalOverlay": {
@@ -121871,7 +121871,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_ModalOverlay"
       },
       "light_purple_SheetOverlay": {
@@ -122012,7 +122012,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_SheetOverlay"
       },
       "light_purple_DialogOverlay": {
@@ -122153,7 +122153,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_DialogOverlay"
       },
       "light_purple_ModalOverlay": {
@@ -122294,7 +122294,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_ModalOverlay"
       },
       "light_pink_SheetOverlay": {
@@ -122435,7 +122435,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_SheetOverlay"
       },
       "light_pink_DialogOverlay": {
@@ -122576,7 +122576,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_DialogOverlay"
       },
       "light_pink_ModalOverlay": {
@@ -122717,7 +122717,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_ModalOverlay"
       },
       "light_red_SheetOverlay": {
@@ -122858,7 +122858,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_SheetOverlay"
       },
       "light_red_DialogOverlay": {
@@ -122999,7 +122999,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_DialogOverlay"
       },
       "light_red_ModalOverlay": {
@@ -123140,7 +123140,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_ModalOverlay"
       },
       "light_gray_SheetOverlay": {
@@ -123281,7 +123281,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_SheetOverlay"
       },
       "light_gray_DialogOverlay": {
@@ -123422,7 +123422,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_DialogOverlay"
       },
       "light_gray_ModalOverlay": {
@@ -123563,7 +123563,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_ModalOverlay"
       },
       "light_active_SheetOverlay": {
@@ -123704,7 +123704,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_SheetOverlay"
       },
       "light_active_DialogOverlay": {
@@ -123845,7 +123845,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_DialogOverlay"
       },
       "light_active_ModalOverlay": {
@@ -123986,7 +123986,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_ModalOverlay"
       },
       "light_orange_active_SheetOverlay": {
@@ -124127,7 +124127,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_SheetOverlay"
       },
       "light_orange_active_DialogOverlay": {
@@ -124268,7 +124268,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_DialogOverlay"
       },
       "light_orange_active_ModalOverlay": {
@@ -124409,7 +124409,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_ModalOverlay"
       },
       "light_yellow_active_SheetOverlay": {
@@ -124550,7 +124550,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_SheetOverlay"
       },
       "light_yellow_active_DialogOverlay": {
@@ -124691,7 +124691,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_DialogOverlay"
       },
       "light_yellow_active_ModalOverlay": {
@@ -124832,7 +124832,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_ModalOverlay"
       },
       "light_green_active_SheetOverlay": {
@@ -124973,7 +124973,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_SheetOverlay"
       },
       "light_green_active_DialogOverlay": {
@@ -125114,7 +125114,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_DialogOverlay"
       },
       "light_green_active_ModalOverlay": {
@@ -125255,7 +125255,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_ModalOverlay"
       },
       "light_blue_active_SheetOverlay": {
@@ -125396,7 +125396,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_SheetOverlay"
       },
       "light_blue_active_DialogOverlay": {
@@ -125537,7 +125537,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_DialogOverlay"
       },
       "light_blue_active_ModalOverlay": {
@@ -125678,7 +125678,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_ModalOverlay"
       },
       "light_purple_active_SheetOverlay": {
@@ -125819,7 +125819,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_SheetOverlay"
       },
       "light_purple_active_DialogOverlay": {
@@ -125960,7 +125960,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_DialogOverlay"
       },
       "light_purple_active_ModalOverlay": {
@@ -126101,7 +126101,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_ModalOverlay"
       },
       "light_pink_active_SheetOverlay": {
@@ -126242,7 +126242,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_SheetOverlay"
       },
       "light_pink_active_DialogOverlay": {
@@ -126383,7 +126383,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_DialogOverlay"
       },
       "light_pink_active_ModalOverlay": {
@@ -126524,7 +126524,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_ModalOverlay"
       },
       "light_red_active_SheetOverlay": {
@@ -126665,7 +126665,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_SheetOverlay"
       },
       "light_red_active_DialogOverlay": {
@@ -126806,7 +126806,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_DialogOverlay"
       },
       "light_red_active_ModalOverlay": {
@@ -126947,7 +126947,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_ModalOverlay"
       },
       "light_gray_active_SheetOverlay": {
@@ -127088,7 +127088,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_SheetOverlay"
       },
       "light_gray_active_DialogOverlay": {
@@ -127229,7 +127229,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_DialogOverlay"
       },
       "light_gray_active_ModalOverlay": {
@@ -127370,7 +127370,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_ModalOverlay"
       },
       "dark_SwitchThumb": {
@@ -135689,7 +135689,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_SwitchThumb"
       },
       "light_orange_SliderThumb": {
@@ -135830,7 +135830,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_SliderThumb"
       },
       "light_orange_Tooltip": {
@@ -135971,7 +135971,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_Tooltip"
       },
       "light_orange_ProgressIndicator": {
@@ -136112,7 +136112,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_ProgressIndicator"
       },
       "light_yellow_SwitchThumb": {
@@ -136253,7 +136253,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_SwitchThumb"
       },
       "light_yellow_SliderThumb": {
@@ -136394,7 +136394,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_SliderThumb"
       },
       "light_yellow_Tooltip": {
@@ -136535,7 +136535,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_Tooltip"
       },
       "light_yellow_ProgressIndicator": {
@@ -136676,7 +136676,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_ProgressIndicator"
       },
       "light_green_SwitchThumb": {
@@ -136817,7 +136817,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_SwitchThumb"
       },
       "light_green_SliderThumb": {
@@ -136958,7 +136958,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_SliderThumb"
       },
       "light_green_Tooltip": {
@@ -137099,7 +137099,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_Tooltip"
       },
       "light_green_ProgressIndicator": {
@@ -137240,7 +137240,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_ProgressIndicator"
       },
       "light_blue_SwitchThumb": {
@@ -137381,7 +137381,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_SwitchThumb"
       },
       "light_blue_SliderThumb": {
@@ -137522,7 +137522,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_SliderThumb"
       },
       "light_blue_Tooltip": {
@@ -137663,7 +137663,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_Tooltip"
       },
       "light_blue_ProgressIndicator": {
@@ -137804,7 +137804,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_ProgressIndicator"
       },
       "light_purple_SwitchThumb": {
@@ -137945,7 +137945,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_SwitchThumb"
       },
       "light_purple_SliderThumb": {
@@ -138086,7 +138086,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_SliderThumb"
       },
       "light_purple_Tooltip": {
@@ -138227,7 +138227,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_Tooltip"
       },
       "light_purple_ProgressIndicator": {
@@ -138368,7 +138368,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_ProgressIndicator"
       },
       "light_pink_SwitchThumb": {
@@ -138509,7 +138509,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_SwitchThumb"
       },
       "light_pink_SliderThumb": {
@@ -138650,7 +138650,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_SliderThumb"
       },
       "light_pink_Tooltip": {
@@ -138791,7 +138791,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_Tooltip"
       },
       "light_pink_ProgressIndicator": {
@@ -138932,7 +138932,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_ProgressIndicator"
       },
       "light_red_SwitchThumb": {
@@ -139073,7 +139073,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_SwitchThumb"
       },
       "light_red_SliderThumb": {
@@ -139214,7 +139214,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_SliderThumb"
       },
       "light_red_Tooltip": {
@@ -139355,7 +139355,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_Tooltip"
       },
       "light_red_ProgressIndicator": {
@@ -139496,7 +139496,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_ProgressIndicator"
       },
       "light_gray_SwitchThumb": {
@@ -139637,7 +139637,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_SwitchThumb"
       },
       "light_gray_SliderThumb": {
@@ -139778,7 +139778,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_SliderThumb"
       },
       "light_gray_Tooltip": {
@@ -139919,7 +139919,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_Tooltip"
       },
       "light_gray_ProgressIndicator": {
@@ -140060,7 +140060,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_ProgressIndicator"
       },
       "dark_orange_SwitchThumb": {
@@ -144713,7 +144713,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_SwitchThumb"
       },
       "light_active_SliderThumb": {
@@ -144854,7 +144854,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_SliderThumb"
       },
       "light_active_Tooltip": {
@@ -144995,7 +144995,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_Tooltip"
       },
       "light_active_ProgressIndicator": {
@@ -145136,7 +145136,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_active_ProgressIndicator"
       },
       "dark_active_SwitchThumb": {
@@ -145841,7 +145841,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_SwitchThumb"
       },
       "light_orange_active_SliderThumb": {
@@ -145982,7 +145982,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_SliderThumb"
       },
       "light_orange_active_Tooltip": {
@@ -146123,7 +146123,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_Tooltip"
       },
       "light_orange_active_ProgressIndicator": {
@@ -146264,7 +146264,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_orange_active_ProgressIndicator"
       },
       "light_yellow_active_SwitchThumb": {
@@ -146405,7 +146405,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_SwitchThumb"
       },
       "light_yellow_active_SliderThumb": {
@@ -146546,7 +146546,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_SliderThumb"
       },
       "light_yellow_active_Tooltip": {
@@ -146687,7 +146687,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_Tooltip"
       },
       "light_yellow_active_ProgressIndicator": {
@@ -146828,7 +146828,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_yellow_active_ProgressIndicator"
       },
       "light_green_active_SwitchThumb": {
@@ -146969,7 +146969,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_SwitchThumb"
       },
       "light_green_active_SliderThumb": {
@@ -147110,7 +147110,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_SliderThumb"
       },
       "light_green_active_Tooltip": {
@@ -147251,7 +147251,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_Tooltip"
       },
       "light_green_active_ProgressIndicator": {
@@ -147392,7 +147392,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_green_active_ProgressIndicator"
       },
       "light_blue_active_SwitchThumb": {
@@ -147533,7 +147533,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_SwitchThumb"
       },
       "light_blue_active_SliderThumb": {
@@ -147674,7 +147674,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_SliderThumb"
       },
       "light_blue_active_Tooltip": {
@@ -147815,7 +147815,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_Tooltip"
       },
       "light_blue_active_ProgressIndicator": {
@@ -147956,7 +147956,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_blue_active_ProgressIndicator"
       },
       "light_purple_active_SwitchThumb": {
@@ -148097,7 +148097,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_SwitchThumb"
       },
       "light_purple_active_SliderThumb": {
@@ -148238,7 +148238,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_SliderThumb"
       },
       "light_purple_active_Tooltip": {
@@ -148379,7 +148379,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_Tooltip"
       },
       "light_purple_active_ProgressIndicator": {
@@ -148520,7 +148520,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_purple_active_ProgressIndicator"
       },
       "light_pink_active_SwitchThumb": {
@@ -148661,7 +148661,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_SwitchThumb"
       },
       "light_pink_active_SliderThumb": {
@@ -148802,7 +148802,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_SliderThumb"
       },
       "light_pink_active_Tooltip": {
@@ -148943,7 +148943,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_Tooltip"
       },
       "light_pink_active_ProgressIndicator": {
@@ -149084,7 +149084,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_pink_active_ProgressIndicator"
       },
       "light_red_active_SwitchThumb": {
@@ -149225,7 +149225,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_SwitchThumb"
       },
       "light_red_active_SliderThumb": {
@@ -149366,7 +149366,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_SliderThumb"
       },
       "light_red_active_Tooltip": {
@@ -149507,7 +149507,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_Tooltip"
       },
       "light_red_active_ProgressIndicator": {
@@ -149648,7 +149648,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_red_active_ProgressIndicator"
       },
       "light_gray_active_SwitchThumb": {
@@ -149789,7 +149789,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_SwitchThumb"
       },
       "light_gray_active_SliderThumb": {
@@ -149930,7 +149930,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_SliderThumb"
       },
       "light_gray_active_Tooltip": {
@@ -150071,7 +150071,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_Tooltip"
       },
       "light_gray_active_ProgressIndicator": {
@@ -150212,7 +150212,7 @@
         "shadowColorHover": "rgba(0,0,0,0.085)",
         "shadowColorPress": "rgba(0,0,0,0.04)",
         "shadowColorFocus": "rgba(0,0,0,0.04)",
-        "primary": "#FF6B6B",
+        "primary": "#99cbf3",
         "id": "light_gray_active_ProgressIndicator"
       },
       "dark_orange_active_SwitchThumb": {
@@ -156399,7 +156399,7 @@
           "isVar": true,
           "key": "$primary",
           "name": "c-primary",
-          "val": "#FF6B6B",
+          "val": "#99cbf3",
           "variable": ""
         },
         "secondary": {
@@ -158854,7 +158854,7 @@
         "isVar": true,
         "key": "$primary",
         "name": "c-primary",
-        "val": "#FF6B6B",
+        "val": "#99cbf3",
         "variable": ""
       },
       "$color.secondary": {

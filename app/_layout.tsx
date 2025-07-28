@@ -6,7 +6,7 @@ import "react-native-reanimated";
 import AppContainer from "@/components/AppContainer";
 import { AudioLibraryProvider } from "@/hooks/providers/MediaLibraryProvider";
 import { tamaguiConfig } from "@/tamagui.config";
-import { Audio, InterruptionModeAndroid, InterruptionModeIOS } from "expo-av";
+import { setAudioModeAsync } from "expo-audio";
 import * as SystemUI from "expo-system-ui";
 import { useEffect } from "react";
 import { View } from "react-native";
@@ -18,13 +18,13 @@ import { TamaguiProvider } from "tamagui";
 
 export default function RootLayout() {
 	const insets = useSafeAreaInsets();
+
 	const [loaded] = useFonts({
 		Inter: require("@tamagui/font-inter/otf/Inter-Regular.otf"),
 		InterBold: require("@tamagui/font-inter/otf/Inter-Bold.otf"),
 		InterLight: require("@tamagui/font-inter/otf/Inter-Light.otf"),
 		InterThin: require("@tamagui/font-inter/otf/Inter-Thin.otf"),
 	});
-	console.log(loaded);
 
 	const backgroundColor = tamaguiConfig.themes["dark"].background.val;
 
@@ -34,14 +34,9 @@ export default function RootLayout() {
 
 	useEffect(() => {
 		const setAudioMode = async () => {
-			await Audio.setAudioModeAsync({
-				staysActiveInBackground: true,
-				allowsRecordingIOS: false,
-				interruptionModeIOS: InterruptionModeIOS.DoNotMix,
-				playsInSilentModeIOS: true,
-				shouldDuckAndroid: true,
-				interruptionModeAndroid: InterruptionModeAndroid.DoNotMix,
-				playThroughEarpieceAndroid: false,
+			await setAudioModeAsync({
+				interruptionModeAndroid: "doNotMix",
+				shouldPlayInBackground: true,
 			});
 		};
 		setAudioMode();
@@ -49,7 +44,6 @@ export default function RootLayout() {
 
 	if (!loaded) return null;
 
-	console.log(tamaguiConfig.fonts.body);
 	return (
 		<TamaguiProvider config={tamaguiConfig} defaultTheme="dark">
 			<AudioLibraryProvider>

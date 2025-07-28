@@ -1,6 +1,6 @@
 import { useMusicLibrary } from "@/hooks/providers/MusicProvider";
 import { Song } from "@/models";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import {
 	ActivityIndicator,
 	FlatList,
@@ -45,25 +45,25 @@ export const MusicLibraryExample: React.FC<MusicLibraryExampleProps> = () => {
 	const [stats, setStats] = useState<any>(null);
 	const [favorites, setFavorites] = useState<Song[]>([]);
 
+	const loadStats = useCallback(async () => {
+		const libraryStats = await getLibraryStats();
+		setStats(libraryStats);
+	}, [getLibraryStats]);
+
+	const loadFavorites = useCallback(async () => {
+		const favoriteSongs = await getFavoriteSongs();
+		setFavorites(favoriteSongs);
+	}, [getFavoriteSongs]);
+
 	// Load statistics on initialization
 	useEffect(() => {
 		loadStats();
-	}, [songs]);
+	}, [loadStats]);
 
 	// Load favorites
 	useEffect(() => {
 		loadFavorites();
-	}, [songs]);
-
-	const loadStats = async () => {
-		const libraryStats = await getLibraryStats();
-		setStats(libraryStats);
-	};
-
-	const loadFavorites = async () => {
-		const favoriteSongs = await getFavoriteSongs();
-		setFavorites(favoriteSongs);
-	};
+	}, [loadFavorites]);
 
 	const handleSearch = async () => {
 		if (searchQuery.trim()) {
@@ -81,8 +81,6 @@ export const MusicLibraryExample: React.FC<MusicLibraryExampleProps> = () => {
 
 	const handlePlaySong = async (songId: string) => {
 		await incrementPlayCount(songId);
-		// Here you could add logic to play the song
-		console.log("Playing song:", songId);
 	};
 
 	const handleStartSync = async () => {
