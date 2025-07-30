@@ -51,7 +51,7 @@ export default function RootLayout() {
 					<View style={{ height: insets.top, backgroundColor }} />
 					<StatusBar style="light" translucent />
 					<SafeAreaView
-						style={{ flex: 1, padding: 10, width: "100%" }}
+						style={{ flex: 1, width: "100%" }}
 						edges={["left", "right", "bottom"]}
 					>
 						<Slot />

@@ -1,11 +1,17 @@
-import { Artist, Song } from "@/models";
-import { useGetPlayingSongId, useMusicStore } from "@/store/songsStore";
+import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSondAndArtist";
+import {
+	useGetIsPausedSong,
+	useGetPlayingSong,
+	useGetPlaySong,
+	useGetTooglePauseSong,
+} from "@/store/usePlayerStore";
 import { tamaguiConfig } from "@/tamagui.config";
-import { AudioPlayer, createAudioPlayer } from "expo-audio";
 import { BlurView } from "expo-blur";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useRouter } from "expo-router";
+import { useEffect, useState } from "react";
 import { Pressable, StyleSheet } from "react-native";
-import { Button, Text, View, XStack, YStack } from "tamagui";
+import Animated from "react-native-reanimated";
+import { Button, XStack } from "tamagui";
 import NextIcon from "../icons/NextIcon";
 import PauseIcon from "../icons/PauseIcon";
 import PlayIcon from "../icons/PlayIcon";
@@ -13,121 +19,25 @@ import PrevIcon from "../icons/PrevIcon";
 import Cover from "./Cover";
 
 const Player: React.FC = () => {
-	const playerRef = useRef<AudioPlayer | null>(null);
-	const isMounted = useRef(true);
-
-	const playingSongId = useGetPlayingSongId();
-	const getSongById = useMusicStore((s) => s.getSongById);
-	const getArtistById = useMusicStore((s) => s.getArtistById);
-	const setPlayingSongId = useMusicStore((s) => s.setPlayingSongId);
-
-	const [song, setSong] = useState<Song | null>(null);
-	const [artist, setArtist] = useState<Artist | null>(null);
-	const [loading, setLoading] = useState(false);
-	const [showSongDetails, setShowSongDetails] = useState(false);
-	const [isPaused, setIsPaused] = useState(false);
-
-	// Limpieza al desmontar
-	useEffect(() => {
-		return () => {
-			isMounted.current = false;
-			if (playerRef.current) {
-				playerRef.current.pause();
-				playerRef.current = null;
-			}
-		};
-	}, []);
-
-	const stopCurrentSound = useCallback(() => {
-		if (playerRef.current) {
-			try {
-				playerRef.current.pause();
-			} catch (err) {
-				console.error("Error stopping player:", err);
-			}
-			playerRef.current = null;
-		}
-	}, []);
-
-	const loadAndPlaySong = useCallback(
-		async (id: string) => {
-			setLoading(true);
-			try {
-				const fetchedSong = await getSongById(id);
-				if (!fetchedSong) {
-					console.warn("No se encontró la canción con id:", id);
-					if (isMounted.current) {
-						setSong(null);
-						setArtist(null);
-					}
-					return;
-				}
-
-				const fetchedArtist = await getArtistById(fetchedSong.artistId);
-				if (!isMounted.current) return;
-
-				setSong(fetchedSong);
-				setArtist(fetchedArtist ?? null);
-
-				stopCurrentSound();
-
-				const player = createAudioPlayer(fetchedSong.sourceUri);
-				player.play();
-				playerRef.current = player;
-			} catch (err) {
-				console.error("Error loading song or artist:", err);
-			} finally {
-				if (isMounted.current) setLoading(false);
-			}
-		},
-		[getSongById, getArtistById, stopCurrentSound]
-	);
+	const { song, isLoading } = useGetPlayingSongAndArtist();
+	const router = useRouter();
+	const playSong = useGetPlaySong();
+	const togglePause = useGetTooglePauseSong();
+	const playingSong = useGetPlayingSong();
+	const isPaused = useGetIsPausedSong();
+	const [playingSongId, setPlayingSongId] = useState<string>('');
 
 	useEffect(() => {
-		if (!playingSongId) {
-			stopCurrentSound();
-			if (isMounted.current) {
-				setSong(null);
-				setArtist(null);
-			}
-		} else {
-			loadAndPlaySong(playingSongId);
+		if (song && playingSongId !== song.id && playingSong?.id !== song.id) {
+			playSong(song);
+			setPlayingSongId(song.id);
 		}
-	}, [playingSongId, loadAndPlaySong, stopCurrentSound]);
+	}, [song, playSong, playingSongId, playingSong?.id]);
 
-	if (loading || !song) {
-		return <></>;
-	}
+	if (isLoading || !song) return null;
 
 	return (
-		<View style={styles.container}>
-			{showSongDetails && (
-				<BlurView
-					intensity={10}
-					tint="regular"
-					experimentalBlurMethod="dimezisBlurView"
-					style={styles.blur}
-				>
-					<YStack gap="$2" flex={1}>
-						<Text
-							fontFamily="$inter"
-							fontWeight={"200"}
-							fontSize={"$6"}
-							maxWidth={"100%"}
-						>
-							{song.title}
-						</Text>
-						<Text
-							fontFamily="$inter"
-							fontWeight={"100"}
-							fontSize={"$5"}
-							textTransform="uppercase"
-						>
-							{artist?.name || "Unknown Artist"}
-						</Text>
-					</YStack>
-				</BlurView>
-			)}
+		<Animated.View style={styles.container}>
 			<BlurView
 				intensity={10}
 				tint="regular"
@@ -135,7 +45,7 @@ const Player: React.FC = () => {
 				style={styles.blur}
 			>
 				<XStack gap={"$4"} maxWidth={"100%"}>
-					<Pressable onPress={() => setShowSongDetails(!showSongDetails)}>
+					<Pressable onPress={() => router.push("/song/playing")}>
 						<Cover
 							coverPath={song.coverPath || ""}
 							alternativeCoverOpacity={1}
@@ -151,17 +61,7 @@ const Player: React.FC = () => {
 						<Button
 							circular
 							backgroundColor={tamaguiConfig.tokens.color.primary}
-							onPress={async () => {
-								if (!playerRef.current) return;
-
-								if (isPaused) {
-									await playerRef.current.play();
-									setIsPaused(false);
-								} else {
-									await playerRef.current.pause();
-									setIsPaused(true);
-								}
-							}}
+							onPress={async () => togglePause()}
 						>
 							{isPaused ? <PlayIcon /> : <PauseIcon />}
 						</Button>
@@ -174,14 +74,14 @@ const Player: React.FC = () => {
 					</XStack>
 				</XStack>
 			</BlurView>
-		</View>
+		</Animated.View>
 	);
 };
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		margin: 8,
+		margin: 16,
 		position: "absolute",
 		bottom: 0,
 		left: 0,
@@ -192,11 +92,33 @@ const styles = StyleSheet.create({
 		flexDirection: "column",
 		gap: 8,
 	},
+	fullScreenContainer: {
+		width: "100%",
+		height: "100%",
+		borderRadius: 0,
+		margin: 0,
+	},
+	fullScreenWrapper: {
+		height: "100%",
+		padding: 16,
+		flexDirection: "column-reverse",
+	},
 	blur: {
 		padding: 32,
 		maxWidth: "100%",
 		borderRadius: 16,
 		overflow: "hidden",
+		backgroundColor: "rgba(72, 72, 72, 0.3)",
+	},
+	coverFullScreen: {
+		position: "absolute",
+		top: 0,
+		left: 0,
+		right: 0,
+		bottom: 0,
+		width: "100%",
+		height: "100%",
+		borderRadius: 0,
 	},
 });
 

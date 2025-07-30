@@ -1,7 +1,8 @@
-import { Artist, Song } from "@/models";
+import { useGetArtistBySong } from "@/hooks/useGetArtistBySong";
+import { Song } from "@/models";
 import { useMusicStore } from "@/store/songsStore";
 import { formatSeconds } from "@/utils/formatSeconds";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Text, XStack, YStack } from "tamagui";
 import { Loading } from "../ui/Loading";
 import Cover from "./Cover";
@@ -11,20 +12,9 @@ type SongItemProps = {
 };
 
 const SongItem: React.FC<SongItemProps> = ({ song }) => {
-	const getArtistById = useMusicStore((state) => state.getArtistById);
+	const {artist, isLoading} = useGetArtistBySong(song);
 	const setPlayingSongId = useMusicStore((state) => state.setPlayingSongId);
-	const [artist, setArtist] = useState<Artist | null>(null);
-	const [loading, setLoading] = useState(true);
 	const [isPlaying, setIsPlaying] = useState(false);
-
-	useEffect(() => {
-		const fetchArtist = async () => {
-			const fetchedArtist = await getArtistById(song.artistId);
-			setArtist(fetchedArtist);
-			setLoading(false);
-		};
-		fetchArtist();
-	}, [getArtistById, song.artistId]);
 
 	const handlePlay = async () => {
 		if (isPlaying) {
@@ -36,17 +26,20 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 		}
 	};
 
-	if (loading) {
+	if (isLoading) {
 		return <Loading />;
 	}
 
 	return (
-		<XStack gap="$4" onPress={handlePlay}>
-			{!!song.coverPath && (
-				<Cover
-					coverPath={song.coverPath}
-				/>
-			)}
+		<XStack
+			gap="$4"
+			onPress={handlePlay}
+			marginHorizontal={"$4"}
+			backgroundColor={"$transparentBackground"}
+			padding="$3"
+			borderRadius="$3"
+		>
+			{!!song.coverPath && <Cover coverPath={song.coverPath} size={52} />}
 			<YStack gap="$1" flex={1}>
 				<Text
 					fontFamily="$inter"
@@ -68,9 +61,10 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 			</YStack>
 			<Text
 				fontFamily="$inter"
-				fontWeight={"100"}
+				fontWeight={"400"}
 				fontSize={"$5"}
 				textTransform="uppercase"
+				alignSelf="center"
 			>
 				{formatSeconds(song.duration || 0)}
 			</Text>

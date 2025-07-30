@@ -4,7 +4,7 @@ import LogoIcon from "../icons/LogoIcon";
 
 const Heading: React.FC = () => {
 	return (
-		<XStack gap={"$6"} alignItems="center">
+		<XStack gap={"$6"} alignItems="center" m={"$2"}>
 			<LogoIcon size={48} />
 			<H1 fontSize={"$5"} fontWeight="700">
 				Lissn

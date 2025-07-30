@@ -1,75 +1,75 @@
 {
-  "expo": {
-    "name": "lissn",
-    "slug": "lissn",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "lissn",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.displaynone.lissn"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true,
-      "permissions": [
-        "android.permission.READ_EXTERNAL_STORAGE",
-        "android.permission.WRITE_EXTERNAL_STORAGE",
-        "android.permission.ACCESS_MEDIA_LOCATION"
-      ],
-      "package": "com.displaynone.lissn"
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
-    },
-    "plugins": [
-      "expo-router",
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
-      ],
-      [
-        "expo-media-library",
-        {
-          "photosPermission": "Allow $(PRODUCT_NAME) to access your photos.",
-          "savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
-          "isAccessMediaLocationEnabled": true
-        }
-      ],
-      "expo-sqlite",
-      "expo-build-properties",
-      [
-        "react-native-edge-to-edge",
-        {
-          "android": {
-            "parentTheme": "Default",
-            "enforceNavigationBarContrast": false
-          }
-        }
-      ],
-      "expo-audio"
-    ],
-    "experiments": {
-      "typedRoutes": true
-    },
-    "extra": {
-      "router": {},
-      "eas": {
-        "projectId": "414f0ab0-89c2-4d40-91cb-149e05f96f88"
-      }
-    }
-  }
+	"expo": {
+		"name": "lissn",
+		"slug": "lissn",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./assets/images/icon.png",
+		"scheme": "lissn",
+		"userInterfaceStyle": "automatic",
+		"newArchEnabled": true,
+		"ios": {
+			"supportsTablet": true,
+			"bundleIdentifier": "com.displaynone.lissn"
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/images/adaptive-icon.png",
+				"backgroundColor": "#ffffff"
+			},
+			"edgeToEdgeEnabled": true,
+			"permissions": [
+				"android.permission.READ_EXTERNAL_STORAGE",
+				"android.permission.WRITE_EXTERNAL_STORAGE",
+				"android.permission.ACCESS_MEDIA_LOCATION"
+			],
+			"package": "com.displaynone.lissn"
+		},
+		"web": {
+			"bundler": "metro",
+			"output": "static",
+			"favicon": "./assets/images/favicon.png"
+		},
+		"plugins": [
+			"expo-router",
+			[
+				"expo-splash-screen",
+				{
+					"image": "./assets/images/splash-icon.png",
+					"imageWidth": 200,
+					"resizeMode": "contain",
+					"backgroundColor": "#ffffff"
+				}
+			],
+			[
+				"expo-media-library",
+				{
+					"photosPermission": "Allow $(PRODUCT_NAME) to access your photos.",
+					"savePhotosPermission": "Allow $(PRODUCT_NAME) to save photos.",
+					"isAccessMediaLocationEnabled": true
+				}
+			],
+			"expo-sqlite",
+			"expo-build-properties",
+			[
+				"react-native-edge-to-edge",
+				{
+					"android": {
+						"parentTheme": "Default",
+						"enforceNavigationBarContrast": false
+					}
+				}
+			],
+			"expo-audio"
+		],
+		"experiments": {
+			"typedRoutes": true
+		},
+		"extra": {
+			"router": {},
+			"eas": {
+				"projectId": "414f0ab0-89c2-4d40-91cb-149e05f96f88"
+			}
+		}
+	}
 }

@@ -9,6 +9,7 @@ const tokens = createTokens({
 		color: "#ffffff",
 		primary: "#afd8ec",
 		secondary: "#4ECDC4",
+		transparentBackground: "rgba(255, 255, 255, 0.02)",
 	},
 });
 

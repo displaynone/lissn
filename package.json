@@ -29,6 +29,7 @@
     "buffer": "^6.0.3",
     "expo": "~53.0.17",
     "expo-audio": "~0.4.8",
+    "expo-blur": "~14.1.5",
     "expo-build-properties": "~0.14.8",
     "expo-constants": "~17.1.7",
     "expo-dev-client": "~5.2.4",
@@ -60,8 +61,7 @@
     "react-native-web": "~0.20.0",
     "react-native-webview": "13.13.5",
     "tamagui": "^1.132.10",
-    "zustand": "^5.0.6",
-    "expo-blur": "~14.1.5"
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
