@@ -55,7 +55,7 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	recoveryMessage: null,
 	playingSongId: undefined,
 
-	refreshSongs: async (limit: number = 20) => {
+	refreshSongs: async (limit: number = 200) => {
 		const songs = await database
 			.get<Song>("songs")
 			.query(Q.sortBy("created_at", Q.desc), Q.take(limit))

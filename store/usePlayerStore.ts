@@ -9,6 +9,7 @@ interface PlayerStore {
 	playSong: (song: Song) => Promise<void>;
 	togglePause: () => Promise<void>;
 	stop: () => void;
+	seekTo: (time: number) => void;
 }
 
 export const usePlayerStore = create<PlayerStore>((set, get) => ({
@@ -20,7 +21,7 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 		get().stop();
 
 		const player = createAudioPlayer(song.sourceUri);
-		await player.play();
+		player.play();
 
 		set({ song, player, isPaused: false });
 	},
@@ -45,11 +46,21 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 		}
 		set({ player: null, song: null, isPaused: true });
 	},
+
+	seekTo: (time: number) => {
+		const { player } = get();
+		if (player) {
+			player.seekTo(time);
+		}
+	},
 }));
 
 export const useGetPlayer = () => usePlayerStore((state) => state.player);
 export const useGetPlaySong = () => usePlayerStore((state) => state.playSong);
-export const useGetTooglePauseSong = () => usePlayerStore((state) => state.togglePause);
+export const useGetTooglePauseSong = () =>
+	usePlayerStore((state) => state.togglePause);
 export const useGetStopSong = () => usePlayerStore((state) => state.stop);
-export const useGetIsPausedSong = () => usePlayerStore((state) => state.isPaused);
+export const useGetSeekToSong = () => usePlayerStore((state) => state.seekTo);
+export const useGetIsPausedSong = () =>
+	usePlayerStore((state) => state.isPaused);
 export const useGetPlayingSong = () => usePlayerStore((state) => state.song);

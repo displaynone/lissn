@@ -5,10 +5,13 @@ import {
 	useStartSync,
 } from "@/store/songsStore";
 import { useGetPlayingSong } from "@/store/usePlayerStore";
+import { tamaguiConfig } from "@/tamagui.config";
+import { BlurView } from "expo-blur";
 import * as NavigationBar from "expo-navigation-bar";
 import { usePathname } from "expo-router";
 import React, { useEffect } from "react";
 import { StyleSheet } from "react-native";
+import { View } from "tamagui";
 import { LinearGradient } from "tamagui/linear-gradient";
 import Cover from "./partials/Cover";
 
@@ -44,10 +47,17 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	}, [isSynced, isSyncing, startSync, refreshSongs]);
 
 	const isDetailedView = pathname === "/song/playing";
+	const showCover = !!song && isDetailedView;
+
+	const gradientColors: string[] = [
+		tamaguiConfig.tokens.color.backgroundGradientStart.val,
+		tamaguiConfig.tokens.color.backgroundGradientMiddle.val,
+		tamaguiConfig.tokens.color.backgroundGradientEnd.val,
+	];
 
 	return (
 		<LinearGradient
-			colors={["#00020a", "#010724", "#020b3a"]}
+			colors={gradientColors}
 			start={[0, 1]}
 			end={[1, 1]}
 			flex={1}
@@ -55,14 +65,29 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 			alignItems="center"
 			borderRadius="$4"
 		>
-			{!!song && isDetailedView && (
-				<Cover
-					coverPath={song.coverPath || ""}
-					alternativeCoverOpacity={1}
-					style={{ ...styles.coverFullScreen }}
-					resizeMode="cover"
-					blurRadius={40}
-				/>
+			{showCover && (
+				<View style={{ ...styles.coverFullScreen }}>
+					<Cover
+						coverPath={song.coverPath || ""}
+						alternativeCoverOpacity={1}
+						style={{ ...styles.coverFullScreen }}
+						resizeMode="cover"
+						showDefault={false}
+					/>
+					<BlurView
+						intensity={30}
+						tint="dark"
+						style={{
+							position: "absolute",
+							top: 0,
+							left: 0,
+							right: 0,
+							bottom: 0,
+							backgroundColor: tamaguiConfig.tokens.color.backgroundDarkTransparent20.val,
+						}}
+						experimentalBlurMethod="dimezisBlurView"
+					/>
+				</View>
 			)}
 			{children}
 		</LinearGradient>

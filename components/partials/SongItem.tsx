@@ -35,7 +35,7 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 			gap="$4"
 			onPress={handlePlay}
 			marginHorizontal={"$4"}
-			backgroundColor={"$transparentBackground"}
+			backgroundColor={"$backgroundTransparent02"}
 			padding="$3"
 			borderRadius="$3"
 		>

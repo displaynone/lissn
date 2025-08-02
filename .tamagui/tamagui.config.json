@@ -157373,6 +157373,69 @@
           "name": "c-secondary",
           "val": "#4ECDC4",
           "variable": ""
+        },
+        "backgroundTransparent02": {
+          "isVar": true,
+          "key": "$backgroundTransparent02",
+          "name": "c-backgroundTransparent02",
+          "val": "rgba(255, 255, 255, 0.02)",
+          "variable": ""
+        },
+        "backgroundTransparent05": {
+          "isVar": true,
+          "key": "$backgroundTransparent05",
+          "name": "c-backgroundTransparent05",
+          "val": "rgba(255, 255, 255, 0.05)",
+          "variable": ""
+        },
+        "backgroundTransparent10": {
+          "isVar": true,
+          "key": "$backgroundTransparent10",
+          "name": "c-backgroundTransparent10",
+          "val": "rgba(255, 255, 255, 0.10)",
+          "variable": ""
+        },
+        "backgroundDarkTransparent02": {
+          "isVar": true,
+          "key": "$backgroundDarkTransparent02",
+          "name": "c-backgroundDarkTransparent02",
+          "val": "rgba(0, 0, 0, 0.10)",
+          "variable": ""
+        },
+        "backgroundDarkTransparent10": {
+          "isVar": true,
+          "key": "$backgroundDarkTransparent10",
+          "name": "c-backgroundDarkTransparent10",
+          "val": "rgba(0, 0, 0, 0.10)",
+          "variable": ""
+        },
+        "backgroundDarkTransparent20": {
+          "isVar": true,
+          "key": "$backgroundDarkTransparent20",
+          "name": "c-backgroundDarkTransparent20",
+          "val": "rgba(0, 0, 0, 0.20)",
+          "variable": ""
+        },
+        "backgroundGradientStart": {
+          "isVar": true,
+          "key": "$backgroundGradientStart",
+          "name": "c-backgroundGradientStart",
+          "val": "#00020a",
+          "variable": ""
+        },
+        "backgroundGradientMiddle": {
+          "isVar": true,
+          "key": "$backgroundGradientMiddle",
+          "name": "c-backgroundGradientMiddle",
+          "val": "#010724",
+          "variable": ""
+        },
+        "backgroundGradientEnd": {
+          "isVar": true,
+          "key": "$backgroundGradientEnd",
+          "name": "c-backgroundGradientEnd",
+          "val": "#020b3a",
+          "variable": ""
         }
       },
       "radius": {
@@ -159827,6 +159890,69 @@
         "key": "$secondary",
         "name": "c-secondary",
         "val": "#4ECDC4",
+        "variable": ""
+      },
+      "$color.backgroundTransparent02": {
+        "isVar": true,
+        "key": "$backgroundTransparent02",
+        "name": "c-backgroundTransparent02",
+        "val": "rgba(255, 255, 255, 0.02)",
+        "variable": ""
+      },
+      "$color.backgroundTransparent05": {
+        "isVar": true,
+        "key": "$backgroundTransparent05",
+        "name": "c-backgroundTransparent05",
+        "val": "rgba(255, 255, 255, 0.05)",
+        "variable": ""
+      },
+      "$color.backgroundTransparent10": {
+        "isVar": true,
+        "key": "$backgroundTransparent10",
+        "name": "c-backgroundTransparent10",
+        "val": "rgba(255, 255, 255, 0.10)",
+        "variable": ""
+      },
+      "$color.backgroundDarkTransparent02": {
+        "isVar": true,
+        "key": "$backgroundDarkTransparent02",
+        "name": "c-backgroundDarkTransparent02",
+        "val": "rgba(0, 0, 0, 0.10)",
+        "variable": ""
+      },
+      "$color.backgroundDarkTransparent10": {
+        "isVar": true,
+        "key": "$backgroundDarkTransparent10",
+        "name": "c-backgroundDarkTransparent10",
+        "val": "rgba(0, 0, 0, 0.10)",
+        "variable": ""
+      },
+      "$color.backgroundDarkTransparent20": {
+        "isVar": true,
+        "key": "$backgroundDarkTransparent20",
+        "name": "c-backgroundDarkTransparent20",
+        "val": "rgba(0, 0, 0, 0.20)",
+        "variable": ""
+      },
+      "$color.backgroundGradientStart": {
+        "isVar": true,
+        "key": "$backgroundGradientStart",
+        "name": "c-backgroundGradientStart",
+        "val": "#00020a",
+        "variable": ""
+      },
+      "$color.backgroundGradientMiddle": {
+        "isVar": true,
+        "key": "$backgroundGradientMiddle",
+        "name": "c-backgroundGradientMiddle",
+        "val": "#010724",
+        "variable": ""
+      },
+      "$color.backgroundGradientEnd": {
+        "isVar": true,
+        "key": "$backgroundGradientEnd",
+        "name": "c-backgroundGradientEnd",
+        "val": "#020b3a",
         "variable": ""
       },
       "$radius.0": {

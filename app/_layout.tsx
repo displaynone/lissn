@@ -10,6 +10,7 @@ import { setAudioModeAsync } from "expo-audio";
 import * as SystemUI from "expo-system-ui";
 import { useEffect } from "react";
 import { View } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import {
 	SafeAreaView,
 	useSafeAreaInsets,
@@ -47,16 +48,18 @@ export default function RootLayout() {
 	return (
 		<TamaguiProvider config={tamaguiConfig} defaultTheme="dark">
 			<AudioLibraryProvider>
-				<AppContainer>
-					<View style={{ height: insets.top, backgroundColor }} />
-					<StatusBar style="light" translucent />
-					<SafeAreaView
-						style={{ flex: 1, width: "100%" }}
-						edges={["left", "right", "bottom"]}
-					>
-						<Slot />
-					</SafeAreaView>
-				</AppContainer>
+				<GestureHandlerRootView style={{ flex: 1 }}>
+					<AppContainer>
+						<View style={{ height: insets.top, backgroundColor }} />
+						<StatusBar style="light" translucent />
+						<SafeAreaView
+							style={{ flex: 1, width: "100%" }}
+							edges={["left", "right", "bottom"]}
+						>
+							<Slot />
+						</SafeAreaView>
+					</AppContainer>
+				</GestureHandlerRootView>
 			</AudioLibraryProvider>
 		</TamaguiProvider>
 	);

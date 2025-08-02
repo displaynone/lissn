@@ -9,7 +9,15 @@ const tokens = createTokens({
 		color: "#ffffff",
 		primary: "#afd8ec",
 		secondary: "#4ECDC4",
-		transparentBackground: "rgba(255, 255, 255, 0.02)",
+		backgroundTransparent02: "rgba(255, 255, 255, 0.02)",
+		backgroundTransparent05: "rgba(255, 255, 255, 0.05)",
+		backgroundTransparent10: "rgba(255, 255, 255, 0.10)",
+		backgroundDarkTransparent02: "rgba(0, 0, 0, 0.10)",
+		backgroundDarkTransparent10: "rgba(0, 0, 0, 0.10)",
+		backgroundDarkTransparent20: "rgba(0, 0, 0, 0.20)",
+		backgroundGradientStart: "#00020a",
+		backgroundGradientMiddle: "#010724",
+		backgroundGradientEnd: "#020b3a",
 	},
 });
 
