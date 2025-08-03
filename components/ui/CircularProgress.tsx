@@ -1,6 +1,7 @@
 import { tamaguiConfig } from "@/tamagui.config";
 import { StyleSheet } from "react-native";
 import Svg, { Circle } from "react-native-svg";
+import { COVER_STROKE_WIDTH } from "../partials/Player";
 
 type CircularProgressProps = {
 	size: number;
@@ -12,7 +13,7 @@ type CircularProgressProps = {
 
 export const CircularProgress: React.FC<CircularProgressProps> = ({
 	size,
-	strokeWidth = 2,
+	strokeWidth = COVER_STROKE_WIDTH,
 	progress,
 	color = tamaguiConfig.tokens.color.primary.val,
 	backgroundColor = "transparent",
@@ -50,7 +51,7 @@ export const CircularProgress: React.FC<CircularProgressProps> = ({
 const styles = StyleSheet.create({
 	svg: {
 		position: "absolute",
-		top: -2,
-		left: -2,
+		top: -1 * COVER_STROKE_WIDTH,
+		left: -1 * COVER_STROKE_WIDTH,
 	},
 });

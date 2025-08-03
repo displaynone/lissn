@@ -24,7 +24,8 @@ type PlayerProps = {
 	isBlurred?: boolean;
 };
 
-const COVER_SIZE = 56;
+export const COVER_SIZE = 56;
+export const COVER_STROKE_WIDTH = 2;
 
 const Player: React.FC<PlayerProps> = ({
 	showCover = true,
@@ -63,11 +64,11 @@ const Player: React.FC<PlayerProps> = ({
 							<Cover
 								coverPath={song.coverPath || ""}
 								alternativeCoverOpacity={1}
-								borderRadius={50}
-								size={COVER_SIZE}
+								borderRadius={COVER_SIZE}
+								size={COVER_SIZE - (COVER_STROKE_WIDTH * 2)}
 							/>
 							<View pos="absolute">
-								<CircularProgress size={COVER_SIZE + 4} progress={progress} />
+								<CircularProgress size={COVER_SIZE} progress={progress} />
 							</View>
 						</Pressable>
 					)}

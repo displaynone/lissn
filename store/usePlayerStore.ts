@@ -21,7 +21,6 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	isStopped: false,
 
 	playSong: async (song) => {
-		console.trace("playSong");
 		get().stop();
 
 		const player = createAudioPlayer(song.sourceUri);
