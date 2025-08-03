@@ -1,8 +1,8 @@
-// app/song/[id].tsx
 import ArrowLeftIcon from "@/components/icons/ArrowLeftIcon";
 import Cover from "@/components/partials/Cover";
 import Player from "@/components/partials/Player";
 import SongTrack from "@/components/partials/SongTrack";
+import { Loading } from "@/components/ui/Loading";
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSondAndArtist";
 import { useRouter } from "expo-router";
 import { useWindowDimensions } from "react-native";
@@ -13,8 +13,9 @@ const SongDetailScreen: React.FC = () => {
 	const { width } = useWindowDimensions();
 	const { song, artist, isLoading } = useGetPlayingSongAndArtist();
 
-	if (isLoading || !song) return <Text>Cargando...</Text>;
-
+	if (isLoading || !song) {
+		return <Loading />;
+	}
 	return (
 		<YStack padding="$6" gap="$4" flexDirection="column" alignItems="center">
 			<XStack justifyContent="flex-start" w={"100%"}>

@@ -157416,6 +157416,13 @@
           "val": "rgba(0, 0, 0, 0.20)",
           "variable": ""
         },
+        "backgroundDarkTransparent40": {
+          "isVar": true,
+          "key": "$backgroundDarkTransparent40",
+          "name": "c-backgroundDarkTransparent40",
+          "val": "rgba(0, 0, 0, 0.40)",
+          "variable": ""
+        },
         "backgroundGradientStart": {
           "isVar": true,
           "key": "$backgroundGradientStart",
@@ -159932,6 +159939,13 @@
         "key": "$backgroundDarkTransparent20",
         "name": "c-backgroundDarkTransparent20",
         "val": "rgba(0, 0, 0, 0.20)",
+        "variable": ""
+      },
+      "$color.backgroundDarkTransparent40": {
+        "isVar": true,
+        "key": "$backgroundDarkTransparent40",
+        "name": "c-backgroundDarkTransparent40",
+        "val": "rgba(0, 0, 0, 0.40)",
         "variable": ""
       },
       "$color.backgroundGradientStart": {
