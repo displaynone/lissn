@@ -15,6 +15,7 @@ const tokens = createTokens({
 		backgroundDarkTransparent02: "rgba(0, 0, 0, 0.10)",
 		backgroundDarkTransparent10: "rgba(0, 0, 0, 0.10)",
 		backgroundDarkTransparent20: "rgba(0, 0, 0, 0.20)",
+		backgroundDarkTransparent40: "rgba(0, 0, 0, 0.40)",
 		backgroundGradientStart: "#00020a",
 		backgroundGradientMiddle: "#010724",
 		backgroundGradientEnd: "#020b3a",

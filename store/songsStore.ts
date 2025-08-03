@@ -196,3 +196,5 @@ export const useRefreshSongs = () =>
 	useMusicStore((state) => state.refreshSongs);
 export const useGetPlayingSongId = () =>
 	useMusicStore((state) => state.playingSongId);
+export const useGetSetPlayingSongId = () =>
+	useMusicStore((state) => state.setPlayingSongId);

@@ -1,28 +1,35 @@
 import { useGetArtistBySong } from "@/hooks/useGetArtistBySong";
 import { Song } from "@/models";
-import { useMusicStore } from "@/store/songsStore";
+import { useGetSetPlayingSongId } from "@/store/songsStore";
+import { useGetIsPausedSong, useGetPlayingSong, useGetPlaySong, useGetStopSong } from "@/store/usePlayerStore";
 import { formatSeconds } from "@/utils/formatSeconds";
-import { useState } from "react";
-import { Text, XStack, YStack } from "tamagui";
+import { Text, View, XStack, YStack } from "tamagui";
 import { Loading } from "../ui/Loading";
+import { WaveformFakeVisualizer } from "../ui/WaveformFakeVisualizer";
 import Cover from "./Cover";
 
 type SongItemProps = {
 	song: Song;
 };
 
+const COVER_SIZE = 52;
+
 const SongItem: React.FC<SongItemProps> = ({ song }) => {
-	const {artist, isLoading} = useGetArtistBySong(song);
-	const setPlayingSongId = useMusicStore((state) => state.setPlayingSongId);
-	const [isPlaying, setIsPlaying] = useState(false);
+	const { artist, isLoading } = useGetArtistBySong(song);
+	const setPlayingSongId = useGetSetPlayingSongId();
+	const stop = useGetStopSong();
+	const play = useGetPlaySong();
+	const playingSongId = useGetPlayingSong();
+	const isPaused = useGetIsPausedSong();
+	const isPlaying = playingSongId?.id === song.id && !isPaused;
 
 	const handlePlay = async () => {
 		if (isPlaying) {
-			setIsPlaying(false);
 			setPlayingSongId(undefined);
+			stop();
 		} else {
-			setIsPlaying(true);
 			setPlayingSongId(song.id);
+			play(song);
 		}
 	};
 
@@ -35,20 +42,37 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 			gap="$4"
 			onPress={handlePlay}
 			marginHorizontal={"$4"}
-			backgroundColor={"$backgroundTransparent02"}
+			backgroundColor={isPlaying ? "$backgroundTransparent10":"$backgroundTransparent02"}
 			padding="$3"
 			borderRadius="$3"
 		>
-			{!!song.coverPath && <Cover coverPath={song.coverPath} size={52} />}
+			<View position="relative">
+				<Cover coverPath={song.coverPath || ""} size={COVER_SIZE} />
+				{isPlaying && (
+					<View
+						ai="center"
+						jc="center"
+						pos={"absolute"}
+						t={0}
+						l={0}
+						w={COVER_SIZE}
+						h={COVER_SIZE}
+						backgroundColor={"$backgroundDarkTransparent40"}
+					>
+						<WaveformFakeVisualizer isPlaying={true} />
+					</View>
+				)}
+			</View>
 			<YStack gap="$1" flex={1}>
 				<Text
 					fontFamily="$inter"
-					fontWeight={"200"}
+					fontWeight={isPlaying ? "500" : "200"}
 					fontSize={"$6"}
 					numberOfLines={1}
 					ellipsizeMode="tail"
+					color={isPlaying ? "$color.primary" : "white"}
 				>
-					{song.title} {isPlaying ? "▶️" : "⏸️"}
+					{song.title}
 				</Text>
 				<Text
 					fontFamily="$inter"

@@ -1,13 +1,13 @@
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSondAndArtist";
+import { usePlayerProgress } from "@/hooks/usePlayerProgress";
 import {
 	useGetIsPausedSong,
-	useGetPlayingSong,
+	useGetIsStoppedSong,
 	useGetPlaySong,
-	useGetTooglePauseSong,
+	useGetTooglePauseSong
 } from "@/store/usePlayerStore";
 import { BlurView } from "expo-blur";
 import { useRouter } from "expo-router";
-import { useEffect, useState } from "react";
 import { Pressable, StyleSheet, ViewStyle } from "react-native";
 import Animated from "react-native-reanimated";
 import { Button, View, XStack } from "tamagui";
@@ -15,6 +15,7 @@ import NextIcon from "../icons/NextIcon";
 import PauseIcon from "../icons/PauseIcon";
 import PlayIcon from "../icons/PlayIcon";
 import PrevIcon from "../icons/PrevIcon";
+import { CircularProgress } from "../ui/CircularProgress";
 import Cover from "./Cover";
 
 type PlayerProps = {
@@ -23,6 +24,8 @@ type PlayerProps = {
 	isBlurred?: boolean;
 };
 
+const COVER_SIZE = 56;
+
 const Player: React.FC<PlayerProps> = ({
 	showCover = true,
 	styleContainer = {},
@@ -30,18 +33,11 @@ const Player: React.FC<PlayerProps> = ({
 }) => {
 	const { song, isLoading } = useGetPlayingSongAndArtist();
 	const router = useRouter();
-	const playSong = useGetPlaySong();
 	const togglePause = useGetTooglePauseSong();
-	const playingSong = useGetPlayingSong();
+	const play = useGetPlaySong();
 	const isPaused = useGetIsPausedSong();
-	const [playingSongId, setPlayingSongId] = useState<string>("");
-
-	useEffect(() => {
-		if (song && playingSongId !== song.id && playingSong?.id !== song.id) {
-			playSong(song);
-			setPlayingSongId(song.id);
-		}
-	}, [song, playSong, playingSongId, playingSong?.id]);
+	const isStopped = useGetIsStoppedSong();
+	const { progress } = usePlayerProgress();
 
 	if (isLoading || !song) return null;
 
@@ -68,8 +64,11 @@ const Player: React.FC<PlayerProps> = ({
 								coverPath={song.coverPath || ""}
 								alternativeCoverOpacity={1}
 								borderRadius={50}
-								size={56}
+								size={COVER_SIZE}
 							/>
+							<View pos="absolute">
+								<CircularProgress size={COVER_SIZE + 4} progress={progress} />
+							</View>
 						</Pressable>
 					)}
 					<Button circular backgroundColor={"transparent"}>
@@ -78,7 +77,7 @@ const Player: React.FC<PlayerProps> = ({
 					<Button
 						circular
 						backgroundColor={"transparent"}
-						onPress={async () => togglePause()}
+						onPress={async () => isStopped ? play(song) : togglePause()}
 					>
 						{isPaused ? (
 							<PlayIcon color="white" />

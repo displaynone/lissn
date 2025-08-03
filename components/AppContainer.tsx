@@ -1,10 +1,10 @@
+import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSondAndArtist";
 import {
 	useIsSynced,
 	useIsSyncing,
 	useRefreshSongs,
 	useStartSync,
 } from "@/store/songsStore";
-import { useGetPlayingSong } from "@/store/usePlayerStore";
 import { tamaguiConfig } from "@/tamagui.config";
 import { BlurView } from "expo-blur";
 import * as NavigationBar from "expo-navigation-bar";
@@ -22,12 +22,11 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const isSynced = useIsSynced();
 	const isSyncing = useIsSyncing();
 	const refreshSongs = useRefreshSongs();
-	const song = useGetPlayingSong();
+	const { song } = useGetPlayingSongAndArtist();
 	const pathname = usePathname();
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
-			console.log("Hiding navigation bar");
 			NavigationBar.setVisibilityAsync("hidden");
 		}, 500); // o 200ms
 		return () => clearTimeout(timeout);
