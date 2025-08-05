@@ -157395,6 +157395,20 @@
           "val": "rgba(255, 255, 255, 0.10)",
           "variable": ""
         },
+        "backgroundTransparent30": {
+          "isVar": true,
+          "key": "$backgroundTransparent30",
+          "name": "c-backgroundTransparent30",
+          "val": "rgba(255, 255, 255, 0.30)",
+          "variable": ""
+        },
+        "backgroundTransparent50": {
+          "isVar": true,
+          "key": "$backgroundTransparent50",
+          "name": "c-backgroundTransparent50",
+          "val": "rgba(255, 255, 255, 0.50)",
+          "variable": ""
+        },
         "backgroundDarkTransparent02": {
           "isVar": true,
           "key": "$backgroundDarkTransparent02",
@@ -159918,6 +159932,20 @@
         "key": "$backgroundTransparent10",
         "name": "c-backgroundTransparent10",
         "val": "rgba(255, 255, 255, 0.10)",
+        "variable": ""
+      },
+      "$color.backgroundTransparent30": {
+        "isVar": true,
+        "key": "$backgroundTransparent30",
+        "name": "c-backgroundTransparent30",
+        "val": "rgba(255, 255, 255, 0.30)",
+        "variable": ""
+      },
+      "$color.backgroundTransparent50": {
+        "isVar": true,
+        "key": "$backgroundTransparent50",
+        "name": "c-backgroundTransparent50",
+        "val": "rgba(255, 255, 255, 0.50)",
         "variable": ""
       },
       "$color.backgroundDarkTransparent02": {

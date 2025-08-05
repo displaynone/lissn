@@ -9,10 +9,11 @@ import {
 import { tamaguiConfig } from "@/tamagui.config";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { BlurView } from "expo-blur";
-import { useRouter } from "expo-router";
+import { usePathname, useRouter } from "expo-router";
 import { Pressable, StyleSheet, ViewStyle } from "react-native";
-import Animated from "react-native-reanimated";
-import { Button, View, XStack } from "tamagui";
+import { Gesture, GestureDetector } from "react-native-gesture-handler";
+import Animated, { runOnJS } from "react-native-reanimated";
+import { Button, useWindowDimensions, View, XStack } from "tamagui";
 import NextIcon from "../icons/NextIcon";
 import PauseIcon from "../icons/PauseIcon";
 import PlayIcon from "../icons/PlayIcon";
@@ -36,11 +37,23 @@ const Player: React.FC<PlayerProps> = ({
 }) => {
 	const { song, isLoading } = useGetPlayingSongAndArtist();
 	const router = useRouter();
+	const path = usePathname();
 	const togglePause = useGetTooglePauseSong();
 	const play = useGetPlaySong();
 	const isPaused = useGetIsPausedSong();
 	const isStopped = useGetIsStoppedSong();
 	const { progress } = usePlayerProgress();
+	const { height } = useWindowDimensions();
+
+	const panGesture = Gesture.Pan()
+		.onUpdate((event) => {
+			// Opcional: podrías hacer una animación visual aquí
+		})
+		.onEnd((event) => {
+			if (event.translationY < -(height / 3) && path !== "/song/playing") {
+				runOnJS(router.push)("/song/playing");
+			}
+		});
 
 	if (isLoading || !song) return null;
 
@@ -54,68 +67,72 @@ const Player: React.FC<PlayerProps> = ({
 	];
 
 	return (
-		<Animated.View style={{ ...styles.container, ...styleContainer }}>
-			<View style={styles.blurContainer}>
-				<BlurView
-					intensity={10}
-					tint="dark"
-					experimentalBlurMethod={isBlurred ? "dimezisBlurView" : "none"}
-					style={styles.blur}
-				/>
+		<GestureDetector gesture={panGesture}>
+			<Animated.View style={{ ...styles.container, ...styleContainer }}>
+				<View style={styles.blurContainer}>
+					<BlurView
+						intensity={10}
+						tint="dark"
+						experimentalBlurMethod={isBlurred ? "dimezisBlurView" : "none"}
+						style={styles.blur}
+					/>
 
-				<LinearGradient
-					colors={gradientColors}
-					start={[0, 1]}
-					end={[1, 1]}
-					flex={1}
-					justifyContent="center"
-					alignItems="center"
-					borderRadius="$4"
-					pos="absolute"
-					width="100%"
-					h={1}
-				></LinearGradient>
-				<XStack
-					gap={"$4"}
-					alignItems="center"
-					backgroundColor={
-						isBlurred ? "$backgroundTransparent05" : "$backgroundTransparent10"
-					}
-					p="$2"
-				>
-					{showCover && (
-						<Pressable onPress={() => router.push("/song/playing")}>
-							<Cover
-								coverPath={song.coverPath || ""}
-								alternativeCoverOpacity={1}
-								borderRadius={COVER_SIZE}
-								size={COVER_SIZE - COVER_STROKE_WIDTH * 2}
-							/>
-							<View pos="absolute">
-								<CircularProgress size={COVER_SIZE} progress={progress} />
-							</View>
-						</Pressable>
-					)}
-					<Button circular backgroundColor={"transparent"}>
-						<PrevIcon color="white" />
-					</Button>
-					<Button
-						circular
-						backgroundColor={"transparent"}
-						onPress={async () => (isStopped ? play(song) : togglePause())}
+					<LinearGradient
+						colors={gradientColors}
+						start={[0, 1]}
+						end={[1, 1]}
+						flex={1}
+						justifyContent="center"
+						alignItems="center"
+						borderRadius="$4"
+						pos="absolute"
+						width="100%"
+						h={1}
+					></LinearGradient>
+					<XStack
+						gap={"$4"}
+						alignItems="center"
+						backgroundColor={
+							isBlurred
+								? "$backgroundTransparent05"
+								: "$backgroundTransparent10"
+						}
+						p="$2"
 					>
-						{isPaused ? (
-							<PlayIcon color="white" />
-						) : (
-							<PauseIcon color="white" />
+						{showCover && (
+							<Pressable onPress={() => router.push("/song/playing")}>
+								<Cover
+									coverPath={song.coverPath || ""}
+									alternativeCoverOpacity={1}
+									borderRadius={COVER_SIZE}
+									size={COVER_SIZE - COVER_STROKE_WIDTH * 2}
+								/>
+								<View pos="absolute">
+									<CircularProgress size={COVER_SIZE} progress={progress} />
+								</View>
+							</Pressable>
 						)}
-					</Button>
-					<Button circular backgroundColor={"transparent"}>
-						<NextIcon color="white" />
-					</Button>
-				</XStack>
-			</View>
-		</Animated.View>
+						<Button circular backgroundColor={"transparent"}>
+							<PrevIcon color="white" />
+						</Button>
+						<Button
+							circular
+							backgroundColor={"transparent"}
+							onPress={async () => (isStopped ? play(song) : togglePause())}
+						>
+							{isPaused ? (
+								<PlayIcon color="white" />
+							) : (
+								<PauseIcon color="white" />
+							)}
+						</Button>
+						<Button circular backgroundColor={"transparent"}>
+							<NextIcon color="white" />
+						</Button>
+					</XStack>
+				</View>
+			</Animated.View>
+		</GestureDetector>
 	);
 };
 
