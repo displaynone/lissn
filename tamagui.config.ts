@@ -12,6 +12,7 @@ const tokens = createTokens({
 		backgroundTransparent02: "rgba(255, 255, 255, 0.02)",
 		backgroundTransparent05: "rgba(255, 255, 255, 0.05)",
 		backgroundTransparent10: "rgba(255, 255, 255, 0.10)",
+		backgroundTransparent20: "rgba(255, 255, 255, 0.20)",
 		backgroundTransparent30: "rgba(255, 255, 255, 0.30)",
 		backgroundTransparent50: "rgba(255, 255, 255, 0.50)",
 		backgroundDarkTransparent02: "rgba(0, 0, 0, 0.10)",

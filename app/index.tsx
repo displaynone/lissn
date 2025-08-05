@@ -6,7 +6,11 @@ import {
 	useGetSetSongsListScrollPosition,
 	useGetSongsListScrollPosition,
 } from "@/store/appStore";
-import { useAreSongsLoading, useGetSongs } from "@/store/songsStore";
+import {
+	useAreSongsLoading,
+	useGetSongs,
+	useRefreshSongs,
+} from "@/store/songsStore";
 import { FlashList } from "@shopify/flash-list";
 import { useCallback, useEffect, useRef } from "react";
 import { Spinner, Text, View, YStack } from "tamagui";
@@ -15,6 +19,7 @@ export default function HomeScreen() {
 	const songs = useGetSongs();
 	const isLoading = useAreSongsLoading();
 	const setSongsListScrollPosition = useGetSetSongsListScrollPosition();
+	const refreshSongs = useRefreshSongs();
 	const offset = useGetSongsListScrollPosition();
 	const listRef = useRef<FlashList<Song>>(null);
 
@@ -52,11 +57,16 @@ export default function HomeScreen() {
 				keyExtractor={(song) => song.id}
 				renderItem={({ item }) => <SongItem song={item} />}
 				ItemSeparatorComponent={() => <View h={12} />}
-				estimatedItemSize={100}
+				estimatedItemSize={50}
+				ListFooterComponent={<View style={{ height: 40 }} />}
 				showsVerticalScrollIndicator={true}
 				onScroll={(e) =>
 					setSongsListScrollPosition(e.nativeEvent.contentOffset.y)
 				}
+				onEndReachedThreshold={0.5}
+				onEndReached={() => {
+					refreshSongs();
+				}}
 			/>
 			<Player />
 		</YStack>

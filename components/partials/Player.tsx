@@ -57,13 +57,23 @@ const Player: React.FC<PlayerProps> = ({
 
 	if (isLoading || !song) return null;
 
-	const gradientColors: string[] = [
+	const borderTopGradientColors: string[] = [
 		tamaguiConfig.tokens.color.backgroundTransparent02.val,
 		tamaguiConfig.tokens.color.backgroundTransparent05.val,
 		tamaguiConfig.tokens.color.backgroundTransparent30.val,
 		tamaguiConfig.tokens.color.backgroundTransparent10.val,
 		tamaguiConfig.tokens.color.backgroundTransparent05.val,
 		tamaguiConfig.tokens.color.backgroundTransparent02.val,
+	];
+	const borderBottomGradientColors: string[] = [
+		"transparent",
+		"transparent",
+		"transparent",
+		tamaguiConfig.tokens.color.backgroundTransparent02.val,
+		tamaguiConfig.tokens.color.backgroundTransparent05.val,
+		tamaguiConfig.tokens.color.backgroundTransparent10.val,
+		tamaguiConfig.tokens.color.backgroundTransparent02.val,
+		"transparent",
 	];
 
 	return (
@@ -78,7 +88,7 @@ const Player: React.FC<PlayerProps> = ({
 					/>
 
 					<LinearGradient
-						colors={gradientColors}
+						colors={borderTopGradientColors}
 						start={[0, 1]}
 						end={[1, 1]}
 						flex={1}
@@ -130,6 +140,19 @@ const Player: React.FC<PlayerProps> = ({
 							<NextIcon color="white" />
 						</Button>
 					</XStack>
+					<LinearGradient
+						colors={borderBottomGradientColors}
+						start={[0, 1]}
+						end={[1, 1]}
+						flex={1}
+						justifyContent="center"
+						alignItems="center"
+						borderRadius="$4"
+						pos="absolute"
+						b={0}
+						width="100%"
+						h={1}
+					></LinearGradient>
 				</View>
 			</Animated.View>
 		</GestureDetector>

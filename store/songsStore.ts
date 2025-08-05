@@ -18,6 +18,8 @@ interface MusicStoreState {
 	isRecovering: boolean;
 	recoveryMessage: string | null;
 	playingSongId?: string;
+	page: number;
+	allSongsLoaded: boolean;
 
 	refreshSongs: (limit?: number) => Promise<void>;
 	getSongById: (id: string) => Promise<Song | null>;
@@ -44,6 +46,8 @@ interface MusicStoreState {
 
 const musicService = MusicLibraryService.getInstance();
 
+const LIMIT = 20;
+
 export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	songs: [],
 	artists: [],
@@ -55,13 +59,33 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	isRecovering: false,
 	recoveryMessage: null,
 	playingSongId: undefined,
+	page: 0,
+	allSongsLoaded: false,
 
-	refreshSongs: async (limit: number = 200) => {
+	refreshSongs: async (limit: number = LIMIT) => {
+		const { songs: loadedSongs, page, allSongsLoaded } = get();
+
+		if (allSongsLoaded) {
+			return;
+		}
+
+		const total = await database.get<Song>("songs").query().fetchCount();
+
 		const songs = await database
 			.get<Song>("songs")
-			.query(Q.sortBy("created_at", Q.desc), Q.take(limit))
+			.query(
+				Q.sortBy("created_at", Q.desc),
+				Q.take(limit),
+				Q.skip(limit * page)
+			)
 			.fetch();
-		set({ songs, isLoading: false });
+		const newSongs = [...loadedSongs, ...songs];
+		set({
+			songs: newSongs,
+			isLoading: false,
+			page: page + 1,
+			allSongsLoaded: newSongs.length >= total,
+		});
 	},
 
 	getSongById: async (id) => {
