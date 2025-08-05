@@ -1,6 +1,7 @@
 import { Song } from "@/models";
 import { AudioPlayer, createAudioPlayer } from "expo-audio";
 import { create } from "zustand";
+import { useMusicStore } from "./songsStore";
 
 interface PlayerStore {
 	song: Song | null;
@@ -25,10 +26,22 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 
 		const player = createAudioPlayer(song.sourceUri);
 		player.play();
-		player.addListener("playbackStatusUpdate", (status) => {
+		player.addListener("playbackStatusUpdate", async (status) => {
 			if (status.didJustFinish) {
-				get().forceStop();
-				set({ isStopped: true });
+				const currentSongId = get().song?.id;
+				if (!currentSongId) return;
+
+				const nextSong = await useMusicStore
+					.getState()
+					.getNextSongById(currentSongId);
+
+				if (nextSong) {
+					await get().playSong(nextSong);
+					useMusicStore.getState().setPlayingSongId(nextSong.id);
+				} else {
+					get().forceStop();
+					set({ isStopped: true });
+				}
 			}
 		});
 		set({ song, player, isPaused: false, isStopped: false });
