@@ -4,8 +4,10 @@ import {
 	useGetIsPausedSong,
 	useGetIsStoppedSong,
 	useGetPlaySong,
-	useGetTooglePauseSong
+	useGetTooglePauseSong,
 } from "@/store/usePlayerStore";
+import { tamaguiConfig } from "@/tamagui.config";
+import { LinearGradient } from "@tamagui/linear-gradient";
 import { BlurView } from "expo-blur";
 import { useRouter } from "expo-router";
 import { Pressable, StyleSheet, ViewStyle } from "react-native";
@@ -42,6 +44,15 @@ const Player: React.FC<PlayerProps> = ({
 
 	if (isLoading || !song) return null;
 
+	const gradientColors: string[] = [
+		tamaguiConfig.tokens.color.backgroundTransparent02.val,
+		tamaguiConfig.tokens.color.backgroundTransparent05.val,
+		tamaguiConfig.tokens.color.backgroundTransparent30.val,
+		tamaguiConfig.tokens.color.backgroundTransparent10.val,
+		tamaguiConfig.tokens.color.backgroundTransparent05.val,
+		tamaguiConfig.tokens.color.backgroundTransparent02.val,
+	];
+
 	return (
 		<Animated.View style={{ ...styles.container, ...styleContainer }}>
 			<View style={styles.blurContainer}>
@@ -51,6 +62,19 @@ const Player: React.FC<PlayerProps> = ({
 					experimentalBlurMethod={isBlurred ? "dimezisBlurView" : "none"}
 					style={styles.blur}
 				/>
+
+				<LinearGradient
+					colors={gradientColors}
+					start={[0, 1]}
+					end={[1, 1]}
+					flex={1}
+					justifyContent="center"
+					alignItems="center"
+					borderRadius="$4"
+					pos="absolute"
+					width="100%"
+					h={1}
+				></LinearGradient>
 				<XStack
 					gap={"$4"}
 					alignItems="center"
@@ -65,7 +89,7 @@ const Player: React.FC<PlayerProps> = ({
 								coverPath={song.coverPath || ""}
 								alternativeCoverOpacity={1}
 								borderRadius={COVER_SIZE}
-								size={COVER_SIZE - (COVER_STROKE_WIDTH * 2)}
+								size={COVER_SIZE - COVER_STROKE_WIDTH * 2}
 							/>
 							<View pos="absolute">
 								<CircularProgress size={COVER_SIZE} progress={progress} />
@@ -78,7 +102,7 @@ const Player: React.FC<PlayerProps> = ({
 					<Button
 						circular
 						backgroundColor={"transparent"}
-						onPress={async () => isStopped ? play(song) : togglePause()}
+						onPress={async () => (isStopped ? play(song) : togglePause())}
 					>
 						{isPaused ? (
 							<PlayIcon color="white" />
