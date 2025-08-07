@@ -1,5 +1,5 @@
 import { SHOW_PLAYING_PAGE_SLIDE_TIME } from "@/constants/generic";
-import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSondAndArtist";
+import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSongAndArtist";
 import { useGetSongDetailPageLoaded } from "@/store/appStore";
 import {
 	useIsSynced,

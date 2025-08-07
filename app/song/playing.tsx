@@ -4,7 +4,7 @@ import Player from "@/components/partials/Player";
 import SongTrack from "@/components/partials/SongTrack";
 import { Loading } from "@/components/ui/Loading";
 import { SHOW_PLAYING_PAGE_SLIDE_TIME } from "@/constants/generic";
-import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSondAndArtist";
+import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSongAndArtist";
 import { useGetSetSongDetailPageLoaded } from "@/store/appStore";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
