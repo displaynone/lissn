@@ -3,54 +3,91 @@ import Cover from "@/components/partials/Cover";
 import Player from "@/components/partials/Player";
 import SongTrack from "@/components/partials/SongTrack";
 import { Loading } from "@/components/ui/Loading";
+import { SHOW_PLAYING_PAGE_SLIDE_TIME } from "@/constants/generic";
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSondAndArtist";
+import { useGetSetSongDetailPageLoaded } from "@/store/appStore";
 import { useRouter } from "expo-router";
+import { useEffect, useState } from "react";
 import { useWindowDimensions } from "react-native";
-import { Button, Text, XStack, YStack } from "tamagui";
+import Animated, {
+	useAnimatedStyle,
+	useSharedValue,
+	withTiming,
+} from "react-native-reanimated";
+import { Button, Text, View, XStack, YStack } from "tamagui";
 
 const SongDetailScreen: React.FC = () => {
 	const router = useRouter();
-	const { width } = useWindowDimensions();
+	const { width, height: windowHeight } = useWindowDimensions();
 	const { song, artist, isLoading } = useGetPlayingSongAndArtist();
+	const height = useSharedValue(windowHeight);
+	const [showPage, setShowPage] = useState(false);
+	const setPageLoaded = useGetSetSongDetailPageLoaded();
+
+	const animatedStyle = useAnimatedStyle(() => {
+		return {
+			height: height.value,
+		};
+	});
+
+	useEffect(() => {
+		if (showPage) {
+			height.value = withTiming(0, { duration: SHOW_PLAYING_PAGE_SLIDE_TIME });
+			setPageLoaded(true);
+		}
+	});
 
 	if (isLoading || !song) {
 		return <Loading />;
 	}
+
+	const handleBack = () => {
+		setPageLoaded(false);
+		router.back();
+	};
+
 	return (
-		<YStack padding="$6" gap="$4" flexDirection="column" alignItems="center">
-			<XStack justifyContent="flex-start" w={"100%"}>
-				<Button
-					circular
-					backgroundColor={"transparent"}
-					onPress={() => router.back()}
+		<View>
+			<Animated.View
+				style={[
+					{
+						width: "100%",
+						backgroundColor: "transparent",
+					},
+					animatedStyle,
+				]}
+			></Animated.View>
+			<YStack padding="$6" gap="$4" flexDirection="column" alignItems="center">
+				<XStack justifyContent="flex-start" w={"100%"}>
+					<Button circular backgroundColor={"transparent"} onPress={handleBack}>
+						<ArrowLeftIcon color="white" />
+					</Button>
+				</XStack>
+				<Text
+					fontFamily="$inter"
+					fontWeight={"800"}
+					fontSize={"$7"}
+					textAlign="center"
 				>
-					<ArrowLeftIcon color="white" />
-				</Button>
-			</XStack>
-			<Text
-				fontFamily="$inter"
-				fontWeight={"800"}
-				fontSize={"$7"}
-				textAlign="center"
-			>
-				{song.title}
-			</Text>
-			<Text fontFamily="$inter" fontWeight={"400"} fontSize={"$6"}>
-				{artist?.name}
-			</Text>
-			<Cover
-				coverPath={song.coverPath || ""}
-				alternativeCoverOpacity={1}
-				size={width * 0.8}
-				// borderRadius={width}
-			/>
-			<SongTrack />
-			<Player
-				showCover={false}
-				styleContainer={{ position: "relative" }}
-				isBlurred={false}
-			/>
-		</YStack>
+					{song.title}
+				</Text>
+				<Text fontFamily="$inter" fontWeight={"400"} fontSize={"$6"}>
+					{artist?.name}
+				</Text>
+				<Cover
+					coverPath={song.coverPath || ""}
+					alternativeCoverOpacity={1}
+					size={width * 0.8}
+					onLoad={() => setShowPage(true)}
+				/>
+				<SongTrack />
+				<Player
+					showCover={false}
+					styleContainer={{ position: "relative" }}
+					isBlurred={false}
+				/>
+			</YStack>
+		</View>
 	);
 };
 

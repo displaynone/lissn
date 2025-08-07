@@ -1,4 +1,6 @@
+import { SHOW_PLAYING_PAGE_SLIDE_TIME } from "@/constants/generic";
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSondAndArtist";
+import { useGetSongDetailPageLoaded } from "@/store/appStore";
 import {
 	useIsSynced,
 	useIsSyncing,
@@ -10,8 +12,12 @@ import { BlurView } from "expo-blur";
 import * as NavigationBar from "expo-navigation-bar";
 import { usePathname } from "expo-router";
 import React, { useEffect } from "react";
-import { StyleSheet } from "react-native";
-import { View } from "tamagui";
+import { StyleSheet, useWindowDimensions } from "react-native";
+import Animated, {
+	useAnimatedStyle,
+	useSharedValue,
+	withTiming,
+} from "react-native-reanimated";
 import { LinearGradient } from "tamagui/linear-gradient";
 import Cover from "./partials/Cover";
 
@@ -24,6 +30,9 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const refreshSongs = useRefreshSongs();
 	const { song } = useGetPlayingSongAndArtist();
 	const pathname = usePathname();
+	const { height: windowHeight } = useWindowDimensions();
+	const top = useSharedValue(windowHeight);
+	const detailPageLoaded = useGetSongDetailPageLoaded();
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -31,6 +40,10 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 		}, 500); // o 200ms
 		return () => clearTimeout(timeout);
 	}, []);
+
+	useEffect(() => {
+		top.value = windowHeight;
+	}, [pathname, top, windowHeight]);
 
 	useEffect(() => {
 		if (!isSynced && !isSyncing) {
@@ -47,6 +60,18 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 
 	const isDetailedView = pathname === "/song/playing";
 	const showCover = !!song && isDetailedView;
+
+	const animatedStyle = useAnimatedStyle(() => {
+		return {
+			top: top.value,
+		};
+	});
+
+	useEffect(() => {
+		if (showCover && detailPageLoaded) {
+			top.value = withTiming(0, { duration: SHOW_PLAYING_PAGE_SLIDE_TIME  });
+		}
+	});
 
 	const gradientColors: string[] = [
 		tamaguiConfig.tokens.color.backgroundGradientStart.val,
@@ -65,11 +90,11 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 			borderRadius="$4"
 		>
 			{showCover && (
-				<View style={{ ...styles.coverFullScreen }}>
+				<Animated.View style={[styles.coverFullScreen, animatedStyle]}>
 					<Cover
 						coverPath={song.coverPath || ""}
 						alternativeCoverOpacity={1}
-						style={{ ...styles.coverFullScreen }}
+						style={styles.coverFullScreen}
 						resizeMode="cover"
 						showDefault={false}
 					/>
@@ -82,11 +107,12 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 							left: 0,
 							right: 0,
 							bottom: 0,
-							backgroundColor: tamaguiConfig.tokens.color.backgroundDarkTransparent20.val,
+							backgroundColor:
+								tamaguiConfig.tokens.color.backgroundDarkTransparent20.val,
 						}}
 						experimentalBlurMethod="dimezisBlurView"
 					/>
-				</View>
+				</Animated.View>
 			)}
 			{children}
 		</LinearGradient>
@@ -96,10 +122,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 const styles = StyleSheet.create({
 	coverFullScreen: {
 		position: "absolute",
-		top: 0,
 		left: 0,
-		right: 0,
-		bottom: 0,
 		width: "100%",
 		height: "100%",
 		borderRadius: 0,

@@ -59,7 +59,7 @@ export const BarAnimated: React.FC<BarAnimatedProps> = ({
           {
             width: '100%',
             backgroundColor: color,
-            borderRadius: 2,
+            borderRadius: 1,
           },
           animatedStyle,
         ]}

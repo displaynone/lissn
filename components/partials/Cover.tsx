@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import FastImage, { ImageStyle } from "react-native-fast-image";
 import MissingCoverIcon from "../icons/MissingCoverIcon";
@@ -10,6 +11,7 @@ type CoverProps = {
 	resizeMode?: keyof typeof FastImage.resizeMode;
 	showDefault?: boolean;
 	borderRadius?: number;
+	onLoad?: () => void;
 };
 
 const Cover: React.FC<CoverProps> = ({
@@ -20,7 +22,10 @@ const Cover: React.FC<CoverProps> = ({
 	resizeMode = "cover",
 	showDefault = true,
 	borderRadius = 8,
+	onLoad,
 }) => {
+	const [isError, setIsError] = useState(false);
+
 	const imageStyle: ImageStyle = {
 		width: size,
 		height: size,
@@ -32,7 +37,7 @@ const Cover: React.FC<CoverProps> = ({
 
 	return (
 		<View style={[imageStyle]}>
-			{showDefault && (
+			{showDefault && isError && (
 				<View
 					style={[
 						StyleSheet.absoluteFillObject,
@@ -51,6 +56,13 @@ const Cover: React.FC<CoverProps> = ({
 				style={imageStyle}
 				source={{ uri: coverPath }}
 				resizeMode={FastImage.resizeMode[resizeMode]}
+				onError={() => {
+					setIsError(true);
+					onLoad?.();
+				}}
+				onLoad={() => {
+					onLoad?.();
+				}}
 			/>
 		</View>
 	);

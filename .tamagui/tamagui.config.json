@@ -157395,6 +157395,13 @@
           "val": "rgba(255, 255, 255, 0.10)",
           "variable": ""
         },
+        "backgroundTransparent20": {
+          "isVar": true,
+          "key": "$backgroundTransparent20",
+          "name": "c-backgroundTransparent20",
+          "val": "rgba(255, 255, 255, 0.20)",
+          "variable": ""
+        },
         "backgroundTransparent30": {
           "isVar": true,
           "key": "$backgroundTransparent30",
@@ -159932,6 +159939,13 @@
         "key": "$backgroundTransparent10",
         "name": "c-backgroundTransparent10",
         "val": "rgba(255, 255, 255, 0.10)",
+        "variable": ""
+      },
+      "$color.backgroundTransparent20": {
+        "isVar": true,
+        "key": "$backgroundTransparent20",
+        "name": "c-backgroundTransparent20",
+        "val": "rgba(255, 255, 255, 0.20)",
         "variable": ""
       },
       "$color.backgroundTransparent30": {

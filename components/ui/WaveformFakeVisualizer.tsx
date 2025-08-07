@@ -11,9 +11,9 @@ type WaveformFakeVisualizerProps = {
 };
 
 export const WaveformFakeVisualizer: React.FC<WaveformFakeVisualizerProps> = ({
-	barCount = 4,
+	barCount = 3,
 	barWidth = 4,
-	barHeight = 30,
+	barHeight = 20,
 	color = tamaguiConfig.tokens.color.primary.val,
 	isPlaying,
 }) => {
