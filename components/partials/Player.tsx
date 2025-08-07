@@ -3,6 +3,8 @@ import { usePlayerProgress } from "@/hooks/usePlayerProgress";
 import {
 	useGetIsPausedSong,
 	useGetIsStoppedSong,
+	useGetPlayNextSong,
+	useGetPlayPreviousSong,
 	useGetPlaySong,
 	useGetTooglePauseSong,
 } from "@/store/usePlayerStore";
@@ -40,6 +42,8 @@ const Player: React.FC<PlayerProps> = ({
 	const path = usePathname();
 	const togglePause = useGetTooglePauseSong();
 	const play = useGetPlaySong();
+	const playNext = useGetPlayNextSong();
+	const playPrev = useGetPlayPreviousSong();
 	const isPaused = useGetIsPausedSong();
 	const isStopped = useGetIsStoppedSong();
 	const { progress } = usePlayerProgress();
@@ -122,7 +126,11 @@ const Player: React.FC<PlayerProps> = ({
 								</View>
 							</Pressable>
 						)}
-						<Button circular backgroundColor={"transparent"}>
+						<Button
+							circular
+							backgroundColor={"transparent"}
+							onPress={() => playPrev()}
+						>
 							<PrevIcon color="white" />
 						</Button>
 						<Button
@@ -136,7 +144,11 @@ const Player: React.FC<PlayerProps> = ({
 								<PauseIcon color="white" />
 							)}
 						</Button>
-						<Button circular backgroundColor={"transparent"}>
+						<Button
+							circular
+							backgroundColor={"transparent"}
+							onPress={() => playNext()}
+						>
 							<NextIcon color="white" />
 						</Button>
 					</XStack>

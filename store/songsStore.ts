@@ -42,6 +42,7 @@ interface MusicStoreState {
 
 	setPlayingSongId: (id?: string) => void;
 	getNextSongById: (id?: string) => Promise<Song | null>;
+	getPreviousSongById: (id?: string) => Promise<Song | null>;
 }
 
 const musicService = MusicLibraryService.getInstance();
@@ -206,12 +207,35 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			const currentSong = await database.get<Song>("songs").find(id);
 			if (!currentSong) return null;
 
-			// Obtener la siguiente canción basada en created_at (por ejemplo)
 			const nextSongs = await database
 				.get<Song>("songs")
 				.query(
 					Q.where("created_at", Q.lt(currentSong.createdAt.getTime())),
 					Q.sortBy("created_at", Q.desc),
+					Q.take(1)
+				)
+				.fetch();
+
+			return nextSongs[0] || null;
+		} catch (e) {
+			console.error("getNextSongById error", e);
+			return null;
+		}
+	},
+
+	getPreviousSongById: async (id?: string) => {
+		if (!id) {
+			return null;
+		}
+		try {
+			const currentSong = await database.get<Song>("songs").find(id);
+			if (!currentSong) return null;
+
+			const nextSongs = await database
+				.get<Song>("songs")
+				.query(
+					Q.where("created_at", Q.gt(currentSong.createdAt.getTime())),
+					Q.sortBy("created_at", Q.asc),
 					Q.take(1)
 				)
 				.fetch();

@@ -13,6 +13,8 @@ interface PlayerStore {
 	stop: () => void;
 	forceStop: () => void;
 	seekTo: (time: number) => void;
+	playNextSong: () => void;
+	playPreviousSong: () => void;
 }
 
 export const usePlayerStore = create<PlayerStore>((set, get) => ({
@@ -28,20 +30,7 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 		player.play();
 		player.addListener("playbackStatusUpdate", async (status) => {
 			if (status.didJustFinish) {
-				const currentSongId = get().song?.id;
-				if (!currentSongId) return;
-
-				const nextSong = await useMusicStore
-					.getState()
-					.getNextSongById(currentSongId);
-
-				if (nextSong) {
-					await get().playSong(nextSong);
-					useMusicStore.getState().setPlayingSongId(nextSong.id);
-				} else {
-					get().forceStop();
-					set({ isStopped: true });
-				}
+				get().playNextSong();
 			}
 		});
 		set({ song, player, isPaused: false, isStopped: false });
@@ -78,6 +67,40 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 			player.seekTo(time);
 		}
 	},
+
+	playNextSong: async () => {
+		const currentSongId = get().song?.id;
+		if (!currentSongId) return;
+
+		const nextSong = await useMusicStore
+			.getState()
+			.getNextSongById(currentSongId);
+
+		if (nextSong) {
+			await get().playSong(nextSong);
+			useMusicStore.getState().setPlayingSongId(nextSong.id);
+		} else {
+			get().forceStop();
+			set({ isStopped: true });
+		}
+	},
+
+	playPreviousSong: async () => {
+		const currentSongId = get().song?.id;
+		if (!currentSongId) return;
+
+		const nextSong = await useMusicStore
+			.getState()
+			.getPreviousSongById(currentSongId);
+
+		if (nextSong) {
+			await get().playSong(nextSong);
+			useMusicStore.getState().setPlayingSongId(nextSong.id);
+		} else {
+			get().forceStop();
+			set({ isStopped: true });
+		}
+	},
 }));
 
 export const useGetPlayer = () => usePlayerStore((state) => state.player);
@@ -91,3 +114,5 @@ export const useGetIsPausedSong = () =>
 export const useGetIsStoppedSong = () =>
 	usePlayerStore((state) => state.isStopped);
 export const useGetPlayingSong = () => usePlayerStore((state) => state.song);
+export const useGetPlayNextSong = () => usePlayerStore((state) => state.playNextSong);
+export const useGetPlayPreviousSong = () => usePlayerStore((state) => state.playPreviousSong);
