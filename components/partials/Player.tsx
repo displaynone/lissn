@@ -1,4 +1,4 @@
-import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSondAndArtist";
+import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSongAndArtist";
 import { usePlayerProgress } from "@/hooks/usePlayerProgress";
 import {
 	useGetIsPausedSong,
