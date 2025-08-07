@@ -7,6 +7,7 @@ import AppContainer from "@/components/AppContainer";
 import { AudioLibraryProvider } from "@/hooks/providers/MediaLibraryProvider";
 import { tamaguiConfig } from "@/tamagui.config";
 import { setAudioModeAsync } from "expo-audio";
+import * as SplashScreen from "expo-splash-screen";
 import * as SystemUI from "expo-system-ui";
 import { useEffect } from "react";
 import { View } from "react-native";
@@ -16,6 +17,13 @@ import {
 	useSafeAreaInsets,
 } from "react-native-safe-area-context";
 import { TamaguiProvider } from "tamagui";
+
+SplashScreen.setOptions({
+	duration: 1000,
+	fade: true,
+});
+
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
 	const insets = useSafeAreaInsets();
@@ -32,6 +40,12 @@ export default function RootLayout() {
 	useEffect(() => {
 		SystemUI.setBackgroundColorAsync(backgroundColor);
 	}, [backgroundColor]);
+
+	useEffect(() => {
+		if (loaded) {
+			SplashScreen.hide();
+		}
+	}, [loaded]);
 
 	useEffect(() => {
 		const setAudioMode = async () => {

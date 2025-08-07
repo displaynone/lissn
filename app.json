@@ -1,6 +1,6 @@
 {
 	"expo": {
-		"name": "lissn",
+		"name": "Lissn",
 		"slug": "lissn",
 		"version": "1.0.0",
 		"orientation": "portrait",
@@ -33,15 +33,6 @@
 		"plugins": [
 			"expo-router",
 			[
-				"expo-splash-screen",
-				{
-					"image": "./assets/images/splash-icon.png",
-					"imageWidth": 200,
-					"resizeMode": "contain",
-					"backgroundColor": "#ffffff"
-				}
-			],
-			[
 				"expo-media-library",
 				{
 					"photosPermission": "Allow $(PRODUCT_NAME) to access your photos.",
@@ -60,7 +51,19 @@
 					}
 				}
 			],
-			"expo-audio"
+			"expo-audio",
+			[
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#00020a",
+          "image": "./assets/images/splash-icon.png",
+          "dark": {
+            "image": "./assets/images/splash-icon.png",
+            "backgroundColor": "#00020a"
+          },
+          "imageWidth": 200
+        }
+      ]
 		],
 		"experiments": {
 			"typedRoutes": true

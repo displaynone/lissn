@@ -1,7 +1,7 @@
+import { COVER_STROKE_WIDTH } from "@/constants/generic";
 import { tamaguiConfig } from "@/tamagui.config";
 import { StyleSheet } from "react-native";
 import Svg, { Circle } from "react-native-svg";
-import { COVER_STROKE_WIDTH } from "../partials/Player";
 
 type CircularProgressProps = {
 	size: number;

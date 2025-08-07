@@ -1,3 +1,4 @@
+import { COVER_SIZE, COVER_STROKE_WIDTH } from "@/constants/generic";
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSongAndArtist";
 import { usePlayerProgress } from "@/hooks/usePlayerProgress";
 import {
@@ -28,9 +29,6 @@ type PlayerProps = {
 	styleContainer?: ViewStyle;
 	isBlurred?: boolean;
 };
-
-export const COVER_SIZE = 56;
-export const COVER_STROKE_WIDTH = 2;
 
 const Player: React.FC<PlayerProps> = ({
 	showCover = true,
