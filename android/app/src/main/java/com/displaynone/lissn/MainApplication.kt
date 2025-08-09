@@ -17,6 +17,7 @@ import expo.modules.ApplicationLifecycleDispatcher
 import expo.modules.ReactNativeHostWrapper
 
 import com.displaynone.lissn.ExpoMusicLibraryPackage
+import com.displaynone.lissn.AudioNotificationPackage
 
 class MainApplication : Application(), ReactApplication {
 
@@ -28,6 +29,7 @@ class MainApplication : Application(), ReactApplication {
             // Packages that cannot be autolinked yet can be added manually here, for example:
             // packages.add(MyReactNativePackage())
             packages.add(ExpoMusicLibraryPackage())
+            packages.add(AudioNotificationPackage())
             return packages
           }
 

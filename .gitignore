@@ -80,5 +80,20 @@ ios
 !android/app/src/main/java/com/displaynone/lissn/assets/AssetUtils.kt
 !android/app/src/main/java/com/displaynone/lissn/assets/GetAssets.kt
 !android/app/src/main/java/com/displaynone/lissn/MusicLibraryConstants.kt
+!android/app/src/main/java/com/displaynone/lissn/AudioNotificationService.kt
+!android/app/src/main/java/com/displaynone/lissn/AudioNotificationModule.kt
+!android/app/src/main/java/com/displaynone/lissn/MediaSessionHelper.kt
+!android/app/src/main/java/com/displaynone/lissn/AudioNotificationReceiver.kt
+!android/app/src/main/java/com/displaynone/lissn/AudioNotificationPackage.kt
+!android/app/src/main/AndroidManifest.xml
 
-android/app/src/main/res/**
+!android/app/src/main/res/
+!android/app/src/main/res/drawable/
+!android/app/src/main/res/drawable/ic_music_note.xml
+!android/app/src/main/res/drawable/ic_close.xml
+!android/app/src/main/res/drawable/ic_play.xml
+!android/app/src/main/res/drawable/ic_next.xml
+!android/app/src/main/res/drawable/ic_pause.xml
+!android/app/src/main/res/drawable/ic_prev.xml
+
+android/app/src/debug/AndroidManifest.xml

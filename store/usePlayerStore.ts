@@ -1,4 +1,11 @@
 import { Song } from "@/models";
+import {
+	startNotification,
+	stopNotification,
+	updateNotification,
+	UpdateNotificationArgs,
+	wireNotificationEvents
+} from "@/services/AudioNotificationService";
 import { AudioPlayer, createAudioPlayer } from "expo-audio";
 import { create } from "zustand";
 import { useMusicStore } from "./songsStore";
@@ -15,7 +22,22 @@ interface PlayerStore {
 	seekTo: (time: number) => void;
 	playNextSong: () => void;
 	playPreviousSong: () => void;
+	updateProgress: (currentTime: number, duration: number) => void;
 }
+
+export const initPlayerNotificationBridge = () => {
+	return wireNotificationEvents({
+		onPlayPause: () => {
+			usePlayerStore.getState().togglePause();
+		},
+		onNext: () => usePlayerStore.getState().playNextSong(),
+		onPrev: () => usePlayerStore.getState().playPreviousSong(),
+		onStop: () => usePlayerStore.getState().stop(),
+		onSeekTo: (position: number) => {
+			usePlayerStore.getState().seekTo(position);
+		},
+	});
+};
 
 export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	song: null,
@@ -33,11 +55,22 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 				get().playNextSong();
 			}
 		});
+
+		const artist = await useMusicStore.getState().getArtistById(song.artistId);
+
+		startNotification(song, artist);
+
 		set({ song, player, isPaused: false, isStopped: false });
+		const meta: UpdateNotificationArgs = {
+			title: song.title,
+			largeIconPath: (song as any)?.coverPath ?? null,
+			isPlaying: true,
+		};
+		updateNotification(meta);
 	},
 
 	togglePause: async () => {
-		const { player, isPaused } = get();
+		const { player, isPaused, song } = get();
 		if (!player) return;
 
 		if (isPaused) {
@@ -47,6 +80,12 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 		}
 
 		set({ isPaused: !isPaused });
+
+		updateNotification({
+			title: song?.title ?? null,
+			artist: (song as any)?.artist?.name ?? null,
+			isPlaying: !isPaused,
+		});
 	},
 
 	stop: () => {
@@ -55,6 +94,7 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 			player.pause();
 		}
 		forceStop();
+		stopNotification();
 	},
 
 	forceStop: () => {
@@ -82,6 +122,7 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 		} else {
 			get().forceStop();
 			set({ isStopped: true });
+			stopNotification();
 		}
 	},
 
@@ -89,16 +130,28 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 		const currentSongId = get().song?.id;
 		if (!currentSongId) return;
 
-		const nextSong = await useMusicStore
+		const previousSong = await useMusicStore
 			.getState()
 			.getPreviousSongById(currentSongId);
 
-		if (nextSong) {
-			await get().playSong(nextSong);
-			useMusicStore.getState().setPlayingSongId(nextSong.id);
+		if (previousSong) {
+			await get().playSong(previousSong);
+			useMusicStore.getState().setPlayingSongId(previousSong.id);
 		} else {
 			get().forceStop();
 			set({ isStopped: true });
+			stopNotification();
+		}
+	},
+
+	updateProgress: (currentTime: number, duration: number) => {
+		// Solo actualizar si hay una canción reproduciéndose
+		const { song, isPaused } = get();
+		if (song && !isPaused) {
+			updateNotification({
+				currentTime,
+				duration,
+			});
 		}
 	},
 }));
@@ -114,5 +167,9 @@ export const useGetIsPausedSong = () =>
 export const useGetIsStoppedSong = () =>
 	usePlayerStore((state) => state.isStopped);
 export const useGetPlayingSong = () => usePlayerStore((state) => state.song);
-export const useGetPlayNextSong = () => usePlayerStore((state) => state.playNextSong);
-export const useGetPlayPreviousSong = () => usePlayerStore((state) => state.playPreviousSong);
+export const useGetPlayNextSong = () =>
+	usePlayerStore((state) => state.playNextSong);
+export const useGetPlayPreviousSong = () =>
+	usePlayerStore((state) => state.playPreviousSong);
+export const useGetUpdateProgress = () =>
+	usePlayerStore((state) => state.updateProgress);

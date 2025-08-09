@@ -5,6 +5,7 @@ import "react-native-reanimated";
 
 import AppContainer from "@/components/AppContainer";
 import { AudioLibraryProvider } from "@/hooks/providers/MediaLibraryProvider";
+import { initPlayerNotificationBridge } from "@/store/usePlayerStore";
 import { tamaguiConfig } from "@/tamagui.config";
 import { setAudioModeAsync } from "expo-audio";
 import * as SplashScreen from "expo-splash-screen";
@@ -40,6 +41,11 @@ export default function RootLayout() {
 	useEffect(() => {
 		SystemUI.setBackgroundColorAsync(backgroundColor);
 	}, [backgroundColor]);
+
+	useEffect(() => {
+		const unsub = initPlayerNotificationBridge();
+		return () => unsub();
+	}, []);
 
 	useEffect(() => {
 		if (loaded) {
