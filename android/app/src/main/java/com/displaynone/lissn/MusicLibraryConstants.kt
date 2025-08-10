@@ -16,11 +16,15 @@ const val ERROR_NO_PERMISSIONS_MESSAGE = "Missing MEDIA_LIBRARY permissions."
 const val ERROR_NO_WRITE_PERMISSION_MESSAGE = "Missing MEDIA_LIBRARY write permission."
 const val ERROR_USER_DID_NOT_GRANT_WRITE_PERMISSIONS_MESSAGE = "User didn't grant write permission to requested files."
 
-val EXTERNAL_CONTENT_URI: Uri = MediaStore.Files.getContentUri("external")
+// Use the audio specific content URI so we have access to all audio columns
+// such as `title_key` which is required by DEFAULT_SORT_ORDER
+val EXTERNAL_CONTENT_URI: Uri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
 
 val ASSET_PROJECTION = arrayOf(
   MediaStore.Audio.Media._ID,
   MediaStore.Audio.Media.TITLE,
+  // Needed for DEFAULT_SORT_ORDER which uses this column
+  MediaStore.Audio.Media.TITLE_KEY,
   MediaStore.Audio.Media.ARTIST,
   MediaStore.Audio.Media.DISPLAY_NAME,
   MediaStore.Audio.Media.DATE_ADDED,
@@ -28,9 +32,10 @@ val ASSET_PROJECTION = arrayOf(
   MediaStore.Audio.Media.DURATION,
   MediaStore.Audio.Media.DATA,
   MediaStore.Audio.Media.ALBUM, // Add album name for consistency
-  MediaStore.Audio.Albums._ID,
-  MediaStore.Audio.Artists._ID,
-  MediaStore.Audio.Genres._ID,
+  // Use IDs directly from Media table
+  MediaStore.Audio.Media.ALBUM_ID,
+  MediaStore.Audio.Media.ARTIST_ID,
+  MediaStore.Audio.Media.GENRE_ID,
 )
 
 val ALBUM_PROJECTION = arrayOf(
