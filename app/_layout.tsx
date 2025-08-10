@@ -4,6 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
 
 import AppContainer from "@/components/AppContainer";
+import BottomNavigation from "@/components/partials/BottomNavigation";
 import { AudioLibraryProvider } from "@/hooks/providers/MediaLibraryProvider";
 import { initPlayerNotificationBridge } from "@/store/usePlayerStore";
 import { tamaguiConfig } from "@/tamagui.config";
@@ -72,15 +73,18 @@ export default function RootLayout() {
 					<AppContainer>
 						<View style={{ height: insets.top, backgroundColor }} />
 						<StatusBar style="light" translucent />
-						<SafeAreaView
-							style={{ flex: 1, width: "100%" }}
-							edges={["left", "right", "bottom"]}
-						>
-							<Slot />
-						</SafeAreaView>
-					</AppContainer>
-				</GestureHandlerRootView>
-			</AudioLibraryProvider>
-		</TamaguiProvider>
+                                                <SafeAreaView
+                                                        style={{ flex: 1, width: "100%" }}
+                                                        edges={["left", "right", "bottom"]}
+                                                >
+                                                        <View style={{ flex: 1 }}>
+                                                                <Slot />
+                                                                <BottomNavigation />
+                                                        </View>
+                                                </SafeAreaView>
+                                        </AppContainer>
+                                </GestureHandlerRootView>
+                        </AudioLibraryProvider>
+                </TamaguiProvider>
 	);
 }
