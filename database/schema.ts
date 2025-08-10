@@ -8,7 +8,7 @@ export const mySchema = appSchema({
       columns: [
         { name: 'name', type: 'string' },
         { name: 'artwork_uri', type: 'string', isOptional: true },
-        { name: 'external_id', type: 'string', isOptional: true },
+        { name: 'external_id', type: 'string', isOptional: true, isIndexed: true },
         { name: 'created_at', type: 'number' },
         { name: 'updated_at', type: 'number' },
       ],

@@ -48,6 +48,7 @@ interface MusicStoreState {
 const musicService = MusicLibraryService.getInstance();
 
 const LIMIT = 20;
+const DEFAULT_ORDER_COLUMN = 'external_id';
 
 export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	songs: [],
@@ -75,7 +76,7 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 		const songs = await database
 			.get<Song>("songs")
 			.query(
-				Q.sortBy("created_at", Q.desc),
+				Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc),
 				Q.take(limit),
 				Q.skip(limit * page)
 			)
@@ -180,7 +181,7 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	refreshArtists: async (limit: number = 20) => {
 		const artists = await database
 			.get<Artist>("artists")
-			.query(Q.sortBy("created_at", Q.desc), Q.take(limit))
+			.query(Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc), Q.take(limit))
 			.fetch();
 		set({ artists, isLoading: false });
 	},
@@ -210,8 +211,8 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			const nextSongs = await database
 				.get<Song>("songs")
 				.query(
-					Q.where("created_at", Q.lt(currentSong.createdAt.getTime())),
-					Q.sortBy("created_at", Q.desc),
+					Q.where(DEFAULT_ORDER_COLUMN, Q.lt(currentSong.createdAt.getTime())),
+					Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc),
 					Q.take(1)
 				)
 				.fetch();
@@ -234,8 +235,8 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			const nextSongs = await database
 				.get<Song>("songs")
 				.query(
-					Q.where("created_at", Q.gt(currentSong.createdAt.getTime())),
-					Q.sortBy("created_at", Q.asc),
+					Q.where(DEFAULT_ORDER_COLUMN, Q.gt(currentSong.createdAt.getTime())),
+					Q.sortBy(DEFAULT_ORDER_COLUMN, Q.asc),
 					Q.take(1)
 				)
 				.fetch();

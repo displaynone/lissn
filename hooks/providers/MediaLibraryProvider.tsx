@@ -53,7 +53,7 @@ export const AudioLibraryProvider: React.FC<{ children: React.ReactNode }> = ({
 			// Load music files
 			const assets = await MusicLibrary.getAssetsAsync({
 				first: 2000,
-				sortBy: ["creationTime DESC"],
+				// sortBy: ["creationTime DESC"],
 			});
 			setSongs(assets);
 
