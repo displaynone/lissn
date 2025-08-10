@@ -266,7 +266,7 @@ class AudioNotificationService : Service() {
                     val reactInstanceManager = app.reactNativeHost.reactInstanceManager
 
                     if (!reactInstanceManager.hasStartedCreatingInitialContext()) {
-+                        reactInstanceManager.createReactContextInBackground()
+                        reactInstanceManager.createReactContextInBackground()
                     }
                 } catch (e: Exception) {
                     Log.e("LissnNotif", "Error creating React Native context", e)
