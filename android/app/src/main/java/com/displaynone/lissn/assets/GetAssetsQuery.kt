@@ -43,7 +43,8 @@ private fun createSelectionString(input: AssetsOptions): String {
         selectionBuilder.append(" AND ")
     }
     selectionBuilder.append(
-        "${MediaStore.Files.FileColumns.MEDIA_TYPE} = ${MediaStore.Files.FileColumns.MEDIA_TYPE_AUDIO}"
+        // Ensure we only query music files when using the audio media table
+        "${MediaStore.Audio.Media.IS_MUSIC} != 0"
     )
 
     input.createdAfter?.let {

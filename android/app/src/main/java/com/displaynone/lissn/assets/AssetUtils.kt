@@ -29,9 +29,9 @@ fun putAssetsInfo(
     val durationIndex = cursor.getColumnIndex(MediaStore.Audio.Media.DURATION)
     val localUriIndex = cursor.getColumnIndex(MediaStore.Audio.Media.DATA)
     val albumNameIndex = cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM)
-    val albumIdIndex = cursor.getColumnIndex(MediaStore.Audio.Albums._ID)
-    val artistIdIndex = cursor.getColumnIndex(MediaStore.Audio.Artists._ID)
-    val genreIdIndex = cursor.getColumnIndex(MediaStore.Audio.Genres._ID)
+    val albumIdIndex = cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ID)
+    val artistIdIndex = cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST_ID)
+    val genreIdIndex = cursor.getColumnIndex(MediaStore.Audio.Media.GENRE_ID)
 
     if (!cursor.moveToPosition(offset)) {
         return
@@ -83,9 +83,9 @@ fun fillAssetBundle(
     val durationIndex = cursor.getColumnIndex(MediaStore.Audio.Media.DURATION)
     val localUriIndex = cursor.getColumnIndex(MediaStore.Audio.Media.DATA)
     val albumNameIndex = cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM)
-    val albumIdIndex = cursor.getColumnIndex(MediaStore.Audio.Albums._ID)
-    val artistIdIndex = cursor.getColumnIndex(MediaStore.Audio.Artists._ID)
-    val genreIdIndex = cursor.getColumnIndex(MediaStore.Audio.Genres._ID)
+    val albumIdIndex = cursor.getColumnIndex(MediaStore.Audio.Media.ALBUM_ID)
+    val artistIdIndex = cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST_ID)
+    val genreIdIndex = cursor.getColumnIndex(MediaStore.Audio.Media.GENRE_ID)
 
     while (cursor.moveToNext()) {
         val assetId = cursor.getString(idIndex)
