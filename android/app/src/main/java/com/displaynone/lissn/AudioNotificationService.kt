@@ -135,12 +135,24 @@ class AudioNotificationService : Service() {
     private fun showOrUpdateNotification() {
         val smallIconId = resolveSmallIcon()
 
+        val openAppIntent = Intent(Intent.ACTION_VIEW, Uri.parse("lissn://song/playing")).apply {
+            setPackage(packageName)
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        }
+        val contentPendingIntent = PendingIntent.getActivity(
+            this,
+            0,
+            openAppIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle(lastTitle)
             .setContentText(lastArtist)
             .setSmallIcon(smallIconId)
             .setOngoing(true)
             .setOnlyAlertOnce(true)
+            .setContentIntent(contentPendingIntent)
             .setStyle(
                 MediaStyle()
                     .setMediaSession(mediaSessionHelper.sessionToken)

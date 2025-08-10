@@ -12,19 +12,31 @@
 			"supportsTablet": true,
 			"bundleIdentifier": "com.displaynone.lissn"
 		},
-		"android": {
-			"adaptiveIcon": {
-				"foregroundImage": "./assets/images/adaptive-icon.png",
-				"backgroundColor": "#ffffff"
-			},
-			"edgeToEdgeEnabled": true,
-			"permissions": [
-				"android.permission.READ_EXTERNAL_STORAGE",
-				"android.permission.WRITE_EXTERNAL_STORAGE",
-				"android.permission.ACCESS_MEDIA_LOCATION"
-			],
-			"package": "com.displaynone.lissn"
-		},
+                "android": {
+                        "adaptiveIcon": {
+                                "foregroundImage": "./assets/images/adaptive-icon.png",
+                                "backgroundColor": "#ffffff"
+                        },
+                        "edgeToEdgeEnabled": true,
+                        "permissions": [
+                                "android.permission.READ_EXTERNAL_STORAGE",
+                                "android.permission.WRITE_EXTERNAL_STORAGE",
+                                "android.permission.ACCESS_MEDIA_LOCATION"
+                        ],
+                        "package": "com.displaynone.lissn",
+                        "intentFilters": [
+                                {
+                                        "action": "VIEW",
+                                        "data": [
+                                                {
+                                                        "scheme": "lissn",
+                                                        "host": "*"
+                                                }
+                                        ],
+                                        "category": ["BROWSABLE", "DEFAULT"]
+                                }
+                        ]
+                },
 		"web": {
 			"bundler": "metro",
 			"output": "static",
