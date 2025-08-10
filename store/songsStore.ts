@@ -48,7 +48,7 @@ interface MusicStoreState {
 const musicService = MusicLibraryService.getInstance();
 
 const LIMIT = 20;
-const DEFAULT_ORDER_COLUMN = 'external_id';
+const DEFAULT_ORDER_COLUMN = "external_id";
 
 export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	songs: [],
@@ -90,14 +90,14 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 		});
 	},
 
-        getSongById: async (id) => {
-                try {
-                        return await database.get<Song>("songs").find(id);
-                } catch (e) {
-                        console.error("getSongById error", e);
-                        return null;
-                }
-        },
+	getSongById: async (id) => {
+		try {
+			return await database.get<Song>("songs").find(id);
+		} catch (e) {
+			console.error("getSongById error", e);
+			return null;
+		}
+	},
 
 	updateSong: async (id, updates) => {
 		await database.write(async () => {
@@ -186,15 +186,15 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 		set({ artists, isLoading: false });
 	},
 
-        getArtistById: async (id) => {
-                try {
-                        const artist = await database.get<Artist>("artists").find(id);
-                        return artist;
-                } catch (e) {
-                        console.error("getArtistById error", e);
-                        return null;
-                }
-        },
+	getArtistById: async (id) => {
+		try {
+			const artist = await database.get<Artist>("artists").find(id);
+			return artist;
+		} catch (e) {
+			console.error("getArtistById error", e);
+			return null;
+		}
+	},
 
 	setPlayingSongId: (id) => {
 		set({ playingSongId: id });
@@ -211,7 +211,7 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			const nextSongs = await database
 				.get<Song>("songs")
 				.query(
-					Q.where(DEFAULT_ORDER_COLUMN, Q.lt(currentSong.createdAt.getTime())),
+					Q.where(DEFAULT_ORDER_COLUMN, Q.lt(currentSong?.externalId || '')),
 					Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc),
 					Q.take(1)
 				)
@@ -235,7 +235,7 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			const nextSongs = await database
 				.get<Song>("songs")
 				.query(
-					Q.where(DEFAULT_ORDER_COLUMN, Q.gt(currentSong.createdAt.getTime())),
+					Q.where(DEFAULT_ORDER_COLUMN, Q.gt(currentSong?.externalId || '')),
 					Q.sortBy(DEFAULT_ORDER_COLUMN, Q.asc),
 					Q.take(1)
 				)

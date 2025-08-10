@@ -4,7 +4,7 @@ import {
 	stopNotification,
 	updateNotification,
 	UpdateNotificationArgs,
-	wireNotificationEvents
+	wireNotificationEvents,
 } from "@/services/AudioNotificationService";
 import { AudioPlayer, createAudioPlayer } from "expo-audio";
 import { create } from "zustand";

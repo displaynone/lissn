@@ -1,9 +1,15 @@
 import { useGetArtistBySong } from "@/hooks/useGetArtistBySong";
 import { Song } from "@/models";
 import { useGetSetPlayingSongId } from "@/store/songsStore";
-import { useGetIsPausedSong, useGetPlayingSong, useGetPlaySong, useGetStopSong } from "@/store/usePlayerStore";
+import {
+	useGetIsPausedSong,
+	useGetPlayingSong,
+	useGetPlaySong,
+	useGetStopSong,
+} from "@/store/usePlayerStore";
 import { formatSeconds } from "@/utils/formatSeconds";
 import { Text, View, XStack, YStack } from "tamagui";
+import { AutoMarquee } from "../ui/AutoMarquee";
 import { Loading } from "../ui/Loading";
 import { WaveformFakeVisualizer } from "../ui/WaveformFakeVisualizer";
 import Cover from "./Cover";
@@ -42,7 +48,9 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 			gap="$4"
 			onPress={handlePlay}
 			marginHorizontal={"$4"}
-			backgroundColor={isPlaying ? "$backgroundTransparent10":"$backgroundTransparent02"}
+			backgroundColor={
+				isPlaying ? "$backgroundTransparent10" : "$backgroundTransparent02"
+			}
 			padding="$3"
 			borderRadius="$3"
 		>
@@ -64,16 +72,16 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 				)}
 			</View>
 			<YStack gap="$1" flex={1}>
-				<Text
-					fontFamily="$inter"
-					fontWeight={isPlaying ? "500" : "200"}
-					fontSize={"$6"}
-					numberOfLines={1}
-					ellipsizeMode="tail"
-					color={isPlaying ? "$color.primary" : "white"}
-				>
-					{song.title}
-				</Text>
+				<AutoMarquee
+					text={song.title}
+					playing={isPlaying}
+					textProps={{
+						fontFamily: "$inter",
+						fontWeight: isPlaying ? "500" : "200",
+						fontSize: "$6",
+						color: isPlaying ? "$color.primary" : "white",
+					}}
+				/>
 				<Text
 					fontFamily="$inter"
 					fontWeight={"100"}

@@ -2,6 +2,7 @@ import ArrowLeftIcon from "@/components/icons/ArrowLeftIcon";
 import Cover from "@/components/partials/Cover";
 import Player from "@/components/partials/Player";
 import SongTrack from "@/components/partials/SongTrack";
+import { AutoMarquee } from "@/components/ui/AutoMarquee";
 import { Loading } from "@/components/ui/Loading";
 import { SHOW_PLAYING_PAGE_SLIDE_TIME } from "@/constants/generic";
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSongAndArtist";
@@ -63,14 +64,15 @@ const SongDetailScreen: React.FC = () => {
 						<ArrowLeftIcon color="white" />
 					</Button>
 				</XStack>
-				<Text
-					fontFamily="$inter"
-					fontWeight={"800"}
-					fontSize={"$7"}
-					textAlign="center"
-				>
-					{song.title}
-				</Text>
+				<AutoMarquee
+					textProps={{
+						fontFamily: "$inter",
+						fontWeight: "800",
+						fontSize: "$7",
+						textAlign: "center"
+					}}
+					text={song.title}
+				/>
 				<Text fontFamily="$inter" fontWeight={"400"} fontSize={"$6"}>
 					{artist?.name}
 				</Text>
