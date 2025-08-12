@@ -12,31 +12,31 @@
 			"supportsTablet": true,
 			"bundleIdentifier": "com.displaynone.lissn"
 		},
-                "android": {
-                        "adaptiveIcon": {
-                                "foregroundImage": "./assets/images/adaptive-icon.png",
-                                "backgroundColor": "#ffffff"
-                        },
-                        "edgeToEdgeEnabled": true,
-                        "permissions": [
-                                "android.permission.READ_EXTERNAL_STORAGE",
-                                "android.permission.WRITE_EXTERNAL_STORAGE",
-                                "android.permission.ACCESS_MEDIA_LOCATION"
-                        ],
-                        "package": "com.displaynone.lissn",
-                        "intentFilters": [
-                                {
-                                        "action": "VIEW",
-                                        "data": [
-                                                {
-                                                        "scheme": "lissn",
-                                                        "host": "*"
-                                                }
-                                        ],
-                                        "category": ["BROWSABLE", "DEFAULT"]
-                                }
-                        ]
-                },
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/images/adaptive-icon.png",
+				"backgroundColor": "#e0fbfc"
+			},
+			"edgeToEdgeEnabled": true,
+			"permissions": [
+				"android.permission.READ_EXTERNAL_STORAGE",
+				"android.permission.WRITE_EXTERNAL_STORAGE",
+				"android.permission.ACCESS_MEDIA_LOCATION"
+			],
+			"package": "com.displaynone.lissn",
+			"intentFilters": [
+				{
+					"action": "VIEW",
+					"data": [
+						{
+							"scheme": "lissn",
+							"host": "*"
+						}
+					],
+					"category": ["BROWSABLE", "DEFAULT"]
+				}
+			]
+		},
 		"web": {
 			"bundler": "metro",
 			"output": "static",
@@ -65,17 +65,17 @@
 			],
 			"expo-audio",
 			[
-        "expo-splash-screen",
-        {
-          "backgroundColor": "#00020a",
-          "image": "./assets/images/splash-icon.png",
-          "dark": {
-            "image": "./assets/images/splash-icon.png",
-            "backgroundColor": "#00020a"
-          },
-          "imageWidth": 200
-        }
-      ]
+				"expo-splash-screen",
+				{
+					"backgroundColor": "#141d29",
+					"image": "./assets/images/splash-icon.png",
+					"dark": {
+						"image": "./assets/images/splash-icon.png",
+						"backgroundColor": "#141d29"
+					},
+					"imageWidth": 200
+				}
+			]
 		],
 		"experiments": {
 			"typedRoutes": true

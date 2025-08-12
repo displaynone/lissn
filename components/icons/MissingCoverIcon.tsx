@@ -23,7 +23,10 @@ const MissingCoverIcon: React.FC<IconProps> = ({ size = 24 }) => {
 					gradientUnits="userSpaceOnUse"
 				>
 					<Stop stopColor={tamaguiConfig.tokens.color.primary.val} offset="0" />
-					<Stop stopColor={tamaguiConfig.tokens.color.tertiary.val} offset="1" />
+					<Stop
+						stopColor={tamaguiConfig.tokens.color.tertiary.val}
+						offset="1"
+					/>
 				</LinearGradient>
 				<Filter
 					id="filter2"

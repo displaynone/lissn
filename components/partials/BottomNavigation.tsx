@@ -6,14 +6,20 @@ import { tamaguiConfig } from "@/tamagui.config";
 import { IconProps } from "@/utils/types";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { Href, usePathname, useRouter } from "expo-router";
-import { FC } from "react";
-import { Button, XStack, YStack } from "tamagui";
+import { FC, useRef } from "react";
+import { View } from "react-native";
+import Animated, {
+	Easing,
+	useAnimatedStyle,
+	useSharedValue,
+	withTiming,
+} from "react-native-reanimated";
+import { Button, TamaguiElement, XStack, YStack } from "tamagui";
 import ArtistsIcon from "../icons/ArtistsIcon";
 import FavoriteIcon from "../icons/FavoriteIcon";
 import HomeIcon from "../icons/HomeIcon";
 import PlaylistIcon from "../icons/PlaylistIcon";
 import SongsIcon from "../icons/SongsIcon";
-
 
 type NavButton = {
 	path: Href;
@@ -23,6 +29,15 @@ type NavButton = {
 const BottomNavigation = () => {
 	const pathname = usePathname();
 	const router = useRouter();
+	const refs = useRef<(TamaguiElement | null)[]>([]);
+	const left = useSharedValue(0);
+
+	const animatedStyle = useAnimatedStyle(() => ({
+		left: withTiming(left.value, {
+			duration: 300,
+			easing: Easing.linear,
+		}),
+	}));
 
 	if (pathname === "/song/playing") return null;
 
@@ -58,9 +73,6 @@ const BottomNavigation = () => {
 			borderTopStartRadius="$3"
 			overflow="hidden"
 			backgroundColor="$color.dark"
-			// pos="absolute"
-			// bottom={-4}
-			alignSelf="center"
 			w="100%"
 			boxShadow="0px 1px 20px black"
 		>
@@ -76,36 +88,41 @@ const BottomNavigation = () => {
 				width="100%"
 				h={1}
 			></LinearGradient>
+			<Animated.View style={[animatedStyle, { position: "absolute", top: 8 }]}>
+				<LinearGradient
+					colors={navigationButtonBackground}
+					start={[0, 0]}
+					end={[1, 1]}
+					overflow="hidden"
+					borderRadius={50}
+					p={0}
+					w={42}
+					h={42}
+				></LinearGradient>
+			</Animated.View>
 			<XStack justifyContent="space-around" alignItems="center" padding="$2">
 				{buttons.map((button, index) => {
 					const isActive = pathname === button.path;
 					return (
-						<LinearGradient
-							colors={
-								isActive
-									? navigationButtonBackground
-									: ["transparent", "transparent"]
-							}
-							start={[0, 0]}
-							end={[1, 1]}
+						<Button
+							ref={(el) => {
+								refs.current[index] = el;
+							}}
 							key={index}
-							overflow="hidden"
-							borderRadius={50}
-							ai="center"
-							jc="center"
-							p={0}
+							circular
+							backgroundColor="transparent"
+							onPress={() => {
+								(refs.current[index] as View)?.measure((x) => {
+									left.value = x + 2;
+								});
+								router.push(button.path);
+							}}
 						>
-							<Button
-								circular
-								backgroundColor="transparent"
-								onPress={() => router.push(button.path)}
-							>
-								<button.Icon
-									size={isActive ? 24 : 24}
-									color={isActive ? activeColor : regularColor}
-								/>
-							</Button>
-						</LinearGradient>
+							<button.Icon
+								size={isActive ? 24 : 24}
+								color={isActive ? activeColor : regularColor}
+							/>
+						</Button>
 					);
 				})}
 			</XStack>
