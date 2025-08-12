@@ -10,7 +10,7 @@ import {
 import { formatSeconds } from "@/utils/formatSeconds";
 import { Text, View, XStack, YStack } from "tamagui";
 import { AutoMarquee } from "../ui/AutoMarquee";
-import { Loading } from "../ui/Loading";
+import LoadingSkeleton from "../ui/LoadingSkeleton";
 import { WaveformFakeVisualizer } from "../ui/WaveformFakeVisualizer";
 import Cover from "./Cover";
 
@@ -40,7 +40,7 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 	};
 
 	if (isLoading) {
-		return <Loading />;
+		return <LoadingSkeleton height={75} />;
 	}
 
 	return (
@@ -48,9 +48,7 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 			gap="$4"
 			onPress={handlePlay}
 			marginHorizontal={"$4"}
-			backgroundColor={
-				isPlaying ? "$backgroundTransparent10" : "$backgroundTransparent02"
-			}
+			backgroundColor={isPlaying ? "$color.dark" : "$backgroundTransparent02"}
 			padding="$3"
 			borderRadius="$3"
 		>
@@ -66,6 +64,7 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 						w={COVER_SIZE}
 						h={COVER_SIZE}
 						backgroundColor={"$backgroundDarkTransparent40"}
+						borderRadius={8}
 					>
 						<WaveformFakeVisualizer isPlaying={true} />
 					</View>

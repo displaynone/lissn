@@ -28,6 +28,7 @@
     "@tamagui/theme-builder": "^1.132.10",
     "ajv": "^8.17.1",
     "buffer": "^6.0.3",
+    "color2k": "^2.0.3",
     "expo": "~53.0.17",
     "expo-audio": "~0.4.8",
     "expo-blur": "~14.1.5",

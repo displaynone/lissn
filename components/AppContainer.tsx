@@ -18,7 +18,7 @@ import Animated, {
 	useSharedValue,
 	withTiming,
 } from "react-native-reanimated";
-import { LinearGradient } from "tamagui/linear-gradient";
+import { View } from "tamagui";
 import Cover from "./partials/Cover";
 
 const AppContainer: React.FC<{ children: React.ReactNode }> = ({
@@ -73,17 +73,9 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 		}
 	});
 
-	const gradientColors: string[] = [
-		tamaguiConfig.tokens.color.backgroundGradientStart.val,
-		tamaguiConfig.tokens.color.backgroundGradientMiddle.val,
-		tamaguiConfig.tokens.color.backgroundGradientEnd.val,
-	];
-
 	return (
-		<LinearGradient
-			colors={gradientColors}
-			start={[0, 1]}
-			end={[1, 1]}
+		<View
+			bg={"$color.background"}
 			flex={1}
 			justifyContent="center"
 			alignItems="center"
@@ -115,7 +107,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 				</Animated.View>
 			)}
 			{children}
-		</LinearGradient>
+		</View>
 	);
 };
 

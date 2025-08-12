@@ -85,7 +85,7 @@ const SongDetailScreen: React.FC = () => {
 				<SongTrack />
 				<Player
 					showCover={false}
-					styleContainer={{ position: "relative" }}
+					styleContainer={{ position: "relative", bottom: 0 }}
 					isBlurred={false}
 				/>
 			</YStack>

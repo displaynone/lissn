@@ -1,3 +1,4 @@
+import { tamaguiConfig } from "@/tamagui.config";
 import { IconProps } from "@/utils/types";
 import Svg, {
 	Defs,
@@ -6,12 +7,10 @@ import Svg, {
 	LinearGradient,
 	Path,
 	Rect,
-	Stop
+	Stop,
 } from "react-native-svg";
 
-const MissingCoverIcon: React.FC<IconProps> = ({
-	size = 24,
-}) => {
+const MissingCoverIcon: React.FC<IconProps> = ({ size = 24 }) => {
 	return (
 		<Svg width={size} height={size} viewBox="0 0 24 24" fill="none">
 			<Defs>
@@ -23,8 +22,8 @@ const MissingCoverIcon: React.FC<IconProps> = ({
 					y2="18.635"
 					gradientUnits="userSpaceOnUse"
 				>
-					<Stop stopColor="#c3bef4" offset="0" />
-					<Stop stopColor="#657ee1" offset="1" />
+					<Stop stopColor={tamaguiConfig.tokens.color.primary.val} offset="0" />
+					<Stop stopColor={tamaguiConfig.tokens.color.tertiary.val} offset="1" />
 				</LinearGradient>
 				<Filter
 					id="filter2"
@@ -42,7 +41,7 @@ const MissingCoverIcon: React.FC<IconProps> = ({
 				height="23.94"
 				rx="1.3204"
 				ry="1.2254"
-				fill="#020b3a"
+				fill={tamaguiConfig.tokens.color.dark.val}
 				strokeLinecap="round"
 				strokeLinejoin="round"
 				strokeWidth=".11339"

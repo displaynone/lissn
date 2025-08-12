@@ -1,4 +1,4 @@
-import { COVER_SIZE, COVER_STROKE_WIDTH } from "@/constants/generic";
+import { borderBottomGradientColors, borderTopGradientColors, COVER_SIZE, COVER_STROKE_WIDTH } from "@/constants/generic";
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSongAndArtist";
 import { usePlayerProgress } from "@/hooks/usePlayerProgress";
 import {
@@ -9,7 +9,6 @@ import {
 	useGetPlaySong,
 	useGetTooglePauseSong,
 } from "@/store/usePlayerStore";
-import { tamaguiConfig } from "@/tamagui.config";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { BlurView } from "expo-blur";
 import { usePathname, useRouter } from "expo-router";
@@ -59,24 +58,7 @@ const Player: React.FC<PlayerProps> = ({
 
 	if (isLoading || !song) return null;
 
-	const borderTopGradientColors: string[] = [
-		tamaguiConfig.tokens.color.backgroundTransparent02.val,
-		tamaguiConfig.tokens.color.backgroundTransparent05.val,
-		tamaguiConfig.tokens.color.backgroundTransparent30.val,
-		tamaguiConfig.tokens.color.backgroundTransparent10.val,
-		tamaguiConfig.tokens.color.backgroundTransparent05.val,
-		tamaguiConfig.tokens.color.backgroundTransparent02.val,
-	];
-	const borderBottomGradientColors: string[] = [
-		"transparent",
-		"transparent",
-		"transparent",
-		tamaguiConfig.tokens.color.backgroundTransparent02.val,
-		tamaguiConfig.tokens.color.backgroundTransparent05.val,
-		tamaguiConfig.tokens.color.backgroundTransparent10.val,
-		tamaguiConfig.tokens.color.backgroundTransparent02.val,
-		"transparent",
-	];
+
 
 	return (
 		<GestureDetector gesture={panGesture}>

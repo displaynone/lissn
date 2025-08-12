@@ -73,18 +73,18 @@ export default function RootLayout() {
 					<AppContainer>
 						<View style={{ height: insets.top, backgroundColor }} />
 						<StatusBar style="light" translucent />
-                                                <SafeAreaView
-                                                        style={{ flex: 1, width: "100%" }}
-                                                        edges={["left", "right", "bottom"]}
-                                                >
-                                                        <View style={{ flex: 1 }}>
-                                                                <Slot />
-                                                                <BottomNavigation />
-                                                        </View>
-                                                </SafeAreaView>
-                                        </AppContainer>
-                                </GestureHandlerRootView>
-                        </AudioLibraryProvider>
-                </TamaguiProvider>
+						<SafeAreaView
+							style={{ flex: 1, width: "100%" }}
+							edges={["left", "right", "bottom"]}
+						>
+							<View style={{ flex: 1 }}>
+								<Slot />
+								<BottomNavigation />
+							</View>
+						</SafeAreaView>
+					</AppContainer>
+				</GestureHandlerRootView>
+			</AudioLibraryProvider>
+		</TamaguiProvider>
 	);
 }
