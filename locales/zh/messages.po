@@ -15,8 +15,8 @@ msgstr ""
 
 #: components/partials/Heading.tsx:16
 msgid "Favorites"
-msgstr ""
+msgstr "收藏夹"
 
 #: components/partials/Heading.tsx:14
 msgid "Songs"
-msgstr ""
+msgstr "歌曲"
