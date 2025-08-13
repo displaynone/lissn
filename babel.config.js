@@ -15,6 +15,7 @@ module.exports = function (api) {
 				},
 			],
 
+			"@lingui/babel-plugin-lingui-macro",
 			// NOTE: this is only necessary if you are using reanimated for animations
 			"react-native-reanimated/plugin",
 		],

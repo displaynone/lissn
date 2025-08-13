@@ -1,17 +1,19 @@
+import { useLingui } from "@lingui/react/macro";
 import { usePathname } from "expo-router";
 import React from "react";
 import { Button, H1, View, XStack } from "tamagui";
 import MenuIcon from "../icons/MenuIcon";
 
 const Heading: React.FC = () => {
+	const { t } = useLingui();
 	const pathname = usePathname();
 
 	const getTitle = () => {
 		switch (pathname) {
 			case "/song":
-				return "Songs";
+				return t`Songs`;
 			case "/playlists/favorites":
-				return "Favorites";
+				return t`Favorites`;
 			default:
 				return "Lissn";
 		}
