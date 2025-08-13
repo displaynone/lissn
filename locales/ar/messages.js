@@ -1,1 +1,1 @@
-/*eslint-disable*/module.exports={messages:JSON.parse("{\"X9kySA\":[\"Favorites\"],\"hGVdRx\":[\"Songs\"]}")};
+/*eslint-disable*/module.exports={messages:JSON.parse("{\"X9kySA\":[\"\u0627\u0644\u0645\u0641\u0636\u0644\u0629\"],\"hGVdRx\":[\"\u0623\u063a\u0627\u0646\u064a\"]}")};
