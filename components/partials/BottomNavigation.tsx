@@ -67,6 +67,12 @@ const BottomNavigation = () => {
 		},
 	];
 
+	const setLeft = (index: number) => {
+		(refs.current[index] as View)?.measure((x) => {
+			left.value = x + 2;
+		});
+	};
+
 	return (
 		<YStack
 			borderTopEndRadius="$3"
@@ -107,14 +113,15 @@ const BottomNavigation = () => {
 						<Button
 							ref={(el) => {
 								refs.current[index] = el;
+								if (index === 2) {
+									setLeft(index);
+								}
 							}}
 							key={index}
 							circular
 							backgroundColor="transparent"
 							onPress={() => {
-								(refs.current[index] as View)?.measure((x) => {
-									left.value = x + 2;
-								});
+								setLeft(index);
 								router.push(button.path);
 							}}
 						>
