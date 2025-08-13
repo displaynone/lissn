@@ -77,6 +77,7 @@ const InterFont = createFont({
 		7: "none",
 	},
 	weight: {
+		1: "100",
 		6: "400",
 		7: "700",
 	},
@@ -85,6 +86,7 @@ const InterFont = createFont({
 		7: "$color",
 	},
 	letterSpacing: {
+		1: 1,
 		5: 2,
 		6: 1,
 		7: 5,
@@ -113,6 +115,8 @@ export const tamaguiConfig = createTamagui({
 	fonts: {
 		...config.fonts,
 		inter: InterFont,
+		heading: InterFont,
+		body: InterFont,
 	},
 	tokens,
 	themes,

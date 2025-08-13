@@ -1,3 +1,4 @@
+import Heading from "@/components/partials/Heading";
 import Player from "@/components/partials/Player";
 import SongItem from "@/components/partials/SongItem";
 import { Song } from "@/models";
@@ -5,7 +6,7 @@ import { useGetSetSongsListScrollPosition, useGetSongsListScrollPosition } from 
 import { useAreSongsLoading, useGetSongs, useRefreshSongs } from "@/store/songsStore";
 import { FlashList } from "@shopify/flash-list";
 import { useCallback, useEffect, useRef } from "react";
-import { Heading, Spinner, Text, View, YStack } from "tamagui";
+import { Spinner, Text, View, YStack } from "tamagui";
 
 export default function SongsScreen() {
 	const songs = useGetSongs();
@@ -63,5 +64,4 @@ export default function SongsScreen() {
 			<Player />
 		</YStack>
 	);
-
 }

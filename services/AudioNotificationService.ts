@@ -64,7 +64,6 @@ type StartNotificationOptions = {
 	isPlaying?: boolean;
 };
 
-// Iniciar notificación (al empezar a reproducir)
 export async function startNotification(
 	song: Song,
 	artist: Artist | null,
@@ -96,7 +95,6 @@ export type UpdateNotificationArgs = {
 	duration?: number | null;
 };
 
-// Actualizar estado (play/pause / metadata / carátula)
 export function updateNotification(args: UpdateNotificationArgs): void {
 	const {
 		title = null,
@@ -108,7 +106,6 @@ export function updateNotification(args: UpdateNotificationArgs): void {
 		duration = null,
 	} = args;
 
-	// Si incluye datos de progreso, usar updateWithProgress
 	if (currentTime !== null || duration !== null) {
 		AudioNotificationModule.updateWithProgress(
 			title,
@@ -120,7 +117,6 @@ export function updateNotification(args: UpdateNotificationArgs): void {
 			duration
 		);
 	} else {
-		// Usar el método original si no hay datos de progreso
 		AudioNotificationModule.update(
 			title,
 			artist,
@@ -131,12 +127,10 @@ export function updateNotification(args: UpdateNotificationArgs): void {
 	}
 }
 
-// Función específica para actualizar solo el progreso
 export function updateNotificationProgress(currentTime: number, duration: number): void {
 	AudioNotificationModule.updateProgress(currentTime, duration);
 }
 
-// Parar servicio (al detener reproducción)
 export function stopNotification(): void {
 	AudioNotificationModule.stop();
 }
@@ -159,56 +153,41 @@ export function wireNotificationEvents({
 	const subs: EmitterSubscription[] = [];
 
 	if (onPlayPause) {
-    console.log('Registering audio-notif-play-pause listener');
     subs.push(
       DeviceEventEmitter.addListener("audio-notif-play-pause", (data) => {
-        console.log('Received audio-notif-play-pause event with data:', data);
         onPlayPause();
       })
 		);
 	}
 	if (onNext) {
-    console.log('Registering audio-notif-next listener');
 		subs.push(DeviceEventEmitter.addListener("audio-notif-next", (data) => {
-      console.log('Received audio-notif-next event with data:', data);
       onNext();
     }));
 	}
 	if (onPrev) {
-    console.log('Registering audio-notif-prev listener');
 		subs.push(DeviceEventEmitter.addListener("audio-notif-prev", (data) => {
-      console.log('Received audio-notif-prev event with data:', data);
       onPrev();
     }));
 	}
 	if (onStop) {
-    console.log('Registering audio-notif-stop listener');
 		subs.push(DeviceEventEmitter.addListener("audio-notif-stop", (data) => {
-      console.log('Received audio-notif-stop event with data:', data);
       onStop();
     }));
 	}
 	if (onSeekTo) {
-    console.log('Registering audio-notif-seek-to listener');
 		subs.push(DeviceEventEmitter.addListener("audio-notif-seek-to", (data) => {
-      console.log('Received audio-notif-seek-to event with data:', data);
       const position = data?.position || 0;
       onSeekTo(position);
     }));
 	}
 
-	// Notificar al servicio nativo que React Native está listo
-	console.log('Notifying native service that React Native is ready');
-	// Pequeño delay para asegurar que todos los listeners estén registrados
 	setTimeout(() => {
-		console.log('Calling AudioNotificationModule.notifyReactNativeReady()');
 		AudioNotificationModule.notifyReactNativeReady();
 	}, 100);
 
 	return () => subs.forEach((s) => s.remove());
 }
 
-// Función adicional para notificar manualmente que RN está listo
 export function notifyReactNativeReady(): void {
 	AudioNotificationModule.notifyReactNativeReady();
 }

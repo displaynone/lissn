@@ -158,7 +158,7 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 
 export const useGetPlayer = () => usePlayerStore((state) => state.player);
 export const useGetPlaySong = () => usePlayerStore((state) => state.playSong);
-export const useGetTooglePauseSong = () =>
+export const useGetTogglePauseSong = () =>
 	usePlayerStore((state) => state.togglePause);
 export const useGetStopSong = () => usePlayerStore((state) => state.stop);
 export const useGetSeekToSong = () => usePlayerStore((state) => state.seekTo);

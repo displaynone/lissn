@@ -1,13 +1,14 @@
 import { borderBottomGradientColors, borderTopGradientColors, COVER_SIZE, COVER_STROKE_WIDTH } from "@/constants/generic";
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSongAndArtist";
 import { usePlayerProgress } from "@/hooks/usePlayerProgress";
+import { useGetToggleFavorite } from "@/store/songsStore";
 import {
 	useGetIsPausedSong,
 	useGetIsStoppedSong,
 	useGetPlayNextSong,
 	useGetPlayPreviousSong,
 	useGetPlaySong,
-	useGetTooglePauseSong,
+	useGetTogglePauseSong,
 } from "@/store/usePlayerStore";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { BlurView } from "expo-blur";
@@ -16,6 +17,7 @@ import { Pressable, StyleSheet, ViewStyle } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, { runOnJS } from "react-native-reanimated";
 import { Button, useWindowDimensions, View, XStack } from "tamagui";
+import FavoriteIcon from "../icons/FavoriteIcon";
 import NextIcon from "../icons/NextIcon";
 import PauseIcon from "../icons/PauseIcon";
 import PlayIcon from "../icons/PlayIcon";
@@ -37,7 +39,7 @@ const Player: React.FC<PlayerProps> = ({
 	const { song, isLoading } = useGetPlayingSongAndArtist();
 	const router = useRouter();
 	const path = usePathname();
-	const togglePause = useGetTooglePauseSong();
+	const togglePause = useGetTogglePauseSong();
 	const play = useGetPlaySong();
 	const playNext = useGetPlayNextSong();
 	const playPrev = useGetPlayPreviousSong();
@@ -45,6 +47,7 @@ const Player: React.FC<PlayerProps> = ({
 	const isStopped = useGetIsStoppedSong();
 	const { progress } = usePlayerProgress();
 	const { height } = useWindowDimensions();
+	const toggleFavorite = useGetToggleFavorite();
 
 	const panGesture = Gesture.Pan()
 		.onUpdate((event) => {
@@ -130,6 +133,13 @@ const Player: React.FC<PlayerProps> = ({
 							onPress={() => playNext()}
 						>
 							<NextIcon color="white" />
+						</Button>
+						<Button
+							circular
+							backgroundColor={"transparent"}
+							onPress={async() => await toggleFavorite(song.id)}
+						>
+							<FavoriteIcon color="white" filled={song.isFavorite} />
 						</Button>
 					</XStack>
 					<LinearGradient

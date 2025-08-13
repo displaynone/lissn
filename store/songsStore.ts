@@ -9,6 +9,7 @@ import { create } from "zustand";
 
 interface MusicStoreState {
 	songs: Song[];
+	favoriteSongs: Song[];
 	artists: Artist[];
 	albums: Album[];
 	isLoading: boolean;
@@ -19,9 +20,12 @@ interface MusicStoreState {
 	recoveryMessage: string | null;
 	playingSongId?: string;
 	page: number;
+	favoritePage: number;
 	allSongsLoaded: boolean;
+	allFavoriteSongsLoaded: boolean;
 
 	refreshSongs: (limit?: number) => Promise<void>;
+	refreshFavoriteSongs: (limit?: number) => Promise<void>;
 	getSongById: (id: string) => Promise<Song | null>;
 	updateSong: (id: string, updates: Partial<Song>) => Promise<void>;
 	toggleFavorite: (id: string) => Promise<void>;
@@ -52,6 +56,7 @@ const DEFAULT_ORDER_COLUMN = "external_id";
 
 export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	songs: [],
+	favoriteSongs: [],
 	artists: [],
 	albums: [],
 	isLoading: true,
@@ -62,7 +67,9 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	recoveryMessage: null,
 	playingSongId: undefined,
 	page: 0,
+	favoritePage: 0,
 	allSongsLoaded: false,
+	allFavoriteSongsLoaded: false,
 
 	refreshSongs: async (limit: number = LIMIT) => {
 		const { songs: loadedSongs, page, allSongsLoaded } = get();
@@ -90,6 +97,40 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 		});
 	},
 
+	refreshFavoriteSongs: async (limit: number = LIMIT) => {
+		const {
+			favoriteSongs: loadedFavoriteSongs,
+			favoritePage,
+			allFavoriteSongsLoaded,
+		} = get();
+
+		if (allFavoriteSongsLoaded) {
+			return;
+		}
+
+		const total = await database
+			.get<Song>("songs")
+			.query(Q.where("is_favorite", true))
+			.fetchCount();
+
+		const songs = await database
+			.get<Song>("songs")
+			.query(
+				Q.where("is_favorite", true),
+				Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc),
+				Q.take(limit),
+				Q.skip(limit * favoritePage)
+			)
+			.fetch();
+		const newSongs = [...loadedFavoriteSongs, ...songs];
+		set({
+			favoriteSongs: newSongs,
+			isLoading: false,
+			favoritePage: favoritePage + 1,
+			allFavoriteSongsLoaded: newSongs.length >= total,
+		});
+	},
+
 	getSongById: async (id) => {
 		try {
 			return await database.get<Song>("songs").find(id);
@@ -108,6 +149,12 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 
 	toggleFavorite: async (id) => {
 		const song = await database.get<Song>("songs").find(id);
+		const { favoriteSongs } = get();
+		if (song.isFavorite) {
+			set({ favoriteSongs: favoriteSongs.filter((song) => song.id !== id) });
+		} else {
+			set({ favoriteSongs: [...favoriteSongs, song] });
+		}
 		await song.toggleFavorite();
 	},
 
@@ -211,7 +258,7 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			const nextSongs = await database
 				.get<Song>("songs")
 				.query(
-					Q.where(DEFAULT_ORDER_COLUMN, Q.lt(currentSong?.externalId || '')),
+					Q.where(DEFAULT_ORDER_COLUMN, Q.lt(currentSong?.externalId || "")),
 					Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc),
 					Q.take(1)
 				)
@@ -235,7 +282,7 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			const nextSongs = await database
 				.get<Song>("songs")
 				.query(
-					Q.where(DEFAULT_ORDER_COLUMN, Q.gt(currentSong?.externalId || '')),
+					Q.where(DEFAULT_ORDER_COLUMN, Q.gt(currentSong?.externalId || "")),
 					Q.sortBy(DEFAULT_ORDER_COLUMN, Q.asc),
 					Q.take(1)
 				)
@@ -250,6 +297,8 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 }));
 
 export const useGetSongs = () => useMusicStore((state) => state.songs);
+export const useGetFavoriteSongs = () =>
+	useMusicStore((state) => state.favoriteSongs);
 export const useGetSongById = (songId: string) =>
 	useMusicStore((state) => state.getSongById(songId));
 export const useGetArtists = () => useMusicStore((state) => state.artists);
@@ -273,3 +322,7 @@ export const useGetPlayingSongId = () =>
 	useMusicStore((state) => state.playingSongId);
 export const useGetSetPlayingSongId = () =>
 	useMusicStore((state) => state.setPlayingSongId);
+export const useGetToggleFavorite = () =>
+	useMusicStore((state) => state.toggleFavorite);
+export const useRefreshFavoriteSongs = () =>
+	useMusicStore((state) => state.refreshFavoriteSongs);

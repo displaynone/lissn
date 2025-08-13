@@ -4,6 +4,7 @@ import { useGetSongDetailPageLoaded } from "@/store/appStore";
 import {
 	useIsSynced,
 	useIsSyncing,
+	useRefreshFavoriteSongs,
 	useRefreshSongs,
 	useStartSync,
 } from "@/store/songsStore";
@@ -28,6 +29,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const isSynced = useIsSynced();
 	const isSyncing = useIsSyncing();
 	const refreshSongs = useRefreshSongs();
+	const refreshFavoriteSongs = useRefreshFavoriteSongs();
 	const { song } = useGetPlayingSongAndArtist();
 	const pathname = usePathname();
 	const { height: windowHeight } = useWindowDimensions();
@@ -51,12 +53,13 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 				try {
 					await startSync();
 					await refreshSongs();
+					await refreshFavoriteSongs();
 				} catch (error) {
 					console.error("Error during sync:", error);
 				}
 			})();
 		}
-	}, [isSynced, isSyncing, startSync, refreshSongs]);
+	}, [isSynced, isSyncing, startSync, refreshSongs, refreshFavoriteSongs]);
 
 	const isDetailedView = pathname === "/song/playing";
 	const showCover = !!song && isDetailedView;
@@ -69,7 +72,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 
 	useEffect(() => {
 		if (showCover && detailPageLoaded) {
-			top.value = withTiming(0, { duration: SHOW_PLAYING_PAGE_SLIDE_TIME  });
+			top.value = withTiming(0, { duration: SHOW_PLAYING_PAGE_SLIDE_TIME });
 		}
 	});
 

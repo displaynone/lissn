@@ -1,14 +1,39 @@
+import { usePathname } from "expo-router";
 import React from "react";
-import { H1, XStack } from "tamagui";
-import LogoIcon from "../icons/LogoIcon";
+import { Button, H1, View, XStack } from "tamagui";
+import MenuIcon from "../icons/MenuIcon";
 
 const Heading: React.FC = () => {
+	const pathname = usePathname();
+
+	const getTitle = () => {
+		switch (pathname) {
+			case "/song":
+				return "Songs";
+			case "/playlists/favorites":
+				return "Favorites";
+			default:
+				return "Lissn";
+		}
+	};
+
 	return (
-		<XStack gap={"$6"} alignItems="center" m={"$2"}>
-			<LogoIcon size={48} />
-			<H1 fontSize={"$5"} fontWeight="700">
-				Lissn
+		<XStack gap={"$6"} ai="center" m={"$2"} jc="space-between">
+			{/* <LogoIcon size={48} /> */}
+			<Button circular backgroundColor={"$backgroundTransparent05"}>
+				<MenuIcon color="white" />
+			</Button>
+			<H1
+				fontSize="$9"
+				fontWeight="$1"
+				f={1}
+				textAlign="center"
+				color="$color.tertiary"
+				letterSpacing="$8"
+			>
+				{getTitle()}
 			</H1>
+			<View w={48}></View>
 		</XStack>
 	);
 };
