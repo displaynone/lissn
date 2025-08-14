@@ -37,37 +37,40 @@ export default function HomeScreen() {
 		return () => clearTimeout(timeout);
 	}, [handleRestoreScroll]);
 
-	if (isLoading || songs.length === 0) {
-		return (
-			<YStack flex={1} justifyContent="center" alignItems="center">
-				<Spinner size="large" color="$blue10" />
-				<Text mt="$4" color="$gray11">
-					{isLoading ? "Loading songs..." : "No songs found"}
-				</Text>
-			</YStack>
-		);
-	}
+	const showLoading = isLoading || songs.length === 0;
+
+	const Loading = (
+		<YStack flex={1} justifyContent="center" alignItems="center">
+			{isLoading && <Spinner size="large" color="$blue10" />}
+			<Text mt="$4" color="$gray11">
+				{isLoading ? "Loading songs..." : "No songs found"}
+			</Text>
+		</YStack>
+	);
 
 	return (
 		<YStack flex={1}>
 			<Heading />
-			<FlashList
-				ref={listRef}
-				data={songs}
-				keyExtractor={(song) => song.id}
-				renderItem={({ item }) => <SongItem song={item} />}
-				ItemSeparatorComponent={() => <View h={12} />}
-				estimatedItemSize={50}
-				ListFooterComponent={<View style={{ height: 40 }} />}
-				showsVerticalScrollIndicator={true}
-				onScroll={(e) =>
-					setSongsListScrollPosition(e.nativeEvent.contentOffset.y)
-				}
-				onEndReachedThreshold={0.5}
-				onEndReached={() => {
-					refreshSongs();
-				}}
-			/>
+			{showLoading && Loading}
+			{!showLoading && (
+				<FlashList
+					ref={listRef}
+					data={songs}
+					keyExtractor={(song) => song.id}
+					renderItem={({ item }) => <SongItem song={item} />}
+					ItemSeparatorComponent={() => <View h={12} />}
+					estimatedItemSize={50}
+					ListFooterComponent={<View style={{ height: 40 }} />}
+					showsVerticalScrollIndicator={true}
+					onScroll={(e) =>
+						setSongsListScrollPosition(e.nativeEvent.contentOffset.y)
+					}
+					onEndReachedThreshold={0.5}
+					onEndReached={() => {
+						refreshSongs();
+					}}
+				/>
+			)}
 			<Player />
 		</YStack>
 	);
