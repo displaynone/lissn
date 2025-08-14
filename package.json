@@ -13,8 +13,8 @@
 		"prebuild": "expo prebuild",
 		"build:eas": "eas build --platform android --profile development",
 		"build:local": "eas build --platform android --profile development --local",
-		"lingui:extract": "lingui extract",
-		"lingui:compile": "lingui compile"
+		"lingui:extract": "npx lingui extract",
+		"lingui:compile": "npx lingui compile"
 	},
 	"dependencies": {
 		"@expo/vector-icons": "^14.1.0",
