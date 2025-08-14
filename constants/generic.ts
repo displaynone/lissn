@@ -4,6 +4,8 @@ import { darken } from "color2k";
 export const COVER_SIZE = 56;
 export const COVER_STROKE_WIDTH = 2;
 export const SHOW_PLAYING_PAGE_SLIDE_TIME = 400;
+export const SHOW_DRAWER_TIME = 300;
+export const GITHUB_PROJECT_URL = 'https://github.com/displaynone/lissn/';
 
 export const borderTopNavigatorGradientColors: string[] = [
 	tamaguiConfig.tokens.color.backgroundTransparent05.val,

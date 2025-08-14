@@ -1,3 +1,4 @@
+import { useGetSetShowDrawer, useGetShowDrawer } from "@/store/appStore";
 import { useGetSearch, useGetSetSearch } from "@/store/songsStore";
 import { tamaguiConfig } from "@/tamagui.config";
 import { debounce } from "@/utils/debounce";
@@ -17,13 +18,15 @@ const Heading: React.FC = () => {
 	const setAppSearch = useGetSetSearch();
 	const [showSearch, setShowSearch] = useState(!!appSearchValue);
 	const [search, setSearch] = useState(appSearchValue);
+	const setShowDrawer = useGetSetShowDrawer();
+	const showDrawer = useGetShowDrawer();
 
 	const debounceSearch = debounce((text: string) => setAppSearch(text), 500);
 
 	const handleSearch = (e: NativeSyntheticEvent<TextInputChangeEventData>) => {
 		setSearch(e.nativeEvent.text);
 		debounceSearch(e.nativeEvent.text);
-	}
+	};
 
 	const getTitle = () => {
 		switch (pathname) {
@@ -39,7 +42,11 @@ const Heading: React.FC = () => {
 	return (
 		<YStack gap={0}>
 			<XStack gap={"$6"} ai="center" m={"$2"} jc="space-between">
-				<Button circular backgroundColor={"transparent"}>
+				<Button
+					circular
+					backgroundColor={"transparent"}
+					onPress={() => setShowDrawer(!showDrawer)}
+				>
 					<MenuIcon color="white" />
 				</Button>
 				<H1
@@ -66,7 +73,11 @@ const Heading: React.FC = () => {
 			</XStack>
 			{showSearch && (
 				<View p="$4">
-					<Input placeholder={t`Search songs`} value={search} onChange={handleSearch}/>
+					<Input
+						placeholder={t`Search songs`}
+						value={search}
+						onChange={handleSearch}
+					/>
 				</View>
 			)}
 		</YStack>

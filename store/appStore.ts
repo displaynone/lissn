@@ -4,16 +4,19 @@ interface AppState {
 	songsListScrollPosition: number;
 	songsFavoriteListScrollPosition: number;
 	songDetailPageLoaded: boolean;
+	showDrawer: boolean;
 
 	setSongsListScrollPosition: (position: number) => void;
 	setSongsFavoriteListScrollPosition: (position: number) => void;
 	setSongDetailPageLoaded: (loaded: boolean) => void;
+	setShowDrawer: (show: boolean) => void;
 }
 
 export const useApp = create<AppState>((set, get) => ({
 	songsListScrollPosition: 0,
 	songsFavoriteListScrollPosition: 0,
 	songDetailPageLoaded: false,
+	showDrawer: false,
 
 	setSongsListScrollPosition: (id) => {
 		set({ songsListScrollPosition: id });
@@ -23,6 +26,9 @@ export const useApp = create<AppState>((set, get) => ({
 	},
 	setSongDetailPageLoaded: (loaded) => {
 		set({ songDetailPageLoaded: loaded });
+	},
+	setShowDrawer: (show) => {
+		set({showDrawer: show});
 	},
 }));
 
@@ -38,3 +44,5 @@ export const useGetSongDetailPageLoaded = () =>
 	useApp((state) => state.songDetailPageLoaded);
 export const useGetSetSongDetailPageLoaded = () =>
 	useApp((state) => state.setSongDetailPageLoaded);
+export const useGetShowDrawer = () => useApp((state) => state.showDrawer);
+export const useGetSetShowDrawer = () => useApp((state) => state.setShowDrawer);

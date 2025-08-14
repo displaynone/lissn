@@ -1,6 +1,13 @@
-import { SHOW_PLAYING_PAGE_SLIDE_TIME } from "@/constants/generic";
+import {
+	SHOW_DRAWER_TIME,
+	SHOW_PLAYING_PAGE_SLIDE_TIME,
+} from "@/constants/generic";
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSongAndArtist";
-import { useGetSongDetailPageLoaded } from "@/store/appStore";
+import {
+	useGetSetShowDrawer,
+	useGetShowDrawer,
+	useGetSongDetailPageLoaded,
+} from "@/store/appStore";
 import {
 	useIsSynced,
 	useIsSyncing,
@@ -13,14 +20,16 @@ import { BlurView } from "expo-blur";
 import * as NavigationBar from "expo-navigation-bar";
 import { usePathname } from "expo-router";
 import React, { useEffect } from "react";
-import { StyleSheet, useWindowDimensions } from "react-native";
+import { Pressable, StyleSheet, useWindowDimensions } from "react-native";
 import Animated, {
 	useAnimatedStyle,
 	useSharedValue,
 	withTiming,
 } from "react-native-reanimated";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { View } from "tamagui";
 import Cover from "./partials/Cover";
+import DrawerContent from "./partials/DrawerContent";
 
 const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	children,
@@ -32,9 +41,14 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const refreshFavoriteSongs = useRefreshFavoriteSongs();
 	const { song } = useGetPlayingSongAndArtist();
 	const pathname = usePathname();
-	const { height: windowHeight } = useWindowDimensions();
+	const { height: windowHeight, width: windowWidth } = useWindowDimensions();
 	const top = useSharedValue(windowHeight);
+	const drawerWidth = windowWidth * 0.8;
+	const drawerLeft = useSharedValue(-windowWidth);
 	const detailPageLoaded = useGetSongDetailPageLoaded();
+	const showDrawer = useGetShowDrawer();
+	const setShowDrawer = useGetSetShowDrawer();
+	const insets = useSafeAreaInsets();
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -69,11 +83,22 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 			top: top.value,
 		};
 	});
+	const drawerStyle = useAnimatedStyle(() => {
+		return {
+			left: drawerLeft.value,
+		};
+	});
 
 	useEffect(() => {
 		if (showCover && detailPageLoaded) {
 			top.value = withTiming(0, { duration: SHOW_PLAYING_PAGE_SLIDE_TIME });
 		}
+	});
+
+	useEffect(() => {
+		drawerLeft.value = withTiming(showDrawer ? 0 : -windowWidth, {
+			duration: SHOW_DRAWER_TIME,
+		});
 	});
 
 	return (
@@ -84,6 +109,20 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 			alignItems="center"
 			borderRadius="$4"
 		>
+			<Animated.View style={[styles.drawer, drawerStyle]}>
+				<Pressable
+					style={styles.drawerCloser}
+					onPress={() => setShowDrawer(false)}
+				></Pressable>
+				<View
+					w={drawerWidth}
+					paddingTop={insets.top}
+					paddingHorizontal="$3"
+					style={styles.drawerContent}
+				>
+					<DrawerContent />
+				</View>
+			</Animated.View>
 			{showCover && (
 				<Animated.View style={[styles.coverFullScreen, animatedStyle]}>
 					<Cover
@@ -122,6 +161,27 @@ const styles = StyleSheet.create({
 		height: "100%",
 		borderRadius: 0,
 		overflow: "hidden",
+	},
+	drawer: {
+		position: "absolute",
+		height: "100%",
+		zIndex: 100,
+		width: "100%",
+	},
+	drawerCloser: {
+		position: "absolute",
+		backgroundColor: tamaguiConfig.tokens.color.backgroundDarkTransparent02.val,
+		width: "100%",
+		height: "100%",
+		top: 0,
+		left: 0,
+	},
+	drawerContent: {
+		backgroundColor: tamaguiConfig.tokens.color.dark.val,
+		boxShadow: "10px 0px 20px black",
+		height: "100%",
+		borderTopRightRadius: 24,
+		borderBottomRightRadius: 24
 	},
 });
 export default AppContainer;

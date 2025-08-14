@@ -78,8 +78,10 @@ const InterFont = createFont({
 	},
 	weight: {
 		1: "100",
+		2: "200",
 		6: "400",
 		7: "700",
+		9: "900",
 	},
 	color: {
 		6: "$colorFocus",
