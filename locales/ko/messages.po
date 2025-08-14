@@ -13,14 +13,22 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/partials/Heading.tsx:33
+#: components/partials/Heading.tsx:36
 msgid "Favorites"
 msgstr "즐겨찾기"
 
-#: components/partials/Heading.tsx:69
+#: components/partials/DrawerContent.tsx:41
+msgid "GitHub Project"
+msgstr ""
+
+#: components/partials/Heading.tsx:77
 msgid "Search songs"
 msgstr "노래 검색"
 
-#: components/partials/Heading.tsx:31
+#: components/partials/Heading.tsx:34
 msgid "Songs"
 msgstr "노래"
+
+#: components/partials/DrawerContent.tsx:26
+msgid "Your music app"
+msgstr ""
