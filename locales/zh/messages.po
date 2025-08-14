@@ -19,7 +19,7 @@ msgstr "收藏夹"
 
 #: components/partials/DrawerContent.tsx:41
 msgid "GitHub Project"
-msgstr ""
+msgstr "GitHub 项目"
 
 #: components/partials/Heading.tsx:77
 msgid "Search songs"
@@ -31,4 +31,4 @@ msgstr "歌曲"
 
 #: components/partials/DrawerContent.tsx:26
 msgid "Your music app"
-msgstr ""
+msgstr "你的音乐应用"
