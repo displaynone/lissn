@@ -19,7 +19,7 @@ msgstr "Preferiti"
 
 #: components/partials/Heading.tsx:69
 msgid "Search songs"
-msgstr ""
+msgstr "Cerca canzoni"
 
 #: components/partials/Heading.tsx:31
 msgid "Songs"

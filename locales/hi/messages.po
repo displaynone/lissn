@@ -19,7 +19,7 @@ msgstr "पसंदीदा"
 
 #: components/partials/Heading.tsx:69
 msgid "Search songs"
-msgstr ""
+msgstr "गीत खोजें"
 
 #: components/partials/Heading.tsx:31
 msgid "Songs"

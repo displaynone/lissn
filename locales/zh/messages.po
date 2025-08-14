@@ -19,7 +19,7 @@ msgstr "收藏夹"
 
 #: components/partials/Heading.tsx:69
 msgid "Search songs"
-msgstr ""
+msgstr "搜索歌曲"
 
 #: components/partials/Heading.tsx:31
 msgid "Songs"
