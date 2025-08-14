@@ -1,1 +1,1 @@
-/*eslint-disable*/module.exports={messages:JSON.parse("{\"X9kySA\":[\"お気に入り\"],\"hGVdRx\":[\"曲\"],\"iHPl8l\":[\"曲を検索\"]}")};
+/*eslint-disable*/module.exports={messages:JSON.parse("{\"1NlcMb\":[\"あなたの音楽アプリ\"],\"X9kySA\":[\"お気に入り\"],\"hGVdRx\":[\"曲\"],\"iHPl8l\":[\"曲を検索\"],\"kMmCRr\":[\"GitHub プロジェクト\"]}")};

@@ -1,1 +1,1 @@
-/*eslint-disable*/module.exports={messages:JSON.parse("{\"X9kySA\":[\"पसंदीदा\"],\"hGVdRx\":[\"गीत\"],\"iHPl8l\":[\"गीत खोजें\"]}")};
+/*eslint-disable*/module.exports={messages:JSON.parse("{\"1NlcMb\":[\"आपका संगीत ऐप\"],\"X9kySA\":[\"पसंदीदा\"],\"hGVdRx\":[\"गीत\"],\"iHPl8l\":[\"गीत खोजें\"],\"kMmCRr\":[\"GitHub परियोजना\"]}")};
