@@ -1,1 +1,1 @@
-/*eslint-disable*/module.exports={messages:JSON.parse("{\"X9kySA\":[\"\u6536\u85cf\u5939\"],\"hGVdRx\":[\"\u6b4c\u66f2\"]}")};
+/*eslint-disable*/module.exports={messages:JSON.parse("{\"X9kySA\":[\"收藏夹\"],\"hGVdRx\":[\"歌曲\"],\"iHPl8l\":[\"搜索歌曲\"]}")};

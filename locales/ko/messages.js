@@ -1,1 +1,1 @@
-/*eslint-disable*/module.exports={messages:JSON.parse("{\"X9kySA\":[\"\uc990\uaca8\ucc3e\uae30\"],\"hGVdRx\":[\"\ub178\ub798\"]}")};
+/*eslint-disable*/module.exports={messages:JSON.parse("{\"X9kySA\":[\"즐겨찾기\"],\"hGVdRx\":[\"노래\"],\"iHPl8l\":[\"노래 검색\"]}")};
