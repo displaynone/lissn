@@ -19,7 +19,7 @@ msgstr "お気に入り"
 
 #: components/partials/Heading.tsx:69
 msgid "Search songs"
-msgstr ""
+msgstr "曲を検索"
 
 #: components/partials/Heading.tsx:31
 msgid "Songs"

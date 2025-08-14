@@ -19,7 +19,7 @@ msgstr "Favoris"
 
 #: components/partials/Heading.tsx:69
 msgid "Search songs"
-msgstr ""
+msgstr "Rechercher des chansons"
 
 #: components/partials/Heading.tsx:31
 msgid "Songs"

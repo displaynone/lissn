@@ -19,7 +19,7 @@ msgstr "المفضلة"
 
 #: components/partials/Heading.tsx:69
 msgid "Search songs"
-msgstr ""
+msgstr "ابحث عن الأغاني"
 
 #: components/partials/Heading.tsx:31
 msgid "Songs"
