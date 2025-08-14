@@ -13,10 +13,14 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/partials/Heading.tsx:16
+#: components/partials/Heading.tsx:33
 msgid "Favorites"
 msgstr "Favoriten"
 
-#: components/partials/Heading.tsx:14
+#: components/partials/Heading.tsx:69
+msgid "Search songs"
+msgstr ""
+
+#: components/partials/Heading.tsx:31
 msgid "Songs"
 msgstr "Lieder"
