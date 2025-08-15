@@ -67,6 +67,7 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 			isPlaying: true,
 		};
 		updateNotification(meta);
+		await song.incrementPlayCount();
 	},
 
 	togglePause: async () => {

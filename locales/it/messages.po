@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/partials/Heading.tsx:36
+#: components/partials/Heading.tsx:37
 msgid "Favorites"
 msgstr "Preferiti"
 
@@ -21,11 +21,19 @@ msgstr "Preferiti"
 msgid "GitHub Project"
 msgstr "Progetto GitHub"
 
-#: components/partials/Heading.tsx:77
+#: app/index.tsx:171
+msgid "Last songs"
+msgstr ""
+
+#: app/index.tsx:156
+msgid "Recently played"
+msgstr ""
+
+#: components/partials/Heading.tsx:75
 msgid "Search songs"
 msgstr "Cerca canzoni"
 
-#: components/partials/Heading.tsx:34
+#: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "Canzoni"
 

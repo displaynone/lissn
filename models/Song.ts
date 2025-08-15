@@ -32,13 +32,9 @@ export class Song extends Model {
 
 	async toggleFavorite() {
 		return this.database.write(async () => {
-			try {
-				await this.update((song) => {
-					song.isFavorite = !song.isFavorite;
-				});
-			} catch (e) {
-				console.log(e);
-			}
+			await this.update((song) => {
+				song.isFavorite = !song.isFavorite;
+			});
 		});
 	}
 }

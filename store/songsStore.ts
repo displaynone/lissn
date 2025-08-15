@@ -36,7 +36,7 @@ interface MusicStoreState {
 	getSongsByArtist: (artistId: string) => Promise<Song[]>;
 	getSongsByAlbum: (albumId: string) => Promise<Song[]>;
 	getFavoriteSongs: () => Promise<Song[]>;
-	getRecentlyPlayed: () => Promise<Song[]>;
+	getRecentlyPlayed: (limit?: number) => Promise<Song[]>;
 
 	startSync: () => Promise<void>;
 	clearDatabase: () => Promise<void>;
@@ -197,13 +197,13 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			.fetch();
 	},
 
-	getRecentlyPlayed: async () => {
+	getRecentlyPlayed: async (limit: number = 10) => {
 		return await database
 			.get<Song>("songs")
 			.query(
 				Q.where("last_played_at", Q.notEq(null)),
 				Q.sortBy("last_played_at", Q.desc),
-				Q.take(50)
+				Q.take(limit)
 			)
 			.fetch();
 	},
@@ -339,3 +339,4 @@ export const useRefreshFavoriteSongs = () =>
 	useMusicStore((state) => state.refreshFavoriteSongs);
 export const useGetSearch = () => useMusicStore((state) => state.search);
 export const useGetSetSearch = () => useMusicStore((state) => state.setSearch);
+export const useGetGetRecentlyPlayed = () => useMusicStore((state) => state.getRecentlyPlayed);
