@@ -23,11 +23,11 @@ msgstr "GitHub プロジェクト"
 
 #: app/index.tsx:171
 msgid "Last songs"
-msgstr ""
+msgstr "最新の曲"
 
 #: app/index.tsx:156
 msgid "Recently played"
-msgstr ""
+msgstr "最近再生した曲"
 
 #: components/partials/Heading.tsx:75
 msgid "Search songs"
