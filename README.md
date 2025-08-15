@@ -1,42 +1,42 @@
 # Lissn
 
-Lissn es un reproductor de música local construido con [Expo](https://expo.dev) y React Native. El proyecto indexa la biblioteca de audio del dispositivo, guarda los metadatos en una base de datos y permite reproducir canciones con controles en la notificación del sistema.
+Lissn is a local music player built with [Expo](https://expo.dev) and React Native. The project indexes the device's audio library, stores metadata in a database, and lets you play songs with controls in the system notification.
 
-## Características
+## Features
 
-- 📂 **Sincronización de biblioteca**: escanea el dispositivo y almacena canciones, artistas, álbumes y géneros usando [WatermelonDB](https://nozbe.github.io/WatermelonDB/).
-- 🎧 **Reproducción de audio**: se apoya en `expo-audio` y un servicio nativo para mostrar controles de reproducción en la notificación.
-- 🗃️ **Base de datos local**: todos los metadatos se guardan localmente para consultas rápidas y uso sin conexión.
-- 🧩 **UI multiplataforma**: creada con [Tamagui](https://tamagui.dev) y navegación mediante `expo-router`.
-- 🌍 **Internacionalización**: gestionada con [Lingui](https://lingui.dev).
+- 📂 **Library sync**: scans the device and stores songs, artists, albums, and genres using [WatermelonDB](https://nozbe.github.io/WatermelonDB/).
+- 🎧 **Audio playback**: powered by `expo-audio` and a native service to show playback controls in the notification.
+- 🗃️ **Local database**: all metadata is stored locally for fast queries and offline use.
+- 🧩 **Cross-platform UI**: built with [Tamagui](https://tamagui.dev) and navigation via `expo-router`.
+- 🌍 **Internationalization**: managed with [Lingui](https://lingui.dev).
 
-## Requisitos
+## Requirements
 
-- Node.js y npm
+- Node.js and npm
 - Expo CLI (`npm install -g expo-cli`)
-- Entorno Android o iOS configurado (Android Studio, Xcode, etc.)
+- Android or iOS environment set up (Android Studio, Xcode, etc.)
 
-## Instalación
+## Installation
 
 ```bash
 npm install
 ```
 
-## Ejecutar en modo desarrollo
+## Run in development
 
 ```bash
 npx expo start
 ```
 
-Tras iniciar, puedes abrir la app en:
+After starting, you can open the app in:
 
-- un build de desarrollo (`expo run:android` / `expo run:ios`)
-- un emulador de Android o simulador de iOS
+- a development build (`expo run:android` / `expo run:ios`)
+- an Android emulator or iOS simulator
 - [Expo Go](https://expo.dev/go)
 
-## Sincronizar la biblioteca musical
+## Sync the music library
 
-La clase `MusicLibraryService` solicita permisos y recorre todos los archivos de audio del dispositivo para llenar la base de datos. Puedes iniciar una sincronización desde tu código:
+The `MusicLibraryService` class requests permissions and traverses all audio files on the device to populate the database. You can trigger a sync from your code:
 
 ```ts
 import { MusicLibraryService } from '@/services/MusicLibraryService';
@@ -44,11 +44,10 @@ import { MusicLibraryService } from '@/services/MusicLibraryService';
 await MusicLibraryService.getInstance().syncLibrary();
 ```
 
-## Código nativo
+## Native code
 
-La carpeta `android/app/src/main/java` incluye un módulo nativo (`ExpoMusicLibrary`) escrito en Kotlin. Este módulo es en gran parte una copia de [dev-josias/expo-music-library](https://github.com/dev-josias/expo-music-library); el proyecto original contenía un fallo al asociar los IDs de los álbumes y dicho bug aún no se ha corregido aquí.
+The `android/app/src/main/java` folder includes a native module (`ExpoMusicLibrary`) written in Kotlin. This module is largely copied from [dev-josias/expo-music-library](https://github.com/dev-josias/expo-music-library); the original project had a bug associating album IDs, and that issue remains unresolved here.
 
-## Licencia
+## License
 
-Este proyecto se distribuye con la misma licencia que el repositorio original del que se derivó el módulo Kotlin.
-
+This project is distributed under the same license as the repository from which the Kotlin module was derived.
