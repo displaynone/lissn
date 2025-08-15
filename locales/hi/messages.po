@@ -23,11 +23,11 @@ msgstr "GitHub परियोजना"
 
 #: app/index.tsx:171
 msgid "Last songs"
-msgstr ""
+msgstr "नवीनतम गीत"
 
 #: app/index.tsx:156
 msgid "Recently played"
-msgstr ""
+msgstr "हाल ही में चलाए गए"
 
 #: components/partials/Heading.tsx:75
 msgid "Search songs"
