@@ -1,1 +1,1 @@
-/*eslint-disable*/module.exports={messages:JSON.parse("{\"1NlcMb\":[\"당신의 음악 앱\"],\"X9kySA\":[\"즐겨찾기\"],\"hGVdRx\":[\"노래\"],\"iHPl8l\":[\"노래 검색\"],\"kMmCRr\":[\"GitHub 프로젝트\"]}")};
+/*eslint-disable*/module.exports={messages:JSON.parse("{\"1NlcMb\":[\"당신의 음악 앱\"],\"FQ9M9o\":[\"최신 곡\"],\"X9kySA\":[\"즐겨찾기\"],\"hGVdRx\":[\"노래\"],\"iHPl8l\":[\"노래 검색\"],\"kMmCRr\":[\"GitHub 프로젝트\"],\"ltxYTI\":[\"최근 재생한 곡\"]}")};
