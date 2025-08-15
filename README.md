@@ -1,50 +1,54 @@
-# Welcome to your Expo app 👋
+# Lissn
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Lissn es un reproductor de música local construido con [Expo](https://expo.dev) y React Native. El proyecto indexa la biblioteca de audio del dispositivo, guarda los metadatos en una base de datos y permite reproducir canciones con controles en la notificación del sistema.
 
-## Get started
+## Características
 
-1. Install dependencies
+- 📂 **Sincronización de biblioteca**: escanea el dispositivo y almacena canciones, artistas, álbumes y géneros usando [WatermelonDB](https://nozbe.github.io/WatermelonDB/).
+- 🎧 **Reproducción de audio**: se apoya en `expo-audio` y un servicio nativo para mostrar controles de reproducción en la notificación.
+- 🗃️ **Base de datos local**: todos los metadatos se guardan localmente para consultas rápidas y uso sin conexión.
+- 🧩 **UI multiplataforma**: creada con [Tamagui](https://tamagui.dev) y navegación mediante `expo-router`.
+- 🌍 **Internacionalización**: gestionada con [Lingui](https://lingui.dev).
 
-   ```bash
-   npm install
-   ```
+## Requisitos
 
-2. Start the app
+- Node.js y npm
+- Expo CLI (`npm install -g expo-cli`)
+- Entorno Android o iOS configurado (Android Studio, Xcode, etc.)
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Instalación
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Ejecutar en modo desarrollo
 
-## Learn more
+```bash
+npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Tras iniciar, puedes abrir la app en:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- un build de desarrollo (`expo run:android` / `expo run:ios`)
+- un emulador de Android o simulador de iOS
+- [Expo Go](https://expo.dev/go)
 
-## Join the community
+## Sincronizar la biblioteca musical
 
-Join our community of developers creating universal apps.
+La clase `MusicLibraryService` solicita permisos y recorre todos los archivos de audio del dispositivo para llenar la base de datos. Puedes iniciar una sincronización desde tu código:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```ts
+import { MusicLibraryService } from '@/services/MusicLibraryService';
+
+await MusicLibraryService.getInstance().syncLibrary();
+```
+
+## Código nativo
+
+La carpeta `android/app/src/main/java` incluye un módulo nativo (`ExpoMusicLibrary`) escrito en Kotlin. Este módulo es en gran parte una copia de [dev-josias/expo-music-library](https://github.com/dev-josias/expo-music-library); el proyecto original contenía un fallo al asociar los IDs de los álbumes y dicho bug aún no se ha corregido aquí.
+
+## Licencia
+
+Este proyecto se distribuye con la misma licencia que el repositorio original del que se derivó el módulo Kotlin.
+
