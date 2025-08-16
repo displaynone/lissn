@@ -15,27 +15,27 @@ msgstr ""
 
 #: components/partials/SongInfo.tsx:142
 msgid "Add to favorites"
-msgstr ""
+msgstr "お気に入りに追加"
 
 #: components/partials/SongInfo.tsx:153
 msgid "Add to playlist"
-msgstr ""
+msgstr "プレイリストに追加"
 
 #: components/partials/SongInfo.tsx:114
 msgid "Album"
-msgstr ""
+msgstr "アルバム"
 
 #: components/partials/SongInfo.tsx:110
 msgid "Artist"
-msgstr ""
+msgstr "アーティスト"
 
 #: components/partials/SongInfo.tsx:167
 msgid "Delete song"
-msgstr ""
+msgstr "曲を削除"
 
 #: components/partials/SongInfo.tsx:161
 msgid "Edit details"
-msgstr ""
+msgstr "詳細を編集"
 
 #: components/partials/Heading.tsx:37
 msgid "Favorites"
@@ -51,11 +51,11 @@ msgstr "最新の曲"
 
 #: components/partials/SongInfo.tsx:128
 msgid "Pause song"
-msgstr ""
+msgstr "曲を一時停止"
 
 #: components/partials/SongInfo.tsx:128
 msgid "Play song"
-msgstr ""
+msgstr "曲を再生"
 
 #: app/index.tsx:156
 msgid "Recently played"
@@ -63,7 +63,7 @@ msgstr "最近再生した曲"
 
 #: components/partials/SongInfo.tsx:142
 msgid "Remove from favorites"
-msgstr ""
+msgstr "お気に入りから削除"
 
 #: components/partials/Heading.tsx:75
 msgid "Search songs"
@@ -75,7 +75,7 @@ msgstr "曲"
 
 #: components/partials/SongInfo.tsx:106
 msgid "Tile"
-msgstr ""
+msgstr "タイトル"
 
 #: components/partials/DrawerContent.tsx:26
 msgid "Your music app"

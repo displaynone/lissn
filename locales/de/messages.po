@@ -15,27 +15,27 @@ msgstr ""
 
 #: components/partials/SongInfo.tsx:142
 msgid "Add to favorites"
-msgstr ""
+msgstr "Zu Favoriten hinzufügen"
 
 #: components/partials/SongInfo.tsx:153
 msgid "Add to playlist"
-msgstr ""
+msgstr "Zur Playlist hinzufügen"
 
 #: components/partials/SongInfo.tsx:114
 msgid "Album"
-msgstr ""
+msgstr "Album"
 
 #: components/partials/SongInfo.tsx:110
 msgid "Artist"
-msgstr ""
+msgstr "Künstler"
 
 #: components/partials/SongInfo.tsx:167
 msgid "Delete song"
-msgstr ""
+msgstr "Song löschen"
 
 #: components/partials/SongInfo.tsx:161
 msgid "Edit details"
-msgstr ""
+msgstr "Details bearbeiten"
 
 #: components/partials/Heading.tsx:37
 msgid "Favorites"
@@ -51,11 +51,11 @@ msgstr "Letzte Songs"
 
 #: components/partials/SongInfo.tsx:128
 msgid "Pause song"
-msgstr ""
+msgstr "Song pausieren"
 
 #: components/partials/SongInfo.tsx:128
 msgid "Play song"
-msgstr ""
+msgstr "Song abspielen"
 
 #: app/index.tsx:156
 msgid "Recently played"
@@ -63,7 +63,7 @@ msgstr "Kürzlich gespielt"
 
 #: components/partials/SongInfo.tsx:142
 msgid "Remove from favorites"
-msgstr ""
+msgstr "Aus Favoriten entfernen"
 
 #: components/partials/Heading.tsx:75
 msgid "Search songs"
@@ -75,7 +75,7 @@ msgstr "Lieder"
 
 #: components/partials/SongInfo.tsx:106
 msgid "Tile"
-msgstr ""
+msgstr "Titel"
 
 #: components/partials/DrawerContent.tsx:26
 msgid "Your music app"
