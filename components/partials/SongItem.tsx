@@ -1,5 +1,6 @@
-import { useGetArtistBySong } from "@/hooks/useGetArtistBySong";
+import { useGetArtistAlbumBySong } from "@/hooks/useGetArtistAlbumBySong";
 import { Song } from "@/models";
+import { useGetSetSelectedSong } from "@/store/appStore";
 import { useGetSetPlayingSongId } from "@/store/songsStore";
 import {
 	useGetIsPausedSong,
@@ -7,8 +8,10 @@ import {
 	useGetPlaySong,
 	useGetStopSong,
 } from "@/store/usePlayerStore";
+import { tamaguiConfig } from "@/tamagui.config";
 import { formatSeconds } from "@/utils/formatSeconds";
-import { Text, View, XStack, YStack } from "tamagui";
+import { Button, Text, View, XStack, YStack } from "tamagui";
+import DotsVerticalIcon from "../icons/DotsVerticalIcon";
 import { AutoMarquee } from "../ui/AutoMarquee";
 import LoadingSkeleton from "../ui/LoadingSkeleton";
 import { WaveformFakeVisualizer } from "../ui/WaveformFakeVisualizer";
@@ -21,13 +24,14 @@ type SongItemProps = {
 const COVER_SIZE = 52;
 
 const SongItem: React.FC<SongItemProps> = ({ song }) => {
-	const { artist, isLoading } = useGetArtistBySong(song);
+	const { artist, isLoading } = useGetArtistAlbumBySong(song);
 	const setPlayingSongId = useGetSetPlayingSongId();
 	const stop = useGetStopSong();
 	const play = useGetPlaySong();
 	const playingSongId = useGetPlayingSong();
 	const isPaused = useGetIsPausedSong();
 	const isPlaying = playingSongId?.id === song.id && !isPaused;
+	const setSelectedSong = useGetSetSelectedSong();
 
 	const handlePlay = async () => {
 		if (isPlaying) {
@@ -48,8 +52,7 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 			gap="$4"
 			onPress={handlePlay}
 			marginHorizontal={"$4"}
-			backgroundColor={isPlaying ? "$color.dark" : "$backgroundTransparent02"}
-			padding="$3"
+			backgroundColor={"transparent"}
 			borderRadius="$3"
 		>
 			<View position="relative">
@@ -90,15 +93,23 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 					{artist?.name || "Unknown Artist"}
 				</Text>
 			</YStack>
-			<Text
-				fontFamily="$inter"
-				fontWeight={"400"}
-				fontSize={"$5"}
-				textTransform="uppercase"
-				alignSelf="center"
-			>
-				{formatSeconds(song.duration || 0)}
-			</Text>
+			<XStack ai="center">
+				<Text
+					fontFamily="$inter"
+					fontWeight={"$9"}
+					fontSize={10}
+					textTransform="uppercase"
+					alignSelf="center"
+				>
+					{formatSeconds(song.duration || 0)}
+				</Text>
+				<Button p={0} transparent onPress={() => setSelectedSong(song)}>
+					<DotsVerticalIcon
+						color={tamaguiConfig.tokens.color.backgroundTransparent50.val}
+						size={18}
+					/>
+				</Button>
+			</XStack>
 		</XStack>
 	);
 };

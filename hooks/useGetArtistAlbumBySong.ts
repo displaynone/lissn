@@ -1,11 +1,13 @@
-import { Artist, Song } from "@/models";
+import { Album, Artist, Song } from "@/models";
 import { useMusicStore } from "@/store/songsStore";
 import { useEffect, useState } from "react";
 
-export const useGetArtistBySong = (song: Song) => {
+export const useGetArtistAlbumBySong = (song?: Song) => {
 	const getArtistById = useMusicStore((state) => state.getArtistById);
+	const getAlbumById = useMusicStore((state) => state.getAlbumById);
 
 	const [artist, setArtist] = useState<Artist | null>(null);
+	const [album, setAlbum] = useState<Album | null>(null);
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<Error | null>(null);
 
@@ -21,8 +23,10 @@ export const useGetArtistBySong = (song: Song) => {
 			try {
 				const fetchedArtist = await getArtistById(song.artistId);
 				setArtist(fetchedArtist);
+				const fetchedAlbum = await getAlbumById(song.albumId);
+				setAlbum(fetchedAlbum);
 			} catch (err) {
-				console.error("Error loading artist by song", err);
+				console.error("Error loading artist or album by song", err);
 				setArtist(null);
 				setError(err as Error);
 			} finally {
@@ -31,7 +35,7 @@ export const useGetArtistBySong = (song: Song) => {
 		};
 
 		load();
-	}, [getArtistById, song.artistId]);
+	}, [getAlbumById, getArtistById, song?.albumId, song?.artistId]);
 
-	return { artist, isLoading, error };
+	return { artist, album, isLoading, error };
 };

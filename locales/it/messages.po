@@ -13,6 +13,30 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: components/partials/SongInfo.tsx:142
+msgid "Add to favorites"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:153
+msgid "Add to playlist"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:114
+msgid "Album"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:110
+msgid "Artist"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:167
+msgid "Delete song"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:161
+msgid "Edit details"
+msgstr ""
+
 #: components/partials/Heading.tsx:37
 msgid "Favorites"
 msgstr "Preferiti"
@@ -25,9 +49,21 @@ msgstr "Progetto GitHub"
 msgid "Last songs"
 msgstr "Ultime canzoni"
 
+#: components/partials/SongInfo.tsx:128
+msgid "Pause song"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:128
+msgid "Play song"
+msgstr ""
+
 #: app/index.tsx:156
 msgid "Recently played"
 msgstr "Riprodotte di recente"
+
+#: components/partials/SongInfo.tsx:142
+msgid "Remove from favorites"
+msgstr ""
 
 #: components/partials/Heading.tsx:75
 msgid "Search songs"
@@ -36,6 +72,10 @@ msgstr "Cerca canzoni"
 #: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "Canzoni"
+
+#: components/partials/SongInfo.tsx:106
+msgid "Tile"
+msgstr ""
 
 #: components/partials/DrawerContent.tsx:26
 msgid "Your music app"

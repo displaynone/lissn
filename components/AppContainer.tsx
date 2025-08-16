@@ -30,6 +30,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { View } from "tamagui";
 import Cover from "./partials/Cover";
 import DrawerContent from "./partials/DrawerContent";
+import SongInfo from "./partials/SongInfo";
 
 const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	children,
@@ -149,6 +150,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 				</Animated.View>
 			)}
 			{children}
+			<SongInfo />
 		</View>
 	);
 };

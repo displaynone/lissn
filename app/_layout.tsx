@@ -21,7 +21,7 @@ import {
 	SafeAreaView,
 	useSafeAreaInsets,
 } from "react-native-safe-area-context";
-import { TamaguiProvider } from "tamagui";
+import { PortalProvider, TamaguiProvider } from "tamagui";
 import arCatalog from "../locales/ar/messages.js";
 import deCatalog from "../locales/de/messages.js";
 import enCatalog from "../locales/en/messages.js";
@@ -57,7 +57,10 @@ const catalogs: Record<string, any> = {
 const deviceLanguage = getLocales()[0]?.languageCode ?? "en";
 const activeLocale = catalogs[deviceLanguage] ? deviceLanguage : "en";
 
-i18n.loadAndActivate({ locale: activeLocale, messages: catalogs[activeLocale] });
+i18n.loadAndActivate({
+	locale: activeLocale,
+	messages: catalogs[activeLocale],
+});
 
 export default function RootLayout() {
 	const insets = useSafeAreaInsets();
@@ -101,23 +104,25 @@ export default function RootLayout() {
 	return (
 		<I18nProvider i18n={i18n}>
 			<TamaguiProvider config={tamaguiConfig} defaultTheme="dark">
-				<AudioLibraryProvider>
-					<GestureHandlerRootView style={{ flex: 1 }}>
-						<AppContainer>
-							<View style={{ height: insets.top, backgroundColor }} />
-							<StatusBar style="light" translucent />
-							<SafeAreaView
-								style={{ flex: 1, width: "100%" }}
-								edges={["left", "right", "bottom"]}
-							>
-								<View style={{ flex: 1 }}>
-									<Slot />
-									<BottomNavigation />
-								</View>
-							</SafeAreaView>
-						</AppContainer>
-					</GestureHandlerRootView>
-				</AudioLibraryProvider>
+				<PortalProvider shouldAddRootHost>
+					<AudioLibraryProvider>
+						<GestureHandlerRootView style={{ flex: 1 }}>
+							<AppContainer>
+								<View style={{ height: insets.top, backgroundColor }} />
+								<StatusBar style="light" translucent />
+								<SafeAreaView
+									style={{ flex: 1, width: "100%" }}
+									edges={["left", "right", "bottom"]}
+								>
+									<View style={{ flex: 1 }}>
+										<Slot />
+										<BottomNavigation />
+									</View>
+								</SafeAreaView>
+							</AppContainer>
+						</GestureHandlerRootView>
+					</AudioLibraryProvider>
+				</PortalProvider>
 			</TamaguiProvider>
 		</I18nProvider>
 	);

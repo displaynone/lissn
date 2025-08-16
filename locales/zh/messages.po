@@ -13,6 +13,30 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: components/partials/SongInfo.tsx:142
+msgid "Add to favorites"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:153
+msgid "Add to playlist"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:114
+msgid "Album"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:110
+msgid "Artist"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:167
+msgid "Delete song"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:161
+msgid "Edit details"
+msgstr ""
+
 #: components/partials/Heading.tsx:37
 msgid "Favorites"
 msgstr "收藏夹"
@@ -25,9 +49,21 @@ msgstr "GitHub 项目"
 msgid "Last songs"
 msgstr "最新歌曲"
 
+#: components/partials/SongInfo.tsx:128
+msgid "Pause song"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:128
+msgid "Play song"
+msgstr ""
+
 #: app/index.tsx:156
 msgid "Recently played"
 msgstr "最近播放"
+
+#: components/partials/SongInfo.tsx:142
+msgid "Remove from favorites"
+msgstr ""
 
 #: components/partials/Heading.tsx:75
 msgid "Search songs"
@@ -36,6 +72,10 @@ msgstr "搜索歌曲"
 #: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "歌曲"
+
+#: components/partials/SongInfo.tsx:106
+msgid "Tile"
+msgstr ""
 
 #: components/partials/DrawerContent.tsx:26
 msgid "Your music app"

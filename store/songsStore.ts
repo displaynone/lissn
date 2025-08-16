@@ -44,6 +44,7 @@ interface MusicStoreState {
 
 	refreshArtists: (limit?: number) => Promise<void>;
 	getArtistById: (id: string) => Promise<Artist | null>;
+	getAlbumById: (id: string) => Promise<Album | null>;
 
 	setPlayingSongId: (id?: string) => void;
 	getNextSongById: (id?: string) => Promise<Song | null>;
@@ -245,6 +246,16 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			return artist;
 		} catch (e) {
 			console.error("getArtistById error", e);
+			return null;
+		}
+	},
+
+	getAlbumById: async (id) => {
+		try {
+			const album = await database.get<Album>("albums").find(id);
+			return album;
+		} catch (e) {
+			console.error("getAlbumById error", e);
 			return null;
 		}
 	},

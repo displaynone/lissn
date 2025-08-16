@@ -1,3 +1,4 @@
+import { Song } from "@/models";
 import { create } from "zustand";
 
 interface AppState {
@@ -5,11 +6,13 @@ interface AppState {
 	songsFavoriteListScrollPosition: number;
 	songDetailPageLoaded: boolean;
 	showDrawer: boolean;
+	seletedSong?: Song;
 
 	setSongsListScrollPosition: (position: number) => void;
 	setSongsFavoriteListScrollPosition: (position: number) => void;
 	setSongDetailPageLoaded: (loaded: boolean) => void;
 	setShowDrawer: (show: boolean) => void;
+	setSelectedSong: (song?: Song) => void;
 }
 
 export const useApp = create<AppState>((set, get) => ({
@@ -17,6 +20,7 @@ export const useApp = create<AppState>((set, get) => ({
 	songsFavoriteListScrollPosition: 0,
 	songDetailPageLoaded: false,
 	showDrawer: false,
+	selectedSong: undefined,
 
 	setSongsListScrollPosition: (id) => {
 		set({ songsListScrollPosition: id });
@@ -28,7 +32,10 @@ export const useApp = create<AppState>((set, get) => ({
 		set({ songDetailPageLoaded: loaded });
 	},
 	setShowDrawer: (show) => {
-		set({showDrawer: show});
+		set({ showDrawer: show });
+	},
+	setSelectedSong: (song) => {
+		set({ seletedSong: song });
 	},
 }));
 
@@ -46,3 +53,5 @@ export const useGetSetSongDetailPageLoaded = () =>
 	useApp((state) => state.setSongDetailPageLoaded);
 export const useGetShowDrawer = () => useApp((state) => state.showDrawer);
 export const useGetSetShowDrawer = () => useApp((state) => state.setShowDrawer);
+export const useGetSelectedSong = () => useApp((state) => state.seletedSong);
+export const useGetSetSelectedSong = () => useApp((state) => state.setSelectedSong);

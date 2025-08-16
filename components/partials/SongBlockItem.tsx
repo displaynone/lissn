@@ -1,4 +1,4 @@
-import { useGetArtistBySong } from "@/hooks/useGetArtistBySong";
+import { useGetArtistAlbumBySong } from "@/hooks/useGetArtistAlbumBySong";
 import { Song } from "@/models";
 import { useGetSetPlayingSongId } from "@/store/songsStore";
 import {
@@ -10,7 +10,6 @@ import {
 import { View, YStack } from "tamagui";
 import { AutoMarquee } from "../ui/AutoMarquee";
 import LoadingSkeleton from "../ui/LoadingSkeleton";
-import { WaveformFakeVisualizer } from "../ui/WaveformFakeVisualizer";
 import Cover from "./Cover";
 
 type SongItemProps = {
@@ -20,7 +19,7 @@ type SongItemProps = {
 const COVER_SIZE = 124;
 
 const SongBlockItem: React.FC<SongItemProps> = ({ song }) => {
-	const { isLoading } = useGetArtistBySong(song);
+	const { isLoading } = useGetArtistAlbumBySong(song);
 	const setPlayingSongId = useGetSetPlayingSongId();
 	const stop = useGetStopSong();
 	const play = useGetPlaySong();
@@ -46,25 +45,6 @@ const SongBlockItem: React.FC<SongItemProps> = ({ song }) => {
 		<YStack gap="$2" onPress={handlePlay} borderRadius="$3" w={COVER_SIZE}>
 			<View position="relative">
 				<Cover coverPath={song.coverPath || ""} size={COVER_SIZE} />
-				{isPlaying && (
-					<View
-						ai="center"
-						jc="center"
-						pos={"absolute"}
-						t={0}
-						l={0}
-						w={COVER_SIZE}
-						h={COVER_SIZE}
-						backgroundColor={"$backgroundDarkTransparent40"}
-						borderRadius={8}
-					>
-						<WaveformFakeVisualizer
-							isPlaying={true}
-							barHeight={COVER_SIZE / 3}
-							barWidth={COVER_SIZE / 9}
-						/>
-					</View>
-				)}
 			</View>
 			<AutoMarquee
 				text={song.title}

@@ -58,7 +58,7 @@ export default function SongsScreen() {
 					data={songs}
 					keyExtractor={(song) => song.id}
 					renderItem={({ item }) => <SongItem song={item} />}
-					ItemSeparatorComponent={() => <View h={12} />}
+					ItemSeparatorComponent={() => <View h={18} />}
 					estimatedItemSize={50}
 					ListFooterComponent={<View style={{ height: 40 }} />}
 					showsVerticalScrollIndicator={true}

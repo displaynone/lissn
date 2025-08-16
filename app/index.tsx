@@ -149,9 +149,9 @@ export default function HomeScreen() {
 	return (
 		<YStack flex={1} gap="$2" onLayout={handleOnLayout}>
 			<Heading />
-			<View>
+			<YStack gap="$4">
 				{!loadingRecent && !!recent.length && (
-					<YStack p="$4" gap="$2">
+					<YStack p="$4" gap="$4">
 						<H2>
 							<Trans>Recently played</Trans>
 						</H2>
@@ -167,7 +167,7 @@ export default function HomeScreen() {
 				)}
 
 				<View onLayout={handleSongListLayout}>
-					<H2 paddingHorizontal="$4" paddingBottom="$2">
+					<H2 paddingHorizontal="$4" paddingBottom="$4">
 						<Trans>Last songs</Trans>
 					</H2>
 				</View>
@@ -188,7 +188,7 @@ export default function HomeScreen() {
 							data={songs}
 							keyExtractor={(song) => song.id}
 							renderItem={({ item }) => <SongItem song={item} />}
-							ItemSeparatorComponent={() => <View h={12} />}
+							ItemSeparatorComponent={() => <View h={18} />}
 							estimatedItemSize={50}
 							ListFooterComponent={<View style={{ height: 40 }} />}
 							showsVerticalScrollIndicator={true}
@@ -206,7 +206,7 @@ export default function HomeScreen() {
 						/>
 					</Animated.View>
 				)}
-			</View>
+			</YStack>
 			<Player />
 		</YStack>
 	);
