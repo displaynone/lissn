@@ -13,70 +13,133 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/partials/SongInfo.tsx:142
+#: components/partials/SongInfo.tsx:133
 msgid "Add to favorites"
 msgstr "添加到收藏夹"
 
-#: components/partials/SongInfo.tsx:153
+#: components/partials/SongInfo.tsx:144
 msgid "Add to playlist"
 msgstr "添加到播放列表"
 
-#: components/partials/SongInfo.tsx:114
+#: components/partials/SongInfo.tsx:105
 msgid "Album"
 msgstr "专辑"
 
-#: components/partials/SongInfo.tsx:110
+#: components/partials/SongInfo.tsx:101
 msgid "Artist"
 msgstr "艺术家"
 
-#: components/partials/SongInfo.tsx:167
+#: components/partials/Heading.tsx:39
+msgid "Artists"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:84
+msgid "Artwork URL"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:168
+msgid "Cancel"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:158
 msgid "Delete song"
 msgstr "删除歌曲"
 
-#: components/partials/SongInfo.tsx:161
+#: app/artists/edit/[id].tsx:153
+msgid "Edit artist"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:152
 msgid "Edit details"
 msgstr "编辑详情"
+
+#: app/settings/index.tsx:18
+msgid "Export music database"
+msgstr ""
 
 #: components/partials/Heading.tsx:37
 msgid "Favorites"
 msgstr "收藏夹"
 
-#: components/partials/DrawerContent.tsx:41
+#: components/partials/DrawerContent.tsx:60
 msgid "GitHub Project"
 msgstr "GitHub 项目"
 
-#: app/index.tsx:171
+#: app/settings/index.tsx:25
+msgid "Import music database"
+msgstr ""
+
+#: app/index.tsx:150
 msgid "Last songs"
 msgstr "最新歌曲"
 
-#: components/partials/SongInfo.tsx:128
+#: app/artists/edit/[id].tsx:63
+msgid "Name"
+msgstr ""
+
+#: app/artists/[id].tsx:47
+msgid "No artist found"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:74
+msgid "Nombre del artista"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:31
+msgid "Not valid URL"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:119
 msgid "Pause song"
 msgstr "暂停歌曲"
 
-#: components/partials/SongInfo.tsx:128
+#: components/partials/SongInfo.tsx:119
 msgid "Play song"
 msgstr "播放歌曲"
 
-#: app/index.tsx:156
+#: app/index.tsx:135
 msgid "Recently played"
 msgstr "最近播放"
 
-#: components/partials/SongInfo.tsx:142
+#: components/partials/SongInfo.tsx:133
 msgid "Remove from favorites"
 msgstr "从收藏夹移除"
 
-#: components/partials/Heading.tsx:75
+#: app/artists/edit/[id].tsx:109
+msgid "Save"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:109
+msgid "Saving..."
+msgstr ""
+
+#: components/partials/Heading.tsx:79
 msgid "Search songs"
 msgstr "搜索歌曲"
 
+#: components/partials/DrawerContent.tsx:42
+#: components/partials/Heading.tsx:41
+msgid "Settings"
+msgstr ""
+
+#: app/artists/[id].tsx:83
 #: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "歌曲"
 
-#: components/partials/SongInfo.tsx:106
+#: app/artists/edit/[id].tsx:24
+msgid "The name must have at least 2 characters"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:97
 msgid "Tile"
 msgstr "标题"
 
-#: components/partials/DrawerContent.tsx:26
+#: app/artists/edit/[id].tsx:25
+#: app/artists/edit/[id].tsx:28
+msgid "Too long"
+msgstr ""
+
+#: components/partials/DrawerContent.tsx:34
 msgid "Your music app"
 msgstr "你的音乐应用"

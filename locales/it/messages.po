@@ -13,70 +13,133 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/partials/SongInfo.tsx:142
+#: components/partials/SongInfo.tsx:133
 msgid "Add to favorites"
 msgstr "Aggiungi ai preferiti"
 
-#: components/partials/SongInfo.tsx:153
+#: components/partials/SongInfo.tsx:144
 msgid "Add to playlist"
 msgstr "Aggiungi alla playlist"
 
-#: components/partials/SongInfo.tsx:114
+#: components/partials/SongInfo.tsx:105
 msgid "Album"
 msgstr "Album"
 
-#: components/partials/SongInfo.tsx:110
+#: components/partials/SongInfo.tsx:101
 msgid "Artist"
 msgstr "Artista"
 
-#: components/partials/SongInfo.tsx:167
+#: components/partials/Heading.tsx:39
+msgid "Artists"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:84
+msgid "Artwork URL"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:168
+msgid "Cancel"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:158
 msgid "Delete song"
 msgstr "Elimina canzone"
 
-#: components/partials/SongInfo.tsx:161
+#: app/artists/edit/[id].tsx:153
+msgid "Edit artist"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:152
 msgid "Edit details"
 msgstr "Modifica dettagli"
+
+#: app/settings/index.tsx:18
+msgid "Export music database"
+msgstr ""
 
 #: components/partials/Heading.tsx:37
 msgid "Favorites"
 msgstr "Preferiti"
 
-#: components/partials/DrawerContent.tsx:41
+#: components/partials/DrawerContent.tsx:60
 msgid "GitHub Project"
 msgstr "Progetto GitHub"
 
-#: app/index.tsx:171
+#: app/settings/index.tsx:25
+msgid "Import music database"
+msgstr ""
+
+#: app/index.tsx:150
 msgid "Last songs"
 msgstr "Ultime canzoni"
 
-#: components/partials/SongInfo.tsx:128
+#: app/artists/edit/[id].tsx:63
+msgid "Name"
+msgstr ""
+
+#: app/artists/[id].tsx:47
+msgid "No artist found"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:74
+msgid "Nombre del artista"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:31
+msgid "Not valid URL"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:119
 msgid "Pause song"
 msgstr "Metti in pausa la canzone"
 
-#: components/partials/SongInfo.tsx:128
+#: components/partials/SongInfo.tsx:119
 msgid "Play song"
 msgstr "Riproduci canzone"
 
-#: app/index.tsx:156
+#: app/index.tsx:135
 msgid "Recently played"
 msgstr "Riprodotte di recente"
 
-#: components/partials/SongInfo.tsx:142
+#: components/partials/SongInfo.tsx:133
 msgid "Remove from favorites"
 msgstr "Rimuovi dai preferiti"
 
-#: components/partials/Heading.tsx:75
+#: app/artists/edit/[id].tsx:109
+msgid "Save"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:109
+msgid "Saving..."
+msgstr ""
+
+#: components/partials/Heading.tsx:79
 msgid "Search songs"
 msgstr "Cerca canzoni"
 
+#: components/partials/DrawerContent.tsx:42
+#: components/partials/Heading.tsx:41
+msgid "Settings"
+msgstr ""
+
+#: app/artists/[id].tsx:83
 #: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "Canzoni"
 
-#: components/partials/SongInfo.tsx:106
+#: app/artists/edit/[id].tsx:24
+msgid "The name must have at least 2 characters"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:97
 msgid "Tile"
 msgstr "Titolo"
 
-#: components/partials/DrawerContent.tsx:26
+#: app/artists/edit/[id].tsx:25
+#: app/artists/edit/[id].tsx:28
+msgid "Too long"
+msgstr ""
+
+#: components/partials/DrawerContent.tsx:34
 msgid "Your music app"
 msgstr "La tua app musicale"
