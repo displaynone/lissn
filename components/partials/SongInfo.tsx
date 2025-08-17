@@ -10,13 +10,12 @@ import {
 import { Trans, useLingui } from "@lingui/react/macro";
 import { useEffect, useState } from "react";
 import {
-  ListItem,
   Separator,
   Sheet,
   styled,
   Text,
   XStack,
-  YStack,
+  YStack
 } from "tamagui";
 import EditIcon from "../icons/EditIcon";
 import FavoriteIcon from "../icons/FavoriteIcon";
@@ -24,6 +23,7 @@ import PauseIcon from "../icons/PauseIcon";
 import PlayIcon from "../icons/PlayIcon";
 import PlaylistAddIcon from "../icons/PlaylistAddIcon";
 import TrashIcon from "../icons/TrashIcon";
+import { ActionItem } from "../ui/ActionItem";
 import Cover from "./Cover";
 
 export const Label = styled(Text, {
@@ -38,15 +38,6 @@ export const Value = styled(Text, {
 	fontSize: "$6",
 	fontWeight: "$2",
 	w: "75%",
-});
-
-export const ActionItem = styled(ListItem, {
-	pressTheme: true,
-	ai: "stretch",
-	bg: "$color.backgroundTransparent02",
-	pressStyle: {
-		bg: "$color.backgroundTransparent20",
-	},
 });
 
 const SongInfo: React.FC = () => {
