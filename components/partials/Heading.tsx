@@ -35,6 +35,8 @@ const Heading: React.FC = () => {
 				return t`Songs`;
 			case "/playlists/favorites":
 				return t`Favorites`;
+			case "/artists":
+				return t`Artists`;
 			default:
 				return "Lissn";
 		}

@@ -29,6 +29,7 @@ interface MusicStoreState {
 	refreshFavoriteSongs: (limit?: number) => Promise<void>;
 	getSongById: (id: string) => Promise<Song | null>;
 	updateSong: (id: string, updates: Partial<Song>) => Promise<void>;
+	updateArtist: (id: string, updates: Partial<Artist>) => Promise<void>;
 	toggleFavorite: (id: string) => Promise<void>;
 	incrementPlayCount: (id: string) => Promise<void>;
 
@@ -154,6 +155,13 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 		});
 	},
 
+	updateArtist: async (id, updates) => {
+		await database.write(async () => {
+			const artist = await database.get<Song>("artists").find(id);
+			await artist.update((record) => Object.assign(record, updates));
+		});
+	},
+
 	toggleFavorite: async (id) => {
 		const song = await database.get<Song>("songs").find(id);
 		const { favoriteSongs } = get();
@@ -235,13 +243,16 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	refreshArtists: async (limit: number = 20) => {
 		const artists = await database
 			.get<Artist>("artists")
-			.query(Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc), Q.take(limit))
+			.query(Q.sortBy("name", Q.asc), Q.take(limit))
 			.fetch();
 		set({ artists, isLoading: false });
 	},
 
 	getArtistById: async (id) => {
 		try {
+			if (!id) {
+				return null;
+			}
 			const artist = await database.get<Artist>("artists").find(id);
 			return artist;
 		} catch (e) {
@@ -324,8 +335,8 @@ export const useGetFavoriteSongs = () =>
 export const useGetSongById = (songId: string) =>
 	useMusicStore((state) => state.getSongById(songId));
 export const useGetArtists = () => useMusicStore((state) => state.artists);
-export const useGetArtistById = (artistId: string) =>
-	useMusicStore((state) => state.getArtistById(artistId));
+export const useGetArtistById = () =>
+	useMusicStore((state) => state.getArtistById);
 export const useGetAlbums = () => useMusicStore((state) => state.albums);
 export const useAreSongsLoading = () =>
 	useMusicStore((state) => state.isLoading);
@@ -348,6 +359,13 @@ export const useGetToggleFavorite = () =>
 	useMusicStore((state) => state.toggleFavorite);
 export const useRefreshFavoriteSongs = () =>
 	useMusicStore((state) => state.refreshFavoriteSongs);
+export const useRefreshArtists = () =>
+	useMusicStore((state) => state.refreshArtists);
 export const useGetSearch = () => useMusicStore((state) => state.search);
 export const useGetSetSearch = () => useMusicStore((state) => state.setSearch);
-export const useGetGetRecentlyPlayed = () => useMusicStore((state) => state.getRecentlyPlayed);
+export const useGetGetRecentlyPlayed = () =>
+	useMusicStore((state) => state.getRecentlyPlayed);
+export const useGetGetSongsByArtist = () =>
+	useMusicStore((state) => state.getSongsByArtist);
+export const useGetUpdateArtist = () =>
+	useMusicStore((state) => state.updateArtist);

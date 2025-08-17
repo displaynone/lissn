@@ -37,7 +37,7 @@ const Cover: React.FC<CoverProps> = ({
 
 	return (
 		<View style={[imageStyle]}>
-			{showDefault && isError && (
+			{showDefault && (isError || !coverPath) && (
 				<View
 					style={[
 						StyleSheet.absoluteFillObject,

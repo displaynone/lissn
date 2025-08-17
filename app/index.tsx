@@ -5,10 +5,6 @@ import SongItem from "@/components/partials/SongItem";
 import { H2 } from "@/components/ui/Headings";
 import { Song } from "@/models";
 import {
-	useGetSetSongsListScrollPosition,
-	useGetSongsListScrollPosition,
-} from "@/store/appStore";
-import {
 	useAreSongsLoading,
 	useGetGetRecentlyPlayed,
 	useGetSearch,
@@ -18,7 +14,7 @@ import {
 import { tamaguiConfig } from "@/tamagui.config";
 import { Trans } from "@lingui/react/macro";
 import { FlashList } from "@shopify/flash-list";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import {
 	LayoutChangeEvent,
 	LayoutRectangle,
@@ -38,11 +34,8 @@ export default function HomeScreen() {
 	const { width } = useWindowDimensions();
 	const songs = useGetSongs();
 	const isLoading = useAreSongsLoading();
-	const setSongsListScrollPosition = useGetSetSongsListScrollPosition();
 	const refreshSongs = useRefreshSongs();
 	const search = useGetSearch();
-	const offset = useGetSongsListScrollPosition();
-	const listRef = useRef<FlashList<Song>>(null);
 	const getRecentlyPlayed = useGetGetRecentlyPlayed();
 	const [recent, setRecent] = useState<Song[]>([]);
 	const [loadingRecent, setLoadingRecent] = useState(true);
@@ -99,20 +92,6 @@ export default function HomeScreen() {
 			}
 		}
 	}, [listSongInitialLayout, listSongLayoutVals, layoutHeight, search]);
-
-	const handleRestoreScroll = useCallback(() => {
-		if (listRef.current && offset > 0) {
-			listRef.current.scrollToOffset({ offset, animated: false });
-		}
-	}, [offset]);
-
-	useEffect(() => {
-		const timeout = setTimeout(() => {
-			handleRestoreScroll();
-		}, 500);
-
-		return () => clearTimeout(timeout);
-	}, [handleRestoreScroll]);
 
 	const handleOnLayout = (e: LayoutChangeEvent) => {
 		layoutHeight.value = e.nativeEvent.layout.height;
@@ -184,7 +163,6 @@ export default function HomeScreen() {
 						]}
 					>
 						<FlashList
-							ref={listRef}
 							data={songs}
 							keyExtractor={(song) => song.id}
 							renderItem={({ item }) => <SongItem song={item} />}
@@ -196,9 +174,6 @@ export default function HomeScreen() {
 								width,
 								height: INITIAL_SONGS_HEIGHT,
 							}}
-							onScroll={(e) =>
-								setSongsListScrollPosition(e.nativeEvent.contentOffset.y)
-							}
 							onEndReachedThreshold={0.5}
 							onEndReached={() => {
 								refreshSongs();

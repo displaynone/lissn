@@ -9,8 +9,10 @@ import {
 	useGetSongDetailPageLoaded,
 } from "@/store/appStore";
 import {
+	useGetArtistById,
 	useIsSynced,
 	useIsSyncing,
+	useRefreshArtists,
 	useRefreshFavoriteSongs,
 	useRefreshSongs,
 	useStartSync,
@@ -19,7 +21,7 @@ import { tamaguiConfig } from "@/tamagui.config";
 import { BlurView } from "expo-blur";
 import * as NavigationBar from "expo-navigation-bar";
 import { usePathname } from "expo-router";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Pressable, StyleSheet, useWindowDimensions } from "react-native";
 import Animated, {
 	useAnimatedStyle,
@@ -40,6 +42,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const isSyncing = useIsSyncing();
 	const refreshSongs = useRefreshSongs();
 	const refreshFavoriteSongs = useRefreshFavoriteSongs();
+	const refreshArtists = useRefreshArtists();
 	const { song } = useGetPlayingSongAndArtist();
 	const pathname = usePathname();
 	const { height: windowHeight, width: windowWidth } = useWindowDimensions();
@@ -50,6 +53,10 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const showDrawer = useGetShowDrawer();
 	const setShowDrawer = useGetSetShowDrawer();
 	const insets = useSafeAreaInsets();
+	const getArtistById = useGetArtistById();
+
+	const [artwork, setArtwork] = useState<string>();
+	console.log({ pathname: pathname.split("/") });
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
@@ -69,12 +76,29 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 					await startSync();
 					await refreshSongs();
 					await refreshFavoriteSongs();
+					await refreshArtists(100_000);
 				} catch (error) {
 					console.error("Error during sync:", error);
 				}
 			})();
 		}
-	}, [isSynced, isSyncing, startSync, refreshSongs, refreshFavoriteSongs]);
+	}, [
+		isSynced,
+		isSyncing,
+		startSync,
+		refreshSongs,
+		refreshFavoriteSongs,
+		refreshArtists,
+	]);
+
+	useEffect(() => {
+		const paths = pathname.split("/");
+		if (paths?.[1] === "artists" && paths?.[2] !== 'edit') {
+			getArtistById(paths[2]).then((artist) => setArtwork(artist?.artworkUri));
+		} else {
+			setArtwork(undefined);
+		}
+	}, [getArtistById, pathname]);
 
 	const isDetailedView = pathname === "/song/playing";
 	const showCover = !!song && isDetailedView;
@@ -124,6 +148,15 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 					<DrawerContent />
 				</View>
 			</Animated.View>
+			{artwork && (
+				<Cover
+					coverPath={artwork}
+					size={windowHeight / 3}
+					resizeMode="cover"
+					style={{ width: "100%", position: "absolute", top: 0 }}
+					borderRadius={0}
+				/>
+			)}
 			{showCover && (
 				<Animated.View style={[styles.coverFullScreen, animatedStyle]}>
 					<Cover
@@ -183,7 +216,7 @@ const styles = StyleSheet.create({
 		boxShadow: "10px 0px 20px black",
 		height: "100%",
 		borderTopRightRadius: 24,
-		borderBottomRightRadius: 24
+		borderBottomRightRadius: 24,
 	},
 });
 export default AppContainer;
