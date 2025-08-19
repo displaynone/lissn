@@ -5,11 +5,13 @@ import "react-native-reanimated";
 
 import AppContainer from "@/components/AppContainer";
 import BottomNavigation from "@/components/partials/BottomNavigation";
+import ToastContent from "@/components/ui/ToastContent";
 import { AudioLibraryProvider } from "@/hooks/providers/MediaLibraryProvider";
 import { initPlayerNotificationBridge } from "@/store/usePlayerStore";
 import { tamaguiConfig } from "@/tamagui.config";
 import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
+import { ToastProvider, ToastViewport } from "@tamagui/toast";
 import { setAudioModeAsync } from "expo-audio";
 import { getLocales } from "expo-localization";
 import * as SplashScreen from "expo-splash-screen";
@@ -105,23 +107,32 @@ export default function RootLayout() {
 		<I18nProvider i18n={i18n}>
 			<TamaguiProvider config={tamaguiConfig} defaultTheme="dark">
 				<PortalProvider shouldAddRootHost>
-					<AudioLibraryProvider>
-						<GestureHandlerRootView style={{ flex: 1 }}>
-							<AppContainer>
-								<View style={{ height: insets.top, backgroundColor }} />
-								<StatusBar style="light" translucent />
-								<SafeAreaView
-									style={{ flex: 1, width: "100%" }}
-									edges={["left", "right", "bottom"]}
-								>
-									<View style={{ flex: 1 }}>
-										<Slot />
-										<BottomNavigation />
-									</View>
-								</SafeAreaView>
-							</AppContainer>
-						</GestureHandlerRootView>
-					</AudioLibraryProvider>
+					<ToastProvider burntOptions={{ from: "bottom" }}>
+						<AudioLibraryProvider>
+							<GestureHandlerRootView style={{ flex: 1 }}>
+								<AppContainer>
+									<View style={{ height: insets.top, backgroundColor }} />
+									<StatusBar style="light" translucent />
+									<SafeAreaView
+										style={{ flex: 1, width: "100%" }}
+										edges={["left", "right", "bottom"]}
+									>
+										<View style={{ flex: 1 }}>
+											<Slot />
+											<BottomNavigation />
+											<ToastContent />
+										</View>
+										<ToastViewport
+											flexDirection="column"
+											bottom={30}
+											left={0}
+											right={0}
+										/>
+									</SafeAreaView>
+								</AppContainer>
+							</GestureHandlerRootView>
+						</AudioLibraryProvider>
+					</ToastProvider>
 				</PortalProvider>
 			</TamaguiProvider>
 		</I18nProvider>

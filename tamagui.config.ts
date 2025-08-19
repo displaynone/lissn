@@ -48,7 +48,7 @@ const themes = {
 	light: {
 		...config.themes.light,
 		background: "#000", //tokens.color.background,
-		color: tokens.color.color,
+		color: "#fff",
 		primary: tokens.color.primary,
 	},
 	dark: {

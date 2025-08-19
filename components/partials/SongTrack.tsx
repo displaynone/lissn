@@ -7,7 +7,8 @@ import { Gesture, GestureDetector } from "react-native-gesture-handler";
 
 import { useWindowDimensions } from "react-native";
 import Animated, { runOnJS } from "react-native-reanimated";
-import { Text, XStack, YStack } from "tamagui";
+import { XStack, YStack } from "tamagui";
+import { Text } from "../ui/Text";
 
 const SongTrack: React.FC = () => {
 	const { song, isLoading } = useGetPlayingSongAndArtist();
@@ -17,12 +18,11 @@ const SongTrack: React.FC = () => {
 
 	const waveformWidth = width * 0.8;
 
-const panGesture = Gesture.Tap()
-	.onStart((event) => {
+	const panGesture = Gesture.Tap().onStart((event) => {
 		const touchX = Math.max(0, Math.min(event.x, waveformWidth));
 		const percentage = touchX / waveformWidth;
 		const seekTime = duration * percentage;
-		runOnJS(seekTo)(seekTime);  // <- Llamada segura al JS thread
+		runOnJS(seekTo)(seekTime); // <- Llamada segura al JS thread
 	});
 
 	if (isLoading || !song) {

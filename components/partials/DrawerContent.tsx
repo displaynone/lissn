@@ -3,12 +3,13 @@ import { useGetSetShowDrawer } from "@/store/appStore";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { useRouter } from "expo-router";
 import { Linking } from "react-native";
-import { Button, H1, Text, XStack, YStack } from "tamagui";
+import { Button, H1, XStack, YStack } from "tamagui";
 import packageData from "../../package.json";
 import GithubIcon from "../icons/GithubIcon";
 import Logo from "../icons/Logo";
 import SettingsIcon from "../icons/SettingsIcon";
 import { ActionItem } from "../ui/ActionItem";
+import { Text } from "../ui/Text";
 
 const DrawerContent: React.FC = () => {
 	const { t } = useLingui();
@@ -39,7 +40,7 @@ const DrawerContent: React.FC = () => {
 				<YStack>
 					<ActionItem
 						icon={<SettingsIcon color="white" size={18} />}
-						title={t`Settings`}
+						title={<Text color="$color.tertiary">{t`Settings`}</Text>}
 						onPress={() => {
 							router.push("/settings");
 							setShowDrawer(false);

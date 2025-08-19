@@ -1,4 +1,5 @@
 import { Song } from "@/models";
+import { ToastData } from "@/utils/types";
 import { create } from "zustand";
 
 interface AppState {
@@ -7,12 +8,14 @@ interface AppState {
 	songDetailPageLoaded: boolean;
 	showDrawer: boolean;
 	seletedSong?: Song;
+	toastData?: ToastData;
 
 	setSongsListScrollPosition: (position: number) => void;
 	setSongsFavoriteListScrollPosition: (position: number) => void;
 	setSongDetailPageLoaded: (loaded: boolean) => void;
 	setShowDrawer: (show: boolean) => void;
 	setSelectedSong: (song?: Song) => void;
+	setToastData: (data?: ToastData) => void;
 }
 
 export const useApp = create<AppState>((set, get) => ({
@@ -21,6 +24,7 @@ export const useApp = create<AppState>((set, get) => ({
 	songDetailPageLoaded: false,
 	showDrawer: false,
 	selectedSong: undefined,
+	toastData: undefined,
 
 	setSongsListScrollPosition: (id) => {
 		set({ songsListScrollPosition: id });
@@ -36,6 +40,12 @@ export const useApp = create<AppState>((set, get) => ({
 	},
 	setSelectedSong: (song) => {
 		set({ seletedSong: song });
+	},
+	setToastData: (data) => {
+		set({ toastData: data });
+		setTimeout(() => {
+			set({ toastData: undefined });
+		}, (data?.duration || 3000) + 1000); // +1s for animation
 	},
 }));
 
@@ -55,3 +65,6 @@ export const useGetShowDrawer = () => useApp((state) => state.showDrawer);
 export const useGetSetShowDrawer = () => useApp((state) => state.setShowDrawer);
 export const useGetSelectedSong = () => useApp((state) => state.seletedSong);
 export const useGetSetSelectedSong = () => useApp((state) => state.setSelectedSong);
+export const useGetToastData = () => useApp((state) => state.toastData);
+export const useGetSetToastData = () => useApp((state) => state.setToastData);
+export const setToastData = (data: any) => useApp.getState().setToastData(data);

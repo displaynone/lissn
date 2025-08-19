@@ -56,7 +56,6 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const getArtistById = useGetArtistById();
 
 	const [artwork, setArtwork] = useState<string>();
-	console.log({ pathname: pathname.split("/") });
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {

@@ -3,6 +3,7 @@ import { H1 } from "@/components/ui/Headings";
 import { Input } from "@/components/ui/Input";
 import { Label } from "@/components/ui/Label";
 import { Loading } from "@/components/ui/Loading";
+import { Text } from "@/components/ui/Text";
 import { Artist } from "@/models";
 import { useGetArtistById, useGetUpdateArtist } from "@/store/songsStore";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,7 +12,7 @@ import { Trans, useLingui } from "@lingui/react/macro";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { Button, Form, Text, View, XStack, YStack } from "tamagui";
+import { Button, Form, View, XStack, YStack } from "tamagui";
 import { z } from "zod";
 
 type EditFormProps = {
@@ -106,7 +107,7 @@ const EditForm: React.FC<EditFormProps> = ({ artist }) => {
 
 			<Form.Trigger asChild>
 				<Button disabled={!isValid || isSubmitting} bg="$color.color">
-					{isSubmitting ? t`Saving...` : t`Save`}
+					<Text>{isSubmitting ? t`Saving...` : t`Save`}</Text>
 				</Button>
 			</Form.Trigger>
 		</Form>
@@ -162,7 +163,7 @@ export default function PlaylistsScreen() {
 						bg="$color.backgroundDarkTransparent20"
 						onPress={() => router.back()}
 						marginTop="$4"
-						color="white"
+						color="$color.white"
 					>
 						<Text>
 							<Trans>Cancel</Trans>

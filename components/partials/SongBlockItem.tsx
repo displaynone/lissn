@@ -54,7 +54,7 @@ const SongBlockItem: React.FC<SongItemProps> = ({ song }) => {
 					fontWeight: isPlaying ? "500" : "200",
 					fontSize: 10,
 					textAlign: "center",
-					color: isPlaying ? "$color.primary" : "white",
+					color: isPlaying ? "$color.primary" : "$color.white",
 				}}
 			/>
 		</YStack>

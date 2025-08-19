@@ -10,10 +10,11 @@ import {
 } from "@/store/usePlayerStore";
 import { tamaguiConfig } from "@/tamagui.config";
 import { formatSeconds } from "@/utils/formatSeconds";
-import { Button, Text, View, XStack, YStack } from "tamagui";
+import { Button, View, XStack, YStack } from "tamagui";
 import DotsVerticalIcon from "../icons/DotsVerticalIcon";
 import { AutoMarquee } from "../ui/AutoMarquee";
 import LoadingSkeleton from "../ui/LoadingSkeleton";
+import { Text } from "../ui/Text";
 import { WaveformFakeVisualizer } from "../ui/WaveformFakeVisualizer";
 import Cover from "./Cover";
 

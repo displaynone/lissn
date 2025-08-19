@@ -4,6 +4,7 @@ import Player from "@/components/partials/Player";
 import SongItem from "@/components/partials/SongItem";
 import { H2 } from "@/components/ui/Headings";
 import { Loading } from "@/components/ui/Loading";
+import { Text } from "@/components/ui/Text";
 import { Artist, Song } from "@/models";
 import { useGetArtistById, useGetGetSongsByArtist } from "@/store/songsStore";
 import { Trans } from "@lingui/react/macro";
@@ -12,7 +13,7 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import { useEffect, useState } from "react";
 import { useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Button, Text, View, XStack, YStack } from "tamagui";
+import { Button, View, XStack, YStack } from "tamagui";
 
 export default function PlaylistsScreen() {
 	const { id } = useLocalSearchParams<{ id: string }>();

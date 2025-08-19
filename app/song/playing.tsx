@@ -4,6 +4,7 @@ import Player from "@/components/partials/Player";
 import SongTrack from "@/components/partials/SongTrack";
 import { AutoMarquee } from "@/components/ui/AutoMarquee";
 import { Loading } from "@/components/ui/Loading";
+import { Text } from "@/components/ui/Text";
 import { SHOW_PLAYING_PAGE_SLIDE_TIME } from "@/constants/generic";
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSongAndArtist";
 import { useGetSetSongDetailPageLoaded } from "@/store/appStore";
@@ -15,7 +16,7 @@ import Animated, {
 	useSharedValue,
 	withTiming,
 } from "react-native-reanimated";
-import { Button, Text, View, XStack, YStack } from "tamagui";
+import { Button, View, XStack, YStack } from "tamagui";
 
 const SongDetailScreen: React.FC = () => {
 	const router = useRouter();
@@ -69,7 +70,7 @@ const SongDetailScreen: React.FC = () => {
 						fontFamily: "$inter",
 						fontWeight: "800",
 						fontSize: "$7",
-						textAlign: "center"
+						textAlign: "center",
 					}}
 					text={song.title}
 				/>
