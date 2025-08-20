@@ -1,16 +1,16 @@
 msgid ""
 msgstr ""
+"POT-Creation-Date: 2025-08-14 00:43+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ja\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-14 00:43+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: ja\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: @lingui/cli\n"
 "Plural-Forms: \n"
 
 #: components/partials/SongInfo.tsx:133
@@ -31,19 +31,19 @@ msgstr "アーティスト"
 
 #: components/partials/Heading.tsx:39
 msgid "Artists"
-msgstr "Artists"
+msgstr "アーティスト"
 
 #: app/artists/edit/[id].tsx:85
 msgid "Artwork URL"
-msgstr "Artwork URL"
+msgstr "アートワークのURL"
 
 #: app/artists/edit/[id].tsx:169
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "キャンセル"
 
 #: utils/pickAndImportDB.ts:29
 msgid "Database imported successfully"
-msgstr ""
+msgstr "データベースを正常にインポートしました"
 
 #: components/partials/SongInfo.tsx:158
 msgid "Delete song"
@@ -51,7 +51,7 @@ msgstr "曲を削除"
 
 #: app/artists/edit/[id].tsx:154
 msgid "Edit artist"
-msgstr "Edit artist"
+msgstr "アーティストを編集"
 
 #: components/partials/SongInfo.tsx:152
 msgid "Edit details"
@@ -60,11 +60,11 @@ msgstr "詳細を編集"
 #. js-lingui-explicit-id
 #: utils/pickAndImportDB.ts:36
 msgid "error.importing_db"
-msgstr ""
+msgstr "選択またはインポート中のエラー: {error}"
 
 #: app/settings/index.tsx:19
 msgid "Export music database"
-msgstr "Export music database"
+msgstr "音楽データベースをエクスポート"
 
 #: components/partials/Heading.tsx:37
 msgid "Favorites"
@@ -72,37 +72,37 @@ msgstr "お気に入り"
 
 #: components/partials/DrawerContent.tsx:61
 msgid "GitHub Project"
-msgstr "GitHub プロジェクト"
+msgstr "GitHubプロジェクト"
 
 #: utils/pickAndImportDB.ts:16
 #: utils/pickAndImportDB.ts:28
 #: utils/pickAndImportDB.ts:34
 msgid "Import database"
-msgstr ""
+msgstr "データベースをインポート"
 
 #: app/settings/index.tsx:26
 msgid "Import music database"
-msgstr "Import music database"
+msgstr "音楽データベースをインポート"
 
 #: app/index.tsx:150
 msgid "Last songs"
-msgstr "最新の曲"
+msgstr "最近の曲"
 
 #: app/artists/edit/[id].tsx:64
 msgid "Name"
-msgstr "Name"
+msgstr "名前"
 
 #: app/artists/[id].tsx:48
 msgid "No artist found"
-msgstr "No artist found"
+msgstr "アーティストが見つかりません"
 
 #: app/artists/edit/[id].tsx:75
 msgid "Nombre del artista"
-msgstr "Nombre del artista"
+msgstr "アーティスト名"
 
 #: app/artists/edit/[id].tsx:32
 msgid "Not valid URL"
-msgstr "Not valid URL"
+msgstr "無効なURL"
 
 #: components/partials/SongInfo.tsx:119
 msgid "Pause song"
@@ -122,11 +122,11 @@ msgstr "お気に入りから削除"
 
 #: app/artists/edit/[id].tsx:110
 msgid "Save"
-msgstr "Save"
+msgstr "保存"
 
 #: app/artists/edit/[id].tsx:110
 msgid "Saving..."
-msgstr "Saving..."
+msgstr "保存中..."
 
 #: components/partials/Heading.tsx:79
 msgid "Search songs"
@@ -134,12 +134,12 @@ msgstr "曲を検索"
 
 #: utils/pickAndImportDB.ts:17
 msgid "Selection canceled"
-msgstr ""
+msgstr "選択をキャンセルしました"
 
 #: components/partials/DrawerContent.tsx:43
 #: components/partials/Heading.tsx:41
 msgid "Settings"
-msgstr "Settings"
+msgstr "設定"
 
 #: app/artists/[id].tsx:84
 #: components/partials/Heading.tsx:35
@@ -148,16 +148,16 @@ msgstr "曲"
 
 #: app/artists/edit/[id].tsx:25
 msgid "The name must have at least 2 characters"
-msgstr "The name must have at least 2 characters"
+msgstr "名前は2文字以上である必要があります"
 
 #: components/partials/SongInfo.tsx:97
 msgid "Tile"
-msgstr "タイトル"
+msgstr "タイル"
 
 #: app/artists/edit/[id].tsx:26
 #: app/artists/edit/[id].tsx:29
 msgid "Too long"
-msgstr "Too long"
+msgstr "長すぎます"
 
 #: components/partials/DrawerContent.tsx:35
 msgid "Your music app"
