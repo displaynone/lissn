@@ -33,19 +33,23 @@ msgstr "아티스트"
 msgid "Artists"
 msgstr "Artists"
 
-#: app/artists/edit/[id].tsx:84
+#: app/artists/edit/[id].tsx:85
 msgid "Artwork URL"
 msgstr "Artwork URL"
 
-#: app/artists/edit/[id].tsx:168
+#: app/artists/edit/[id].tsx:169
 msgid "Cancel"
 msgstr "Cancel"
+
+#: utils/pickAndImportDB.ts:29
+msgid "Database imported successfully"
+msgstr ""
 
 #: components/partials/SongInfo.tsx:158
 msgid "Delete song"
 msgstr "노래 삭제"
 
-#: app/artists/edit/[id].tsx:153
+#: app/artists/edit/[id].tsx:154
 msgid "Edit artist"
 msgstr "Edit artist"
 
@@ -53,7 +57,12 @@ msgstr "Edit artist"
 msgid "Edit details"
 msgstr "세부 정보 수정"
 
-#: app/settings/index.tsx:18
+#. js-lingui-explicit-id
+#: utils/pickAndImportDB.ts:36
+msgid "error.importing_db"
+msgstr ""
+
+#: app/settings/index.tsx:19
 msgid "Export music database"
 msgstr "Export music database"
 
@@ -61,11 +70,17 @@ msgstr "Export music database"
 msgid "Favorites"
 msgstr "즐겨찾기"
 
-#: components/partials/DrawerContent.tsx:60
+#: components/partials/DrawerContent.tsx:61
 msgid "GitHub Project"
 msgstr "GitHub 프로젝트"
 
-#: app/settings/index.tsx:25
+#: utils/pickAndImportDB.ts:16
+#: utils/pickAndImportDB.ts:28
+#: utils/pickAndImportDB.ts:34
+msgid "Import database"
+msgstr ""
+
+#: app/settings/index.tsx:26
 msgid "Import music database"
 msgstr "Import music database"
 
@@ -73,19 +88,19 @@ msgstr "Import music database"
 msgid "Last songs"
 msgstr "최신 곡"
 
-#: app/artists/edit/[id].tsx:63
+#: app/artists/edit/[id].tsx:64
 msgid "Name"
 msgstr "Name"
 
-#: app/artists/[id].tsx:47
+#: app/artists/[id].tsx:48
 msgid "No artist found"
 msgstr "No artist found"
 
-#: app/artists/edit/[id].tsx:74
+#: app/artists/edit/[id].tsx:75
 msgid "Nombre del artista"
 msgstr "Nombre del artista"
 
-#: app/artists/edit/[id].tsx:31
+#: app/artists/edit/[id].tsx:32
 msgid "Not valid URL"
 msgstr "Not valid URL"
 
@@ -105,11 +120,11 @@ msgstr "최근 재생한 곡"
 msgid "Remove from favorites"
 msgstr "즐겨찾기에서 제거"
 
-#: app/artists/edit/[id].tsx:109
+#: app/artists/edit/[id].tsx:110
 msgid "Save"
 msgstr "Save"
 
-#: app/artists/edit/[id].tsx:109
+#: app/artists/edit/[id].tsx:110
 msgid "Saving..."
 msgstr "Saving..."
 
@@ -117,15 +132,21 @@ msgstr "Saving..."
 msgid "Search songs"
 msgstr "노래 검색"
 
-#: components/partials/DrawerContent.tsx:42 components/partials/Heading.tsx:41
+#: utils/pickAndImportDB.ts:17
+msgid "Selection canceled"
+msgstr ""
+
+#: components/partials/DrawerContent.tsx:43
+#: components/partials/Heading.tsx:41
 msgid "Settings"
 msgstr "Settings"
 
-#: app/artists/[id].tsx:83 components/partials/Heading.tsx:35
+#: app/artists/[id].tsx:84
+#: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "노래"
 
-#: app/artists/edit/[id].tsx:24
+#: app/artists/edit/[id].tsx:25
 msgid "The name must have at least 2 characters"
 msgstr "The name must have at least 2 characters"
 
@@ -133,10 +154,11 @@ msgstr "The name must have at least 2 characters"
 msgid "Tile"
 msgstr "제목"
 
-#: app/artists/edit/[id].tsx:25 app/artists/edit/[id].tsx:28
+#: app/artists/edit/[id].tsx:26
+#: app/artists/edit/[id].tsx:29
 msgid "Too long"
 msgstr "Too long"
 
-#: components/partials/DrawerContent.tsx:34
+#: components/partials/DrawerContent.tsx:35
 msgid "Your music app"
 msgstr "당신의 음악 앱"

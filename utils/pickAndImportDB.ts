@@ -1,4 +1,5 @@
 import { setToastData } from "@/store/appStore";
+import { i18n } from "@lingui/core";
 import { t } from "@lingui/core/macro";
 import * as DocumentPicker from "expo-document-picker";
 import { importDatabaseJSON } from "./importDB";
@@ -13,7 +14,7 @@ export async function pickAndImportDb() {
 		if (result.canceled) {
 			setToastData({
 				title: t`Import database`,
-				message: "Selection canceled",
+				message: t`Selection canceled`,
 				duration: 3000,
 			});
 			return;
@@ -25,13 +26,20 @@ export async function pickAndImportDb() {
 		await importDatabaseJSON(file.uri, "merge");
 		setToastData({
 			title: t`Import database`,
-			message: "Database imported successfully",
+			message: t`Database imported successfully`,
 			duration: 3000,
 		});
 	} catch (err) {
 		setToastData({
 			title: t`Import database`,
-			message: "Error selecting or importing: " + (err instanceof Error ? err.message : String(err)),
+			message: i18n._(
+				{
+					id: "error.importing_db",
+					message: "Error selecting or importing: {error}",
+					values:{
+						error:(err instanceof Error ? err.message : String(err))
+					}
+				}),
 			duration: 3000,
 		});
 	}
