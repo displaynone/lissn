@@ -1,16 +1,16 @@
 msgid ""
 msgstr ""
+"POT-Creation-Date: 2025-08-14 00:43+0200\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: it\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-14 00:43+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: it\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: @lingui/cli\n"
 "Plural-Forms: \n"
 
 #: components/partials/SongInfo.tsx:133
@@ -31,19 +31,19 @@ msgstr "Artista"
 
 #: components/partials/Heading.tsx:39
 msgid "Artists"
-msgstr "Artists"
+msgstr "Artisti"
 
 #: app/artists/edit/[id].tsx:85
 msgid "Artwork URL"
-msgstr "Artwork URL"
+msgstr "URL della copertina"
 
 #: app/artists/edit/[id].tsx:169
 msgid "Cancel"
-msgstr "Cancel"
+msgstr "Annulla"
 
 #: utils/pickAndImportDB.ts:29
 msgid "Database imported successfully"
-msgstr ""
+msgstr "Database importato con successo"
 
 #: components/partials/SongInfo.tsx:158
 msgid "Delete song"
@@ -51,7 +51,7 @@ msgstr "Elimina canzone"
 
 #: app/artists/edit/[id].tsx:154
 msgid "Edit artist"
-msgstr "Edit artist"
+msgstr "Modifica artista"
 
 #: components/partials/SongInfo.tsx:152
 msgid "Edit details"
@@ -60,11 +60,11 @@ msgstr "Modifica dettagli"
 #. js-lingui-explicit-id
 #: utils/pickAndImportDB.ts:36
 msgid "error.importing_db"
-msgstr ""
+msgstr "Errore nella selezione o importazione: {error}"
 
 #: app/settings/index.tsx:19
 msgid "Export music database"
-msgstr "Export music database"
+msgstr "Esporta database musicale"
 
 #: components/partials/Heading.tsx:37
 msgid "Favorites"
@@ -78,11 +78,11 @@ msgstr "Progetto GitHub"
 #: utils/pickAndImportDB.ts:28
 #: utils/pickAndImportDB.ts:34
 msgid "Import database"
-msgstr ""
+msgstr "Importa database"
 
 #: app/settings/index.tsx:26
 msgid "Import music database"
-msgstr "Import music database"
+msgstr "Importa database musicale"
 
 #: app/index.tsx:150
 msgid "Last songs"
@@ -90,19 +90,19 @@ msgstr "Ultime canzoni"
 
 #: app/artists/edit/[id].tsx:64
 msgid "Name"
-msgstr "Name"
+msgstr "Nome"
 
 #: app/artists/[id].tsx:48
 msgid "No artist found"
-msgstr "No artist found"
+msgstr "Nessun artista trovato"
 
 #: app/artists/edit/[id].tsx:75
 msgid "Nombre del artista"
-msgstr "Nombre del artista"
+msgstr "Nome dell'artista"
 
 #: app/artists/edit/[id].tsx:32
 msgid "Not valid URL"
-msgstr "Not valid URL"
+msgstr "URL non valida"
 
 #: components/partials/SongInfo.tsx:119
 msgid "Pause song"
@@ -122,11 +122,11 @@ msgstr "Rimuovi dai preferiti"
 
 #: app/artists/edit/[id].tsx:110
 msgid "Save"
-msgstr "Save"
+msgstr "Salva"
 
 #: app/artists/edit/[id].tsx:110
 msgid "Saving..."
-msgstr "Saving..."
+msgstr "Salvataggio..."
 
 #: components/partials/Heading.tsx:79
 msgid "Search songs"
@@ -134,12 +134,12 @@ msgstr "Cerca canzoni"
 
 #: utils/pickAndImportDB.ts:17
 msgid "Selection canceled"
-msgstr ""
+msgstr "Selezione annullata"
 
 #: components/partials/DrawerContent.tsx:43
 #: components/partials/Heading.tsx:41
 msgid "Settings"
-msgstr "Settings"
+msgstr "Impostazioni"
 
 #: app/artists/[id].tsx:84
 #: components/partials/Heading.tsx:35
@@ -148,16 +148,16 @@ msgstr "Canzoni"
 
 #: app/artists/edit/[id].tsx:25
 msgid "The name must have at least 2 characters"
-msgstr "The name must have at least 2 characters"
+msgstr "Il nome deve contenere almeno 2 caratteri"
 
 #: components/partials/SongInfo.tsx:97
 msgid "Tile"
-msgstr "Titolo"
+msgstr "Riquadro"
 
 #: app/artists/edit/[id].tsx:26
 #: app/artists/edit/[id].tsx:29
 msgid "Too long"
-msgstr "Too long"
+msgstr "Troppo lungo"
 
 #: components/partials/DrawerContent.tsx:35
 msgid "Your music app"
