@@ -1,4 +1,9 @@
-import { borderBottomGradientColors, borderTopGradientColors, COVER_SIZE, COVER_STROKE_WIDTH } from "@/constants/generic";
+import {
+	borderBottomGradientColors,
+	borderTopGradientColors,
+	COVER_SIZE,
+	COVER_STROKE_WIDTH,
+} from "@/constants/generic";
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSongAndArtist";
 import { usePlayerProgress } from "@/hooks/usePlayerProgress";
 import { useGetToggleFavorite } from "@/store/songsStore";
@@ -60,8 +65,6 @@ const Player: React.FC<PlayerProps> = ({
 		});
 
 	if (isLoading || !song) return null;
-
-
 
 	return (
 		<GestureDetector gesture={panGesture}>
@@ -137,7 +140,7 @@ const Player: React.FC<PlayerProps> = ({
 						<Button
 							circular
 							backgroundColor={"transparent"}
-							onPress={async() => await toggleFavorite(song.id)}
+							onPress={async () => await toggleFavorite(song.id)}
 						>
 							<FavoriteIcon color="white" filled={song.isFavorite} />
 						</Button>

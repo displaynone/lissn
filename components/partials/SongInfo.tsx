@@ -1,22 +1,15 @@
 import { useGetArtistAlbumBySong } from "@/hooks/useGetArtistAlbumBySong";
 import { useGetSelectedSong, useGetSetSelectedSong } from "@/store/appStore";
-import { useGetToggleFavorite } from "@/store/songsStore";
+import { useGetSetPlayingSongId, useGetToggleFavorite } from "@/store/songsStore";
 import {
-  useGetIsPausedSong,
-  useGetPlayingSong,
-  useGetPlaySong,
-  useGetStopSong,
+	useGetIsPausedSong,
+	useGetPlayingSong,
+	useGetPlaySong,
+	useGetStopSong,
 } from "@/store/usePlayerStore";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { useEffect, useState } from "react";
-import {
-  Separator,
-  Sheet,
-  styled,
-  Text,
-  XStack,
-  YStack
-} from "tamagui";
+import { Separator, Sheet, styled, XStack, YStack } from "tamagui";
 import EditIcon from "../icons/EditIcon";
 import FavoriteIcon from "../icons/FavoriteIcon";
 import PauseIcon from "../icons/PauseIcon";
@@ -24,6 +17,7 @@ import PlayIcon from "../icons/PlayIcon";
 import PlaylistAddIcon from "../icons/PlaylistAddIcon";
 import TrashIcon from "../icons/TrashIcon";
 import { ActionItem } from "../ui/ActionItem";
+import { Text } from "../ui/Text";
 import Cover from "./Cover";
 
 export const Label = styled(Text, {
@@ -37,7 +31,8 @@ export const Label = styled(Text, {
 export const Value = styled(Text, {
 	fontSize: "$6",
 	fontWeight: "$2",
-	w: "75%",
+	w: "60%",
+	maxWidth: "100%",
 });
 
 const SongInfo: React.FC = () => {
@@ -46,6 +41,7 @@ const SongInfo: React.FC = () => {
 	const song = useGetSelectedSong();
 	const toggleFavorite = useGetToggleFavorite();
 
+	const setPlayingSongId = useGetSetPlayingSongId();
 	const { artist, album } = useGetArtistAlbumBySong(song);
 	const setSelectedSong = useGetSetSelectedSong();
 	const isPaused = useGetIsPausedSong();
@@ -78,23 +74,23 @@ const SongInfo: React.FC = () => {
 			<Sheet.Overlay
 				animation="lazy"
 				enterStyle={{ opacity: 0 }}
-				exitStyle={{ opacity: 0 }}
+				exitStyle={{ opacity: 0, }}
+				bg="$color.backgroundDarkTransparent40"
 			/>
 
-			{/* <Sheet.Handle /> */}
 			<Sheet.Frame
 				padding="$4"
 				justifyContent="center"
 				alignItems="center"
-				backgroundColor="$color.background"
+				backgroundColor="$color.primar"
 				alignSelf="center"
 			>
 				<YStack gap="$4" maxWidth="100%">
-					<XStack gap="$4">
+					<XStack gap="$4" maxWidth="100%">
 						<Cover coverPath={song?.coverPath || ""} />
-						<XStack flexWrap="wrap" gap={0}>
+						<XStack flexWrap="wrap" gap={0} maxWidth="90%">
 							<Label>
-								<Trans>Tile</Trans>
+								<Trans>Title</Trans>
 							</Label>
 							<Value>{song?.title}</Value>
 							<Label>
@@ -116,12 +112,16 @@ const SongInfo: React.FC = () => {
 									<PlayIcon color="white" size={18} />
 								)
 							}
-							title={isPlayingSong ? t`Pause song` : t`Play song`}
+							title={
+								<Text>{isPlayingSong ? t`Pause song` : t`Play song`}</Text>
+							}
 							onPress={() => {
 								if (isPlayingSong) {
 									stop();
+									setPlayingSongId(undefined);
 								} else if (song) {
 									play(song);
+									setPlayingSongId(song.id);
 								}
 							}}
 						/>
@@ -130,7 +130,9 @@ const SongInfo: React.FC = () => {
 								<FavoriteIcon color="white" filled={isFavorite} size={18} />
 							}
 							title={
-								isFavorite ? t`Remove from favorites` : t`Add to favorites`
+								<Text>
+									{isFavorite ? t`Remove from favorites` : t`Add to favorites`}
+								</Text>
 							}
 							onPress={() => {
 								toggleFavorite(song?.id || "");
@@ -138,24 +140,20 @@ const SongInfo: React.FC = () => {
 							}}
 						/>
 						<ActionItem
-							icon={
-								<PlaylistAddIcon color="white" size={18} />
-							}
-							title={t`Add to playlist`}
+							icon={<PlaylistAddIcon color="white" size={18} />}
+							title={<Text>{t`Add to playlist`}</Text>}
 							onPress={() => {}}
 						/>
 						<Separator borderColor="$color.backgroundTransparent02" />
 						<ActionItem
-							icon={
-								<EditIcon color="white" size={18} />
-							}
-							title={t`Edit details`}
+							icon={<EditIcon color="white" size={18} />}
+							title={<Text>{t`Edit details`}</Text>}
 							onPress={() => {}}
 						/>
 						<ActionItem
 							bg="$red9Light"
 							icon={<TrashIcon color="white" size={18} />}
-							title={t`Delete song`}
+							title={<Text>{t`Delete song`}</Text>}
 							onPress={() => {}}
 						/>
 					</YStack>
