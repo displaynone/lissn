@@ -35,7 +35,7 @@ msgstr "艺术家"
 
 #: app/artists/edit/[id].tsx:176
 msgid "Artists merged"
-msgstr ""
+msgstr "艺术家已合并"
 
 #: app/artists/edit/[id].tsx:103
 msgid "Artwork URL"
@@ -95,19 +95,19 @@ msgstr "最近的歌曲"
 
 #: app/artists/edit/[id].tsx:291
 msgid "Merge"
-msgstr ""
+msgstr "合并"
 
 #: app/artists/edit/[id].tsx:279
 msgid "Merge artists"
-msgstr ""
+msgstr "合并艺术家"
 
 #: app/artists/edit/[id].tsx:268
 msgid "Merge them"
-msgstr ""
+msgstr "合并它们"
 
 #: app/artists/edit/[id].tsx:269
 msgid "Merging..."
-msgstr ""
+msgstr "正在合并..."
 
 #: app/artists/edit/[id].tsx:82
 msgid "Name"
@@ -143,7 +143,7 @@ msgstr "从收藏中移除"
 
 #: app/artists/edit/[id].tsx:234
 msgid "Same artist?"
-msgstr ""
+msgstr "相同的艺术家？"
 
 #: app/artists/edit/[id].tsx:128
 msgid "Save"
@@ -173,7 +173,7 @@ msgstr "歌曲"
 
 #: app/artists/edit/[id].tsx:177
 msgid "The artists have been merged successfully"
-msgstr ""
+msgstr "艺术家已成功合并"
 
 #: app/artists/edit/[id].tsx:43
 msgid "The name must have at least 2 characters"
@@ -181,7 +181,7 @@ msgstr "名称至少需要2个字符"
 
 #: app/artists/edit/[id].tsx:237
 msgid "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
-msgstr ""
+msgstr "这些艺术家共享同一个名字，因为 Android 从 ID3 标签中读取它，你可以在 Lissn 中编辑。"
 
 #: components/partials/SongInfo.tsx:97
 #~ msgid "Tile"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: components/partials/SongInfo.tsx:93
 msgid "Title"
-msgstr ""
+msgstr "标题"
 
 #: app/artists/edit/[id].tsx:44
 #: app/artists/edit/[id].tsx:47

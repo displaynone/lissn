@@ -35,7 +35,7 @@ msgstr "कलाकार"
 
 #: app/artists/edit/[id].tsx:176
 msgid "Artists merged"
-msgstr ""
+msgstr "कलाकारों को जोड़ा गया"
 
 #: app/artists/edit/[id].tsx:103
 msgid "Artwork URL"
@@ -95,19 +95,19 @@ msgstr "आखिरी गीत"
 
 #: app/artists/edit/[id].tsx:291
 msgid "Merge"
-msgstr ""
+msgstr "मिलाएँ"
 
 #: app/artists/edit/[id].tsx:279
 msgid "Merge artists"
-msgstr ""
+msgstr "कलाकारों को मिलाएँ"
 
 #: app/artists/edit/[id].tsx:268
 msgid "Merge them"
-msgstr ""
+msgstr "उन्हें मिलाएँ"
 
 #: app/artists/edit/[id].tsx:269
 msgid "Merging..."
-msgstr ""
+msgstr "मिला रहे हैं..."
 
 #: app/artists/edit/[id].tsx:82
 msgid "Name"
@@ -143,7 +143,7 @@ msgstr "पसंदीदा से हटाएं"
 
 #: app/artists/edit/[id].tsx:234
 msgid "Same artist?"
-msgstr ""
+msgstr "क्या वही कलाकार है?"
 
 #: app/artists/edit/[id].tsx:128
 msgid "Save"
@@ -173,7 +173,7 @@ msgstr "गीत"
 
 #: app/artists/edit/[id].tsx:177
 msgid "The artists have been merged successfully"
-msgstr ""
+msgstr "कलाकारों को सफलतापूर्वक मिला दिया गया है"
 
 #: app/artists/edit/[id].tsx:43
 msgid "The name must have at least 2 characters"
@@ -181,7 +181,7 @@ msgstr "नाम में कम से कम 2 अक्षर होने 
 
 #: app/artists/edit/[id].tsx:237
 msgid "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
-msgstr ""
+msgstr "इन कलाकारों का नाम समान है क्योंकि एंड्रॉइड इसे ID3 टैग्स से पढ़ता है, जिन्हें आप Lissn में संपादित कर सकते हैं."
 
 #: components/partials/SongInfo.tsx:97
 #~ msgid "Tile"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: components/partials/SongInfo.tsx:93
 msgid "Title"
-msgstr ""
+msgstr "शीर्षक"
 
 #: app/artists/edit/[id].tsx:44
 #: app/artists/edit/[id].tsx:47

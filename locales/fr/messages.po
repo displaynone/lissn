@@ -35,7 +35,7 @@ msgstr "Artistes"
 
 #: app/artists/edit/[id].tsx:176
 msgid "Artists merged"
-msgstr ""
+msgstr "Artistes fusionnés"
 
 #: app/artists/edit/[id].tsx:103
 msgid "Artwork URL"
@@ -95,19 +95,19 @@ msgstr "Dernières chansons"
 
 #: app/artists/edit/[id].tsx:291
 msgid "Merge"
-msgstr ""
+msgstr "Fusionner"
 
 #: app/artists/edit/[id].tsx:279
 msgid "Merge artists"
-msgstr ""
+msgstr "Fusionner les artistes"
 
 #: app/artists/edit/[id].tsx:268
 msgid "Merge them"
-msgstr ""
+msgstr "Les fusionner"
 
 #: app/artists/edit/[id].tsx:269
 msgid "Merging..."
-msgstr ""
+msgstr "Fusion en cours..."
 
 #: app/artists/edit/[id].tsx:82
 msgid "Name"
@@ -143,7 +143,7 @@ msgstr "Retirer des favoris"
 
 #: app/artists/edit/[id].tsx:234
 msgid "Same artist?"
-msgstr ""
+msgstr "Même artiste ?"
 
 #: app/artists/edit/[id].tsx:128
 msgid "Save"
@@ -173,7 +173,7 @@ msgstr "Chansons"
 
 #: app/artists/edit/[id].tsx:177
 msgid "The artists have been merged successfully"
-msgstr ""
+msgstr "Les artistes ont été fusionnés avec succès"
 
 #: app/artists/edit/[id].tsx:43
 msgid "The name must have at least 2 characters"
@@ -181,7 +181,7 @@ msgstr "Le nom doit comporter au moins 2 caractères"
 
 #: app/artists/edit/[id].tsx:237
 msgid "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
-msgstr ""
+msgstr "Ces artistes partagent le même nom parce qu'Android le lit à partir des balises ID3, que vous pouvez modifier dans Lissn."
 
 #: components/partials/SongInfo.tsx:97
 #~ msgid "Tile"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: components/partials/SongInfo.tsx:93
 msgid "Title"
-msgstr ""
+msgstr "Titre"
 
 #: app/artists/edit/[id].tsx:44
 #: app/artists/edit/[id].tsx:47

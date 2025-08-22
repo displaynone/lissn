@@ -35,7 +35,7 @@ msgstr "アーティスト"
 
 #: app/artists/edit/[id].tsx:176
 msgid "Artists merged"
-msgstr ""
+msgstr "アーティストを統合しました"
 
 #: app/artists/edit/[id].tsx:103
 msgid "Artwork URL"
@@ -95,19 +95,19 @@ msgstr "最近の曲"
 
 #: app/artists/edit/[id].tsx:291
 msgid "Merge"
-msgstr ""
+msgstr "統合"
 
 #: app/artists/edit/[id].tsx:279
 msgid "Merge artists"
-msgstr ""
+msgstr "アーティストを統合"
 
 #: app/artists/edit/[id].tsx:268
 msgid "Merge them"
-msgstr ""
+msgstr "統合する"
 
 #: app/artists/edit/[id].tsx:269
 msgid "Merging..."
-msgstr ""
+msgstr "統合中..."
 
 #: app/artists/edit/[id].tsx:82
 msgid "Name"
@@ -143,7 +143,7 @@ msgstr "お気に入りから削除"
 
 #: app/artists/edit/[id].tsx:234
 msgid "Same artist?"
-msgstr ""
+msgstr "同じアーティストですか？"
 
 #: app/artists/edit/[id].tsx:128
 msgid "Save"
@@ -173,7 +173,7 @@ msgstr "曲"
 
 #: app/artists/edit/[id].tsx:177
 msgid "The artists have been merged successfully"
-msgstr ""
+msgstr "アーティストは正常に統合されました"
 
 #: app/artists/edit/[id].tsx:43
 msgid "The name must have at least 2 characters"
@@ -181,7 +181,7 @@ msgstr "名前は2文字以上である必要があります"
 
 #: app/artists/edit/[id].tsx:237
 msgid "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
-msgstr ""
+msgstr "これらのアーティストは同じ名前を共有しています。これは Android が ID3 タグから読み取っているためで、Lissn で編集できます。"
 
 #: components/partials/SongInfo.tsx:97
 #~ msgid "Tile"
@@ -189,7 +189,7 @@ msgstr ""
 
 #: components/partials/SongInfo.tsx:93
 msgid "Title"
-msgstr ""
+msgstr "タイトル"
 
 #: app/artists/edit/[id].tsx:44
 #: app/artists/edit/[id].tsx:47
