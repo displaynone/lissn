@@ -9,6 +9,7 @@ export const H1 = styled(TamaguiH1, {
 	color: "$color.tertiary",
 	letterSpacing: "$8",
 });
+
 export const H2 = styled(TamaguiH2, {
 	fontSize: "$6",
 	fontWeight: "$2",

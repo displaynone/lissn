@@ -1,18 +1,36 @@
 import ArrowLeftIcon from "@/components/icons/ArrowLeftIcon";
-import { H1 } from "@/components/ui/Headings";
+import Cover from "@/components/partials/Cover";
+import SheetDialog from "@/components/partials/SheetDialog";
+import { H1, H2 } from "@/components/ui/Headings";
 import { Input } from "@/components/ui/Input";
 import { Label } from "@/components/ui/Label";
 import { Loading } from "@/components/ui/Loading";
 import { Text } from "@/components/ui/Text";
+import useMergeArtists from "@/hooks/useMergeArtists";
 import { Artist } from "@/models";
-import { useGetArtistById, useGetUpdateArtist } from "@/store/songsStore";
+import { useGetSetToastData } from "@/store/appStore";
+import {
+	useGetArtistById,
+	useGetSimilarArtists,
+	useGetUpdateArtist,
+	useRefreshArtists,
+} from "@/store/songsStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/core/macro";
 import { Trans, useLingui } from "@lingui/react/macro";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { Button, Form, View, XStack, YStack } from "tamagui";
+import {
+	Button,
+	Form,
+	ScrollView,
+	Separator,
+	Spinner,
+	View,
+	XStack,
+	YStack,
+} from "tamagui";
 import { z } from "zod";
 
 type EditFormProps = {
@@ -120,6 +138,12 @@ export default function PlaylistsScreen() {
 	const router = useRouter();
 	const [artist, setArtist] = useState<Artist | null>(null);
 	const [loading, setLoading] = useState(true);
+	const [similarArtists, setSimilarArtists] = useState<Artist[]>([]);
+	const getSimilarArtists = useGetSimilarArtists();
+	const { loading: mergeLoading, mergeArtists } = useMergeArtists();
+	const refreshArtists = useRefreshArtists();
+	const [open, setOpen] = useState(false);
+	const setToastData = useGetSetToastData();
 
 	useEffect(() => {
 		if (id) {
@@ -130,47 +154,156 @@ export default function PlaylistsScreen() {
 		}
 	});
 
+	const fetchSimilarArtists = useCallback(async () => {
+		if (artist) {
+			getSimilarArtists(artist).then(setSimilarArtists);
+		}
+	}, [artist, getSimilarArtists]);
+
+	useEffect(() => {
+		if (artist) {
+			fetchSimilarArtists();
+		}
+	}, [artist, fetchSimilarArtists]);
+
+	const handleMerging = () => {
+		if (artist && similarArtists.length > 0) {
+			const otherArtistsIds = similarArtists.map((a) => a.id);
+			mergeArtists(artist.id, otherArtistsIds).then(() => {
+				setOpen(false);
+				setToastData({
+					id: "merge_artists",
+					title: t`Artists merged`,
+					message: t`The artists have been merged successfully`,
+					duration: 3000,
+				});
+				refreshArtists(100_000);
+				fetchSimilarArtists();
+			});
+		}
+	};
+
 	if (loading) {
 		return <Loading />;
 	}
 
 	return (
-		<YStack flex={1} p="$2" gap="$4">
-			<XStack
-				gap={"$6"}
-				ai="center"
-				m={"$2"}
-				marginBottom={0}
-				jc="space-between"
-			>
-				<Button
-					circular
-					backgroundColor={"transparent"}
-					onPress={() => router.back()}
+		<>
+			<YStack flex={1} p="$4" gap="$4">
+				<XStack
+					gap={"$6"}
+					ai="center"
+					m={"$2"}
+					marginBottom={0}
+					jc="space-between"
 				>
-					<ArrowLeftIcon color="white" />
-				</Button>
-				<H1>
-					<Trans>Edit artist</Trans>
-				</H1>
-				<View w={42} />
-			</XStack>
-			<YStack paddingHorizontal="$6">
-				{!artist && <Loading />}
-				{artist && <EditForm artist={artist} />}
-				{artist && (
 					<Button
-						bg="$color.backgroundDarkTransparent20"
+						circular
+						backgroundColor={"transparent"}
 						onPress={() => router.back()}
-						marginTop="$4"
-						color="$color.white"
 					>
-						<Text>
-							<Trans>Cancel</Trans>
-						</Text>
+						<ArrowLeftIcon color="white" />
 					</Button>
-				)}
+					<H1>
+						<Trans>Edit artist</Trans>
+					</H1>
+					<View w={42} />
+				</XStack>
+				<ScrollView>
+					<YStack gap="$4">
+						<YStack paddingHorizontal="$4">
+							{!artist && <Loading />}
+							{artist && <EditForm artist={artist} />}
+							{artist && (
+								<Button
+									bg="$color.backgroundDarkTransparent20"
+									onPress={() => router.back()}
+									marginTop="$4"
+									color="$color.white"
+								>
+									<Text>
+										<Trans>Cancel</Trans>
+									</Text>
+								</Button>
+							)}
+						</YStack>
+						{!!similarArtists.length && (
+							<YStack p="$4" gap="$4">
+								<Separator borderColor={"$backgroundTransparent10"}/>
+								<H2>
+									<Trans>Same artist?</Trans>
+								</H2>
+								<Text>
+									<Trans>
+										These artists share the same name because Android reads it
+										from the ID3 tags, which you can edit in Lissn.
+									</Trans>
+								</Text>
+								<YStack gap="$3">
+									{similarArtists.map((similarArtist) => (
+										<XStack key={similarArtist.id} gap="$4" ai="center">
+											<Cover
+												coverPath={similarArtist.artworkUri || ""}
+												size={36}
+											/>
+											<Text
+												textAlign="center"
+												fontWeight="$1"
+												fontSize="$6"
+												color="$color.tertiary"
+											>
+												{similarArtist.name}
+											</Text>
+										</XStack>
+									))}
+								</YStack>
+
+								<Button
+									chromeless
+									onPress={() => setOpen(true)}
+									icon={mergeLoading ? Spinner : undefined}
+									bg="$backgroundDarkTransparent20"
+								>
+									<Text color="$color.primary">
+										{!mergeLoading && <Trans>Merge them</Trans>}
+										{mergeLoading && <Trans>Merging...</Trans>}
+									</Text>
+								</Button>
+							</YStack>
+						)}
+					</YStack>
+				</ScrollView>
+				<SheetDialog open={open} onOpenChange={(val: boolean) => setOpen(val)}>
+					<YStack gap="$3" p="$4">
+						<H2>
+							<Trans>Merge artists</Trans>
+						</H2>
+					</YStack>
+					<Text>Are you sure you want to merge these artists?</Text>
+					<XStack gap="$4" jc="flex-end" mt="$4">
+						<Button
+							bg="$color.color"
+							onPress={() => handleMerging()}
+							marginTop="$4"
+							color="$color.white"
+						>
+							<Text>
+								<Trans>Merge</Trans>
+							</Text>
+						</Button>
+						<Button
+							bg="$color.backgroundDarkTransparent20"
+							onPress={() => setOpen(false)}
+							marginTop="$4"
+							color="$color.white"
+						>
+							<Text>
+								<Trans>Cancel</Trans>
+							</Text>
+						</Button>
+					</XStack>
+				</SheetDialog>
 			</YStack>
-		</YStack>
+		</>
 	);
 }

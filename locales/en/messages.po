@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/partials/SongInfo.tsx:133
+#: components/partials/SongInfo.tsx:134
 msgid "Add to favorites"
 msgstr "Add to favorites"
 
@@ -21,11 +21,11 @@ msgstr "Add to favorites"
 msgid "Add to playlist"
 msgstr "Add to playlist"
 
-#: components/partials/SongInfo.tsx:105
+#: components/partials/SongInfo.tsx:101
 msgid "Album"
 msgstr "Album"
 
-#: components/partials/SongInfo.tsx:101
+#: components/partials/SongInfo.tsx:97
 msgid "Artist"
 msgstr "Artist"
 
@@ -33,11 +33,16 @@ msgstr "Artist"
 msgid "Artists"
 msgstr "Artists"
 
-#: app/artists/edit/[id].tsx:85
+#: app/artists/edit/[id].tsx:176
+msgid "Artists merged"
+msgstr "Artists merged"
+
+#: app/artists/edit/[id].tsx:103
 msgid "Artwork URL"
 msgstr "Artwork URL"
 
-#: app/artists/edit/[id].tsx:169
+#: app/artists/edit/[id].tsx:225
+#: app/artists/edit/[id].tsx:301
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -45,15 +50,15 @@ msgstr "Cancel"
 msgid "Database imported successfully"
 msgstr "Database imported successfully"
 
-#: components/partials/SongInfo.tsx:158
+#: components/partials/SongInfo.tsx:156
 msgid "Delete song"
 msgstr "Delete song"
 
-#: app/artists/edit/[id].tsx:154
+#: app/artists/edit/[id].tsx:208
 msgid "Edit artist"
 msgstr "Edit artist"
 
-#: components/partials/SongInfo.tsx:152
+#: components/partials/SongInfo.tsx:150
 msgid "Edit details"
 msgstr "Edit details"
 
@@ -88,7 +93,23 @@ msgstr "Import music database"
 msgid "Last songs"
 msgstr "Last songs"
 
-#: app/artists/edit/[id].tsx:64
+#: app/artists/edit/[id].tsx:291
+msgid "Merge"
+msgstr "Merge"
+
+#: app/artists/edit/[id].tsx:279
+msgid "Merge artists"
+msgstr "Merge artists"
+
+#: app/artists/edit/[id].tsx:268
+msgid "Merge them"
+msgstr "Merge them"
+
+#: app/artists/edit/[id].tsx:269
+msgid "Merging..."
+msgstr "Merging..."
+
+#: app/artists/edit/[id].tsx:82
 msgid "Name"
 msgstr "Name"
 
@@ -96,19 +117,19 @@ msgstr "Name"
 msgid "No artist found"
 msgstr "No artist found"
 
-#: app/artists/edit/[id].tsx:75
+#: app/artists/edit/[id].tsx:93
 msgid "Nombre del artista"
 msgstr "Nombre del artista"
 
-#: app/artists/edit/[id].tsx:32
+#: app/artists/edit/[id].tsx:50
 msgid "Not valid URL"
 msgstr "Not valid URL"
 
-#: components/partials/SongInfo.tsx:119
+#: components/partials/SongInfo.tsx:116
 msgid "Pause song"
 msgstr "Pause song"
 
-#: components/partials/SongInfo.tsx:119
+#: components/partials/SongInfo.tsx:116
 msgid "Play song"
 msgstr "Play song"
 
@@ -116,15 +137,19 @@ msgstr "Play song"
 msgid "Recently played"
 msgstr "Recently played"
 
-#: components/partials/SongInfo.tsx:133
+#: components/partials/SongInfo.tsx:134
 msgid "Remove from favorites"
 msgstr "Remove from favorites"
 
-#: app/artists/edit/[id].tsx:110
+#: app/artists/edit/[id].tsx:234
+msgid "Same artist?"
+msgstr "Same artist?"
+
+#: app/artists/edit/[id].tsx:128
 msgid "Save"
 msgstr "Save"
 
-#: app/artists/edit/[id].tsx:110
+#: app/artists/edit/[id].tsx:128
 msgid "Saving..."
 msgstr "Saving..."
 
@@ -141,21 +166,33 @@ msgstr "Selection canceled"
 msgid "Settings"
 msgstr "Settings"
 
-#: app/artists/[id].tsx:84
+#: app/artists/[id].tsx:88
 #: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "Songs"
 
-#: app/artists/edit/[id].tsx:25
+#: app/artists/edit/[id].tsx:177
+msgid "The artists have been merged successfully"
+msgstr "The artists have been merged successfully"
+
+#: app/artists/edit/[id].tsx:43
 msgid "The name must have at least 2 characters"
 msgstr "The name must have at least 2 characters"
 
-#: components/partials/SongInfo.tsx:97
-msgid "Tile"
-msgstr "Tile"
+#: app/artists/edit/[id].tsx:237
+msgid "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
+msgstr "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
 
-#: app/artists/edit/[id].tsx:26
-#: app/artists/edit/[id].tsx:29
+#: components/partials/SongInfo.tsx:97
+#~ msgid "Tile"
+#~ msgstr "Tile"
+
+#: components/partials/SongInfo.tsx:93
+msgid "Title"
+msgstr "Title"
+
+#: app/artists/edit/[id].tsx:44
+#: app/artists/edit/[id].tsx:47
 msgid "Too long"
 msgstr "Too long"
 

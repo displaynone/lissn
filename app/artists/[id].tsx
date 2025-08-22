@@ -52,9 +52,13 @@ export default function PlaylistsScreen() {
 
 	return (
 		<>
-			<View pos="absolute">
-				<Button circular transparent onPress={() => router.back()}>
-					<ArrowLeftIcon color="white" size={18} />
+			<View pos="absolute" p="$4">
+				<Button
+					circular
+					bg="$backgroundDarkTransparent10"
+					onPress={() => router.back()}
+				>
+					<ArrowLeftIcon color="white" size={24} />
 				</Button>
 			</View>
 			<YStack

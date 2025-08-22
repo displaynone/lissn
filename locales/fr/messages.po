@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/partials/SongInfo.tsx:133
+#: components/partials/SongInfo.tsx:134
 msgid "Add to favorites"
 msgstr "Ajouter aux favoris"
 
@@ -21,11 +21,11 @@ msgstr "Ajouter aux favoris"
 msgid "Add to playlist"
 msgstr "Ajouter à la playlist"
 
-#: components/partials/SongInfo.tsx:105
+#: components/partials/SongInfo.tsx:101
 msgid "Album"
 msgstr "Album"
 
-#: components/partials/SongInfo.tsx:101
+#: components/partials/SongInfo.tsx:97
 msgid "Artist"
 msgstr "Artiste"
 
@@ -33,11 +33,16 @@ msgstr "Artiste"
 msgid "Artists"
 msgstr "Artistes"
 
-#: app/artists/edit/[id].tsx:85
+#: app/artists/edit/[id].tsx:176
+msgid "Artists merged"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:103
 msgid "Artwork URL"
 msgstr "URL de l'illustration"
 
-#: app/artists/edit/[id].tsx:169
+#: app/artists/edit/[id].tsx:225
+#: app/artists/edit/[id].tsx:301
 msgid "Cancel"
 msgstr "Annuler"
 
@@ -45,15 +50,15 @@ msgstr "Annuler"
 msgid "Database imported successfully"
 msgstr "Base de données importée avec succès"
 
-#: components/partials/SongInfo.tsx:158
+#: components/partials/SongInfo.tsx:156
 msgid "Delete song"
 msgstr "Supprimer la chanson"
 
-#: app/artists/edit/[id].tsx:154
+#: app/artists/edit/[id].tsx:208
 msgid "Edit artist"
 msgstr "Modifier l'artiste"
 
-#: components/partials/SongInfo.tsx:152
+#: components/partials/SongInfo.tsx:150
 msgid "Edit details"
 msgstr "Modifier les détails"
 
@@ -88,7 +93,23 @@ msgstr "Importer la base de données musicale"
 msgid "Last songs"
 msgstr "Dernières chansons"
 
-#: app/artists/edit/[id].tsx:64
+#: app/artists/edit/[id].tsx:291
+msgid "Merge"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:279
+msgid "Merge artists"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:268
+msgid "Merge them"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:269
+msgid "Merging..."
+msgstr ""
+
+#: app/artists/edit/[id].tsx:82
 msgid "Name"
 msgstr "Nom"
 
@@ -96,19 +117,19 @@ msgstr "Nom"
 msgid "No artist found"
 msgstr "Aucun artiste trouvé"
 
-#: app/artists/edit/[id].tsx:75
+#: app/artists/edit/[id].tsx:93
 msgid "Nombre del artista"
 msgstr "Nom de l'artiste"
 
-#: app/artists/edit/[id].tsx:32
+#: app/artists/edit/[id].tsx:50
 msgid "Not valid URL"
 msgstr "URL non valide"
 
-#: components/partials/SongInfo.tsx:119
+#: components/partials/SongInfo.tsx:116
 msgid "Pause song"
 msgstr "Mettre la chanson en pause"
 
-#: components/partials/SongInfo.tsx:119
+#: components/partials/SongInfo.tsx:116
 msgid "Play song"
 msgstr "Lire la chanson"
 
@@ -116,15 +137,19 @@ msgstr "Lire la chanson"
 msgid "Recently played"
 msgstr "Récemment jouées"
 
-#: components/partials/SongInfo.tsx:133
+#: components/partials/SongInfo.tsx:134
 msgid "Remove from favorites"
 msgstr "Retirer des favoris"
 
-#: app/artists/edit/[id].tsx:110
+#: app/artists/edit/[id].tsx:234
+msgid "Same artist?"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:128
 msgid "Save"
 msgstr "Enregistrer"
 
-#: app/artists/edit/[id].tsx:110
+#: app/artists/edit/[id].tsx:128
 msgid "Saving..."
 msgstr "Enregistrement..."
 
@@ -141,21 +166,33 @@ msgstr "Sélection annulée"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: app/artists/[id].tsx:84
+#: app/artists/[id].tsx:88
 #: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "Chansons"
 
-#: app/artists/edit/[id].tsx:25
+#: app/artists/edit/[id].tsx:177
+msgid "The artists have been merged successfully"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:43
 msgid "The name must have at least 2 characters"
 msgstr "Le nom doit comporter au moins 2 caractères"
 
-#: components/partials/SongInfo.tsx:97
-msgid "Tile"
-msgstr "Vignette"
+#: app/artists/edit/[id].tsx:237
+msgid "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
+msgstr ""
 
-#: app/artists/edit/[id].tsx:26
-#: app/artists/edit/[id].tsx:29
+#: components/partials/SongInfo.tsx:97
+#~ msgid "Tile"
+#~ msgstr "Vignette"
+
+#: components/partials/SongInfo.tsx:93
+msgid "Title"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:44
+#: app/artists/edit/[id].tsx:47
 msgid "Too long"
 msgstr "Trop long"
 

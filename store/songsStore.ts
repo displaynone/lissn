@@ -52,6 +52,12 @@ interface MusicStoreState {
 	getPreviousSongById: (id?: string) => Promise<Song | null>;
 
 	setSearch: (search?: string) => void;
+
+	getSimilarArtists: (artist: Artist) => Promise<Artist[]>;
+	mergeArtists: (
+		targetArtistId: string,
+		otherArtistsIds: string[]
+	) => Promise<void>;
 }
 
 const musicService = MusicLibraryService.getInstance();
@@ -327,6 +333,37 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 		set({ search, page: 0, allSongsLoaded: false, songs: [] });
 		get().refreshSongs();
 	},
+
+	getSimilarArtists: async (artist: Artist) => {
+		const artists = await database
+			.get<Artist>("artists")
+			.query(
+				Q.where("name", Q.like(`%${Q.sanitizeLikeString(artist.name)}%`)),
+				Q.where("id", Q.notEq(artist.id))
+			)
+			.fetch();
+		return artists;
+	},
+
+	mergeArtists: async (targetArtistId: string, otherArtistsIds: string[]) => {
+		await database.write(async () => {
+			const songs = await database
+				.get<Song>("songs")
+				.query(Q.where("artist_id", Q.oneOf(otherArtistsIds)))
+				.fetch();
+			for (const song of songs) {
+				await song.update((s) => {
+					s.artistId = targetArtistId;
+				});
+			}
+			const otherArtists = await database
+				.get<Artist>("artists")
+				.query(Q.where("id", Q.oneOf(otherArtistsIds)));
+			for (const artist of otherArtists) {
+				await artist.markAsDeleted();
+			}
+		});
+	},
 }));
 
 export const useGetSongs = () => useMusicStore((state) => state.songs);
@@ -369,3 +406,7 @@ export const useGetGetSongsByArtist = () =>
 	useMusicStore((state) => state.getSongsByArtist);
 export const useGetUpdateArtist = () =>
 	useMusicStore((state) => state.updateArtist);
+export const useGetSimilarArtists = () =>
+	useMusicStore((state) => state.getSimilarArtists);
+export const useGetMergeArtists = () =>
+	useMusicStore((state) => state.mergeArtists);

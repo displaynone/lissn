@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/partials/SongInfo.tsx:133
+#: components/partials/SongInfo.tsx:134
 msgid "Add to favorites"
 msgstr "즐겨찾기에 추가"
 
@@ -21,11 +21,11 @@ msgstr "즐겨찾기에 추가"
 msgid "Add to playlist"
 msgstr "재생목록에 추가"
 
-#: components/partials/SongInfo.tsx:105
+#: components/partials/SongInfo.tsx:101
 msgid "Album"
 msgstr "앨범"
 
-#: components/partials/SongInfo.tsx:101
+#: components/partials/SongInfo.tsx:97
 msgid "Artist"
 msgstr "아티스트"
 
@@ -33,11 +33,16 @@ msgstr "아티스트"
 msgid "Artists"
 msgstr "아티스트"
 
-#: app/artists/edit/[id].tsx:85
+#: app/artists/edit/[id].tsx:176
+msgid "Artists merged"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:103
 msgid "Artwork URL"
 msgstr "아트워크 URL"
 
-#: app/artists/edit/[id].tsx:169
+#: app/artists/edit/[id].tsx:225
+#: app/artists/edit/[id].tsx:301
 msgid "Cancel"
 msgstr "취소"
 
@@ -45,15 +50,15 @@ msgstr "취소"
 msgid "Database imported successfully"
 msgstr "데이터베이스가 성공적으로 가져와졌습니다"
 
-#: components/partials/SongInfo.tsx:158
+#: components/partials/SongInfo.tsx:156
 msgid "Delete song"
 msgstr "노래 삭제"
 
-#: app/artists/edit/[id].tsx:154
+#: app/artists/edit/[id].tsx:208
 msgid "Edit artist"
 msgstr "아티스트 편집"
 
-#: components/partials/SongInfo.tsx:152
+#: components/partials/SongInfo.tsx:150
 msgid "Edit details"
 msgstr "세부정보 편집"
 
@@ -88,7 +93,23 @@ msgstr "음악 데이터베이스 가져오기"
 msgid "Last songs"
 msgstr "최근 노래"
 
-#: app/artists/edit/[id].tsx:64
+#: app/artists/edit/[id].tsx:291
+msgid "Merge"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:279
+msgid "Merge artists"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:268
+msgid "Merge them"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:269
+msgid "Merging..."
+msgstr ""
+
+#: app/artists/edit/[id].tsx:82
 msgid "Name"
 msgstr "이름"
 
@@ -96,19 +117,19 @@ msgstr "이름"
 msgid "No artist found"
 msgstr "아티스트를 찾을 수 없습니다"
 
-#: app/artists/edit/[id].tsx:75
+#: app/artists/edit/[id].tsx:93
 msgid "Nombre del artista"
 msgstr "아티스트 이름"
 
-#: app/artists/edit/[id].tsx:32
+#: app/artists/edit/[id].tsx:50
 msgid "Not valid URL"
 msgstr "유효하지 않은 URL"
 
-#: components/partials/SongInfo.tsx:119
+#: components/partials/SongInfo.tsx:116
 msgid "Pause song"
 msgstr "노래 일시중지"
 
-#: components/partials/SongInfo.tsx:119
+#: components/partials/SongInfo.tsx:116
 msgid "Play song"
 msgstr "노래 재생"
 
@@ -116,15 +137,19 @@ msgstr "노래 재생"
 msgid "Recently played"
 msgstr "최근 재생"
 
-#: components/partials/SongInfo.tsx:133
+#: components/partials/SongInfo.tsx:134
 msgid "Remove from favorites"
 msgstr "즐겨찾기에서 제거"
 
-#: app/artists/edit/[id].tsx:110
+#: app/artists/edit/[id].tsx:234
+msgid "Same artist?"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:128
 msgid "Save"
 msgstr "저장"
 
-#: app/artists/edit/[id].tsx:110
+#: app/artists/edit/[id].tsx:128
 msgid "Saving..."
 msgstr "저장 중..."
 
@@ -141,21 +166,33 @@ msgstr "선택이 취소되었습니다"
 msgid "Settings"
 msgstr "설정"
 
-#: app/artists/[id].tsx:84
+#: app/artists/[id].tsx:88
 #: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "노래"
 
-#: app/artists/edit/[id].tsx:25
+#: app/artists/edit/[id].tsx:177
+msgid "The artists have been merged successfully"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:43
 msgid "The name must have at least 2 characters"
 msgstr "이름은 최소 두 글자여야 합니다"
 
-#: components/partials/SongInfo.tsx:97
-msgid "Tile"
-msgstr "타일"
+#: app/artists/edit/[id].tsx:237
+msgid "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
+msgstr ""
 
-#: app/artists/edit/[id].tsx:26
-#: app/artists/edit/[id].tsx:29
+#: components/partials/SongInfo.tsx:97
+#~ msgid "Tile"
+#~ msgstr "타일"
+
+#: components/partials/SongInfo.tsx:93
+msgid "Title"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:44
+#: app/artists/edit/[id].tsx:47
 msgid "Too long"
 msgstr "너무 깁니다"
 

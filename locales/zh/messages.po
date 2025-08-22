@@ -13,7 +13,7 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/partials/SongInfo.tsx:133
+#: components/partials/SongInfo.tsx:134
 msgid "Add to favorites"
 msgstr "添加到收藏"
 
@@ -21,11 +21,11 @@ msgstr "添加到收藏"
 msgid "Add to playlist"
 msgstr "添加到播放列表"
 
-#: components/partials/SongInfo.tsx:105
+#: components/partials/SongInfo.tsx:101
 msgid "Album"
 msgstr "专辑"
 
-#: components/partials/SongInfo.tsx:101
+#: components/partials/SongInfo.tsx:97
 msgid "Artist"
 msgstr "艺术家"
 
@@ -33,11 +33,16 @@ msgstr "艺术家"
 msgid "Artists"
 msgstr "艺术家"
 
-#: app/artists/edit/[id].tsx:85
+#: app/artists/edit/[id].tsx:176
+msgid "Artists merged"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:103
 msgid "Artwork URL"
 msgstr "封面网址"
 
-#: app/artists/edit/[id].tsx:169
+#: app/artists/edit/[id].tsx:225
+#: app/artists/edit/[id].tsx:301
 msgid "Cancel"
 msgstr "取消"
 
@@ -45,15 +50,15 @@ msgstr "取消"
 msgid "Database imported successfully"
 msgstr "数据库导入成功"
 
-#: components/partials/SongInfo.tsx:158
+#: components/partials/SongInfo.tsx:156
 msgid "Delete song"
 msgstr "删除歌曲"
 
-#: app/artists/edit/[id].tsx:154
+#: app/artists/edit/[id].tsx:208
 msgid "Edit artist"
 msgstr "编辑艺术家"
 
-#: components/partials/SongInfo.tsx:152
+#: components/partials/SongInfo.tsx:150
 msgid "Edit details"
 msgstr "编辑详情"
 
@@ -88,7 +93,23 @@ msgstr "导入音乐数据库"
 msgid "Last songs"
 msgstr "最近的歌曲"
 
-#: app/artists/edit/[id].tsx:64
+#: app/artists/edit/[id].tsx:291
+msgid "Merge"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:279
+msgid "Merge artists"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:268
+msgid "Merge them"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:269
+msgid "Merging..."
+msgstr ""
+
+#: app/artists/edit/[id].tsx:82
 msgid "Name"
 msgstr "名称"
 
@@ -96,19 +117,19 @@ msgstr "名称"
 msgid "No artist found"
 msgstr "未找到艺术家"
 
-#: app/artists/edit/[id].tsx:75
+#: app/artists/edit/[id].tsx:93
 msgid "Nombre del artista"
 msgstr "艺术家名称"
 
-#: app/artists/edit/[id].tsx:32
+#: app/artists/edit/[id].tsx:50
 msgid "Not valid URL"
 msgstr "无效的 URL"
 
-#: components/partials/SongInfo.tsx:119
+#: components/partials/SongInfo.tsx:116
 msgid "Pause song"
 msgstr "暂停歌曲"
 
-#: components/partials/SongInfo.tsx:119
+#: components/partials/SongInfo.tsx:116
 msgid "Play song"
 msgstr "播放歌曲"
 
@@ -116,15 +137,19 @@ msgstr "播放歌曲"
 msgid "Recently played"
 msgstr "最近播放"
 
-#: components/partials/SongInfo.tsx:133
+#: components/partials/SongInfo.tsx:134
 msgid "Remove from favorites"
 msgstr "从收藏中移除"
 
-#: app/artists/edit/[id].tsx:110
+#: app/artists/edit/[id].tsx:234
+msgid "Same artist?"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:128
 msgid "Save"
 msgstr "保存"
 
-#: app/artists/edit/[id].tsx:110
+#: app/artists/edit/[id].tsx:128
 msgid "Saving..."
 msgstr "正在保存..."
 
@@ -141,21 +166,33 @@ msgstr "选择已取消"
 msgid "Settings"
 msgstr "设置"
 
-#: app/artists/[id].tsx:84
+#: app/artists/[id].tsx:88
 #: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "歌曲"
 
-#: app/artists/edit/[id].tsx:25
+#: app/artists/edit/[id].tsx:177
+msgid "The artists have been merged successfully"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:43
 msgid "The name must have at least 2 characters"
 msgstr "名称至少需要2个字符"
 
-#: components/partials/SongInfo.tsx:97
-msgid "Tile"
-msgstr "磁贴"
+#: app/artists/edit/[id].tsx:237
+msgid "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
+msgstr ""
 
-#: app/artists/edit/[id].tsx:26
-#: app/artists/edit/[id].tsx:29
+#: components/partials/SongInfo.tsx:97
+#~ msgid "Tile"
+#~ msgstr "磁贴"
+
+#: components/partials/SongInfo.tsx:93
+msgid "Title"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:44
+#: app/artists/edit/[id].tsx:47
 msgid "Too long"
 msgstr "太长"
 
