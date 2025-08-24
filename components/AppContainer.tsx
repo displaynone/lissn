@@ -12,6 +12,7 @@ import {
 	useGetArtistById,
 	useIsSynced,
 	useIsSyncing,
+	useRefreshAlbums,
 	useRefreshArtists,
 	useRefreshFavoriteSongs,
 	useRefreshSongs,
@@ -43,6 +44,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const refreshSongs = useRefreshSongs();
 	const refreshFavoriteSongs = useRefreshFavoriteSongs();
 	const refreshArtists = useRefreshArtists();
+	const refreshAlbums = useRefreshAlbums();
 	const { song } = useGetPlayingSongAndArtist();
 	const pathname = usePathname();
 	const { height: windowHeight, width: windowWidth } = useWindowDimensions();
@@ -76,6 +78,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 					await refreshSongs();
 					await refreshFavoriteSongs();
 					await refreshArtists(100_000);
+					await refreshAlbums(100_000);
 				} catch (error) {
 					console.error("Error during sync:", error);
 				}
@@ -88,11 +91,12 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 		refreshSongs,
 		refreshFavoriteSongs,
 		refreshArtists,
+		refreshAlbums,
 	]);
 
 	useEffect(() => {
 		const paths = pathname.split("/");
-		if (paths?.[1] === "artists" && paths?.[2] !== 'edit') {
+		if (paths?.[1] === "artists" && paths?.[2] !== "edit") {
 			getArtistById(paths[2]).then((artist) => setArtwork(artist?.artworkUri));
 		} else {
 			setArtwork(undefined);

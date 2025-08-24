@@ -90,7 +90,7 @@ const EditForm: React.FC<EditFormProps> = ({ artist }) => {
 							value={value}
 							onBlur={onBlur}
 							onChangeText={onChange}
-							placeholder={t`Nombre del artista`}
+							placeholder={t`Artist name`}
 							returnKeyType="next"
 						/>
 					)}
@@ -280,7 +280,7 @@ export default function PlaylistsScreen() {
 						</H2>
 					</YStack>
 					<Text>Are you sure you want to merge these artists?</Text>
-					<XStack gap="$4" jc="flex-end" mt="$4">
+					<XStack gap="$4" jc="flex-start" mt="$4">
 						<Button
 							bg="$color.color"
 							onPress={() => handleMerging()}

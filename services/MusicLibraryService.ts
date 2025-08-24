@@ -113,10 +113,13 @@ export class MusicLibraryService {
 
 		await database.write(async () => {
 			// Check if already exists
+			// It needs to use raq query because of wattermelon filtering deleted records
 			const existing = await database
 				.get<Song>("songs")
-				.query(Q.where("external_id", asset.id))
-				.fetch();
+				.query(
+					Q.unsafeSqlQuery(`select * from songs where external_id = ?`, [asset.id])
+				)
+				.unsafeFetchRaw();
 
 			if (existing.length > 0) {
 				return; // Already exists, don't process

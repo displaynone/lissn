@@ -71,10 +71,16 @@ const SongDetailScreen: React.FC = () => {
 						fontWeight: "800",
 						fontSize: "$7",
 						textAlign: "center",
+						color: "white",
 					}}
 					text={song.title}
 				/>
-				<Text fontFamily="$inter" fontWeight={"400"} fontSize={"$6"}>
+				<Text
+					fontFamily="$inter"
+					fontWeight={"400"}
+					fontSize={"$6"}
+					onPress={() => router.push(`/artists/${artist?.id}`)}
+				>
 					{artist?.name}
 				</Text>
 				<Cover

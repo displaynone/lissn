@@ -30,8 +30,10 @@ interface MusicStoreState {
 	getSongById: (id: string) => Promise<Song | null>;
 	updateSong: (id: string, updates: Partial<Song>) => Promise<void>;
 	updateArtist: (id: string, updates: Partial<Artist>) => Promise<void>;
+	createArtist: (artist: Partial<Artist>) => Promise<Artist>;
 	toggleFavorite: (id: string) => Promise<void>;
 	incrementPlayCount: (id: string) => Promise<void>;
+	deleteSong: (id: string) => Promise<void>;
 
 	searchSongs: (query: string) => Promise<Song[]>;
 	getSongsByArtist: (artistId: string) => Promise<Song[]>;
@@ -58,6 +60,8 @@ interface MusicStoreState {
 		targetArtistId: string,
 		otherArtistsIds: string[]
 	) => Promise<void>;
+
+	refreshAlbums: (limit?: number) => Promise<void>;
 }
 
 const musicService = MusicLibraryService.getInstance();
@@ -157,7 +161,15 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	updateSong: async (id, updates) => {
 		await database.write(async () => {
 			const song = await database.get<Song>("songs").find(id);
-			await song.update((record) => Object.assign(record, updates));
+			const updatedSong = await song.update((record) => {
+				Object.entries(updates).forEach(([key, value]) => {
+					// @ts-expect-error dynamic assignment
+					record[key] = value;
+				});
+			});
+			set((state) => ({
+				songs: state.songs.map((s) => (s.id === id ? updatedSong : s)),
+			}));
 		});
 	},
 
@@ -166,6 +178,20 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			const artist = await database.get<Song>("artists").find(id);
 			await artist.update((record) => Object.assign(record, updates));
 		});
+	},
+
+	createArtist: async (artist: Partial<Artist>) => {
+		const res = await database.write(async () => {
+			const writtenArtist = await database
+				.get("artists")
+				.create((newArtist) => {
+					Object.assign(newArtist, artist);
+				});
+			return writtenArtist;
+		});
+		const { refreshArtists } = get();
+		await refreshArtists(100_000);
+		return res as Artist;
 	},
 
 	toggleFavorite: async (id) => {
@@ -182,6 +208,22 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	incrementPlayCount: async (id) => {
 		const song = await database.get<Song>("songs").find(id);
 		await song.incrementPlayCount();
+	},
+
+	deleteSong: async (id) => {
+		await database.write(async () => {
+			console.log("Deleting song", id);
+			const song = await database.get<Song>("songs").find(id);
+			await song.markAsDeleted();
+			const { songs, favoriteSongs, playingSongId } = get();
+			set({
+				songs: songs.filter((s) => s.id !== id),
+				favoriteSongs: favoriteSongs.filter((s) => s.id !== id),
+			});
+			if (playingSongId === id) {
+				set({ playingSongId: undefined });
+			}
+		});
 	},
 
 	searchSongs: async (query) => {
@@ -364,13 +406,20 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			}
 		});
 	},
+
+	refreshAlbums: async (limit: number = 20) => {
+		const albums = await database
+			.get<Album>("albums")
+			.query(Q.sortBy("title", Q.asc), Q.take(limit))
+			.fetch();
+		set({ albums });
+	},
 }));
 
 export const useGetSongs = () => useMusicStore((state) => state.songs);
 export const useGetFavoriteSongs = () =>
 	useMusicStore((state) => state.favoriteSongs);
-export const useGetSongById = (songId: string) =>
-	useMusicStore((state) => state.getSongById(songId));
+export const useGetSongById = () => useMusicStore((state) => state.getSongById);
 export const useGetArtists = () => useMusicStore((state) => state.artists);
 export const useGetArtistById = () =>
 	useMusicStore((state) => state.getArtistById);
@@ -398,6 +447,8 @@ export const useRefreshFavoriteSongs = () =>
 	useMusicStore((state) => state.refreshFavoriteSongs);
 export const useRefreshArtists = () =>
 	useMusicStore((state) => state.refreshArtists);
+export const useRefreshAlbums = () =>
+	useMusicStore((state) => state.refreshAlbums);
 export const useGetSearch = () => useMusicStore((state) => state.search);
 export const useGetSetSearch = () => useMusicStore((state) => state.setSearch);
 export const useGetGetRecentlyPlayed = () =>
@@ -406,7 +457,13 @@ export const useGetGetSongsByArtist = () =>
 	useMusicStore((state) => state.getSongsByArtist);
 export const useGetUpdateArtist = () =>
 	useMusicStore((state) => state.updateArtist);
+export const useGetUpdateSong = () =>
+	useMusicStore((state) => state.updateSong);
 export const useGetSimilarArtists = () =>
 	useMusicStore((state) => state.getSimilarArtists);
 export const useGetMergeArtists = () =>
 	useMusicStore((state) => state.mergeArtists);
+export const useGetDeleteSong = () =>
+	useMusicStore((state) => state.deleteSong);
+export const useGetCreateArtist = () =>
+	useMusicStore((state) => state.createArtist);
