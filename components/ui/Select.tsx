@@ -1,6 +1,7 @@
 import { Trans, useLingui } from "@lingui/react/macro";
 import { LinearGradient } from "@tamagui/linear-gradient";
 import { ReactNode, useMemo } from "react";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
   Adapt,
   Sheet,
@@ -17,8 +18,8 @@ import { Text } from "./Text";
 type SelectProps<T> = TamaguiSelectProps & { trigger?: React.ReactNode } & {
 	items: T[];
 	placeholder?: string;
-  getId: (item: T) => string;
-  getDescription: (item: T) => string | ReactNode;
+	getId: (item: T) => string;
+	getDescription: (item: T) => string | ReactNode;
 };
 
 const Select = <T,>({
@@ -26,11 +27,12 @@ const Select = <T,>({
 	items,
 	placeholder,
 	onValueChange,
-  getId,
-  getDescription,
+	getId,
+	getDescription,
 	...props
 }: SelectProps<T>) => {
 	const { t } = useLingui();
+	const insets = useSafeAreaInsets();
 
 	return (
 		<TamaguiSelect
@@ -82,7 +84,7 @@ const Select = <T,>({
 					position="relative"
 					width="100%"
 					height="$3"
-          maxHeight={200}
+					maxHeight={200}
 				>
 					<YStack zIndex={10}>
 						<ChevronUpIcon size={20} color="white" />
@@ -96,12 +98,10 @@ const Select = <T,>({
 					/>
 				</TamaguiSelect.ScrollUpButton>
 
-				<TamaguiSelect.Viewport
-					minWidth={200}
-				>
+				<TamaguiSelect.Viewport minWidth={200}>
 					<TamaguiSelect.Group>
 						<TamaguiSelect.Label>
-							<H2>
+							<H2 paddingTop={insets.top}>
 								<Trans>Select an option</Trans>
 							</H2>
 						</TamaguiSelect.Label>

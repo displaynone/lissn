@@ -113,7 +113,9 @@ const SongInfo: React.FC = () => {
 								<Label>
 									<Trans>Album</Trans>
 								</Label>
-								<Value>{album?.title}</Value>
+								<Value onPress={() => router.push(`/albums/${album?.id}`)}>
+									{album?.title}
+								</Value>
 							</XStack>
 						</XStack>
 						<YStack gap="$2">

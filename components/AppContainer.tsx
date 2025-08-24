@@ -9,6 +9,7 @@ import {
 	useGetSongDetailPageLoaded,
 } from "@/store/appStore";
 import {
+	useGetAlbumById,
 	useGetArtistById,
 	useIsSynced,
 	useIsSyncing,
@@ -56,6 +57,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const setShowDrawer = useGetSetShowDrawer();
 	const insets = useSafeAreaInsets();
 	const getArtistById = useGetArtistById();
+	const getAlbumById = useGetAlbumById();
 
 	const [artwork, setArtwork] = useState<string>();
 
@@ -102,6 +104,19 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 			setArtwork(undefined);
 		}
 	}, [getArtistById, pathname]);
+
+	useEffect(() => {
+		const paths = pathname.split("/");
+		if (
+			paths.length === 3 &&
+			paths?.[1] === "albums" &&
+			paths?.[2] !== "edit"
+		) {
+			getAlbumById(paths[2]).then((album) => setArtwork(album?.artworkUri));
+		} else {
+			setArtwork(undefined);
+		}
+	}, [getAlbumById, pathname]);
 
 	const isDetailedView = pathname === "/song/playing";
 	const showCover = !!song && isDetailedView;

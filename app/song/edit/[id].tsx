@@ -5,7 +5,7 @@ import { Label } from "@/components/ui/Label";
 import { Loading } from "@/components/ui/Loading";
 import Select from "@/components/ui/Select";
 import { Text } from "@/components/ui/Text";
-import { Artist, Song } from "@/models";
+import { Song } from "@/models";
 import { useGetSetToastData } from "@/store/appStore";
 import {
 	useGetAlbums,
@@ -36,7 +36,7 @@ const songSchema = z.object({
 		.string()
 		.max(120, t`Too long`)
 		.regex(
-			/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/\S*)?$/,
+			/^((https?|content):\/\/)?([a-zA-Z0-9-]+\.)*[a-zA-Z]{2,}(:\d+)?(\/\S*)?$/,
 			t`Not valid URL`
 		)
 		.optional()
@@ -75,6 +75,7 @@ const EditForm: React.FC<EditFormProps> = ({ song }) => {
 			title: t`Song update`,
 			message: t`The song has been updated correctly`,
 		});
+		router.back();
 	};
 
 	return (
@@ -101,7 +102,7 @@ const EditForm: React.FC<EditFormProps> = ({ song }) => {
 			</YStack>
 
 			<YStack gap="$2">
-				<Label htmlFor="externalId">
+				<Label htmlFor="coverPath">
 					<Trans>Artwork URL</Trans>
 				</Label>
 				<Controller
@@ -109,7 +110,7 @@ const EditForm: React.FC<EditFormProps> = ({ song }) => {
 					name="coverPath"
 					render={({ field: { value, onChange, onBlur } }) => (
 						<Input
-							id="externalId"
+							id="coverPath"
 							value={value}
 							onBlur={onBlur}
 							onChangeText={onChange}
@@ -134,21 +135,26 @@ const EditForm: React.FC<EditFormProps> = ({ song }) => {
 					name="artistId"
 					render={({ field: { value, onChange } }) => (
 						<Select
+							id="artistId"
 							items={artists}
 							value={value}
 							onValueChange={(val) => {
-								console.log(val);
 								onChange(val);
 							}}
-							getId={(item) => (item as Artist).id}
-							getDescription={(item) => (item as Artist).name}
+							getId={(item) => item.id}
+							getDescription={(item) => item.name}
 						/>
 					)}
 				/>
-				<Text color="$color.primary" onPress={() => router.push('/artists/new')}><Trans>Create new artist</Trans></Text>
-				{!!errors.coverPath && (
+				{!!errors.artistId && (
 					<Text color="$red10">{errors.artistId?.message}</Text>
 				)}
+				<Text
+					color="$color.primary"
+					onPress={() => router.push("/artists/new")}
+				>
+					<Trans>Create new artist</Trans>
+				</Text>
 			</YStack>
 
 			<YStack gap="$2">
@@ -160,10 +166,10 @@ const EditForm: React.FC<EditFormProps> = ({ song }) => {
 					name="albumId"
 					render={({ field: { value, onChange } }) => (
 						<Select
+							id="albumId"
 							items={albums}
 							value={value}
 							onValueChange={(val) => {
-								console.log(val);
 								onChange(val);
 							}}
 							getId={(item) => item.id}
@@ -171,9 +177,15 @@ const EditForm: React.FC<EditFormProps> = ({ song }) => {
 						/>
 					)}
 				/>
-				{!!errors.coverPath && (
-					<Text color="$red10">{errors.coverPath.message}</Text>
+				{!!errors.albumId && (
+					<Text color="$red10">{errors.albumId.message}</Text>
 				)}
+				<Text
+					color="$color.primary"
+					onPress={() => router.push("/albums/new")}
+				>
+					<Trans>Create new album</Trans>
+				</Text>
 			</YStack>
 
 			<Form.Trigger asChild>

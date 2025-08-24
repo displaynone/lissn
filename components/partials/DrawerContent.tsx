@@ -5,6 +5,7 @@ import { useRouter } from "expo-router";
 import { Linking } from "react-native";
 import { Button, H1, XStack, YStack } from "tamagui";
 import packageData from "../../package.json";
+import AlbumIcon from "../icons/AlbumIcon";
 import GithubIcon from "../icons/GithubIcon";
 import Logo from "../icons/Logo";
 import SettingsIcon from "../icons/SettingsIcon";
@@ -37,7 +38,16 @@ const DrawerContent: React.FC = () => {
 					</YStack>
 					<Logo size={72} />
 				</XStack>
-				<YStack>
+				<YStack gap="$3" width="100%">
+					<ActionItem
+						icon={<AlbumIcon color="white" size={18} />}
+						title={<Text color="$color.tertiary">{t`Albums`}</Text>}
+						onPress={() => {
+							router.push("/albums");
+							setShowDrawer(false);
+						}}
+						backgroundColor={"transparent"}
+					/>
 					<ActionItem
 						icon={<SettingsIcon color="white" size={18} />}
 						title={<Text color="$color.tertiary">{t`Settings`}</Text>}
@@ -45,6 +55,7 @@ const DrawerContent: React.FC = () => {
 							router.push("/settings");
 							setShowDrawer(false);
 						}}
+						backgroundColor={"transparent"}
 					/>
 				</YStack>
 			</YStack>
