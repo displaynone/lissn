@@ -13,21 +13,51 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: components/partials/SongInfo.tsx:134
+#: components/partials/SongInfo.tsx:151
 msgid "Add to favorites"
 msgstr "즐겨찾기에 추가"
 
-#: components/partials/SongInfo.tsx:144
+#: components/partials/SongInfo.tsx:161
 msgid "Add to playlist"
 msgstr "재생목록에 추가"
 
-#: components/partials/SongInfo.tsx:101
+#: app/song/edit/[id].tsx:162
+#: components/partials/SongInfo.tsx:114
 msgid "Album"
 msgstr "앨범"
 
-#: components/partials/SongInfo.tsx:97
+#: app/albums/new.tsx:66
+msgid "Album created successfully"
+msgstr ""
+
+#: app/albums/edit/[id].tsx:93
+msgid "Album name"
+msgstr ""
+
+#: components/partials/DrawerContent.tsx:44
+msgid "Albums"
+msgstr ""
+
+#: app/albums/edit/[id].tsx:176
+msgid "Albums merged"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:189
+msgid "Are you sure you want to delete the song?"
+msgstr ""
+
+#: app/song/edit/[id].tsx:131
+#: components/partials/SongInfo.tsx:108
 msgid "Artist"
 msgstr "아티스트"
+
+#: app/artists/new.tsx:66
+msgid "Artist created successfully"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:93
+msgid "Artist name"
+msgstr ""
 
 #: components/partials/Heading.tsx:39
 msgid "Artists"
@@ -37,30 +67,61 @@ msgstr "아티스트"
 msgid "Artists merged"
 msgstr "아티스트가 병합되었습니다"
 
+#: app/albums/edit/[id].tsx:103
+#: app/albums/new.tsx:97
 #: app/artists/edit/[id].tsx:103
+#: app/artists/new.tsx:97
+#: app/song/edit/[id].tsx:106
 msgid "Artwork URL"
 msgstr "아트워크 URL"
 
+#: app/albums/edit/[id].tsx:225
+#: app/albums/edit/[id].tsx:301
+#: app/albums/new.tsx:166
 #: app/artists/edit/[id].tsx:225
 #: app/artists/edit/[id].tsx:301
+#: app/artists/new.tsx:166
+#: app/song/edit/[id].tsx:262
+#: components/partials/SongInfo.tsx:216
 msgid "Cancel"
 msgstr "취소"
+
+#: app/song/edit/[id].tsx:187
+msgid "Create new album"
+msgstr ""
+
+#: app/song/edit/[id].tsx:156
+msgid "Create new artist"
+msgstr ""
 
 #: utils/pickAndImportDB.ts:29
 msgid "Database imported successfully"
 msgstr "데이터베이스가 성공적으로 가져와졌습니다"
 
-#: components/partials/SongInfo.tsx:156
+#: components/partials/SongInfo.tsx:206
+msgid "Delete"
+msgstr ""
+
+#: components/partials/SongInfo.tsx:176
+#: components/partials/SongInfo.tsx:186
 msgid "Delete song"
 msgstr "노래 삭제"
+
+#: app/albums/edit/[id].tsx:208
+msgid "Edit album"
+msgstr ""
 
 #: app/artists/edit/[id].tsx:208
 msgid "Edit artist"
 msgstr "아티스트 편집"
 
-#: components/partials/SongInfo.tsx:150
+#: components/partials/SongInfo.tsx:167
 msgid "Edit details"
 msgstr "세부정보 편집"
+
+#: app/song/edit/[id].tsx:245
+msgid "Edit song"
+msgstr ""
 
 #. js-lingui-explicit-id
 #: utils/pickAndImportDB.ts:36
@@ -75,7 +136,7 @@ msgstr "음악 데이터베이스 내보내기"
 msgid "Favorites"
 msgstr "즐겨찾기"
 
-#: components/partials/DrawerContent.tsx:61
+#: components/partials/DrawerContent.tsx:72
 msgid "GitHub Project"
 msgstr "GitHub 프로젝트"
 
@@ -93,43 +154,75 @@ msgstr "음악 데이터베이스 가져오기"
 msgid "Last songs"
 msgstr "최근 노래"
 
+#: app/albums/edit/[id].tsx:291
 #: app/artists/edit/[id].tsx:291
 msgid "Merge"
 msgstr "병합"
+
+#: app/albums/edit/[id].tsx:279
+msgid "Merge albums"
+msgstr ""
 
 #: app/artists/edit/[id].tsx:279
 msgid "Merge artists"
 msgstr "아티스트 병합"
 
+#: app/albums/edit/[id].tsx:268
 #: app/artists/edit/[id].tsx:268
 msgid "Merge them"
 msgstr "병합하기"
 
+#: app/albums/edit/[id].tsx:269
 #: app/artists/edit/[id].tsx:269
 msgid "Merging..."
 msgstr "병합 중..."
 
+#: app/albums/edit/[id].tsx:82
+#: app/albums/new.tsx:76
 #: app/artists/edit/[id].tsx:82
+#: app/artists/new.tsx:76
 msgid "Name"
 msgstr "이름"
+
+#: app/albums/new.tsx:65
+#: app/albums/new.tsx:150
+msgid "New album"
+msgstr ""
+
+#: app/artists/new.tsx:65
+#: app/artists/new.tsx:150
+msgid "New artist"
+msgstr ""
+
+#: app/albums/[id].tsx:48
+msgid "No album found"
+msgstr ""
 
 #: app/artists/[id].tsx:48
 msgid "No artist found"
 msgstr "아티스트를 찾을 수 없습니다"
 
-#: app/artists/edit/[id].tsx:93
+#: app/albums/new.tsx:87
+msgid "Nombre del albuma"
+msgstr ""
+
+#: app/artists/new.tsx:87
 msgid "Nombre del artista"
 msgstr "아티스트 이름"
 
+#: app/albums/edit/[id].tsx:50
+#: app/albums/new.tsx:36
 #: app/artists/edit/[id].tsx:50
+#: app/artists/new.tsx:36
+#: app/song/edit/[id].tsx:40
 msgid "Not valid URL"
 msgstr "유효하지 않은 URL"
 
-#: components/partials/SongInfo.tsx:116
+#: components/partials/SongInfo.tsx:131
 msgid "Pause song"
 msgstr "노래 일시중지"
 
-#: components/partials/SongInfo.tsx:116
+#: components/partials/SongInfo.tsx:131
 msgid "Play song"
 msgstr "노래 재생"
 
@@ -137,19 +230,31 @@ msgstr "노래 재생"
 msgid "Recently played"
 msgstr "최근 재생"
 
-#: components/partials/SongInfo.tsx:134
+#: components/partials/SongInfo.tsx:150
 msgid "Remove from favorites"
 msgstr "즐겨찾기에서 제거"
+
+#: app/albums/edit/[id].tsx:234
+msgid "Same album?"
+msgstr ""
 
 #: app/artists/edit/[id].tsx:234
 msgid "Same artist?"
 msgstr "같은 아티스트인가요?"
 
+#: app/albums/edit/[id].tsx:128
+#: app/albums/new.tsx:122
 #: app/artists/edit/[id].tsx:128
+#: app/artists/new.tsx:122
+#: app/song/edit/[id].tsx:193
 msgid "Save"
 msgstr "저장"
 
+#: app/albums/edit/[id].tsx:128
+#: app/albums/new.tsx:122
 #: app/artists/edit/[id].tsx:128
+#: app/artists/new.tsx:122
+#: app/song/edit/[id].tsx:193
 msgid "Saving..."
 msgstr "저장 중..."
 
@@ -157,27 +262,60 @@ msgstr "저장 중..."
 msgid "Search songs"
 msgstr "노래 검색"
 
+#: components/ui/Select.tsx:54
+#: components/ui/Select.tsx:105
+msgid "Select an option"
+msgstr ""
+
 #: utils/pickAndImportDB.ts:17
 msgid "Selection canceled"
 msgstr "선택이 취소되었습니다"
 
-#: components/partials/DrawerContent.tsx:43
+#: components/partials/DrawerContent.tsx:53
 #: components/partials/Heading.tsx:41
 msgid "Settings"
 msgstr "설정"
 
+#: app/song/edit/[id].tsx:96
+msgid "Song name"
+msgstr ""
+
+#: app/song/edit/[id].tsx:75
+msgid "Song update"
+msgstr ""
+
+#: app/albums/[id].tsx:88
 #: app/artists/[id].tsx:88
 #: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "노래"
+
+#: app/albums/edit/[id].tsx:177
+msgid "The albums have been merged successfully"
+msgstr ""
 
 #: app/artists/edit/[id].tsx:177
 msgid "The artists have been merged successfully"
 msgstr "아티스트가 성공적으로 병합되었습니다"
 
 #: app/artists/edit/[id].tsx:43
+#: app/artists/new.tsx:29
 msgid "The name must have at least 2 characters"
 msgstr "이름은 최소 두 글자여야 합니다"
+
+#: app/song/edit/[id].tsx:76
+msgid "The song has been updated correctly"
+msgstr ""
+
+#: app/albums/edit/[id].tsx:43
+#: app/albums/new.tsx:29
+#: app/song/edit/[id].tsx:33
+msgid "The title must have at least 2 characters"
+msgstr ""
+
+#: app/albums/edit/[id].tsx:237
+msgid "These albums share the same title because Android reads it from the ID3 tags, which you can edit in Lissn."
+msgstr ""
 
 #: app/artists/edit/[id].tsx:237
 msgid "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
@@ -187,15 +325,24 @@ msgstr "이 아티스트들은 동일한 이름을 사용합니다. 이는 Andro
 #~ msgid "Tile"
 #~ msgstr "타일"
 
-#: components/partials/SongInfo.tsx:93
+#: app/song/edit/[id].tsx:85
+#: components/partials/SongInfo.tsx:104
 msgid "Title"
 msgstr "제목"
 
+#: app/albums/edit/[id].tsx:44
+#: app/albums/edit/[id].tsx:47
+#: app/albums/new.tsx:30
+#: app/albums/new.tsx:33
 #: app/artists/edit/[id].tsx:44
 #: app/artists/edit/[id].tsx:47
+#: app/artists/new.tsx:30
+#: app/artists/new.tsx:33
+#: app/song/edit/[id].tsx:34
+#: app/song/edit/[id].tsx:37
 msgid "Too long"
 msgstr "너무 깁니다"
 
-#: components/partials/DrawerContent.tsx:35
+#: components/partials/DrawerContent.tsx:36
 msgid "Your music app"
 msgstr "당신의 음악 앱"
