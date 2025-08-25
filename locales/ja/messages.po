@@ -32,7 +32,7 @@ msgstr "アルバムが正常に作成されました"
 
 #: app/albums/edit/[id].tsx:189
 msgid "Album deleted"
-msgstr ""
+msgstr "アルバムが削除されました"
 
 #: app/albums/edit/[id].tsx:89
 #: app/albums/new.tsx:80
@@ -62,7 +62,7 @@ msgstr "アーティストが正常に作成されました"
 
 #: app/artists/edit/[id].tsx:189
 msgid "Artist deleted"
-msgstr ""
+msgstr "アーティストが削除されました"
 
 #: app/artists/edit/[id].tsx:89
 msgid "Artist name"
@@ -118,12 +118,12 @@ msgstr "削除"
 #: app/albums/edit/[id].tsx:251
 #: app/albums/edit/[id].tsx:341
 msgid "Delete album"
-msgstr ""
+msgstr "アルバムを削除"
 
 #: app/artists/edit/[id].tsx:251
 #: app/artists/edit/[id].tsx:342
 msgid "Delete artist"
-msgstr ""
+msgstr "アーティストを削除"
 
 #: components/partials/SongInfo.tsx:176
 #: components/partials/SongInfo.tsx:186
@@ -311,7 +311,7 @@ msgstr "曲"
 
 #: app/albums/edit/[id].tsx:190
 msgid "The album has been deleted correctly"
-msgstr ""
+msgstr "アルバムは正常に削除されました"
 
 #: app/albums/edit/[id].tsx:175
 msgid "The albums have been merged successfully"
@@ -319,7 +319,7 @@ msgstr "アルバムは正常に統合されました"
 
 #: app/artists/edit/[id].tsx:190
 msgid "The artist has been deleted correctly"
-msgstr ""
+msgstr "アーティストは正常に削除されました"
 
 #: app/artists/edit/[id].tsx:175
 msgid "The artists have been merged successfully"

@@ -32,7 +32,7 @@ msgstr "앨범이 성공적으로 생성되었습니다"
 
 #: app/albums/edit/[id].tsx:189
 msgid "Album deleted"
-msgstr ""
+msgstr "앨범이 삭제되었습니다"
 
 #: app/albums/edit/[id].tsx:89
 #: app/albums/new.tsx:80
@@ -62,7 +62,7 @@ msgstr "아티스트가 성공적으로 생성되었습니다"
 
 #: app/artists/edit/[id].tsx:189
 msgid "Artist deleted"
-msgstr ""
+msgstr "아티스트가 삭제되었습니다"
 
 #: app/artists/edit/[id].tsx:89
 msgid "Artist name"
@@ -118,12 +118,12 @@ msgstr "삭제"
 #: app/albums/edit/[id].tsx:251
 #: app/albums/edit/[id].tsx:341
 msgid "Delete album"
-msgstr ""
+msgstr "앨범 삭제"
 
 #: app/artists/edit/[id].tsx:251
 #: app/artists/edit/[id].tsx:342
 msgid "Delete artist"
-msgstr ""
+msgstr "아티스트 삭제"
 
 #: components/partials/SongInfo.tsx:176
 #: components/partials/SongInfo.tsx:186
@@ -311,7 +311,7 @@ msgstr "노래"
 
 #: app/albums/edit/[id].tsx:190
 msgid "The album has been deleted correctly"
-msgstr ""
+msgstr "앨범이 정상적으로 삭제되었습니다"
 
 #: app/albums/edit/[id].tsx:175
 msgid "The albums have been merged successfully"
@@ -319,7 +319,7 @@ msgstr "앨범이 성공적으로 병합되었습니다"
 
 #: app/artists/edit/[id].tsx:190
 msgid "The artist has been deleted correctly"
-msgstr ""
+msgstr "아티스트가 정상적으로 삭제되었습니다"
 
 #: app/artists/edit/[id].tsx:175
 msgid "The artists have been merged successfully"
