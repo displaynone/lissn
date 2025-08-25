@@ -349,6 +349,9 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 
 	getAlbumById: async (id) => {
 		try {
+			if (!id) {
+				return null;
+			}
 			const album = await database.get<Album>("albums").find(id);
 			return album;
 		} catch (e) {

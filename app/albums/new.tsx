@@ -27,10 +27,10 @@ const albumSchema = z.object({
 	title: z
 		.string()
 		.min(2, t`The title must have at least 2 characters`)
-		.max(120, t`Too long`),
+		.max(250, t`Too long`),
 	artworkUri: z
 		.string()
-		.max(120, t`Too long`)
+		.max(250, t`Too long`)
 		.regex(
 			/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/\S*)?$/,
 			t`Not valid URL`

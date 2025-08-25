@@ -98,7 +98,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 
 	useEffect(() => {
 		const paths = pathname.split("/");
-		if (paths?.[1] === "artists" && paths?.[2] !== "edit") {
+		if (paths?.[1] === "artists" && !["edit", "new"].includes(paths?.[2])) {
 			getArtistById(paths[2]).then((artist) => setArtwork(artist?.artworkUri));
 		} else {
 			setArtwork(undefined);
@@ -110,7 +110,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 		if (
 			paths.length === 3 &&
 			paths?.[1] === "albums" &&
-			paths?.[2] !== "edit"
+			!["edit", "new"].includes(paths?.[2])
 		) {
 			getAlbumById(paths[2]).then((album) => setArtwork(album?.artworkUri));
 		} else {
