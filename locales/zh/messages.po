@@ -32,7 +32,7 @@ msgstr "专辑创建成功"
 
 #: app/albums/edit/[id].tsx:189
 msgid "Album deleted"
-msgstr ""
+msgstr "专辑已删除"
 
 #: app/albums/edit/[id].tsx:89
 #: app/albums/new.tsx:80
@@ -62,7 +62,7 @@ msgstr "艺术家创建成功"
 
 #: app/artists/edit/[id].tsx:189
 msgid "Artist deleted"
-msgstr ""
+msgstr "艺术家已删除"
 
 #: app/artists/edit/[id].tsx:89
 msgid "Artist name"
@@ -118,12 +118,12 @@ msgstr "删除"
 #: app/albums/edit/[id].tsx:251
 #: app/albums/edit/[id].tsx:341
 msgid "Delete album"
-msgstr ""
+msgstr "删除专辑"
 
 #: app/artists/edit/[id].tsx:251
 #: app/artists/edit/[id].tsx:342
 msgid "Delete artist"
-msgstr ""
+msgstr "删除艺术家"
 
 #: components/partials/SongInfo.tsx:176
 #: components/partials/SongInfo.tsx:186
@@ -311,7 +311,7 @@ msgstr "歌曲"
 
 #: app/albums/edit/[id].tsx:190
 msgid "The album has been deleted correctly"
-msgstr ""
+msgstr "专辑已成功删除"
 
 #: app/albums/edit/[id].tsx:175
 msgid "The albums have been merged successfully"
@@ -319,7 +319,7 @@ msgstr "专辑已成功合并"
 
 #: app/artists/edit/[id].tsx:190
 msgid "The artist has been deleted correctly"
-msgstr ""
+msgstr "艺术家已成功删除"
 
 #: app/artists/edit/[id].tsx:175
 msgid "The artists have been merged successfully"

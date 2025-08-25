@@ -32,7 +32,7 @@ msgstr "Album creato con successo"
 
 #: app/albums/edit/[id].tsx:189
 msgid "Album deleted"
-msgstr ""
+msgstr "Album eliminato"
 
 #: app/albums/edit/[id].tsx:89
 #: app/albums/new.tsx:80
@@ -62,7 +62,7 @@ msgstr "Artista creato con successo"
 
 #: app/artists/edit/[id].tsx:189
 msgid "Artist deleted"
-msgstr ""
+msgstr "Artista eliminato"
 
 #: app/artists/edit/[id].tsx:89
 msgid "Artist name"
@@ -118,12 +118,12 @@ msgstr "Elimina"
 #: app/albums/edit/[id].tsx:251
 #: app/albums/edit/[id].tsx:341
 msgid "Delete album"
-msgstr ""
+msgstr "Elimina album"
 
 #: app/artists/edit/[id].tsx:251
 #: app/artists/edit/[id].tsx:342
 msgid "Delete artist"
-msgstr ""
+msgstr "Elimina artista"
 
 #: components/partials/SongInfo.tsx:176
 #: components/partials/SongInfo.tsx:186
@@ -311,7 +311,7 @@ msgstr "Canzoni"
 
 #: app/albums/edit/[id].tsx:190
 msgid "The album has been deleted correctly"
-msgstr ""
+msgstr "L'album è stato eliminato correttamente"
 
 #: app/albums/edit/[id].tsx:175
 msgid "The albums have been merged successfully"
@@ -319,7 +319,7 @@ msgstr "Gli album sono stati uniti con successo"
 
 #: app/artists/edit/[id].tsx:190
 msgid "The artist has been deleted correctly"
-msgstr ""
+msgstr "L'artista è stato eliminato correttamente"
 
 #: app/artists/edit/[id].tsx:175
 msgid "The artists have been merged successfully"

@@ -32,7 +32,7 @@ msgstr "تم إنشاء الألبوم بنجاح"
 
 #: app/albums/edit/[id].tsx:189
 msgid "Album deleted"
-msgstr ""
+msgstr "تم حذف الألبوم"
 
 #: app/albums/edit/[id].tsx:89
 #: app/albums/new.tsx:80
@@ -62,7 +62,7 @@ msgstr "تم إنشاء الفنان بنجاح"
 
 #: app/artists/edit/[id].tsx:189
 msgid "Artist deleted"
-msgstr ""
+msgstr "تم حذف الفنان"
 
 #: app/artists/edit/[id].tsx:89
 msgid "Artist name"
@@ -118,12 +118,12 @@ msgstr "حذف"
 #: app/albums/edit/[id].tsx:251
 #: app/albums/edit/[id].tsx:341
 msgid "Delete album"
-msgstr ""
+msgstr "حذف الألبوم"
 
 #: app/artists/edit/[id].tsx:251
 #: app/artists/edit/[id].tsx:342
 msgid "Delete artist"
-msgstr ""
+msgstr "حذف الفنان"
 
 #: components/partials/SongInfo.tsx:176
 #: components/partials/SongInfo.tsx:186
@@ -311,7 +311,7 @@ msgstr "أغانٍ"
 
 #: app/albums/edit/[id].tsx:190
 msgid "The album has been deleted correctly"
-msgstr ""
+msgstr "تم حذف الألبوم بنجاح"
 
 #: app/albums/edit/[id].tsx:175
 msgid "The albums have been merged successfully"
@@ -319,7 +319,7 @@ msgstr "تم دمج الألبومات بنجاح"
 
 #: app/artists/edit/[id].tsx:190
 msgid "The artist has been deleted correctly"
-msgstr ""
+msgstr "تم حذف الفنان بنجاح"
 
 #: app/artists/edit/[id].tsx:175
 msgid "The artists have been merged successfully"
