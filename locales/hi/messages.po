@@ -25,37 +25,9 @@ msgstr "प्लेलिस्ट में जोड़ें"
 msgid "Album"
 msgstr "एल्बम"
 
-#: app/albums/new.tsx:66
-msgid "Album created successfully"
-msgstr ""
-
-#: app/albums/edit/[id].tsx:93
-msgid "Album name"
-msgstr ""
-
-#: components/partials/DrawerContent.tsx:44
-msgid "Albums"
-msgstr ""
-
-#: app/albums/edit/[id].tsx:176
-msgid "Albums merged"
-msgstr ""
-
-#: components/partials/SongInfo.tsx:189
-msgid "Are you sure you want to delete the song?"
-msgstr ""
-
 #: app/song/edit/[id].tsx:131 components/partials/SongInfo.tsx:108
 msgid "Artist"
 msgstr "कलाकार"
-
-#: app/artists/new.tsx:66
-msgid "Artist created successfully"
-msgstr ""
-
-#: app/artists/edit/[id].tsx:93
-msgid "Artist name"
-msgstr ""
 
 #: components/partials/Heading.tsx:39
 msgid "Artists"
@@ -78,29 +50,13 @@ msgstr "कलाकृति URL"
 msgid "Cancel"
 msgstr "रद्द करें"
 
-#: app/song/edit/[id].tsx:187
-msgid "Create new album"
-msgstr ""
-
-#: app/song/edit/[id].tsx:156
-msgid "Create new artist"
-msgstr ""
-
 #: utils/pickAndImportDB.ts:29
 msgid "Database imported successfully"
 msgstr "डेटाबेस सफलतापूर्वक आयात किया गया"
 
-#: components/partials/SongInfo.tsx:206
-msgid "Delete"
-msgstr ""
-
 #: components/partials/SongInfo.tsx:176 components/partials/SongInfo.tsx:186
 msgid "Delete song"
 msgstr "गीत हटाएं"
-
-#: app/albums/edit/[id].tsx:208
-msgid "Edit album"
-msgstr ""
 
 #: app/artists/edit/[id].tsx:208
 msgid "Edit artist"
@@ -109,10 +65,6 @@ msgstr "कलाकार संपादित करें"
 #: components/partials/SongInfo.tsx:167
 msgid "Edit details"
 msgstr "विवरण संपादित करें"
-
-#: app/song/edit/[id].tsx:245
-msgid "Edit song"
-msgstr ""
 
 #. js-lingui-explicit-id
 #: utils/pickAndImportDB.ts:36
@@ -148,10 +100,6 @@ msgstr "आखिरी गीत"
 msgid "Merge"
 msgstr "मिलाएँ"
 
-#: app/albums/edit/[id].tsx:279
-msgid "Merge albums"
-msgstr ""
-
 #: app/artists/edit/[id].tsx:279
 msgid "Merge artists"
 msgstr "कलाकारों को मिलाएँ"
@@ -169,25 +117,9 @@ msgstr "मिला रहे हैं..."
 msgid "Name"
 msgstr "नाम"
 
-#: app/albums/new.tsx:65 app/albums/new.tsx:150
-msgid "New album"
-msgstr ""
-
-#: app/artists/new.tsx:65 app/artists/new.tsx:150
-msgid "New artist"
-msgstr ""
-
-#: app/albums/[id].tsx:48
-msgid "No album found"
-msgstr ""
-
 #: app/artists/[id].tsx:48
 msgid "No artist found"
 msgstr "कोई कलाकार नहीं मिला"
-
-#: app/albums/new.tsx:87
-msgid "Nombre del albuma"
-msgstr ""
 
 #: app/artists/new.tsx:87
 msgid "Nombre del artista"
@@ -215,10 +147,6 @@ msgstr "हाल ही में चलाए गए"
 msgid "Remove from favorites"
 msgstr "पसंदीदा से हटाएं"
 
-#: app/albums/edit/[id].tsx:234
-msgid "Same album?"
-msgstr ""
-
 #: app/artists/edit/[id].tsx:234
 msgid "Same artist?"
 msgstr "क्या वही कलाकार है?"
@@ -239,10 +167,6 @@ msgstr "सहेजा जा रहा है..."
 msgid "Search songs"
 msgstr "गीत खोजें"
 
-#: components/ui/Select.tsx:54 components/ui/Select.tsx:105
-msgid "Select an option"
-msgstr ""
-
 #: utils/pickAndImportDB.ts:17
 msgid "Selection canceled"
 msgstr "चयन रद्द किया गया"
@@ -251,22 +175,10 @@ msgstr "चयन रद्द किया गया"
 msgid "Settings"
 msgstr "सेटिंग्स"
 
-#: app/song/edit/[id].tsx:96
-msgid "Song name"
-msgstr ""
-
-#: app/song/edit/[id].tsx:75
-msgid "Song update"
-msgstr ""
-
 #: app/albums/[id].tsx:88 app/artists/[id].tsx:88
 #: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "गीत"
-
-#: app/albums/edit/[id].tsx:177
-msgid "The albums have been merged successfully"
-msgstr ""
 
 #: app/artists/edit/[id].tsx:177
 msgid "The artists have been merged successfully"
@@ -275,20 +187,6 @@ msgstr "कलाकारों को सफलतापूर्वक मि
 #: app/artists/edit/[id].tsx:43 app/artists/new.tsx:29
 msgid "The name must have at least 2 characters"
 msgstr "नाम में कम से कम 2 अक्षर होने चाहिए"
-
-#: app/song/edit/[id].tsx:76
-msgid "The song has been updated correctly"
-msgstr ""
-
-#: app/albums/edit/[id].tsx:43 app/albums/new.tsx:29 app/song/edit/[id].tsx:33
-msgid "The title must have at least 2 characters"
-msgstr ""
-
-#: app/albums/edit/[id].tsx:237
-msgid ""
-"These albums share the same title because Android reads it from the ID3 "
-"tags, which you can edit in Lissn."
-msgstr ""
 
 #: app/artists/edit/[id].tsx:237
 msgid ""
@@ -312,6 +210,109 @@ msgstr "बहुत लंबा"
 #: components/partials/DrawerContent.tsx:36
 msgid "Your music app"
 msgstr "आपका संगीत ऐप"
+
+#: app/albums/new.tsx:66
+msgid "Album created successfully"
+msgstr "एल्बम सफलतापूर्वक बनाया गया"
+
+#: app/albums/edit/[id].tsx:93
+msgid "Album name"
+msgstr "एल्बम का नाम"
+
+#: components/partials/DrawerContent.tsx:44
+msgid "Albums"
+msgstr "एल्बम"
+
+#: app/albums/edit/[id].tsx:176
+msgid "Albums merged"
+msgstr "एल्बम मर्ज किए गए"
+
+#: components/partials/SongInfo.tsx:189
+msgid "Are you sure you want to delete the song?"
+msgstr "क्या आप वाकई गाना हटाना चाहते हैं?"
+
+#: app/artists/new.tsx:66
+msgid "Artist created successfully"
+msgstr "कलाकार सफलतापूर्वक बनाया गया"
+
+#: app/artists/edit/[id].tsx:93
+msgid "Artist name"
+msgstr "कलाकार का नाम"
+
+#: app/song/edit/[id].tsx:187
+msgid "Create new album"
+msgstr "नया एल्बम बनाएं"
+
+#: app/song/edit/[id].tsx:156
+msgid "Create new artist"
+msgstr "नया कलाकार बनाएं"
+
+#: components/partials/SongInfo.tsx:206
+msgid "Delete"
+msgstr "हटाएं"
+
+#: app/albums/edit/[id].tsx:208
+msgid "Edit album"
+msgstr "एल्बम संपादित करें"
+
+#: app/song/edit/[id].tsx:245
+msgid "Edit song"
+msgstr "गाना संपादित करें"
+
+#: app/albums/edit/[id].tsx:279
+msgid "Merge albums"
+msgstr "एल्बम मर्ज करें"
+
+#: app/albums/new.tsx:65 app/albums/new.tsx:150
+msgid "New album"
+msgstr "नया एल्बम"
+
+#: app/artists/new.tsx:65 app/artists/new.tsx:150
+msgid "New artist"
+msgstr "नया कलाकार"
+
+#: app/albums/[id].tsx:48
+msgid "No album found"
+msgstr "कोई एल्बम नहीं मिला"
+
+#: app/albums/new.tsx:87
+msgid "Nombre del albuma"
+msgstr "एल्बम का नाम"
+
+#: app/albums/edit/[id].tsx:234
+msgid "Same album?"
+msgstr "क्या वही एल्बम?"
+
+#: components/ui/Select.tsx:54 components/ui/Select.tsx:105
+msgid "Select an option"
+msgstr "एक विकल्प चुनें"
+
+#: app/song/edit/[id].tsx:96
+msgid "Song name"
+msgstr "गाने का नाम"
+
+#: app/song/edit/[id].tsx:75
+msgid "Song update"
+msgstr "गाने का अपडेट"
+
+#: app/albums/edit/[id].tsx:177
+msgid "The albums have been merged successfully"
+msgstr "एल्बम सफलतापूर्वक मर्ज किए गए हैं"
+
+#: app/song/edit/[id].tsx:76
+msgid "The song has been updated correctly"
+msgstr "गाना सफलतापूर्वक अपडेट किया गया है"
+
+#: app/albums/edit/[id].tsx:43 app/albums/new.tsx:29 app/song/edit/[id].tsx:33
+msgid "The title must have at least 2 characters"
+msgstr "शीर्षक में कम से कम 2 अक्षर होने चाहिए"
+
+#: app/albums/edit/[id].tsx:237
+msgid ""
+"These albums share the same title because Android reads it from the ID3 "
+"tags, which you can edit in Lissn."
+msgstr ""
+"इन एल्बमों का शीर्षक समान है क्योंकि एंड्रॉइड इसे ID3 टैग से पढ़ता है, जिन्हें आप Lissn में संपादित कर सकते हैं।"
 
 #: components/partials/SongInfo.tsx:97
 #~ msgid "Tile"
