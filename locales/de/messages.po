@@ -21,16 +21,21 @@ msgstr "Zu Favoriten hinzufügen"
 msgid "Add to playlist"
 msgstr "Zur Playlist hinzufügen"
 
-#: app/song/edit/[id].tsx:162
+#: app/song/edit/[id].tsx:156
 #: components/partials/SongInfo.tsx:114
 msgid "Album"
 msgstr "Album"
 
-#: app/albums/new.tsx:66
+#: app/albums/new.tsx:59
 msgid "Album created successfully"
 msgstr "Album erfolgreich erstellt"
 
-#: app/albums/edit/[id].tsx:93
+#: app/albums/edit/[id].tsx:189
+msgid "Album deleted"
+msgstr ""
+
+#: app/albums/edit/[id].tsx:89
+#: app/albums/new.tsx:80
 msgid "Album name"
 msgstr "Albumname"
 
@@ -38,7 +43,7 @@ msgstr "Albumname"
 msgid "Albums"
 msgstr "Alben"
 
-#: app/albums/edit/[id].tsx:176
+#: app/albums/edit/[id].tsx:174
 msgid "Albums merged"
 msgstr "Alben zusammengeführt"
 
@@ -46,16 +51,20 @@ msgstr "Alben zusammengeführt"
 msgid "Are you sure you want to delete the song?"
 msgstr "Bist du sicher, dass du das Lied löschen möchtest?"
 
-#: app/song/edit/[id].tsx:131
+#: app/song/edit/[id].tsx:125
 #: components/partials/SongInfo.tsx:108
 msgid "Artist"
 msgstr "Künstler"
 
-#: app/artists/new.tsx:66
+#: app/artists/new.tsx:59
 msgid "Artist created successfully"
 msgstr "Künstler erfolgreich erstellt"
 
-#: app/artists/edit/[id].tsx:93
+#: app/artists/edit/[id].tsx:189
+msgid "Artist deleted"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:89
 msgid "Artist name"
 msgstr "Künstlername"
 
@@ -63,34 +72,36 @@ msgstr "Künstlername"
 msgid "Artists"
 msgstr "Künstler"
 
-#: app/artists/edit/[id].tsx:176
+#: app/artists/edit/[id].tsx:174
 msgid "Artists merged"
 msgstr "Künstler zusammengeführt"
 
-#: app/albums/edit/[id].tsx:103
-#: app/albums/new.tsx:97
-#: app/artists/edit/[id].tsx:103
-#: app/artists/new.tsx:97
-#: app/song/edit/[id].tsx:106
+#: app/albums/edit/[id].tsx:99
+#: app/albums/new.tsx:90
+#: app/artists/edit/[id].tsx:99
+#: app/artists/new.tsx:90
+#: app/song/edit/[id].tsx:100
 msgid "Artwork URL"
 msgstr "Artwork-URL"
 
-#: app/albums/edit/[id].tsx:225
-#: app/albums/edit/[id].tsx:301
-#: app/albums/new.tsx:166
-#: app/artists/edit/[id].tsx:225
-#: app/artists/edit/[id].tsx:301
-#: app/artists/new.tsx:166
-#: app/song/edit/[id].tsx:262
+#: app/albums/edit/[id].tsx:237
+#: app/albums/edit/[id].tsx:329
+#: app/albums/edit/[id].tsx:363
+#: app/albums/new.tsx:159
+#: app/artists/edit/[id].tsx:237
+#: app/artists/edit/[id].tsx:330
+#: app/artists/edit/[id].tsx:364
+#: app/artists/new.tsx:159
+#: app/song/edit/[id].tsx:253
 #: components/partials/SongInfo.tsx:216
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: app/song/edit/[id].tsx:187
+#: app/song/edit/[id].tsx:178
 msgid "Create new album"
 msgstr "Neues Album erstellen"
 
-#: app/song/edit/[id].tsx:156
+#: app/song/edit/[id].tsx:150
 msgid "Create new artist"
 msgstr "Neuen Künstler erstellen"
 
@@ -98,20 +109,32 @@ msgstr "Neuen Künstler erstellen"
 msgid "Database imported successfully"
 msgstr "Datenbank erfolgreich importiert"
 
+#: app/albums/edit/[id].tsx:353
+#: app/artists/edit/[id].tsx:354
 #: components/partials/SongInfo.tsx:206
 msgid "Delete"
 msgstr "Löschen"
+
+#: app/albums/edit/[id].tsx:251
+#: app/albums/edit/[id].tsx:341
+msgid "Delete album"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:251
+#: app/artists/edit/[id].tsx:342
+msgid "Delete artist"
+msgstr ""
 
 #: components/partials/SongInfo.tsx:176
 #: components/partials/SongInfo.tsx:186
 msgid "Delete song"
 msgstr "Song löschen"
 
-#: app/albums/edit/[id].tsx:208
+#: app/albums/edit/[id].tsx:219
 msgid "Edit album"
 msgstr "Album bearbeiten"
 
-#: app/artists/edit/[id].tsx:208
+#: app/artists/edit/[id].tsx:219
 msgid "Edit artist"
 msgstr "Künstler bearbeiten"
 
@@ -119,7 +142,7 @@ msgstr "Künstler bearbeiten"
 msgid "Edit details"
 msgstr "Details bearbeiten"
 
-#: app/song/edit/[id].tsx:245
+#: app/song/edit/[id].tsx:236
 msgid "Edit song"
 msgstr "Lied bearbeiten"
 
@@ -154,43 +177,43 @@ msgstr "Musikdatenbank importieren"
 msgid "Last songs"
 msgstr "Letzte Songs"
 
-#: app/albums/edit/[id].tsx:291
-#: app/artists/edit/[id].tsx:291
+#: app/albums/edit/[id].tsx:319
+#: app/artists/edit/[id].tsx:320
 msgid "Merge"
 msgstr "Zusammenführen"
 
-#: app/albums/edit/[id].tsx:279
+#: app/albums/edit/[id].tsx:307
 msgid "Merge albums"
 msgstr "Alben zusammenführen"
 
-#: app/artists/edit/[id].tsx:279
+#: app/artists/edit/[id].tsx:308
 msgid "Merge artists"
 msgstr "Künstler zusammenführen"
 
-#: app/albums/edit/[id].tsx:268
-#: app/artists/edit/[id].tsx:268
+#: app/albums/edit/[id].tsx:296
+#: app/artists/edit/[id].tsx:296
 msgid "Merge them"
 msgstr "Zusammenführen"
 
-#: app/albums/edit/[id].tsx:269
-#: app/artists/edit/[id].tsx:269
+#: app/albums/edit/[id].tsx:297
+#: app/artists/edit/[id].tsx:297
 msgid "Merging..."
 msgstr "Wird zusammengeführt..."
 
-#: app/albums/edit/[id].tsx:82
-#: app/albums/new.tsx:76
-#: app/artists/edit/[id].tsx:82
-#: app/artists/new.tsx:76
+#: app/albums/edit/[id].tsx:78
+#: app/albums/new.tsx:69
+#: app/artists/edit/[id].tsx:78
+#: app/artists/new.tsx:69
 msgid "Name"
 msgstr "Name"
 
-#: app/albums/new.tsx:65
-#: app/albums/new.tsx:150
+#: app/albums/new.tsx:58
+#: app/albums/new.tsx:143
 msgid "New album"
 msgstr "Neues Album"
 
-#: app/artists/new.tsx:65
-#: app/artists/new.tsx:150
+#: app/artists/new.tsx:58
+#: app/artists/new.tsx:143
 msgid "New artist"
 msgstr "Neuer Künstler"
 
@@ -203,18 +226,14 @@ msgid "No artist found"
 msgstr "Kein Künstler gefunden"
 
 #: app/albums/new.tsx:87
-msgid "Nombre del albuma"
-msgstr "Albumname"
+#~ msgid "Nombre del albuma"
+#~ msgstr "Albumname"
 
-#: app/artists/new.tsx:87
+#: app/artists/new.tsx:80
 msgid "Nombre del artista"
 msgstr "Name des Künstlers"
 
-#: app/albums/edit/[id].tsx:50
-#: app/albums/new.tsx:36
-#: app/artists/edit/[id].tsx:50
-#: app/artists/new.tsx:36
-#: app/song/edit/[id].tsx:40
+#: utils/validations.ts:9
 msgid "Not valid URL"
 msgstr "Ungültige URL"
 
@@ -234,27 +253,27 @@ msgstr "Kürzlich gespielt"
 msgid "Remove from favorites"
 msgstr "Aus Favoriten entfernen"
 
-#: app/albums/edit/[id].tsx:234
+#: app/albums/edit/[id].tsx:262
 msgid "Same album?"
 msgstr "Gleiches Album?"
 
-#: app/artists/edit/[id].tsx:234
+#: app/artists/edit/[id].tsx:262
 msgid "Same artist?"
 msgstr "Gleicher Künstler?"
 
-#: app/albums/edit/[id].tsx:128
-#: app/albums/new.tsx:122
-#: app/artists/edit/[id].tsx:128
-#: app/artists/new.tsx:122
-#: app/song/edit/[id].tsx:193
+#: app/albums/edit/[id].tsx:124
+#: app/albums/new.tsx:115
+#: app/artists/edit/[id].tsx:124
+#: app/artists/new.tsx:115
+#: app/song/edit/[id].tsx:184
 msgid "Save"
 msgstr "Speichern"
 
-#: app/albums/edit/[id].tsx:128
-#: app/albums/new.tsx:122
-#: app/artists/edit/[id].tsx:128
-#: app/artists/new.tsx:122
-#: app/song/edit/[id].tsx:193
+#: app/albums/edit/[id].tsx:124
+#: app/albums/new.tsx:115
+#: app/artists/edit/[id].tsx:124
+#: app/artists/new.tsx:115
+#: app/song/edit/[id].tsx:184
 msgid "Saving..."
 msgstr "Speichern..."
 
@@ -276,11 +295,11 @@ msgstr "Auswahl abgebrochen"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: app/song/edit/[id].tsx:96
+#: app/song/edit/[id].tsx:90
 msgid "Song name"
 msgstr "Liedname"
 
-#: app/song/edit/[id].tsx:75
+#: app/song/edit/[id].tsx:69
 msgid "Song update"
 msgstr "Lied aktualisiert"
 
@@ -290,34 +309,42 @@ msgstr "Lied aktualisiert"
 msgid "Songs"
 msgstr "Songs"
 
-#: app/albums/edit/[id].tsx:177
+#: app/albums/edit/[id].tsx:190
+msgid "The album has been deleted correctly"
+msgstr ""
+
+#: app/albums/edit/[id].tsx:175
 msgid "The albums have been merged successfully"
 msgstr "Die Alben wurden erfolgreich zusammengeführt"
 
-#: app/artists/edit/[id].tsx:177
+#: app/artists/edit/[id].tsx:190
+msgid "The artist has been deleted correctly"
+msgstr ""
+
+#: app/artists/edit/[id].tsx:175
 msgid "The artists have been merged successfully"
 msgstr "Die Künstler wurden erfolgreich zusammengeführt"
 
-#: app/artists/edit/[id].tsx:43
-#: app/artists/new.tsx:29
+#: app/artists/edit/[id].tsx:47
+#: app/artists/new.tsx:30
 msgid "The name must have at least 2 characters"
 msgstr "Der Name muss mindestens 2 Zeichen haben"
 
-#: app/song/edit/[id].tsx:76
+#: app/song/edit/[id].tsx:70
 msgid "The song has been updated correctly"
 msgstr "Das Lied wurde erfolgreich aktualisiert"
 
-#: app/albums/edit/[id].tsx:43
-#: app/albums/new.tsx:29
-#: app/song/edit/[id].tsx:33
+#: app/albums/edit/[id].tsx:47
+#: app/albums/new.tsx:30
+#: app/song/edit/[id].tsx:34
 msgid "The title must have at least 2 characters"
 msgstr "Der Titel muss mindestens 2 Zeichen haben"
 
-#: app/albums/edit/[id].tsx:237
+#: app/albums/edit/[id].tsx:265
 msgid "These albums share the same title because Android reads it from the ID3 tags, which you can edit in Lissn."
 msgstr "Diese Alben teilen denselben Titel, weil Android ihn aus den ID3-Tags liest, die du in Lissn bearbeiten kannst."
 
-#: app/artists/edit/[id].tsx:237
+#: app/artists/edit/[id].tsx:265
 msgid "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
 msgstr "Diese Künstler teilen sich denselben Namen, weil Android ihn aus den ID3-Tags liest, die du in Lissn bearbeiten kannst."
 
@@ -325,21 +352,17 @@ msgstr "Diese Künstler teilen sich denselben Namen, weil Android ihn aus den ID
 #~ msgid "Tile"
 #~ msgstr "Kachel"
 
-#: app/song/edit/[id].tsx:85
+#: app/song/edit/[id].tsx:79
 #: components/partials/SongInfo.tsx:104
 msgid "Title"
 msgstr "Titel"
 
-#: app/albums/edit/[id].tsx:44
-#: app/albums/edit/[id].tsx:47
-#: app/albums/new.tsx:30
-#: app/albums/new.tsx:33
-#: app/artists/edit/[id].tsx:44
-#: app/artists/edit/[id].tsx:47
-#: app/artists/new.tsx:30
-#: app/artists/new.tsx:33
-#: app/song/edit/[id].tsx:34
-#: app/song/edit/[id].tsx:37
+#: app/albums/edit/[id].tsx:48
+#: app/albums/new.tsx:31
+#: app/artists/edit/[id].tsx:48
+#: app/artists/new.tsx:31
+#: app/song/edit/[id].tsx:35
+#: utils/validations.ts:6
 msgid "Too long"
 msgstr "Zu lang"
 
