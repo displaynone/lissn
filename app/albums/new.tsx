@@ -8,6 +8,7 @@ import { useGetSetToastData } from "@/store/appStore";
 import {
 	useGetCreateAlbum
 } from "@/store/songsStore";
+import { isValidUrl } from "@/utils/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/core/macro";
 import { Trans, useLingui } from "@lingui/react/macro";
@@ -28,15 +29,7 @@ const albumSchema = z.object({
 		.string()
 		.min(2, t`The title must have at least 2 characters`)
 		.max(250, t`Too long`),
-	artworkUri: z
-		.string()
-		.max(250, t`Too long`)
-		.regex(
-			/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/\S*)?$/,
-			t`Not valid URL`
-		)
-		.optional()
-		.or(z.literal("")),
+	artworkUri: isValidUrl,
 });
 
 const CreateForm: React.FC = () => {
@@ -84,7 +77,7 @@ const CreateForm: React.FC = () => {
 							value={value}
 							onBlur={onBlur}
 							onChangeText={onChange}
-							placeholder={t`Nombre del albuma`}
+							placeholder={t`Album name`}
 							returnKeyType="next"
 						/>
 					)}
@@ -92,7 +85,7 @@ const CreateForm: React.FC = () => {
 				{!!errors.title && <Text color="$red10">{errors.title.message}</Text>}
 			</YStack>
 
-			<YStack gap="$2">
+			<YStack gap="$2" paddingBottom="$4">
 				<Label htmlFor="externalId">
 					<Trans>Artwork URL</Trans>
 				</Label>

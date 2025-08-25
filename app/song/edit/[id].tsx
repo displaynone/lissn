@@ -12,8 +12,9 @@ import {
 	useGetArtists,
 	useGetSongById,
 	useGetUpdateSong,
-	useRefreshSongs,
+	useRefreshSongs
 } from "@/store/songsStore";
+import { isValidUrl } from "@/utils/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/core/macro";
 import { Trans, useLingui } from "@lingui/react/macro";
@@ -32,15 +33,7 @@ const songSchema = z.object({
 		.string()
 		.min(2, t`The title must have at least 2 characters`)
 		.max(250, t`Too long`),
-	coverPath: z
-		.string()
-		.max(250, t`Too long`)
-		.regex(
-			/^((https?|content):\/\/)?([a-zA-Z0-9-]+\.)*[a-zA-Z]{2,}(:\d+)?(\/\S*)?$/,
-			t`Not valid URL`
-		)
-		.optional()
-		.or(z.literal("")),
+	coverPath: isValidUrl,
 	artistId: z.string(),
 	albumId: z.string(),
 });
@@ -69,13 +62,14 @@ const EditForm: React.FC<EditFormProps> = ({ song }) => {
 	});
 
 	const onSubmit = (data: Partial<Song>) => {
-		update(song.id, data).then(() => router.back());
-		setToastData({
-			id: "song_updated",
-			title: t`Song update`,
-			message: t`The song has been updated correctly`,
+		update(song.id, data).then(() => {
+			router.back();
+			setToastData({
+				id: "song_updated",
+				title: t`Song update`,
+				message: t`The song has been updated correctly`,
+			});
 		});
-		router.back();
 	};
 
 	return (
@@ -157,7 +151,7 @@ const EditForm: React.FC<EditFormProps> = ({ song }) => {
 				</Text>
 			</YStack>
 
-			<YStack gap="$2">
+			<YStack gap="$2" paddingBottom="$4">
 				<Label htmlFor="albumId">
 					<Trans>Album</Trans>
 				</Label>
@@ -180,10 +174,7 @@ const EditForm: React.FC<EditFormProps> = ({ song }) => {
 				{!!errors.albumId && (
 					<Text color="$red10">{errors.albumId.message}</Text>
 				)}
-				<Text
-					color="$color.primary"
-					onPress={() => router.push("/albums/new")}
-				>
+				<Text color="$color.primary" onPress={() => router.push("/albums/new")}>
 					<Trans>Create new album</Trans>
 				</Text>
 			</YStack>

@@ -49,7 +49,7 @@ export default function SongsScreen() {
 	);
 
 	return (
-		<YStack flex={1}>
+		<YStack flex={1} gap="$3">
 			<Heading />
 			{showLoading && Loading}
 			{!showLoading && (

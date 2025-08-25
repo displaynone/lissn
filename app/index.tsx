@@ -80,7 +80,7 @@ export default function HomeScreen() {
 			if (search) {
 				listSongLayoutVals.value = {
 					height: layoutHeight.value,
-					top: 0,
+					top: 16,
 					left: 0,
 				};
 			} else {

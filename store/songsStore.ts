@@ -36,6 +36,8 @@ interface MusicStoreState {
 	toggleFavorite: (id: string) => Promise<void>;
 	incrementPlayCount: (id: string) => Promise<void>;
 	deleteSong: (id: string) => Promise<void>;
+	deleteArtist: (id: string) => Promise<void>;
+	deleteAlbum: (id: string) => Promise<void>;
 
 	searchSongs: (query: string) => Promise<Song[]>;
 	getSongsByArtist: (artistId: string) => Promise<Song[]>;
@@ -261,6 +263,30 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			if (playingSongId === id) {
 				set({ playingSongId: undefined });
 			}
+		});
+	},
+
+	deleteArtist: async (id) => {
+		await database.write(async () => {
+			console.log("Deleting artist", id);
+			const artist = await database.get<Artist>("artists").find(id);
+			await artist.markAsDeleted();
+			const { artists } = get();
+			set({
+				artists: artists.filter((a) => a.id !== id),
+			});
+		});
+	},
+
+	deleteAlbum: async (id) => {
+		await database.write(async () => {
+			console.log("Deleting album", id);
+			const album = await database.get<Album>("albums").find(id);
+			await album.markAsDeleted();
+			const { albums } = get();
+			set({
+				albums: albums.filter((a) => a.id !== id),
+			});
 		});
 	},
 
@@ -541,6 +567,10 @@ export const useGetMergeArtists = () =>
 	useMusicStore((state) => state.mergeArtists);
 export const useGetDeleteSong = () =>
 	useMusicStore((state) => state.deleteSong);
+export const useGetDeleteArtist = () =>
+	useMusicStore((state) => state.deleteArtist);
+export const useGetDeleteAlbum = () =>
+	useMusicStore((state) => state.deleteAlbum);
 export const useGetCreateArtist = () =>
 	useMusicStore((state) => state.createArtist);
 export const useGetCreateAlbum = () =>

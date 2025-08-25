@@ -8,6 +8,7 @@ import { useGetSetToastData } from "@/store/appStore";
 import {
 	useGetCreateArtist
 } from "@/store/songsStore";
+import { isValidUrl } from "@/utils/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/core/macro";
 import { Trans, useLingui } from "@lingui/react/macro";
@@ -28,15 +29,7 @@ const artistSchema = z.object({
 		.string()
 		.min(2, t`The name must have at least 2 characters`)
 		.max(250, t`Too long`),
-	artworkUri: z
-		.string()
-		.max(120, t`Too long`)
-		.regex(
-			/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/\S*)?$/,
-			t`Not valid URL`
-		)
-		.optional()
-		.or(z.literal("")),
+	artworkUri: isValidUrl,
 });
 
 const CreateForm: React.FC = () => {
@@ -92,7 +85,7 @@ const CreateForm: React.FC = () => {
 				{!!errors.name && <Text color="$red10">{errors.name.message}</Text>}
 			</YStack>
 
-			<YStack gap="$2">
+			<YStack gap="$2" paddingBottom="$4">
 				<Label htmlFor="externalId">
 					<Trans>Artwork URL</Trans>
 				</Label>

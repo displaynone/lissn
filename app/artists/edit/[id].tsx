@@ -1,4 +1,5 @@
 import ArrowLeftIcon from "@/components/icons/ArrowLeftIcon";
+import TrashIcon from "@/components/icons/TrashIcon";
 import Cover from "@/components/partials/Cover";
 import SheetDialog from "@/components/partials/SheetDialog";
 import { H1, H2 } from "@/components/ui/Headings";
@@ -11,10 +12,13 @@ import { Artist } from "@/models";
 import { useGetSetToastData } from "@/store/appStore";
 import {
 	useGetArtistById,
+	useGetDeleteArtist,
 	useGetSimilarArtists,
 	useGetUpdateArtist,
 	useRefreshArtists,
 } from "@/store/songsStore";
+import { tamaguiConfig } from "@/tamagui.config";
+import { isValidUrl } from "@/utils/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { t } from "@lingui/core/macro";
 import { Trans, useLingui } from "@lingui/react/macro";
@@ -42,15 +46,7 @@ const artistSchema = z.object({
 		.string()
 		.min(2, t`The name must have at least 2 characters`)
 		.max(250, t`Too long`),
-	artworkUri: z
-		.string()
-		.max(120, t`Too long`)
-		.regex(
-			/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/\S*)?$/,
-			t`Not valid URL`
-		)
-		.optional()
-		.or(z.literal("")),
+	artworkUri: isValidUrl,
 });
 
 const EditForm: React.FC<EditFormProps> = ({ artist }) => {
@@ -98,7 +94,7 @@ const EditForm: React.FC<EditFormProps> = ({ artist }) => {
 				{!!errors.name && <Text color="$red10">{errors.name.message}</Text>}
 			</YStack>
 
-			<YStack gap="$2">
+			<YStack gap="$2" paddingBottom="$4">
 				<Label htmlFor="externalId">
 					<Trans>Artwork URL</Trans>
 				</Label>
@@ -143,7 +139,9 @@ export default function PlaylistsScreen() {
 	const { loading: mergeLoading, mergeArtists } = useMergeArtists();
 	const refreshArtists = useRefreshArtists();
 	const [open, setOpen] = useState(false);
+	const [openDelete, setOpenDelete] = useState(false);
 	const setToastData = useGetSetToastData();
+	const deleteArtist = useGetDeleteArtist();
 
 	useEffect(() => {
 		if (id) {
@@ -183,6 +181,19 @@ export default function PlaylistsScreen() {
 		}
 	};
 
+	const handleDelete = () => {
+		if (artist) {
+			deleteArtist(artist.id).then(() => {
+				setToastData({
+					id: "artist_deleted",
+					title: t`Artist deleted`,
+					message: t`The artist has been deleted correctly`,
+				});
+				router.push("/artists");
+			});
+		}
+	};
+
 	if (loading) {
 		return <Loading />;
 	}
@@ -215,21 +226,38 @@ export default function PlaylistsScreen() {
 							{!artist && <Loading />}
 							{artist && <EditForm artist={artist} />}
 							{artist && (
-								<Button
-									bg="$color.backgroundDarkTransparent20"
-									onPress={() => router.back()}
-									marginTop="$4"
-									color="$color.white"
-								>
-									<Text>
-										<Trans>Cancel</Trans>
-									</Text>
-								</Button>
+								<>
+									<Button
+										bg="$color.backgroundDarkTransparent20"
+										onPress={() => router.back()}
+										marginTop="$4"
+										color="$color.white"
+									>
+										<Text>
+											<Trans>Cancel</Trans>
+										</Text>
+									</Button>
+									<Button
+										bg="transparent"
+										onPress={() => setOpenDelete(true)}
+										marginTop="$4"
+									>
+										<XStack ai="center" gap="$2">
+											<TrashIcon
+												color={tamaguiConfig.tokens.color.red9Light.val}
+												size={16}
+											/>
+											<Text color="$red9Light">
+												<Trans>Delete artist</Trans>
+											</Text>
+										</XStack>
+									</Button>
+								</>
 							)}
 						</YStack>
 						{!!similarArtists.length && (
 							<YStack p="$4" gap="$4">
-								<Separator borderColor={"$backgroundTransparent10"}/>
+								<Separator borderColor={"$backgroundTransparent10"} />
 								<H2>
 									<Trans>Same artist?</Trans>
 								</H2>
@@ -273,6 +301,7 @@ export default function PlaylistsScreen() {
 						)}
 					</YStack>
 				</ScrollView>
+
 				<SheetDialog open={open} onOpenChange={(val: boolean) => setOpen(val)}>
 					<YStack gap="$3" p="$4">
 						<H2>
@@ -294,6 +323,40 @@ export default function PlaylistsScreen() {
 						<Button
 							bg="$color.backgroundDarkTransparent20"
 							onPress={() => setOpen(false)}
+							marginTop="$4"
+							color="$color.white"
+						>
+							<Text>
+								<Trans>Cancel</Trans>
+							</Text>
+						</Button>
+					</XStack>
+				</SheetDialog>
+
+				<SheetDialog
+					open={openDelete}
+					onOpenChange={(val: boolean) => setOpenDelete(val)}
+				>
+					<YStack gap="$3" p="$4">
+						<H2>
+							<Trans>Delete artist</Trans>
+						</H2>
+					</YStack>
+					<Text>Are you sure you want to delete this artist?</Text>
+					<XStack gap="$4" jc="flex-start" mt="$4">
+						<Button
+							bg="$red9Light"
+							onPress={() => handleDelete()}
+							marginTop="$4"
+							color="$color.white"
+						>
+							<Text>
+								<Trans>Delete</Trans>
+							</Text>
+						</Button>
+						<Button
+							bg="$color.backgroundDarkTransparent20"
+							onPress={() => setOpenDelete(false)}
 							marginTop="$4"
 							color="$color.white"
 						>
