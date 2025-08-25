@@ -25,37 +25,9 @@ msgstr "添加到播放列表"
 msgid "Album"
 msgstr "专辑"
 
-#: app/albums/new.tsx:66
-msgid "Album created successfully"
-msgstr ""
-
-#: app/albums/edit/[id].tsx:93
-msgid "Album name"
-msgstr ""
-
-#: components/partials/DrawerContent.tsx:44
-msgid "Albums"
-msgstr ""
-
-#: app/albums/edit/[id].tsx:176
-msgid "Albums merged"
-msgstr ""
-
-#: components/partials/SongInfo.tsx:189
-msgid "Are you sure you want to delete the song?"
-msgstr ""
-
 #: app/song/edit/[id].tsx:131 components/partials/SongInfo.tsx:108
 msgid "Artist"
 msgstr "艺术家"
-
-#: app/artists/new.tsx:66
-msgid "Artist created successfully"
-msgstr ""
-
-#: app/artists/edit/[id].tsx:93
-msgid "Artist name"
-msgstr ""
 
 #: components/partials/Heading.tsx:39
 msgid "Artists"
@@ -78,29 +50,13 @@ msgstr "封面网址"
 msgid "Cancel"
 msgstr "取消"
 
-#: app/song/edit/[id].tsx:187
-msgid "Create new album"
-msgstr ""
-
-#: app/song/edit/[id].tsx:156
-msgid "Create new artist"
-msgstr ""
-
 #: utils/pickAndImportDB.ts:29
 msgid "Database imported successfully"
 msgstr "数据库导入成功"
 
-#: components/partials/SongInfo.tsx:206
-msgid "Delete"
-msgstr ""
-
 #: components/partials/SongInfo.tsx:176 components/partials/SongInfo.tsx:186
 msgid "Delete song"
 msgstr "删除歌曲"
-
-#: app/albums/edit/[id].tsx:208
-msgid "Edit album"
-msgstr ""
 
 #: app/artists/edit/[id].tsx:208
 msgid "Edit artist"
@@ -109,10 +65,6 @@ msgstr "编辑艺术家"
 #: components/partials/SongInfo.tsx:167
 msgid "Edit details"
 msgstr "编辑详情"
-
-#: app/song/edit/[id].tsx:245
-msgid "Edit song"
-msgstr ""
 
 #. js-lingui-explicit-id
 #: utils/pickAndImportDB.ts:36
@@ -148,10 +100,6 @@ msgstr "最近的歌曲"
 msgid "Merge"
 msgstr "合并"
 
-#: app/albums/edit/[id].tsx:279
-msgid "Merge albums"
-msgstr ""
-
 #: app/artists/edit/[id].tsx:279
 msgid "Merge artists"
 msgstr "合并艺术家"
@@ -169,25 +117,9 @@ msgstr "正在合并..."
 msgid "Name"
 msgstr "名称"
 
-#: app/albums/new.tsx:65 app/albums/new.tsx:150
-msgid "New album"
-msgstr ""
-
-#: app/artists/new.tsx:65 app/artists/new.tsx:150
-msgid "New artist"
-msgstr ""
-
-#: app/albums/[id].tsx:48
-msgid "No album found"
-msgstr ""
-
 #: app/artists/[id].tsx:48
 msgid "No artist found"
 msgstr "未找到艺术家"
-
-#: app/albums/new.tsx:87
-msgid "Nombre del albuma"
-msgstr ""
 
 #: app/artists/new.tsx:87
 msgid "Nombre del artista"
@@ -215,10 +147,6 @@ msgstr "最近播放"
 msgid "Remove from favorites"
 msgstr "从收藏中移除"
 
-#: app/albums/edit/[id].tsx:234
-msgid "Same album?"
-msgstr ""
-
 #: app/artists/edit/[id].tsx:234
 msgid "Same artist?"
 msgstr "相同的艺术家？"
@@ -239,10 +167,6 @@ msgstr "正在保存..."
 msgid "Search songs"
 msgstr "搜索歌曲"
 
-#: components/ui/Select.tsx:54 components/ui/Select.tsx:105
-msgid "Select an option"
-msgstr ""
-
 #: utils/pickAndImportDB.ts:17
 msgid "Selection canceled"
 msgstr "选择已取消"
@@ -251,22 +175,10 @@ msgstr "选择已取消"
 msgid "Settings"
 msgstr "设置"
 
-#: app/song/edit/[id].tsx:96
-msgid "Song name"
-msgstr ""
-
-#: app/song/edit/[id].tsx:75
-msgid "Song update"
-msgstr ""
-
 #: app/albums/[id].tsx:88 app/artists/[id].tsx:88
 #: components/partials/Heading.tsx:35
 msgid "Songs"
 msgstr "歌曲"
-
-#: app/albums/edit/[id].tsx:177
-msgid "The albums have been merged successfully"
-msgstr ""
 
 #: app/artists/edit/[id].tsx:177
 msgid "The artists have been merged successfully"
@@ -275,20 +187,6 @@ msgstr "艺术家已成功合并"
 #: app/artists/edit/[id].tsx:43 app/artists/new.tsx:29
 msgid "The name must have at least 2 characters"
 msgstr "名称至少需要2个字符"
-
-#: app/song/edit/[id].tsx:76
-msgid "The song has been updated correctly"
-msgstr ""
-
-#: app/albums/edit/[id].tsx:43 app/albums/new.tsx:29 app/song/edit/[id].tsx:33
-msgid "The title must have at least 2 characters"
-msgstr ""
-
-#: app/albums/edit/[id].tsx:237
-msgid ""
-"These albums share the same title because Android reads it from the ID3 "
-"tags, which you can edit in Lissn."
-msgstr ""
 
 #: app/artists/edit/[id].tsx:237
 msgid ""
@@ -312,6 +210,109 @@ msgstr "太长"
 #: components/partials/DrawerContent.tsx:36
 msgid "Your music app"
 msgstr "你的音乐应用"
+
+#: app/albums/new.tsx:66
+msgid "Album created successfully"
+msgstr "专辑创建成功"
+
+#: app/albums/edit/[id].tsx:93
+msgid "Album name"
+msgstr "专辑名称"
+
+#: components/partials/DrawerContent.tsx:44
+msgid "Albums"
+msgstr "专辑"
+
+#: app/albums/edit/[id].tsx:176
+msgid "Albums merged"
+msgstr "专辑合并成功"
+
+#: components/partials/SongInfo.tsx:189
+msgid "Are you sure you want to delete the song?"
+msgstr "确定要删除这首歌吗？"
+
+#: app/artists/new.tsx:66
+msgid "Artist created successfully"
+msgstr "艺术家创建成功"
+
+#: app/artists/edit/[id].tsx:93
+msgid "Artist name"
+msgstr "艺术家名称"
+
+#: app/song/edit/[id].tsx:187
+msgid "Create new album"
+msgstr "创建新专辑"
+
+#: app/song/edit/[id].tsx:156
+msgid "Create new artist"
+msgstr "创建新艺术家"
+
+#: components/partials/SongInfo.tsx:206
+msgid "Delete"
+msgstr "删除"
+
+#: app/albums/edit/[id].tsx:208
+msgid "Edit album"
+msgstr "编辑专辑"
+
+#: app/song/edit/[id].tsx:245
+msgid "Edit song"
+msgstr "编辑歌曲"
+
+#: app/albums/edit/[id].tsx:279
+msgid "Merge albums"
+msgstr "合并专辑"
+
+#: app/albums/new.tsx:65 app/albums/new.tsx:150
+msgid "New album"
+msgstr "新专辑"
+
+#: app/artists/new.tsx:65 app/artists/new.tsx:150
+msgid "New artist"
+msgstr "新艺术家"
+
+#: app/albums/[id].tsx:48
+msgid "No album found"
+msgstr "未找到专辑"
+
+#: app/albums/new.tsx:87
+msgid "Nombre del albuma"
+msgstr "专辑名称"
+
+#: app/albums/edit/[id].tsx:234
+msgid "Same album?"
+msgstr "同一个专辑？"
+
+#: components/ui/Select.tsx:54 components/ui/Select.tsx:105
+msgid "Select an option"
+msgstr "选择一个选项"
+
+#: app/song/edit/[id].tsx:96
+msgid "Song name"
+msgstr "歌曲名称"
+
+#: app/song/edit/[id].tsx:75
+msgid "Song update"
+msgstr "歌曲更新"
+
+#: app/albums/edit/[id].tsx:177
+msgid "The albums have been merged successfully"
+msgstr "专辑已成功合并"
+
+#: app/song/edit/[id].tsx:76
+msgid "The song has been updated correctly"
+msgstr "歌曲已成功更新"
+
+#: app/albums/edit/[id].tsx:43 app/albums/new.tsx:29 app/song/edit/[id].tsx:33
+msgid "The title must have at least 2 characters"
+msgstr "标题至少需要 2 个字符"
+
+#: app/albums/edit/[id].tsx:237
+msgid ""
+"These albums share the same title because Android reads it from the ID3 "
+"tags, which you can edit in Lissn."
+msgstr ""
+"这些专辑共享同一标题，因为 Android 从 ID3 标签读取它，你可以在 Lissn 中编辑。"
 
 #: components/partials/SongInfo.tsx:97
 #~ msgid "Tile"
