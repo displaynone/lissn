@@ -21,195 +21,10 @@ msgstr "أضف إلى المفضلة"
 msgid "Add to playlist"
 msgstr "أضف إلى قائمة التشغيل"
 
-#: app/song/edit/[id].tsx:162 components/partials/SongInfo.tsx:114
+#: app/song/edit/[id].tsx:162
+#: components/partials/SongInfo.tsx:114
 msgid "Album"
 msgstr "ألبوم"
-
-#: app/song/edit/[id].tsx:131 components/partials/SongInfo.tsx:108
-msgid "Artist"
-msgstr "فنان"
-
-#: components/partials/Heading.tsx:39
-msgid "Artists"
-msgstr "فنانون"
-
-#: app/artists/edit/[id].tsx:176
-msgid "Artists merged"
-msgstr "تم دمج الفنانين"
-
-#: app/albums/edit/[id].tsx:103 app/albums/new.tsx:97
-#: app/artists/edit/[id].tsx:103 app/artists/new.tsx:97
-#: app/song/edit/[id].tsx:106
-msgid "Artwork URL"
-msgstr "رابط الصورة"
-
-#: app/albums/edit/[id].tsx:225 app/albums/edit/[id].tsx:301
-#: app/albums/new.tsx:166 app/artists/edit/[id].tsx:225
-#: app/artists/edit/[id].tsx:301 app/artists/new.tsx:166
-#: app/song/edit/[id].tsx:262 components/partials/SongInfo.tsx:216
-msgid "Cancel"
-msgstr "إلغاء"
-
-#: utils/pickAndImportDB.ts:29
-msgid "Database imported successfully"
-msgstr "تم استيراد قاعدة البيانات بنجاح"
-
-#: components/partials/SongInfo.tsx:176 components/partials/SongInfo.tsx:186
-msgid "Delete song"
-msgstr "حذف الأغنية"
-
-#: app/artists/edit/[id].tsx:208
-msgid "Edit artist"
-msgstr "تعديل الفنان"
-
-#: components/partials/SongInfo.tsx:167
-msgid "Edit details"
-msgstr "تعديل التفاصيل"
-
-#. js-lingui-explicit-id
-#: utils/pickAndImportDB.ts:36
-msgid "error.importing_db"
-msgstr "خطأ في التحديد أو الاستيراد: {error}"
-
-#: app/settings/index.tsx:19
-msgid "Export music database"
-msgstr "تصدير قاعدة بيانات الموسيقى"
-
-#: components/partials/Heading.tsx:37
-msgid "Favorites"
-msgstr "المفضلة"
-
-#: components/partials/DrawerContent.tsx:72
-msgid "GitHub Project"
-msgstr "مشروع GitHub"
-
-#: utils/pickAndImportDB.ts:16 utils/pickAndImportDB.ts:28
-#: utils/pickAndImportDB.ts:34
-msgid "Import database"
-msgstr "استيراد قاعدة البيانات"
-
-#: app/settings/index.tsx:26
-msgid "Import music database"
-msgstr "استيراد قاعدة بيانات الموسيقى"
-
-#: app/index.tsx:150
-msgid "Last songs"
-msgstr "آخر الأغاني"
-
-#: app/albums/edit/[id].tsx:291 app/artists/edit/[id].tsx:291
-msgid "Merge"
-msgstr "دمج"
-
-#: app/artists/edit/[id].tsx:279
-msgid "Merge artists"
-msgstr "دمج الفنانين"
-
-#: app/albums/edit/[id].tsx:268 app/artists/edit/[id].tsx:268
-msgid "Merge them"
-msgstr "دمجهم"
-
-#: app/albums/edit/[id].tsx:269 app/artists/edit/[id].tsx:269
-msgid "Merging..."
-msgstr "جارٍ الدمج..."
-
-#: app/albums/edit/[id].tsx:82 app/albums/new.tsx:76
-#: app/artists/edit/[id].tsx:82 app/artists/new.tsx:76
-msgid "Name"
-msgstr "الاسم"
-
-#: app/artists/[id].tsx:48
-msgid "No artist found"
-msgstr "لم يتم العثور على فنان"
-
-#: app/artists/new.tsx:87
-msgid "Nombre del artista"
-msgstr "اسم الفنان"
-
-#: app/albums/edit/[id].tsx:50 app/albums/new.tsx:36
-#: app/artists/edit/[id].tsx:50 app/artists/new.tsx:36
-#: app/song/edit/[id].tsx:40
-msgid "Not valid URL"
-msgstr "عنوان URL غير صالح"
-
-#: components/partials/SongInfo.tsx:131
-msgid "Pause song"
-msgstr "إيقاف الأغنية"
-
-#: components/partials/SongInfo.tsx:131
-msgid "Play song"
-msgstr "تشغيل الأغنية"
-
-#: app/index.tsx:135
-msgid "Recently played"
-msgstr "تم التشغيل مؤخراً"
-
-#: components/partials/SongInfo.tsx:150
-msgid "Remove from favorites"
-msgstr "إزالة من المفضلة"
-
-#: app/artists/edit/[id].tsx:234
-msgid "Same artist?"
-msgstr "نفس الفنان؟"
-
-#: app/albums/edit/[id].tsx:128 app/albums/new.tsx:122
-#: app/artists/edit/[id].tsx:128 app/artists/new.tsx:122
-#: app/song/edit/[id].tsx:193
-msgid "Save"
-msgstr "حفظ"
-
-#: app/albums/edit/[id].tsx:128 app/albums/new.tsx:122
-#: app/artists/edit/[id].tsx:128 app/artists/new.tsx:122
-#: app/song/edit/[id].tsx:193
-msgid "Saving..."
-msgstr "جارٍ الحفظ..."
-
-#: components/partials/Heading.tsx:79
-msgid "Search songs"
-msgstr "البحث عن الأغاني"
-
-#: utils/pickAndImportDB.ts:17
-msgid "Selection canceled"
-msgstr "تم إلغاء التحديد"
-
-#: components/partials/DrawerContent.tsx:53 components/partials/Heading.tsx:41
-msgid "Settings"
-msgstr "الإعدادات"
-
-#: app/albums/[id].tsx:88 app/artists/[id].tsx:88
-#: components/partials/Heading.tsx:35
-msgid "Songs"
-msgstr "أغانٍ"
-
-#: app/artists/edit/[id].tsx:177
-msgid "The artists have been merged successfully"
-msgstr "تم دمج الفنانين بنجاح"
-
-#: app/artists/edit/[id].tsx:43 app/artists/new.tsx:29
-msgid "The name must have at least 2 characters"
-msgstr "يجب أن يحتوي الاسم على حرفين على الأقل"
-
-#: app/artists/edit/[id].tsx:237
-msgid ""
-"These artists share the same name because Android reads it from the ID3 "
-"tags, which you can edit in Lissn."
-msgstr ""
-"يشترك هؤلاء الفنانون في نفس الاسم لأن أندرويد يقرأه من وسوم ID3 التي يمكنك "
-"تعديلها في Lissn."
-
-#: app/song/edit/[id].tsx:85 components/partials/SongInfo.tsx:104
-msgid "Title"
-msgstr "العنوان"
-
-#: app/albums/edit/[id].tsx:44 app/albums/edit/[id].tsx:47
-#: app/albums/new.tsx:30 app/albums/new.tsx:33 app/artists/edit/[id].tsx:44
-#: app/artists/edit/[id].tsx:47 app/artists/new.tsx:30 app/artists/new.tsx:33
-#: app/song/edit/[id].tsx:34 app/song/edit/[id].tsx:37
-msgid "Too long"
-msgstr "طويل جداً"
-
-#: components/partials/DrawerContent.tsx:36
-msgid "Your music app"
-msgstr "تطبيق الموسيقى الخاص بك"
 
 #: app/albums/new.tsx:66
 msgid "Album created successfully"
@@ -231,6 +46,11 @@ msgstr "تم دمج الألبومات"
 msgid "Are you sure you want to delete the song?"
 msgstr "هل أنت متأكد أنك تريد حذف الأغنية؟"
 
+#: app/song/edit/[id].tsx:131
+#: components/partials/SongInfo.tsx:108
+msgid "Artist"
+msgstr "فنان"
+
 #: app/artists/new.tsx:66
 msgid "Artist created successfully"
 msgstr "تم إنشاء الفنان بنجاح"
@@ -238,6 +58,33 @@ msgstr "تم إنشاء الفنان بنجاح"
 #: app/artists/edit/[id].tsx:93
 msgid "Artist name"
 msgstr "اسم الفنان"
+
+#: components/partials/Heading.tsx:39
+msgid "Artists"
+msgstr "فنانون"
+
+#: app/artists/edit/[id].tsx:176
+msgid "Artists merged"
+msgstr "تم دمج الفنانين"
+
+#: app/albums/edit/[id].tsx:103
+#: app/albums/new.tsx:97
+#: app/artists/edit/[id].tsx:103
+#: app/artists/new.tsx:97
+#: app/song/edit/[id].tsx:106
+msgid "Artwork URL"
+msgstr "رابط الصورة"
+
+#: app/albums/edit/[id].tsx:225
+#: app/albums/edit/[id].tsx:301
+#: app/albums/new.tsx:166
+#: app/artists/edit/[id].tsx:225
+#: app/artists/edit/[id].tsx:301
+#: app/artists/new.tsx:166
+#: app/song/edit/[id].tsx:262
+#: components/partials/SongInfo.tsx:216
+msgid "Cancel"
+msgstr "إلغاء"
 
 #: app/song/edit/[id].tsx:187
 msgid "Create new album"
@@ -247,27 +94,103 @@ msgstr "إنشاء ألبوم جديد"
 msgid "Create new artist"
 msgstr "إنشاء فنان جديد"
 
+#: utils/pickAndImportDB.ts:29
+msgid "Database imported successfully"
+msgstr "تم استيراد قاعدة البيانات بنجاح"
+
 #: components/partials/SongInfo.tsx:206
 msgid "Delete"
 msgstr "حذف"
+
+#: components/partials/SongInfo.tsx:176
+#: components/partials/SongInfo.tsx:186
+msgid "Delete song"
+msgstr "حذف الأغنية"
 
 #: app/albums/edit/[id].tsx:208
 msgid "Edit album"
 msgstr "تعديل الألبوم"
 
+#: app/artists/edit/[id].tsx:208
+msgid "Edit artist"
+msgstr "تعديل الفنان"
+
+#: components/partials/SongInfo.tsx:167
+msgid "Edit details"
+msgstr "تعديل التفاصيل"
+
 #: app/song/edit/[id].tsx:245
 msgid "Edit song"
 msgstr "تعديل الأغنية"
+
+#. js-lingui-explicit-id
+#: utils/pickAndImportDB.ts:36
+msgid "error.importing_db"
+msgstr "خطأ في التحديد أو الاستيراد: {error}"
+
+#: app/settings/index.tsx:19
+msgid "Export music database"
+msgstr "تصدير قاعدة بيانات الموسيقى"
+
+#: components/partials/Heading.tsx:37
+msgid "Favorites"
+msgstr "المفضلة"
+
+#: components/partials/DrawerContent.tsx:72
+msgid "GitHub Project"
+msgstr "مشروع GitHub"
+
+#: utils/pickAndImportDB.ts:16
+#: utils/pickAndImportDB.ts:28
+#: utils/pickAndImportDB.ts:34
+msgid "Import database"
+msgstr "استيراد قاعدة البيانات"
+
+#: app/settings/index.tsx:26
+msgid "Import music database"
+msgstr "استيراد قاعدة بيانات الموسيقى"
+
+#: app/index.tsx:150
+msgid "Last songs"
+msgstr "آخر الأغاني"
+
+#: app/albums/edit/[id].tsx:291
+#: app/artists/edit/[id].tsx:291
+msgid "Merge"
+msgstr "دمج"
 
 #: app/albums/edit/[id].tsx:279
 msgid "Merge albums"
 msgstr "دمج الألبومات"
 
-#: app/albums/new.tsx:65 app/albums/new.tsx:150
+#: app/artists/edit/[id].tsx:279
+msgid "Merge artists"
+msgstr "دمج الفنانين"
+
+#: app/albums/edit/[id].tsx:268
+#: app/artists/edit/[id].tsx:268
+msgid "Merge them"
+msgstr "دمجهم"
+
+#: app/albums/edit/[id].tsx:269
+#: app/artists/edit/[id].tsx:269
+msgid "Merging..."
+msgstr "جارٍ الدمج..."
+
+#: app/albums/edit/[id].tsx:82
+#: app/albums/new.tsx:76
+#: app/artists/edit/[id].tsx:82
+#: app/artists/new.tsx:76
+msgid "Name"
+msgstr "الاسم"
+
+#: app/albums/new.tsx:65
+#: app/albums/new.tsx:150
 msgid "New album"
 msgstr "ألبوم جديد"
 
-#: app/artists/new.tsx:65 app/artists/new.tsx:150
+#: app/artists/new.tsx:65
+#: app/artists/new.tsx:150
 msgid "New artist"
 msgstr "فنان جديد"
 
@@ -275,17 +198,83 @@ msgstr "فنان جديد"
 msgid "No album found"
 msgstr "لم يتم العثور على ألبوم"
 
+#: app/artists/[id].tsx:48
+msgid "No artist found"
+msgstr "لم يتم العثور على فنان"
+
 #: app/albums/new.tsx:87
 msgid "Nombre del albuma"
 msgstr "اسم الألبوم"
+
+#: app/artists/new.tsx:87
+msgid "Nombre del artista"
+msgstr "اسم الفنان"
+
+#: app/albums/edit/[id].tsx:50
+#: app/albums/new.tsx:36
+#: app/artists/edit/[id].tsx:50
+#: app/artists/new.tsx:36
+#: app/song/edit/[id].tsx:40
+msgid "Not valid URL"
+msgstr "عنوان URL غير صالح"
+
+#: components/partials/SongInfo.tsx:131
+msgid "Pause song"
+msgstr "إيقاف الأغنية"
+
+#: components/partials/SongInfo.tsx:131
+msgid "Play song"
+msgstr "تشغيل الأغنية"
+
+#: app/index.tsx:135
+msgid "Recently played"
+msgstr "تم التشغيل مؤخراً"
+
+#: components/partials/SongInfo.tsx:150
+msgid "Remove from favorites"
+msgstr "إزالة من المفضلة"
 
 #: app/albums/edit/[id].tsx:234
 msgid "Same album?"
 msgstr "نفس الألبوم؟"
 
-#: components/ui/Select.tsx:54 components/ui/Select.tsx:105
+#: app/artists/edit/[id].tsx:234
+msgid "Same artist?"
+msgstr "نفس الفنان؟"
+
+#: app/albums/edit/[id].tsx:128
+#: app/albums/new.tsx:122
+#: app/artists/edit/[id].tsx:128
+#: app/artists/new.tsx:122
+#: app/song/edit/[id].tsx:193
+msgid "Save"
+msgstr "حفظ"
+
+#: app/albums/edit/[id].tsx:128
+#: app/albums/new.tsx:122
+#: app/artists/edit/[id].tsx:128
+#: app/artists/new.tsx:122
+#: app/song/edit/[id].tsx:193
+msgid "Saving..."
+msgstr "جارٍ الحفظ..."
+
+#: components/partials/Heading.tsx:79
+msgid "Search songs"
+msgstr "البحث عن الأغاني"
+
+#: components/ui/Select.tsx:54
+#: components/ui/Select.tsx:105
 msgid "Select an option"
 msgstr "اختر خيارًا"
+
+#: utils/pickAndImportDB.ts:17
+msgid "Selection canceled"
+msgstr "تم إلغاء التحديد"
+
+#: components/partials/DrawerContent.tsx:53
+#: components/partials/Heading.tsx:41
+msgid "Settings"
+msgstr "الإعدادات"
 
 #: app/song/edit/[id].tsx:96
 msgid "Song name"
@@ -295,26 +284,65 @@ msgstr "اسم الأغنية"
 msgid "Song update"
 msgstr "تحديث الأغنية"
 
+#: app/albums/[id].tsx:88
+#: app/artists/[id].tsx:88
+#: components/partials/Heading.tsx:35
+msgid "Songs"
+msgstr "أغانٍ"
+
 #: app/albums/edit/[id].tsx:177
 msgid "The albums have been merged successfully"
 msgstr "تم دمج الألبومات بنجاح"
+
+#: app/artists/edit/[id].tsx:177
+msgid "The artists have been merged successfully"
+msgstr "تم دمج الفنانين بنجاح"
+
+#: app/artists/edit/[id].tsx:43
+#: app/artists/new.tsx:29
+msgid "The name must have at least 2 characters"
+msgstr "يجب أن يحتوي الاسم على حرفين على الأقل"
 
 #: app/song/edit/[id].tsx:76
 msgid "The song has been updated correctly"
 msgstr "تم تحديث الأغنية بنجاح"
 
-#: app/albums/edit/[id].tsx:43 app/albums/new.tsx:29 app/song/edit/[id].tsx:33
+#: app/albums/edit/[id].tsx:43
+#: app/albums/new.tsx:29
+#: app/song/edit/[id].tsx:33
 msgid "The title must have at least 2 characters"
 msgstr "يجب أن يحتوي العنوان على حرفين على الأقل"
 
 #: app/albums/edit/[id].tsx:237
-msgid ""
-"These albums share the same title because Android reads it from the ID3 "
-"tags, which you can edit in Lissn."
-msgstr ""
-"تشارك هذه الألبومات العنوان نفسه لأن أندرويد يقرأه من وسوم ID3 التي يمكنك "
-"تعديلها في Lissn."
+msgid "These albums share the same title because Android reads it from the ID3 tags, which you can edit in Lissn."
+msgstr "تشارك هذه الألبومات العنوان نفسه لأن أندرويد يقرأه من وسوم ID3 التي يمكنك تعديلها في Lissn."
+
+#: app/artists/edit/[id].tsx:237
+msgid "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
+msgstr "يشترك هؤلاء الفنانون في نفس الاسم لأن أندرويد يقرأه من وسوم ID3 التي يمكنك تعديلها في Lissn."
 
 #: components/partials/SongInfo.tsx:97
 #~ msgid "Tile"
 #~ msgstr "لوحة"
+
+#: app/song/edit/[id].tsx:85
+#: components/partials/SongInfo.tsx:104
+msgid "Title"
+msgstr "العنوان"
+
+#: app/albums/edit/[id].tsx:44
+#: app/albums/edit/[id].tsx:47
+#: app/albums/new.tsx:30
+#: app/albums/new.tsx:33
+#: app/artists/edit/[id].tsx:44
+#: app/artists/edit/[id].tsx:47
+#: app/artists/new.tsx:30
+#: app/artists/new.tsx:33
+#: app/song/edit/[id].tsx:34
+#: app/song/edit/[id].tsx:37
+msgid "Too long"
+msgstr "طويل جداً"
+
+#: components/partials/DrawerContent.tsx:36
+msgid "Your music app"
+msgstr "تطبيق الموسيقى الخاص بك"

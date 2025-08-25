@@ -21,195 +21,10 @@ msgstr "お気に入りに追加"
 msgid "Add to playlist"
 msgstr "プレイリストに追加"
 
-#: app/song/edit/[id].tsx:162 components/partials/SongInfo.tsx:114
+#: app/song/edit/[id].tsx:162
+#: components/partials/SongInfo.tsx:114
 msgid "Album"
 msgstr "アルバム"
-
-#: app/song/edit/[id].tsx:131 components/partials/SongInfo.tsx:108
-msgid "Artist"
-msgstr "アーティスト"
-
-#: components/partials/Heading.tsx:39
-msgid "Artists"
-msgstr "アーティスト"
-
-#: app/artists/edit/[id].tsx:176
-msgid "Artists merged"
-msgstr "アーティストを統合しました"
-
-#: app/albums/edit/[id].tsx:103 app/albums/new.tsx:97
-#: app/artists/edit/[id].tsx:103 app/artists/new.tsx:97
-#: app/song/edit/[id].tsx:106
-msgid "Artwork URL"
-msgstr "アートワークのURL"
-
-#: app/albums/edit/[id].tsx:225 app/albums/edit/[id].tsx:301
-#: app/albums/new.tsx:166 app/artists/edit/[id].tsx:225
-#: app/artists/edit/[id].tsx:301 app/artists/new.tsx:166
-#: app/song/edit/[id].tsx:262 components/partials/SongInfo.tsx:216
-msgid "Cancel"
-msgstr "キャンセル"
-
-#: utils/pickAndImportDB.ts:29
-msgid "Database imported successfully"
-msgstr "データベースを正常にインポートしました"
-
-#: components/partials/SongInfo.tsx:176 components/partials/SongInfo.tsx:186
-msgid "Delete song"
-msgstr "曲を削除"
-
-#: app/artists/edit/[id].tsx:208
-msgid "Edit artist"
-msgstr "アーティストを編集"
-
-#: components/partials/SongInfo.tsx:167
-msgid "Edit details"
-msgstr "詳細を編集"
-
-#. js-lingui-explicit-id
-#: utils/pickAndImportDB.ts:36
-msgid "error.importing_db"
-msgstr "選択またはインポート中のエラー: {error}"
-
-#: app/settings/index.tsx:19
-msgid "Export music database"
-msgstr "音楽データベースをエクスポート"
-
-#: components/partials/Heading.tsx:37
-msgid "Favorites"
-msgstr "お気に入り"
-
-#: components/partials/DrawerContent.tsx:72
-msgid "GitHub Project"
-msgstr "GitHubプロジェクト"
-
-#: utils/pickAndImportDB.ts:16 utils/pickAndImportDB.ts:28
-#: utils/pickAndImportDB.ts:34
-msgid "Import database"
-msgstr "データベースをインポート"
-
-#: app/settings/index.tsx:26
-msgid "Import music database"
-msgstr "音楽データベースをインポート"
-
-#: app/index.tsx:150
-msgid "Last songs"
-msgstr "最近の曲"
-
-#: app/albums/edit/[id].tsx:291 app/artists/edit/[id].tsx:291
-msgid "Merge"
-msgstr "統合"
-
-#: app/artists/edit/[id].tsx:279
-msgid "Merge artists"
-msgstr "アーティストを統合"
-
-#: app/albums/edit/[id].tsx:268 app/artists/edit/[id].tsx:268
-msgid "Merge them"
-msgstr "統合する"
-
-#: app/albums/edit/[id].tsx:269 app/artists/edit/[id].tsx:269
-msgid "Merging..."
-msgstr "統合中..."
-
-#: app/albums/edit/[id].tsx:82 app/albums/new.tsx:76
-#: app/artists/edit/[id].tsx:82 app/artists/new.tsx:76
-msgid "Name"
-msgstr "名前"
-
-#: app/artists/[id].tsx:48
-msgid "No artist found"
-msgstr "アーティストが見つかりません"
-
-#: app/artists/new.tsx:87
-msgid "Nombre del artista"
-msgstr "アーティスト名"
-
-#: app/albums/edit/[id].tsx:50 app/albums/new.tsx:36
-#: app/artists/edit/[id].tsx:50 app/artists/new.tsx:36
-#: app/song/edit/[id].tsx:40
-msgid "Not valid URL"
-msgstr "無効なURL"
-
-#: components/partials/SongInfo.tsx:131
-msgid "Pause song"
-msgstr "曲を一時停止"
-
-#: components/partials/SongInfo.tsx:131
-msgid "Play song"
-msgstr "曲を再生"
-
-#: app/index.tsx:135
-msgid "Recently played"
-msgstr "最近再生した曲"
-
-#: components/partials/SongInfo.tsx:150
-msgid "Remove from favorites"
-msgstr "お気に入りから削除"
-
-#: app/artists/edit/[id].tsx:234
-msgid "Same artist?"
-msgstr "同じアーティストですか？"
-
-#: app/albums/edit/[id].tsx:128 app/albums/new.tsx:122
-#: app/artists/edit/[id].tsx:128 app/artists/new.tsx:122
-#: app/song/edit/[id].tsx:193
-msgid "Save"
-msgstr "保存"
-
-#: app/albums/edit/[id].tsx:128 app/albums/new.tsx:122
-#: app/artists/edit/[id].tsx:128 app/artists/new.tsx:122
-#: app/song/edit/[id].tsx:193
-msgid "Saving..."
-msgstr "保存中..."
-
-#: components/partials/Heading.tsx:79
-msgid "Search songs"
-msgstr "曲を検索"
-
-#: utils/pickAndImportDB.ts:17
-msgid "Selection canceled"
-msgstr "選択をキャンセルしました"
-
-#: components/partials/DrawerContent.tsx:53 components/partials/Heading.tsx:41
-msgid "Settings"
-msgstr "設定"
-
-#: app/albums/[id].tsx:88 app/artists/[id].tsx:88
-#: components/partials/Heading.tsx:35
-msgid "Songs"
-msgstr "曲"
-
-#: app/artists/edit/[id].tsx:177
-msgid "The artists have been merged successfully"
-msgstr "アーティストは正常に統合されました"
-
-#: app/artists/edit/[id].tsx:43 app/artists/new.tsx:29
-msgid "The name must have at least 2 characters"
-msgstr "名前は2文字以上である必要があります"
-
-#: app/artists/edit/[id].tsx:237
-msgid ""
-"These artists share the same name because Android reads it from the ID3 "
-"tags, which you can edit in Lissn."
-msgstr ""
-"これらのアーティストは同じ名前を共有しています。これは Android が ID3 タグか"
-"ら読み取っているためで、Lissn で編集できます。"
-
-#: app/song/edit/[id].tsx:85 components/partials/SongInfo.tsx:104
-msgid "Title"
-msgstr "タイトル"
-
-#: app/albums/edit/[id].tsx:44 app/albums/edit/[id].tsx:47
-#: app/albums/new.tsx:30 app/albums/new.tsx:33 app/artists/edit/[id].tsx:44
-#: app/artists/edit/[id].tsx:47 app/artists/new.tsx:30 app/artists/new.tsx:33
-#: app/song/edit/[id].tsx:34 app/song/edit/[id].tsx:37
-msgid "Too long"
-msgstr "長すぎます"
-
-#: components/partials/DrawerContent.tsx:36
-msgid "Your music app"
-msgstr "あなたの音楽アプリ"
 
 #: app/albums/new.tsx:66
 msgid "Album created successfully"
@@ -231,6 +46,11 @@ msgstr "アルバムを統合しました"
 msgid "Are you sure you want to delete the song?"
 msgstr "本当にこの曲を削除しますか？"
 
+#: app/song/edit/[id].tsx:131
+#: components/partials/SongInfo.tsx:108
+msgid "Artist"
+msgstr "アーティスト"
+
 #: app/artists/new.tsx:66
 msgid "Artist created successfully"
 msgstr "アーティストが正常に作成されました"
@@ -238,6 +58,33 @@ msgstr "アーティストが正常に作成されました"
 #: app/artists/edit/[id].tsx:93
 msgid "Artist name"
 msgstr "アーティスト名"
+
+#: components/partials/Heading.tsx:39
+msgid "Artists"
+msgstr "アーティスト"
+
+#: app/artists/edit/[id].tsx:176
+msgid "Artists merged"
+msgstr "アーティストを統合しました"
+
+#: app/albums/edit/[id].tsx:103
+#: app/albums/new.tsx:97
+#: app/artists/edit/[id].tsx:103
+#: app/artists/new.tsx:97
+#: app/song/edit/[id].tsx:106
+msgid "Artwork URL"
+msgstr "アートワークのURL"
+
+#: app/albums/edit/[id].tsx:225
+#: app/albums/edit/[id].tsx:301
+#: app/albums/new.tsx:166
+#: app/artists/edit/[id].tsx:225
+#: app/artists/edit/[id].tsx:301
+#: app/artists/new.tsx:166
+#: app/song/edit/[id].tsx:262
+#: components/partials/SongInfo.tsx:216
+msgid "Cancel"
+msgstr "キャンセル"
 
 #: app/song/edit/[id].tsx:187
 msgid "Create new album"
@@ -247,27 +94,103 @@ msgstr "新しいアルバムを作成"
 msgid "Create new artist"
 msgstr "新しいアーティストを作成"
 
+#: utils/pickAndImportDB.ts:29
+msgid "Database imported successfully"
+msgstr "データベースを正常にインポートしました"
+
 #: components/partials/SongInfo.tsx:206
 msgid "Delete"
 msgstr "削除"
+
+#: components/partials/SongInfo.tsx:176
+#: components/partials/SongInfo.tsx:186
+msgid "Delete song"
+msgstr "曲を削除"
 
 #: app/albums/edit/[id].tsx:208
 msgid "Edit album"
 msgstr "アルバムを編集"
 
+#: app/artists/edit/[id].tsx:208
+msgid "Edit artist"
+msgstr "アーティストを編集"
+
+#: components/partials/SongInfo.tsx:167
+msgid "Edit details"
+msgstr "詳細を編集"
+
 #: app/song/edit/[id].tsx:245
 msgid "Edit song"
 msgstr "曲を編集"
+
+#. js-lingui-explicit-id
+#: utils/pickAndImportDB.ts:36
+msgid "error.importing_db"
+msgstr "選択またはインポート中のエラー: {error}"
+
+#: app/settings/index.tsx:19
+msgid "Export music database"
+msgstr "音楽データベースをエクスポート"
+
+#: components/partials/Heading.tsx:37
+msgid "Favorites"
+msgstr "お気に入り"
+
+#: components/partials/DrawerContent.tsx:72
+msgid "GitHub Project"
+msgstr "GitHubプロジェクト"
+
+#: utils/pickAndImportDB.ts:16
+#: utils/pickAndImportDB.ts:28
+#: utils/pickAndImportDB.ts:34
+msgid "Import database"
+msgstr "データベースをインポート"
+
+#: app/settings/index.tsx:26
+msgid "Import music database"
+msgstr "音楽データベースをインポート"
+
+#: app/index.tsx:150
+msgid "Last songs"
+msgstr "最近の曲"
+
+#: app/albums/edit/[id].tsx:291
+#: app/artists/edit/[id].tsx:291
+msgid "Merge"
+msgstr "統合"
 
 #: app/albums/edit/[id].tsx:279
 msgid "Merge albums"
 msgstr "アルバムを統合"
 
-#: app/albums/new.tsx:65 app/albums/new.tsx:150
+#: app/artists/edit/[id].tsx:279
+msgid "Merge artists"
+msgstr "アーティストを統合"
+
+#: app/albums/edit/[id].tsx:268
+#: app/artists/edit/[id].tsx:268
+msgid "Merge them"
+msgstr "統合する"
+
+#: app/albums/edit/[id].tsx:269
+#: app/artists/edit/[id].tsx:269
+msgid "Merging..."
+msgstr "統合中..."
+
+#: app/albums/edit/[id].tsx:82
+#: app/albums/new.tsx:76
+#: app/artists/edit/[id].tsx:82
+#: app/artists/new.tsx:76
+msgid "Name"
+msgstr "名前"
+
+#: app/albums/new.tsx:65
+#: app/albums/new.tsx:150
 msgid "New album"
 msgstr "新しいアルバム"
 
-#: app/artists/new.tsx:65 app/artists/new.tsx:150
+#: app/artists/new.tsx:65
+#: app/artists/new.tsx:150
 msgid "New artist"
 msgstr "新しいアーティスト"
 
@@ -275,17 +198,83 @@ msgstr "新しいアーティスト"
 msgid "No album found"
 msgstr "アルバムが見つかりません"
 
+#: app/artists/[id].tsx:48
+msgid "No artist found"
+msgstr "アーティストが見つかりません"
+
 #: app/albums/new.tsx:87
 msgid "Nombre del albuma"
 msgstr "アルバム名"
+
+#: app/artists/new.tsx:87
+msgid "Nombre del artista"
+msgstr "アーティスト名"
+
+#: app/albums/edit/[id].tsx:50
+#: app/albums/new.tsx:36
+#: app/artists/edit/[id].tsx:50
+#: app/artists/new.tsx:36
+#: app/song/edit/[id].tsx:40
+msgid "Not valid URL"
+msgstr "無効なURL"
+
+#: components/partials/SongInfo.tsx:131
+msgid "Pause song"
+msgstr "曲を一時停止"
+
+#: components/partials/SongInfo.tsx:131
+msgid "Play song"
+msgstr "曲を再生"
+
+#: app/index.tsx:135
+msgid "Recently played"
+msgstr "最近再生した曲"
+
+#: components/partials/SongInfo.tsx:150
+msgid "Remove from favorites"
+msgstr "お気に入りから削除"
 
 #: app/albums/edit/[id].tsx:234
 msgid "Same album?"
 msgstr "同じアルバムですか？"
 
-#: components/ui/Select.tsx:54 components/ui/Select.tsx:105
+#: app/artists/edit/[id].tsx:234
+msgid "Same artist?"
+msgstr "同じアーティストですか？"
+
+#: app/albums/edit/[id].tsx:128
+#: app/albums/new.tsx:122
+#: app/artists/edit/[id].tsx:128
+#: app/artists/new.tsx:122
+#: app/song/edit/[id].tsx:193
+msgid "Save"
+msgstr "保存"
+
+#: app/albums/edit/[id].tsx:128
+#: app/albums/new.tsx:122
+#: app/artists/edit/[id].tsx:128
+#: app/artists/new.tsx:122
+#: app/song/edit/[id].tsx:193
+msgid "Saving..."
+msgstr "保存中..."
+
+#: components/partials/Heading.tsx:79
+msgid "Search songs"
+msgstr "曲を検索"
+
+#: components/ui/Select.tsx:54
+#: components/ui/Select.tsx:105
 msgid "Select an option"
 msgstr "オプションを選択"
+
+#: utils/pickAndImportDB.ts:17
+msgid "Selection canceled"
+msgstr "選択をキャンセルしました"
+
+#: components/partials/DrawerContent.tsx:53
+#: components/partials/Heading.tsx:41
+msgid "Settings"
+msgstr "設定"
 
 #: app/song/edit/[id].tsx:96
 msgid "Song name"
@@ -295,25 +284,65 @@ msgstr "曲名"
 msgid "Song update"
 msgstr "曲の更新"
 
+#: app/albums/[id].tsx:88
+#: app/artists/[id].tsx:88
+#: components/partials/Heading.tsx:35
+msgid "Songs"
+msgstr "曲"
+
 #: app/albums/edit/[id].tsx:177
 msgid "The albums have been merged successfully"
 msgstr "アルバムは正常に統合されました"
+
+#: app/artists/edit/[id].tsx:177
+msgid "The artists have been merged successfully"
+msgstr "アーティストは正常に統合されました"
+
+#: app/artists/edit/[id].tsx:43
+#: app/artists/new.tsx:29
+msgid "The name must have at least 2 characters"
+msgstr "名前は2文字以上である必要があります"
 
 #: app/song/edit/[id].tsx:76
 msgid "The song has been updated correctly"
 msgstr "曲は正常に更新されました"
 
-#: app/albums/edit/[id].tsx:43 app/albums/new.tsx:29 app/song/edit/[id].tsx:33
+#: app/albums/edit/[id].tsx:43
+#: app/albums/new.tsx:29
+#: app/song/edit/[id].tsx:33
 msgid "The title must have at least 2 characters"
 msgstr "タイトルは2文字以上でなければなりません"
 
 #: app/albums/edit/[id].tsx:237
-msgid ""
-"These albums share the same title because Android reads it from the ID3 "
-"tags, which you can edit in Lissn."
-msgstr ""
-"これらのアルバムは同じタイトルを共有しています。Android が ID3 タグから読み取るためで、Lissn で編集できます。"
+msgid "These albums share the same title because Android reads it from the ID3 tags, which you can edit in Lissn."
+msgstr "これらのアルバムは同じタイトルを共有しています。Android が ID3 タグから読み取るためで、Lissn で編集できます。"
+
+#: app/artists/edit/[id].tsx:237
+msgid "These artists share the same name because Android reads it from the ID3 tags, which you can edit in Lissn."
+msgstr "これらのアーティストは同じ名前を共有しています。これは Android が ID3 タグから読み取っているためで、Lissn で編集できます。"
 
 #: components/partials/SongInfo.tsx:97
 #~ msgid "Tile"
 #~ msgstr "タイル"
+
+#: app/song/edit/[id].tsx:85
+#: components/partials/SongInfo.tsx:104
+msgid "Title"
+msgstr "タイトル"
+
+#: app/albums/edit/[id].tsx:44
+#: app/albums/edit/[id].tsx:47
+#: app/albums/new.tsx:30
+#: app/albums/new.tsx:33
+#: app/artists/edit/[id].tsx:44
+#: app/artists/edit/[id].tsx:47
+#: app/artists/new.tsx:30
+#: app/artists/new.tsx:33
+#: app/song/edit/[id].tsx:34
+#: app/song/edit/[id].tsx:37
+msgid "Too long"
+msgstr "長すぎます"
+
+#: components/partials/DrawerContent.tsx:36
+msgid "Your music app"
+msgstr "あなたの音楽アプリ"
