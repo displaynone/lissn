@@ -75,7 +75,8 @@
 					},
 					"imageWidth": 200
 				}
-			]
+			],
+			"./plugins/withOkHttp"
 		],
 		"experiments": {
 			"typedRoutes": true

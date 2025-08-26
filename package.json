@@ -10,7 +10,7 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "dev:client": "expo install expo-dev-client",
-    "prebuild": "expo prebuild",
+    "prebuild": "expo prebuild -p android",
     "build:eas": "eas build --platform android --profile development",
     "build:local": "eas build --platform android --profile development --local",
     "lingui:extract": "npx lingui extract",

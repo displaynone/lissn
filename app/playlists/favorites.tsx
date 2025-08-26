@@ -46,7 +46,7 @@ export default function FavoritesScreen() {
 	}
 
 	return (
-		<YStack flex={1}>
+		<YStack flex={1} gap="$3">
 			<Heading />
 			<FlashList
 				ref={listRef}

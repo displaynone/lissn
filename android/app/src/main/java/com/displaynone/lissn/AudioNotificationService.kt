@@ -4,17 +4,23 @@ import android.app.*
 import android.content.*
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.media.session.PlaybackState
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import androidx.media.app.NotificationCompat.MediaStyle
 import android.support.v4.media.session.PlaybackStateCompat
 import android.net.Uri
-import java.io.InputStream
 import android.util.Log
 import com.facebook.react.ReactApplication
-import com.facebook.react.modules.core.DeviceEventManagerModule
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import java.util.concurrent.TimeUnit
 
 class AudioNotificationService : Service() {
 
@@ -48,11 +54,12 @@ class AudioNotificationService : Service() {
     private var actionReceiver: BroadcastReceiver? = null
     private val pendingActions = mutableListOf<String>()
 
+    // Scope para trabajos en background (IO) del servicio
+    private val serviceScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+
     override fun onCreate() {
         super.onCreate()
-        mediaSessionHelper = MediaSessionHelper(this) { action ->
-            handleAction(action)
-        }
+        mediaSessionHelper = MediaSessionHelper(this) { action -> handleAction(action) }
         createChannel()
         registerActionReceiver()
     }
@@ -71,11 +78,22 @@ class AudioNotificationService : Service() {
             lastCurrentTime = it.getLongExtra(EXTRA_CURRENT_TIME, lastCurrentTime)
             lastDuration = it.getLongExtra(EXTRA_DURATION, lastDuration)
 
+            // Si nos pasan una portada, la cargamos en background (HTTPS)
             it.getStringExtra(EXTRA_LARGE_ICON_PATH)?.let { path ->
-                lastLargeBitmap = loadBitmapFromPath(path)
+                lastLargeBitmap = null // placeholder sin portada
+                serviceScope.launch {
+                    val bmp = loadBitmapFromPath(path)
+                    if (bmp != null) {
+                        lastLargeBitmap = bmp
+                        // tras cargar, refrescamos metadata y notificación
+                        updatePlaybackState(lastIsPlaying)
+                        showOrUpdateNotification()
+                    }
+                }
             }
         }
 
+        // Actualización inmediata (sin bloquear por la imagen)
         updatePlaybackState(lastIsPlaying)
         showOrUpdateNotification()
 
@@ -88,6 +106,7 @@ class AudioNotificationService : Service() {
         super.onDestroy()
         mediaSessionHelper.release()
         unregisterActionReceiver()
+        serviceScope.cancel() // cancela corrutinas en curso
     }
 
     private fun createChannel() {
@@ -121,14 +140,14 @@ class AudioNotificationService : Service() {
         return if (id != 0) id else R.drawable.ic_music_note
     }
 
-        private fun updatePlaybackState(isPlaying: Boolean) {
+    private fun updatePlaybackState(isPlaying: Boolean) {
         val state = if (isPlaying) PlaybackStateCompat.STATE_PLAYING else PlaybackStateCompat.STATE_PAUSED
-        val currentPosition = if (lastCurrentTime > 0) lastCurrentTime * 1000 else PlaybackStateCompat.PLAYBACK_POSITION_UNKNOWN // Convert to milliseconds
+        val currentPosition = if (lastCurrentTime > 0) lastCurrentTime * 1000 else PlaybackStateCompat.PLAYBACK_POSITION_UNKNOWN
         val playbackSpeed = if (isPlaying) 1.0f else 0.0f
 
         mediaSessionHelper.setPlaybackState(state, currentPosition, playbackSpeed)
 
-        val durationMs = if (lastDuration > 0) lastDuration * 1000 else null // Convert to milliseconds
+        val durationMs = if (lastDuration > 0) lastDuration * 1000 else null
         mediaSessionHelper.setMetadata(lastTitle, lastArtist, lastLargeBitmap, durationMs)
     }
 
@@ -158,23 +177,14 @@ class AudioNotificationService : Service() {
                     .setMediaSession(mediaSessionHelper.sessionToken)
                     .setShowActionsInCompactView(0, 1, 2)
             )
-            .addAction(
-                R.drawable.ic_prev, "Prev",
-                buildActionPendingIntent(ACTION_PREV)
-            )
+            .addAction(R.drawable.ic_prev, "Prev", buildActionPendingIntent(ACTION_PREV))
             .addAction(
                 if (lastIsPlaying) R.drawable.ic_pause else R.drawable.ic_play,
                 if (lastIsPlaying) "Pause" else "Play",
                 buildActionPendingIntent(ACTION_PLAY_PAUSE)
             )
-            .addAction(
-                R.drawable.ic_next, "Next",
-                buildActionPendingIntent(ACTION_NEXT)
-            )
-            .addAction(
-                R.drawable.ic_close, "Stop",
-                buildActionPendingIntent(ACTION_STOP)
-            )
+            .addAction(R.drawable.ic_next, "Next", buildActionPendingIntent(ACTION_NEXT))
+            .addAction(R.drawable.ic_close, "Stop", buildActionPendingIntent(ACTION_STOP))
 
         lastLargeBitmap?.let { builder.setLargeIcon(it) }
 
@@ -182,20 +192,45 @@ class AudioNotificationService : Service() {
         startForeground(NOTIFICATION_ID, notification)
     }
 
-    private fun loadBitmapFromPath(path: String): Bitmap? {
-        return try {
+    private val httpClient by lazy {
+        OkHttpClient.Builder()
+            .connectTimeout(5, TimeUnit.SECONDS)
+            .readTimeout(7, TimeUnit.SECONDS)
+            .build()
+    }
+
+    // Carga imagen desde content/file/HTTPS. NO soporta HTTP (intencionado).
+    private suspend fun loadBitmapFromPath(path: String): Bitmap? = withContext(Dispatchers.IO) {
+        try {
             val uri = Uri.parse(path)
-            when (uri.scheme) {
-                "content" -> {
-                    contentResolver.openInputStream(uri)?.use { ins: InputStream ->
-                        BitmapFactory.decodeStream(ins)
-                    }
-                }
-                "file" -> BitmapFactory.decodeFile(uri.path)
-                else -> BitmapFactory.decodeFile(path) // ruta absoluta
+            when (uri.scheme?.lowercase()) {
+                "content" -> contentResolver.openInputStream(uri)?.use(BitmapFactory::decodeStream)
+                "file"    -> BitmapFactory.decodeFile(uri.path)
+                "https"   -> downloadBitmapHttpsOnly(uri.toString())
+                // sin esquema o ruta absoluta
+                null, ""  -> BitmapFactory.decodeFile(path)
+                // explícitamente NO soportamos http
+                else      -> null
             }
         } catch (e: Exception) {
+            Log.w("Lissn/ART", "Error loading bitmap: ${e.message}")
             null
+        }
+    }
+
+    private fun downloadBitmapHttpsOnly(url: String): Bitmap? {
+        val req = Request.Builder()
+            .url(url)
+            .header("User-Agent", "Lissn/1.0 (Android)")
+            .build()
+
+        httpClient.newCall(req).execute().use { resp ->
+            if (!resp.isSuccessful) return null
+            // Asegura que la URL final sigue siendo HTTPS
+            if (resp.request.url.scheme != "https") return null
+            val ct = resp.header("Content-Type") ?: return null
+            if (!ct.startsWith("image/")) return null
+            return resp.body?.byteStream()?.use(BitmapFactory::decodeStream)
         }
     }
 
@@ -212,15 +247,28 @@ class AudioNotificationService : Service() {
         artist?.let { lastArtist = it }
         isPlaying?.let { lastIsPlaying = it }
         smallIconName?.let { lastSmallIconName = it }
-        largeIconPath?.let { path -> lastLargeBitmap = loadBitmapFromPath(path) }
         currentTime?.let { lastCurrentTime = it }
         duration?.let { lastDuration = it }
 
+        // Carga asíncrona de la portada si llega ruta nueva
+        if (!largeIconPath.isNullOrBlank()) {
+            lastLargeBitmap = null
+            serviceScope.launch {
+                val bmp = loadBitmapFromPath(largeIconPath)
+                if (bmp != null) {
+                    lastLargeBitmap = bmp
+                    updatePlaybackState(lastIsPlaying)
+                    showOrUpdateNotification()
+                }
+            }
+        }
+
+        // Actualiza inmediatamente (sin bloquear por la imagen)
         updatePlaybackState(lastIsPlaying)
         showOrUpdateNotification()
     }
 
-        private fun registerActionReceiver() {
+    private fun registerActionReceiver() {
         val filter = IntentFilter().apply {
             addAction(ACTION_PLAY_PAUSE)
             addAction(ACTION_NEXT)
@@ -273,17 +321,12 @@ class AudioNotificationService : Service() {
                     sendBroadcast(intent)
                 }
             } else {
-                try {
-                    val app = applicationContext as ReactApplication
-                    val reactInstanceManager = app.reactNativeHost.reactInstanceManager
-
-                    if (!reactInstanceManager.hasStartedCreatingInitialContext()) {
-                        reactInstanceManager.createReactContextInBackground()
-                    }
-                } catch (e: Exception) {
-                    Log.e("LissnNotif", "Error creating React Native context", e)
+                val reactInstanceManager = app.reactNativeHost.reactInstanceManager
+                if (!reactInstanceManager.hasStartedCreatingInitialContext()) {
+                    reactInstanceManager.createReactContextInBackground()
                 }
-               val launchIntent = packageManager.getLaunchIntentForPackage(packageName)
+
+                val launchIntent = packageManager.getLaunchIntentForPackage(packageName)
                 launchIntent?.let {
                     it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP or Intent.FLAG_ACTIVITY_CLEAR_TOP)
                     startActivity(it)
@@ -308,10 +351,7 @@ class AudioNotificationService : Service() {
             if (pendingActions.isNotEmpty()) {
                 val actionsToProcess = pendingActions.toList()
                 pendingActions.clear()
-
-                actionsToProcess.forEach { action ->
-                    handleAction(action)
-                }
+                actionsToProcess.forEach { action -> handleAction(action) }
             }
         }
     }
