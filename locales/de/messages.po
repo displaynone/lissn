@@ -279,15 +279,15 @@ msgstr "Speichern..."
 
 #: components/partials/Heading.tsx:99
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
 #: components/partials/Heading.tsx:97
 msgid "Search artists"
-msgstr ""
+msgstr "Search artists"
 
 #: components/partials/Heading.tsx:95
 msgid "Search favorite songs"
-msgstr ""
+msgstr "Search favorite songs"
 
 #: components/partials/Heading.tsx:93
 msgid "Search songs"
