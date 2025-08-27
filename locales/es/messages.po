@@ -279,15 +279,15 @@ msgstr "Guardando..."
 
 #: components/partials/Heading.tsx:99
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #: components/partials/Heading.tsx:97
 msgid "Search artists"
-msgstr ""
+msgstr "Buscar artistas"
 
 #: components/partials/Heading.tsx:95
 msgid "Search favorite songs"
-msgstr ""
+msgstr "Buscar canciones favoritas"
 
 #: components/partials/Heading.tsx:93
 msgid "Search songs"

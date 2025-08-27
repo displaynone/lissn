@@ -279,15 +279,15 @@ msgstr "保存中..."
 
 #: components/partials/Heading.tsx:99
 msgid "Search"
-msgstr ""
+msgstr "検索"
 
 #: components/partials/Heading.tsx:97
 msgid "Search artists"
-msgstr ""
+msgstr "アーティストを検索"
 
 #: components/partials/Heading.tsx:95
 msgid "Search favorite songs"
-msgstr ""
+msgstr "お気に入りの曲を検索"
 
 #: components/partials/Heading.tsx:93
 msgid "Search songs"

@@ -279,15 +279,15 @@ msgstr "저장 중..."
 
 #: components/partials/Heading.tsx:99
 msgid "Search"
-msgstr ""
+msgstr "검색"
 
 #: components/partials/Heading.tsx:97
 msgid "Search artists"
-msgstr ""
+msgstr "아티스트 검색"
 
 #: components/partials/Heading.tsx:95
 msgid "Search favorite songs"
-msgstr ""
+msgstr "즐겨찾는 노래 검색"
 
 #: components/partials/Heading.tsx:93
 msgid "Search songs"

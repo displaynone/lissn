@@ -279,15 +279,15 @@ msgstr "正在保存..."
 
 #: components/partials/Heading.tsx:99
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
 #: components/partials/Heading.tsx:97
 msgid "Search artists"
-msgstr ""
+msgstr "搜索艺术家"
 
 #: components/partials/Heading.tsx:95
 msgid "Search favorite songs"
-msgstr ""
+msgstr "搜索收藏的歌曲"
 
 #: components/partials/Heading.tsx:93
 msgid "Search songs"
