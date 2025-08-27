@@ -1,10 +1,10 @@
 import Cover from "@/components/partials/Cover";
 import Heading from "@/components/partials/Heading";
 import Player from "@/components/partials/Player";
-import { useGetAlbums } from "@/store/songsStore";
+import { useGetAlbums, useGetSearch } from "@/store/songsStore";
 import { FlashList } from "@shopify/flash-list";
 import { useRouter } from "expo-router";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { LayoutChangeEvent } from "react-native";
 import { Text, View, YStack } from "tamagui";
 
@@ -13,17 +13,29 @@ const DEFAULT_COVER_SIZE = 42;
 export default function AlbumScreen() {
 	const router = useRouter();
 	const albums = useGetAlbums();
+	const search = useGetSearch();
+
 	const [width, setWidth] = useState(DEFAULT_COVER_SIZE);
 
 	const handleOnLayout = (e: LayoutChangeEvent) => {
 		setWidth(e.nativeEvent.layout.width);
 	};
 
+	const selectedAlbums = useMemo(
+		() =>
+			albums.filter((item) =>
+				search?.["albums"]
+					? item.title.toLowerCase().includes(search?.["albums"].toLowerCase())
+					: true
+			),
+		[albums, search]
+	);
+
 	return (
 		<YStack flex={1} gap="$2" p="$4" onLayout={handleOnLayout}>
 			<Heading />
 			<FlashList
-				data={albums}
+				data={selectedAlbums}
 				numColumns={3}
 				keyExtractor={(song) => song.id}
 				renderItem={({ item }) => (

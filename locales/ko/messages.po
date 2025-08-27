@@ -68,7 +68,7 @@ msgstr "아티스트가 삭제되었습니다"
 msgid "Artist name"
 msgstr "아티스트 이름"
 
-#: components/partials/Heading.tsx:39
+#: components/partials/Heading.tsx:82
 msgid "Artists"
 msgstr "아티스트"
 
@@ -155,7 +155,7 @@ msgstr "선택 또는 가져오기 오류: {error}"
 msgid "Export music database"
 msgstr "음악 데이터베이스 내보내기"
 
-#: components/partials/Heading.tsx:37
+#: components/partials/Heading.tsx:80
 msgid "Favorites"
 msgstr "즐겨찾기"
 
@@ -277,7 +277,19 @@ msgstr "저장"
 msgid "Saving..."
 msgstr "저장 중..."
 
-#: components/partials/Heading.tsx:79
+#: components/partials/Heading.tsx:99
+msgid "Search"
+msgstr ""
+
+#: components/partials/Heading.tsx:97
+msgid "Search artists"
+msgstr ""
+
+#: components/partials/Heading.tsx:95
+msgid "Search favorite songs"
+msgstr ""
+
+#: components/partials/Heading.tsx:93
 msgid "Search songs"
 msgstr "노래 검색"
 
@@ -291,7 +303,7 @@ msgid "Selection canceled"
 msgstr "선택이 취소되었습니다"
 
 #: components/partials/DrawerContent.tsx:53
-#: components/partials/Heading.tsx:41
+#: components/partials/Heading.tsx:84
 msgid "Settings"
 msgstr "설정"
 
@@ -305,7 +317,7 @@ msgstr "노래 업데이트"
 
 #: app/albums/[id].tsx:88
 #: app/artists/[id].tsx:88
-#: components/partials/Heading.tsx:35
+#: components/partials/Heading.tsx:78
 msgid "Songs"
 msgstr "노래"
 

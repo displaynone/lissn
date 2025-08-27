@@ -68,7 +68,7 @@ msgstr "تم حذف الفنان"
 msgid "Artist name"
 msgstr "اسم الفنان"
 
-#: components/partials/Heading.tsx:39
+#: components/partials/Heading.tsx:82
 msgid "Artists"
 msgstr "فنانون"
 
@@ -155,7 +155,7 @@ msgstr "خطأ في التحديد أو الاستيراد: {error}"
 msgid "Export music database"
 msgstr "تصدير قاعدة بيانات الموسيقى"
 
-#: components/partials/Heading.tsx:37
+#: components/partials/Heading.tsx:80
 msgid "Favorites"
 msgstr "المفضلة"
 
@@ -277,7 +277,19 @@ msgstr "حفظ"
 msgid "Saving..."
 msgstr "جارٍ الحفظ..."
 
-#: components/partials/Heading.tsx:79
+#: components/partials/Heading.tsx:99
+msgid "Search"
+msgstr ""
+
+#: components/partials/Heading.tsx:97
+msgid "Search artists"
+msgstr ""
+
+#: components/partials/Heading.tsx:95
+msgid "Search favorite songs"
+msgstr ""
+
+#: components/partials/Heading.tsx:93
 msgid "Search songs"
 msgstr "البحث عن الأغاني"
 
@@ -291,7 +303,7 @@ msgid "Selection canceled"
 msgstr "تم إلغاء التحديد"
 
 #: components/partials/DrawerContent.tsx:53
-#: components/partials/Heading.tsx:41
+#: components/partials/Heading.tsx:84
 msgid "Settings"
 msgstr "الإعدادات"
 
@@ -305,7 +317,7 @@ msgstr "تحديث الأغنية"
 
 #: app/albums/[id].tsx:88
 #: app/artists/[id].tsx:88
-#: components/partials/Heading.tsx:35
+#: components/partials/Heading.tsx:78
 msgid "Songs"
 msgstr "أغانٍ"
 

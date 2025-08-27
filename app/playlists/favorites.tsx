@@ -6,7 +6,11 @@ import {
 	useGetSetSongsListScrollPosition,
 	useGetSongsFavoriteListScrollPosition,
 } from "@/store/appStore";
-import { useAreSongsLoading, useGetFavoriteSongs, useRefreshSongs } from "@/store/songsStore";
+import {
+	useAreSongsLoading,
+	useGetFavoriteSongs,
+	useRefreshSongs,
+} from "@/store/songsStore";
 import { FlashList } from "@shopify/flash-list";
 import { useCallback, useEffect, useRef } from "react";
 import { Spinner, Text, View, YStack } from "tamagui";
@@ -34,37 +38,38 @@ export default function FavoritesScreen() {
 		return () => clearTimeout(timeout);
 	}, [handleRestoreScroll]);
 
-	if (isLoading || songs.length === 0) {
-		return (
-			<YStack flex={1} justifyContent="center" alignItems="center">
-				<Spinner size="large" color="$blue10" />
-				<Text mt="$4" color="$gray11">
-					{isLoading ? "Loading songs..." : "No songs found"}
-				</Text>
-			</YStack>
-		);
-	}
+	const Loading = (
+		<YStack flex={1} justifyContent="center" alignItems="center">
+			<Spinner size="large" color="$blue10" />
+			<Text mt="$4" color="$gray11">
+				{isLoading ? "Loading songs..." : "No songs found"}
+			</Text>
+		</YStack>
+	);
 
 	return (
 		<YStack flex={1} gap="$3">
 			<Heading />
-			<FlashList
-				ref={listRef}
-				data={songs}
-				keyExtractor={(song) => song.id}
-				renderItem={({ item }) => <SongItem song={item} />}
-				ItemSeparatorComponent={() => <View h={12} />}
-				estimatedItemSize={50}
-				ListFooterComponent={<View style={{ height: 40 }} />}
-				showsVerticalScrollIndicator={true}
-				onScroll={(e) =>
-					setSongsListScrollPosition(e.nativeEvent.contentOffset.y)
-				}
-				onEndReachedThreshold={0.5}
-				onEndReached={() => {
-					refreshSongs();
-				}}
-			/>
+			{isLoading && Loading}
+			{!isLoading && (
+				<FlashList
+					ref={listRef}
+					data={songs}
+					keyExtractor={(song) => song.id}
+					renderItem={({ item }) => <SongItem song={item} />}
+					ItemSeparatorComponent={() => <View h={12} />}
+					estimatedItemSize={50}
+					ListFooterComponent={<View style={{ height: 40 }} />}
+					showsVerticalScrollIndicator={true}
+					onScroll={(e) =>
+						setSongsListScrollPosition(e.nativeEvent.contentOffset.y)
+					}
+					onEndReachedThreshold={0.5}
+					onEndReached={() => {
+						refreshSongs();
+					}}
+				/>
+			)}
 			<Player />
 		</YStack>
 	);

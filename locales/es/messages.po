@@ -68,7 +68,7 @@ msgstr "Artista eliminado"
 msgid "Artist name"
 msgstr "Nombre del artista"
 
-#: components/partials/Heading.tsx:39
+#: components/partials/Heading.tsx:82
 msgid "Artists"
 msgstr "Artistas"
 
@@ -155,7 +155,7 @@ msgstr "Error al seleccionar o importar: {error}"
 msgid "Export music database"
 msgstr "Exportar base de datos musical"
 
-#: components/partials/Heading.tsx:37
+#: components/partials/Heading.tsx:80
 msgid "Favorites"
 msgstr "Favoritos"
 
@@ -277,7 +277,19 @@ msgstr "Guardar"
 msgid "Saving..."
 msgstr "Guardando..."
 
-#: components/partials/Heading.tsx:79
+#: components/partials/Heading.tsx:99
+msgid "Search"
+msgstr ""
+
+#: components/partials/Heading.tsx:97
+msgid "Search artists"
+msgstr ""
+
+#: components/partials/Heading.tsx:95
+msgid "Search favorite songs"
+msgstr ""
+
+#: components/partials/Heading.tsx:93
 msgid "Search songs"
 msgstr "Buscar canciones"
 
@@ -291,7 +303,7 @@ msgid "Selection canceled"
 msgstr "Selección cancelada"
 
 #: components/partials/DrawerContent.tsx:53
-#: components/partials/Heading.tsx:41
+#: components/partials/Heading.tsx:84
 msgid "Settings"
 msgstr "Configuración"
 
@@ -305,7 +317,7 @@ msgstr "Actualización de la canción"
 
 #: app/albums/[id].tsx:88
 #: app/artists/[id].tsx:88
-#: components/partials/Heading.tsx:35
+#: components/partials/Heading.tsx:78
 msgid "Songs"
 msgstr "Canciones"
 

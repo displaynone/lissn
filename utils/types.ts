@@ -15,3 +15,7 @@ export type ToastData = {
 	message?: string;
 	duration?: number;
 };
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const SearchTypes = ["songs", "artists", "albums", "favorites"] as const;
+export type SearchType = typeof SearchTypes[number];

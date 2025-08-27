@@ -68,7 +68,7 @@ msgstr "アーティストが削除されました"
 msgid "Artist name"
 msgstr "アーティスト名"
 
-#: components/partials/Heading.tsx:39
+#: components/partials/Heading.tsx:82
 msgid "Artists"
 msgstr "アーティスト"
 
@@ -155,7 +155,7 @@ msgstr "選択またはインポート中のエラー: {error}"
 msgid "Export music database"
 msgstr "音楽データベースをエクスポート"
 
-#: components/partials/Heading.tsx:37
+#: components/partials/Heading.tsx:80
 msgid "Favorites"
 msgstr "お気に入り"
 
@@ -277,7 +277,19 @@ msgstr "保存"
 msgid "Saving..."
 msgstr "保存中..."
 
-#: components/partials/Heading.tsx:79
+#: components/partials/Heading.tsx:99
+msgid "Search"
+msgstr ""
+
+#: components/partials/Heading.tsx:97
+msgid "Search artists"
+msgstr ""
+
+#: components/partials/Heading.tsx:95
+msgid "Search favorite songs"
+msgstr ""
+
+#: components/partials/Heading.tsx:93
 msgid "Search songs"
 msgstr "曲を検索"
 
@@ -291,7 +303,7 @@ msgid "Selection canceled"
 msgstr "選択をキャンセルしました"
 
 #: components/partials/DrawerContent.tsx:53
-#: components/partials/Heading.tsx:41
+#: components/partials/Heading.tsx:84
 msgid "Settings"
 msgstr "設定"
 
@@ -305,7 +317,7 @@ msgstr "曲の更新"
 
 #: app/albums/[id].tsx:88
 #: app/artists/[id].tsx:88
-#: components/partials/Heading.tsx:35
+#: components/partials/Heading.tsx:78
 msgid "Songs"
 msgstr "曲"
 

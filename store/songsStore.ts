@@ -4,6 +4,7 @@ import {
 	MusicLibraryService,
 	SyncProgress,
 } from "@/services/MusicLibraryService";
+import { SearchType } from "@/utils/types";
 import { Q } from "@nozbe/watermelondb";
 import { create } from "zustand";
 
@@ -23,7 +24,7 @@ interface MusicStoreState {
 	favoritePage: number;
 	allSongsLoaded: boolean;
 	allFavoriteSongsLoaded: boolean;
-	search?: string;
+	search?: Record<Partial<SearchType>, string | undefined>;
 
 	refreshSongs: (limit?: number) => Promise<void>;
 	refreshFavoriteSongs: (limit?: number) => Promise<void>;
@@ -57,7 +58,7 @@ interface MusicStoreState {
 	getNextSongById: (id?: string) => Promise<Song | null>;
 	getPreviousSongById: (id?: string) => Promise<Song | null>;
 
-	setSearch: (search?: string) => void;
+	setSearch: (search?: string, searchType?: SearchType) => void;
 
 	getSimilarArtists: (artist: Artist) => Promise<Artist[]>;
 	mergeArtists: (
@@ -105,10 +106,10 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 
 		const total = await database.get<Song>("songs").query().fetchCount();
 
+		const s = search?.["songs"]?.trim() || "";
+
 		const conditions = [
-			search?.trim()
-				? Q.where("title", Q.like(`%${Q.sanitizeLikeString(search.trim())}%`))
-				: undefined,
+			s ? Q.where("title", Q.like(`%${Q.sanitizeLikeString(s)}%`)) : undefined,
 			Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc),
 			Q.take(limit),
 			Q.skip(limit * page),
@@ -129,26 +130,29 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			favoriteSongs: loadedFavoriteSongs,
 			favoritePage,
 			allFavoriteSongsLoaded,
+			search,
 		} = get();
 
 		if (allFavoriteSongsLoaded) {
 			return;
 		}
 
+		const s = search?.["favorites"]?.trim() || "";
+
 		const total = await database
 			.get<Song>("songs")
 			.query(Q.where("is_favorite", true))
 			.fetchCount();
 
-		const songs = await database
-			.get<Song>("songs")
-			.query(
-				Q.where("is_favorite", true),
-				Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc),
-				Q.take(limit),
-				Q.skip(limit * favoritePage)
-			)
-			.fetch();
+		const conditions = [
+			s ? Q.where("title", Q.like(`%${Q.sanitizeLikeString(s)}%`)) : undefined,
+			Q.where("is_favorite", true),
+			Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc),
+			Q.take(limit),
+			Q.skip(limit * favoritePage),
+		].filter(Boolean) as Q.Clause[];
+
+		const songs = await database.get<Song>("songs").query(conditions).fetch();
 		const newSongs = [...loadedFavoriteSongs, ...songs];
 		set({
 			favoriteSongs: newSongs,
@@ -222,11 +226,9 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 
 	createAlbum: async (album: Partial<Album>) => {
 		const res = await database.write(async () => {
-			const writtenAlbum = await database
-				.get("albums")
-				.create((newAlbum) => {
-					Object.assign(newAlbum, album);
-				});
+			const writtenAlbum = await database.get("albums").create((newAlbum) => {
+				Object.assign(newAlbum, album);
+			});
 			return writtenAlbum;
 		});
 		const { refreshAlbums } = get();
@@ -438,9 +440,19 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 		}
 	},
 
-	setSearch: (search?: string) => {
-		set({ search, page: 0, allSongsLoaded: false, songs: [] });
+	setSearch: (s?: string, searchType: SearchType = "songs") => {
+		const { search } = get();
+		set({
+			search: { ...search, [searchType]: s } as typeof search,
+			page: 0,
+			allSongsLoaded: false,
+			songs: [],
+			favoritePage: 0,
+			allFavoriteSongsLoaded: false,
+			favoriteSongs: [],
+		});
 		get().refreshSongs();
+		get().refreshFavoriteSongs();
 	},
 
 	getSimilarArtists: async (artist: Artist) => {

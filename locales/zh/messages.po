@@ -68,7 +68,7 @@ msgstr "艺术家已删除"
 msgid "Artist name"
 msgstr "艺术家名称"
 
-#: components/partials/Heading.tsx:39
+#: components/partials/Heading.tsx:82
 msgid "Artists"
 msgstr "艺术家"
 
@@ -155,7 +155,7 @@ msgstr "选择或导入时出错：{error}"
 msgid "Export music database"
 msgstr "导出音乐数据库"
 
-#: components/partials/Heading.tsx:37
+#: components/partials/Heading.tsx:80
 msgid "Favorites"
 msgstr "收藏"
 
@@ -277,7 +277,19 @@ msgstr "保存"
 msgid "Saving..."
 msgstr "正在保存..."
 
-#: components/partials/Heading.tsx:79
+#: components/partials/Heading.tsx:99
+msgid "Search"
+msgstr ""
+
+#: components/partials/Heading.tsx:97
+msgid "Search artists"
+msgstr ""
+
+#: components/partials/Heading.tsx:95
+msgid "Search favorite songs"
+msgstr ""
+
+#: components/partials/Heading.tsx:93
 msgid "Search songs"
 msgstr "搜索歌曲"
 
@@ -291,7 +303,7 @@ msgid "Selection canceled"
 msgstr "选择已取消"
 
 #: components/partials/DrawerContent.tsx:53
-#: components/partials/Heading.tsx:41
+#: components/partials/Heading.tsx:84
 msgid "Settings"
 msgstr "设置"
 
@@ -305,7 +317,7 @@ msgstr "歌曲更新"
 
 #: app/albums/[id].tsx:88
 #: app/artists/[id].tsx:88
-#: components/partials/Heading.tsx:35
+#: components/partials/Heading.tsx:78
 msgid "Songs"
 msgstr "歌曲"
 

@@ -68,7 +68,7 @@ msgstr "कलाकार हटाया गया"
 msgid "Artist name"
 msgstr "कलाकार का नाम"
 
-#: components/partials/Heading.tsx:39
+#: components/partials/Heading.tsx:82
 msgid "Artists"
 msgstr "कलाकार"
 
@@ -155,7 +155,7 @@ msgstr "चयन या आयात में त्रुटि: {error}"
 msgid "Export music database"
 msgstr "संगीत डेटाबेस निर्यात करें"
 
-#: components/partials/Heading.tsx:37
+#: components/partials/Heading.tsx:80
 msgid "Favorites"
 msgstr "पसंदीदा"
 
@@ -277,7 +277,19 @@ msgstr "सहेजें"
 msgid "Saving..."
 msgstr "सहेजा जा रहा है..."
 
-#: components/partials/Heading.tsx:79
+#: components/partials/Heading.tsx:99
+msgid "Search"
+msgstr ""
+
+#: components/partials/Heading.tsx:97
+msgid "Search artists"
+msgstr ""
+
+#: components/partials/Heading.tsx:95
+msgid "Search favorite songs"
+msgstr ""
+
+#: components/partials/Heading.tsx:93
 msgid "Search songs"
 msgstr "गीत खोजें"
 
@@ -291,7 +303,7 @@ msgid "Selection canceled"
 msgstr "चयन रद्द किया गया"
 
 #: components/partials/DrawerContent.tsx:53
-#: components/partials/Heading.tsx:41
+#: components/partials/Heading.tsx:84
 msgid "Settings"
 msgstr "सेटिंग्स"
 
@@ -305,7 +317,7 @@ msgstr "गाने का अपडेट"
 
 #: app/albums/[id].tsx:88
 #: app/artists/[id].tsx:88
-#: components/partials/Heading.tsx:35
+#: components/partials/Heading.tsx:78
 msgid "Songs"
 msgstr "गीत"
 
