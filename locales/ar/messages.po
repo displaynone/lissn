@@ -279,15 +279,15 @@ msgstr "جارٍ الحفظ..."
 
 #: components/partials/Heading.tsx:99
 msgid "Search"
-msgstr "Search"
+msgstr "بحث"
 
 #: components/partials/Heading.tsx:97
 msgid "Search artists"
-msgstr "Search artists"
+msgstr "البحث عن الفنانين"
 
 #: components/partials/Heading.tsx:95
 msgid "Search favorite songs"
-msgstr "Search favorite songs"
+msgstr "البحث عن الأغاني المفضلة"
 
 #: components/partials/Heading.tsx:93
 msgid "Search songs"

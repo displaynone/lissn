@@ -279,15 +279,15 @@ msgstr "Salvataggio..."
 
 #: components/partials/Heading.tsx:99
 msgid "Search"
-msgstr "Search"
+msgstr "Cerca"
 
 #: components/partials/Heading.tsx:97
 msgid "Search artists"
-msgstr "Search artists"
+msgstr "Cerca artisti"
 
 #: components/partials/Heading.tsx:95
 msgid "Search favorite songs"
-msgstr "Search favorite songs"
+msgstr "Cerca canzoni preferite"
 
 #: components/partials/Heading.tsx:93
 msgid "Search songs"
