@@ -247,7 +247,7 @@ msgstr "曲を再生"
 
 #: components/partials/Heading.tsx:82
 msgid "Playlists"
-msgstr ""
+msgstr "プレイリスト"
 
 #: app/index.tsx:135
 msgid "Recently played"

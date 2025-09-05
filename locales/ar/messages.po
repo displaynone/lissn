@@ -247,7 +247,7 @@ msgstr "تشغيل الأغنية"
 
 #: components/partials/Heading.tsx:82
 msgid "Playlists"
-msgstr ""
+msgstr "قوائم التشغيل"
 
 #: app/index.tsx:135
 msgid "Recently played"
