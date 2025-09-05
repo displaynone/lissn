@@ -16,6 +16,8 @@ import {
 	useRefreshAlbums,
 	useRefreshArtists,
 	useRefreshFavoriteSongs,
+	useRefreshPlayingNowSongs,
+	useRefreshPlaylists,
 	useRefreshSongs,
 	useStartSync,
 } from "@/store/songsStore";
@@ -45,7 +47,9 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const refreshSongs = useRefreshSongs();
 	const refreshFavoriteSongs = useRefreshFavoriteSongs();
 	const refreshArtists = useRefreshArtists();
+	const refreshPlaylists = useRefreshPlaylists();
 	const refreshAlbums = useRefreshAlbums();
+	const refreshPlayingNowSongs = useRefreshPlayingNowSongs();
 	const { song } = useGetPlayingSongAndArtist();
 	const pathname = usePathname();
 	const { height: windowHeight, width: windowWidth } = useWindowDimensions();
@@ -75,15 +79,13 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	useEffect(() => {
 		if (!isSynced && !isSyncing) {
 			(async () => {
-				try {
-					await startSync();
-					await refreshSongs();
-					await refreshFavoriteSongs();
-					await refreshArtists(100_000);
-					await refreshAlbums(100_000);
-				} catch (error) {
-					console.error("Error during sync:", error);
-				}
+				await startSync();
+				await refreshSongs();
+				await refreshFavoriteSongs();
+				await refreshArtists(100_000);
+				await refreshPlaylists(100_000);
+				await refreshAlbums(100_000);
+				await refreshPlayingNowSongs(100_000);
 			})();
 		}
 	}, [
@@ -94,6 +96,8 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 		refreshFavoriteSongs,
 		refreshArtists,
 		refreshAlbums,
+		refreshPlaylists,
+		refreshPlayingNowSongs,
 	]);
 
 	useEffect(() => {

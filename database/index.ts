@@ -3,6 +3,7 @@ import SQLiteAdapter from '@nozbe/watermelondb/adapters/sqlite'
 
 import { Album, Artist, Genre, Playlist, PlaylistSong, Song } from '@/models'
 import { mySchema } from './schema'
+import { seedIfEmpty } from './seed/seedPlaylists'
 
 const adapter = new SQLiteAdapter({
   schema: mySchema,
@@ -17,3 +18,9 @@ export const database = new Database({
   adapter,
   modelClasses: [Artist, Album, Genre, Song, Playlist, PlaylistSong],
 })
+
+const setup = async () => {
+  await seedIfEmpty(database);
+}
+
+setup();

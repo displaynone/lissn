@@ -165,7 +165,9 @@ export default function HomeScreen() {
 						<FlashList
 							data={songs}
 							keyExtractor={(song) => song.id}
-							renderItem={({ item }) => <SongItem song={item} />}
+							renderItem={({ item }) => (
+								<SongItem song={item} origin="latest" />
+							)}
 							ItemSeparatorComponent={() => <View h={18} />}
 							estimatedItemSize={50}
 							ListFooterComponent={<View style={{ height: 40 }} />}

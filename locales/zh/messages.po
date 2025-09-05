@@ -68,7 +68,7 @@ msgstr "艺术家已删除"
 msgid "Artist name"
 msgstr "艺术家名称"
 
-#: components/partials/Heading.tsx:82
+#: components/partials/Heading.tsx:84
 msgid "Artists"
 msgstr "艺术家"
 
@@ -245,6 +245,10 @@ msgstr "暂停歌曲"
 msgid "Play song"
 msgstr "播放歌曲"
 
+#: components/partials/Heading.tsx:82
+msgid "Playlists"
+msgstr ""
+
 #: app/index.tsx:135
 msgid "Recently played"
 msgstr "最近播放"
@@ -277,19 +281,19 @@ msgstr "保存"
 msgid "Saving..."
 msgstr "正在保存..."
 
-#: components/partials/Heading.tsx:99
+#: components/partials/Heading.tsx:101
 msgid "Search"
 msgstr "搜索"
 
-#: components/partials/Heading.tsx:97
+#: components/partials/Heading.tsx:99
 msgid "Search artists"
 msgstr "搜索艺术家"
 
-#: components/partials/Heading.tsx:95
+#: components/partials/Heading.tsx:97
 msgid "Search favorite songs"
 msgstr "搜索收藏的歌曲"
 
-#: components/partials/Heading.tsx:93
+#: components/partials/Heading.tsx:95
 msgid "Search songs"
 msgstr "搜索歌曲"
 
@@ -303,7 +307,7 @@ msgid "Selection canceled"
 msgstr "选择已取消"
 
 #: components/partials/DrawerContent.tsx:53
-#: components/partials/Heading.tsx:84
+#: components/partials/Heading.tsx:86
 msgid "Settings"
 msgstr "设置"
 

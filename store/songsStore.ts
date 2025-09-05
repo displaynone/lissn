@@ -1,5 +1,6 @@
 import { database } from "@/database";
-import { Album, Artist, Song } from "@/models";
+import { Album, Artist, Playlist, PlaylistSong, Song } from "@/models";
+import { PLAYLIST_PLAYING_NOW_NAME } from "@/models/Playlist";
 import {
 	MusicLibraryService,
 	SyncProgress,
@@ -11,8 +12,10 @@ import { create } from "zustand";
 interface MusicStoreState {
 	songs: Song[];
 	favoriteSongs: Song[];
+	playingNowSongs: Song[];
 	artists: Artist[];
 	albums: Album[];
+	playlists: Playlist[];
 	isLoading: boolean;
 	isSyncing: boolean;
 	isSynced: boolean;
@@ -22,12 +25,15 @@ interface MusicStoreState {
 	playingSongId?: string;
 	page: number;
 	favoritePage: number;
+	playingNowPage: number;
 	allSongsLoaded: boolean;
 	allFavoriteSongsLoaded: boolean;
-	search?: Record<Partial<SearchType>, string | undefined>;
+	allPlayingNowSongsLoaded: boolean;
+	search?: Partial<Record<SearchType, string>> | undefined;
 
 	refreshSongs: (limit?: number) => Promise<void>;
 	refreshFavoriteSongs: (limit?: number) => Promise<void>;
+	refreshPlayingNowSongs: (limit?: number) => Promise<void>;
 	getSongById: (id: string) => Promise<Song | null>;
 	updateSong: (id: string, updates: Partial<Song>) => Promise<void>;
 	updateArtist: (id: string, updates: Partial<Artist>) => Promise<void>;
@@ -51,6 +57,7 @@ interface MusicStoreState {
 	getLibraryStats: () => Promise<any>;
 
 	refreshArtists: (limit?: number) => Promise<void>;
+	refreshPlaylists: (limit?: number) => Promise<void>;
 	getArtistById: (id: string) => Promise<Artist | null>;
 	getAlbumById: (id: string) => Promise<Album | null>;
 
@@ -72,6 +79,17 @@ interface MusicStoreState {
 	) => Promise<void>;
 
 	refreshAlbums: (limit?: number) => Promise<void>;
+
+	deletePlaylistSongs: (playlist: Playlist) => Promise<void>;
+	getAllSongIds: () => Promise<string[]>;
+	createPlaylistSong: (
+		playlistId: string,
+		songId: string,
+		position: number
+	) => Promise<PlaylistSong>;
+	getPositionInPlayingNow: (
+		id: string
+	) => Promise<{ position: number; playlistId: string }>;
 }
 
 const musicService = MusicLibraryService.getInstance();
@@ -82,8 +100,10 @@ const DEFAULT_ORDER_COLUMN = "external_id";
 export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	songs: [],
 	favoriteSongs: [],
+	playingNowSongs: [],
 	artists: [],
 	albums: [],
+	playlists: [],
 	isLoading: true,
 	isSynced: false,
 	isSyncing: false,
@@ -93,8 +113,10 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	playingSongId: undefined,
 	page: 0,
 	favoritePage: 0,
+	playingNowPage: 0,
 	allSongsLoaded: false,
 	allFavoriteSongsLoaded: false,
+	allPlayingNowSongsLoaded: false,
 	search: undefined,
 
 	refreshSongs: async (limit: number = LIMIT) => {
@@ -104,12 +126,17 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			return;
 		}
 
-		const total = await database.get<Song>("songs").query().fetchCount();
-
 		const s = search?.["songs"]?.trim() || "";
+		const searchCondition = s
+			? [Q.where("title", Q.like(`%${Q.sanitizeLikeString(s)}%`))]
+			: [];
+		const total = await database
+			.get<Song>("songs")
+			.query(searchCondition)
+			.fetchCount();
 
 		const conditions = [
-			s ? Q.where("title", Q.like(`%${Q.sanitizeLikeString(s)}%`)) : undefined,
+			...searchCondition,
 			Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc),
 			Q.take(limit),
 			Q.skip(limit * page),
@@ -117,12 +144,56 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 
 		const songs = await database.get<Song>("songs").query(conditions).fetch();
 		const newSongs = [...loadedSongs, ...songs];
+		const dedup = new Map(newSongs.map((s) => [s.id, s]));
 		set({
-			songs: newSongs,
+			songs: Array.from(dedup.values()),
 			isLoading: false,
 			page: page + 1,
 			allSongsLoaded: newSongs.length >= total,
 		});
+	},
+
+	refreshPlayingNowSongs: async (limit: number = LIMIT) => {
+		try {
+			const playlist = await database
+				.get<Playlist>("playlists")
+				.query(Q.where("name", PLAYLIST_PLAYING_NOW_NAME))
+				.fetchIds();
+			const songIds = (
+				await database
+					.get<PlaylistSong>("playlist_songs")
+					.query(Q.where("playlist_id", playlist?.[0]))
+					.fetch()
+			).map((item) => item.songId);
+
+			const s = ""; //search?.["songs"]?.trim() || "";
+
+			const conditions = [
+				s
+					? Q.where("title", Q.like(`%${Q.sanitizeLikeString(s)}%`))
+					: undefined,
+				Q.where("id", Q.oneOf(songIds)),
+				Q.take(limit),
+			].filter(Boolean) as Q.Clause[];
+
+			const newSongs = await database
+				.get<Song>("songs")
+				.query(conditions)
+				.fetch();
+			const dedup = new Map(newSongs.map((s) => [s.id, s]));
+			const orderedSongs = songIds
+				.map((id) => dedup.get(id))
+				.filter(Boolean) as Song[];
+
+			set({
+				playingNowSongs: orderedSongs,
+				isLoading: false,
+				playingNowPage: 0,
+				allPlayingNowSongsLoaded: false,
+			});
+		} catch (e) {
+			console.log(e);
+		}
 	},
 
 	refreshFavoriteSongs: async (limit: number = LIMIT) => {
@@ -154,8 +225,10 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 
 		const songs = await database.get<Song>("songs").query(conditions).fetch();
 		const newSongs = [...loadedFavoriteSongs, ...songs];
+		const dedup = new Map(newSongs.map((s) => [s.id, s]));
+
 		set({
-			favoriteSongs: newSongs,
+			favoriteSongs: Array.from(dedup.values()),
 			isLoading: false,
 			favoritePage: favoritePage + 1,
 			allFavoriteSongsLoaded: newSongs.length >= total,
@@ -188,7 +261,7 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 
 	updateArtist: async (id, updates) => {
 		await database.write(async () => {
-			const artist = await database.get<Song>("artists").find(id);
+			const artist = await database.get<Artist>("artists").find(id);
 			await artist.update((record) => {
 				Object.entries(updates).forEach(([key, value]) => {
 					// @ts-expect-error dynamic assignment
@@ -200,7 +273,7 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 
 	updateAlbum: async (id, updates) => {
 		await database.write(async () => {
-			const album = await database.get<Song>("albums").find(id);
+			const album = await database.get<Album>("albums").find(id);
 			await album.update((record) => {
 				Object.entries(updates).forEach(([key, value]) => {
 					// @ts-expect-error dynamic assignment
@@ -316,7 +389,10 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	getFavoriteSongs: async () => {
 		return await database
 			.get<Song>("songs")
-			.query(Q.where("is_favorite", true))
+			.query(
+				Q.where("is_favorite", true),
+				Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc)
+			)
 			.fetch();
 	},
 
@@ -362,6 +438,14 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 		set({ artists, isLoading: false });
 	},
 
+	refreshPlaylists: async (limit: number = 20) => {
+		const playlists = await database
+			.get<Playlist>("playlists")
+			.query(Q.sortBy("name", Q.asc), Q.take(limit))
+			.fetch();
+		set({ playlists, isLoading: false });
+	},
+
 	getArtistById: async (id) => {
 		try {
 			if (!id) {
@@ -397,19 +481,27 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			return null;
 		}
 		try {
-			const currentSong = await database.get<Song>("songs").find(id);
-			if (!currentSong) return null;
+			const { getPositionInPlayingNow } = get();
+			const { position, playlistId } = await getPositionInPlayingNow(id);
 
-			const nextSongs = await database
-				.get<Song>("songs")
+			if (!playlistId || position === -1) {
+				return null;
+			}
+			const nextSong = await database
+				.get<PlaylistSong>("playlist_songs")
 				.query(
-					Q.where(DEFAULT_ORDER_COLUMN, Q.lt(currentSong?.externalId || "")),
-					Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc),
+					Q.where("playlist_id", Q.eq(playlistId)),
+					Q.where("position", Q.gt(position)),
+					Q.sortBy("position", Q.asc),
 					Q.take(1)
 				)
 				.fetch();
+			if (!nextSong.length) {
+				return null;
+			}
 
-			return nextSongs[0] || null;
+			const { getSongById } = get();
+			return getSongById(nextSong?.[0].songId);
 		} catch (e) {
 			console.error("getNextSongById error", e);
 			return null;
@@ -421,21 +513,29 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			return null;
 		}
 		try {
-			const currentSong = await database.get<Song>("songs").find(id);
-			if (!currentSong) return null;
+			const { getPositionInPlayingNow } = get();
+			const { position, playlistId } = await getPositionInPlayingNow(id);
 
-			const nextSongs = await database
-				.get<Song>("songs")
+			if (!playlistId || position === -1) {
+				return null;
+			}
+			const nextSong = await database
+				.get<PlaylistSong>("playlist_songs")
 				.query(
-					Q.where(DEFAULT_ORDER_COLUMN, Q.gt(currentSong?.externalId || "")),
-					Q.sortBy(DEFAULT_ORDER_COLUMN, Q.asc),
+					Q.where("playlist_id", Q.eq(playlistId)),
+					Q.where("position", Q.lt(position)),
+					Q.sortBy("position", Q.desc),
 					Q.take(1)
 				)
 				.fetch();
+			if (!nextSong) {
+				return null;
+			}
 
-			return nextSongs[0] || null;
+			const { getSongById } = get();
+			return getSongById(nextSong?.[0].songId);
 		} catch (e) {
-			console.error("getNextSongById error", e);
+			console.error("getPreviousSongById error", e);
 			return null;
 		}
 	},
@@ -490,7 +590,8 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			}
 			const otherArtists = await database
 				.get<Artist>("artists")
-				.query(Q.where("id", Q.oneOf(otherArtistsIds)));
+				.query(Q.where("id", Q.oneOf(otherArtistsIds)))
+				.fetch();
 			for (const artist of otherArtists) {
 				await artist.markAsDeleted();
 			}
@@ -510,7 +611,8 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			}
 			const otherAlbums = await database
 				.get<Artist>("albums")
-				.query(Q.where("id", Q.oneOf(otherAlbumsIds)));
+				.query(Q.where("id", Q.oneOf(otherAlbumsIds)))
+				.fetch();
 			for (const album of otherAlbums) {
 				await album.markAsDeleted();
 			}
@@ -524,6 +626,76 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 			.fetch();
 		set({ albums });
 	},
+
+	deletePlaylistSongs: async (playlist: Playlist) => {
+		const playlistSongs = await database
+			.get<PlaylistSong>("playlist_songs")
+			.query(Q.where("playlist_id", playlist.id))
+			.fetch();
+		for (const playlistsong of playlistSongs) {
+			await database.write(async () => {
+				try {
+					await playlistsong.destroyPermanently();
+				} catch (e) {
+					console.log(e);
+				}
+			});
+		}
+	},
+
+	getAllSongIds: async () => {
+		return await database
+			.get<Song>("songs")
+			.query(Q.sortBy(DEFAULT_ORDER_COLUMN, Q.desc))
+			.fetchIds();
+	},
+
+	createPlaylistSong: async (
+		playlistId: string,
+		songId: string,
+		position: number
+	) => {
+		const res = await database.write(async () => {
+			const pl = await database
+				.get<PlaylistSong>("playlist_songs")
+				.create((playlistsong) => {
+					playlistsong.playlistId = playlistId;
+					playlistsong.songId = songId;
+					playlistsong.position = position;
+				});
+			return pl;
+		});
+		return res as PlaylistSong;
+	},
+
+	getPositionInPlayingNow: async (id: string) => {
+		const nullResult = { position: -1, playlistId: "" };
+		if (!id) {
+			return nullResult;
+		}
+		try {
+			const playlist = await database
+				.get<Playlist>("playlists")
+				.query(Q.where("name", Q.eq(PLAYLIST_PLAYING_NOW_NAME)))
+				.fetch();
+			if (!playlist.length) {
+				return nullResult;
+			}
+			const currentSong = await database
+				.get<PlaylistSong>("playlist_songs")
+				.query(
+					Q.where("playlist_id", Q.eq(playlist[0].id)),
+					Q.where("song_id", Q.eq(id)),
+					Q.take(1)
+				)
+				.fetch();
+			if (!currentSong.length) return nullResult;
+			return { position: currentSong[0].position, playlistId: playlist[0].id };
+		} catch (e) {
+			console.log("Error getting position in playing now list", e);
+		}
+		return nullResult;
+	},
 }));
 
 export const useGetSongs = () => useMusicStore((state) => state.songs);
@@ -531,6 +703,7 @@ export const useGetFavoriteSongs = () =>
 	useMusicStore((state) => state.favoriteSongs);
 export const useGetSongById = () => useMusicStore((state) => state.getSongById);
 export const useGetArtists = () => useMusicStore((state) => state.artists);
+export const useGetPlaylists = () => useMusicStore((state) => state.playlists);
 export const useGetArtistById = () =>
 	useMusicStore((state) => state.getArtistById);
 export const useGetAlbums = () => useMusicStore((state) => state.albums);
@@ -557,6 +730,8 @@ export const useRefreshFavoriteSongs = () =>
 	useMusicStore((state) => state.refreshFavoriteSongs);
 export const useRefreshArtists = () =>
 	useMusicStore((state) => state.refreshArtists);
+export const useRefreshPlaylists = () =>
+	useMusicStore((state) => state.refreshPlaylists);
 export const useRefreshAlbums = () =>
 	useMusicStore((state) => state.refreshAlbums);
 export const useGetSearch = () => useMusicStore((state) => state.search);
@@ -593,3 +768,7 @@ export const useGetGetSongsByAlbum = () =>
 	useMusicStore((state) => state.getSongsByAlbum);
 export const useGetMergeAlbums = () =>
 	useMusicStore((state) => state.mergeAlbums);
+export const useRefreshPlayingNowSongs = () =>
+	useMusicStore((state) => state.refreshPlayingNowSongs);
+export const useGetPlayingNowSongs = () =>
+	useMusicStore((state) => state.playingNowSongs);

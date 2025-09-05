@@ -1,3 +1,4 @@
+import useGeneratePlayingNowList from "@/hooks/useGeneratePlayingNowList";
 import { useGetArtistAlbumBySong } from "@/hooks/useGetArtistAlbumBySong";
 import { Song } from "@/models";
 import { useGetSetSelectedSong } from "@/store/appStore";
@@ -10,6 +11,7 @@ import {
 } from "@/store/usePlayerStore";
 import { tamaguiConfig } from "@/tamagui.config";
 import { formatSeconds } from "@/utils/formatSeconds";
+import { PlaylistType } from "@/utils/types";
 import { Button, View, XStack, YStack } from "tamagui";
 import DotsVerticalIcon from "../icons/DotsVerticalIcon";
 import { AutoMarquee } from "../ui/AutoMarquee";
@@ -20,11 +22,12 @@ import Cover from "./Cover";
 
 type SongItemProps = {
 	song: Song;
+	origin?: PlaylistType;
 };
 
 const COVER_SIZE = 52;
 
-const SongItem: React.FC<SongItemProps> = ({ song }) => {
+const SongItem: React.FC<SongItemProps> = ({ song, origin = 'latest'}) => {
 	const { artist, isLoading } = useGetArtistAlbumBySong(song);
 	const setPlayingSongId = useGetSetPlayingSongId();
 	const stop = useGetStopSong();
@@ -33,12 +36,14 @@ const SongItem: React.FC<SongItemProps> = ({ song }) => {
 	const isPaused = useGetIsPausedSong();
 	const isPlaying = playingSongId?.id === song.id && !isPaused;
 	const setSelectedSong = useGetSetSelectedSong();
+	const {generatePlaylist} = useGeneratePlayingNowList();
 
 	const handlePlay = async () => {
 		if (isPlaying) {
 			setPlayingSongId(undefined);
 			stop();
 		} else {
+			generatePlaylist(origin);
 			setPlayingSongId(song.id);
 			play(song);
 		}

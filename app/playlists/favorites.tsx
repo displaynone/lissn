@@ -56,7 +56,9 @@ export default function FavoritesScreen() {
 					ref={listRef}
 					data={songs}
 					keyExtractor={(song) => song.id}
-					renderItem={({ item }) => <SongItem song={item} />}
+					renderItem={({ item }) => (
+						<SongItem song={item} origin="/playlists/favorites" />
+					)}
 					ItemSeparatorComponent={() => <View h={12} />}
 					estimatedItemSize={50}
 					ListFooterComponent={<View style={{ height: 40 }} />}
@@ -66,7 +68,9 @@ export default function FavoritesScreen() {
 					}
 					onEndReachedThreshold={0.5}
 					onEndReached={() => {
-						refreshSongs();
+						if (!isLoading) {
+							refreshSongs();
+						}
 					}}
 				/>
 			)}

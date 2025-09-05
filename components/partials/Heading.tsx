@@ -78,6 +78,8 @@ const Heading: React.FC = () => {
 				return t`Songs`;
 			case "/playlists/favorites":
 				return t`Favorites`;
+			case "/playlists":
+				return t`Playlists`;
 			case "/artists":
 				return t`Artists`;
 			case "/settings":

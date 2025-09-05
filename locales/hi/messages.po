@@ -68,7 +68,7 @@ msgstr "कलाकार हटाया गया"
 msgid "Artist name"
 msgstr "कलाकार का नाम"
 
-#: components/partials/Heading.tsx:82
+#: components/partials/Heading.tsx:84
 msgid "Artists"
 msgstr "कलाकार"
 
@@ -245,6 +245,10 @@ msgstr "गीत रोकें"
 msgid "Play song"
 msgstr "गीत चलाएं"
 
+#: components/partials/Heading.tsx:82
+msgid "Playlists"
+msgstr ""
+
 #: app/index.tsx:135
 msgid "Recently played"
 msgstr "हाल ही में चलाए गए"
@@ -277,19 +281,19 @@ msgstr "सहेजें"
 msgid "Saving..."
 msgstr "सहेजा जा रहा है..."
 
-#: components/partials/Heading.tsx:99
+#: components/partials/Heading.tsx:101
 msgid "Search"
 msgstr "खोजें"
 
-#: components/partials/Heading.tsx:97
+#: components/partials/Heading.tsx:99
 msgid "Search artists"
 msgstr "कलाकार खोजें"
 
-#: components/partials/Heading.tsx:95
+#: components/partials/Heading.tsx:97
 msgid "Search favorite songs"
 msgstr "पसंदीदा गीत खोजें"
 
-#: components/partials/Heading.tsx:93
+#: components/partials/Heading.tsx:95
 msgid "Search songs"
 msgstr "गीत खोजें"
 
@@ -303,7 +307,7 @@ msgid "Selection canceled"
 msgstr "चयन रद्द किया गया"
 
 #: components/partials/DrawerContent.tsx:53
-#: components/partials/Heading.tsx:84
+#: components/partials/Heading.tsx:86
 msgid "Settings"
 msgstr "सेटिंग्स"
 
