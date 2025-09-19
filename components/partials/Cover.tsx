@@ -1,6 +1,6 @@
+import FastImage, { ImageStyle } from "@d11/react-native-fast-image";
 import { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import FastImage, { ImageStyle } from "react-native-fast-image";
 import MissingCoverIcon from "../icons/MissingCoverIcon";
 
 type CoverProps = {

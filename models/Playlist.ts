@@ -1,7 +1,7 @@
 import { Model } from '@nozbe/watermelondb';
 import { date, field, readonly } from '@nozbe/watermelondb/decorators';
 
-export const PLAYLIST_PLAYING_NOW_NAME = 'playing_now';
+export const PLAYLIST_PLAYING_NOW_NAME = '_playing_now';
 
 export class Playlist extends Model {
   static table = 'playlists'

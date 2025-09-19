@@ -6,6 +6,7 @@ import { Linking } from "react-native";
 import { Button, H1, XStack, YStack } from "tamagui";
 import packageData from "../../package.json";
 import AlbumIcon from "../icons/AlbumIcon";
+import EditPlaylistIcon from "../icons/EditPlaylistIcon";
 import GithubIcon from "../icons/GithubIcon";
 import Logo from "../icons/Logo";
 import SettingsIcon from "../icons/SettingsIcon";
@@ -53,6 +54,15 @@ const DrawerContent: React.FC = () => {
 						title={<Text color="$color.tertiary">{t`Settings`}</Text>}
 						onPress={() => {
 							router.push("/settings");
+							setShowDrawer(false);
+						}}
+						backgroundColor={"transparent"}
+					/>
+					<ActionItem
+						icon={<EditPlaylistIcon color="white" size={18} />}
+						title={<Text color="$color.tertiary">{t`Edit playlists`}</Text>}
+						onPress={() => {
+							router.push("/playlists/edit");
 							setShowDrawer(false);
 						}}
 						backgroundColor={"transparent"}

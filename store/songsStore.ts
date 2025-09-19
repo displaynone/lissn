@@ -5,6 +5,7 @@ import {
 	MusicLibraryService,
 	SyncProgress,
 } from "@/services/MusicLibraryService";
+import { toSlug } from "@/utils/toSlug";
 import { SearchType } from "@/utils/types";
 import { Q } from "@nozbe/watermelondb";
 import { create } from "zustand";
@@ -30,6 +31,7 @@ interface MusicStoreState {
 	allFavoriteSongsLoaded: boolean;
 	allPlayingNowSongsLoaded: boolean;
 	search?: Partial<Record<SearchType, string>> | undefined;
+	currentPlaylist: string;
 
 	refreshSongs: (limit?: number) => Promise<void>;
 	refreshFavoriteSongs: (limit?: number) => Promise<void>;
@@ -39,12 +41,14 @@ interface MusicStoreState {
 	updateArtist: (id: string, updates: Partial<Artist>) => Promise<void>;
 	updateAlbum: (id: string, updates: Partial<Album>) => Promise<void>;
 	createArtist: (artist: Partial<Artist>) => Promise<Artist>;
+	createPlaylist: (artist: Partial<Playlist>) => Promise<Playlist>;
 	createAlbum: (album: Partial<Album>) => Promise<Album>;
 	toggleFavorite: (id: string) => Promise<void>;
 	incrementPlayCount: (id: string) => Promise<void>;
 	deleteSong: (id: string) => Promise<void>;
 	deleteArtist: (id: string) => Promise<void>;
 	deleteAlbum: (id: string) => Promise<void>;
+	deletePlaylist: (id: string) => Promise<void>;
 
 	searchSongs: (query: string) => Promise<Song[]>;
 	getSongsByArtist: (artistId: string) => Promise<Song[]>;
@@ -85,11 +89,13 @@ interface MusicStoreState {
 	createPlaylistSong: (
 		playlistId: string,
 		songId: string,
-		position: number
+		position?: number
 	) => Promise<PlaylistSong>;
 	getPositionInPlayingNow: (
 		id: string
 	) => Promise<{ position: number; playlistId: string }>;
+	setCurrentPlaylist: (id: string) => void;
+	refreshAll: () => Promise<void>;
 }
 
 const musicService = MusicLibraryService.getInstance();
@@ -97,7 +103,7 @@ const musicService = MusicLibraryService.getInstance();
 const LIMIT = 20;
 const DEFAULT_ORDER_COLUMN = "external_id";
 
-export const useMusicStore = create<MusicStoreState>((set, get) => ({
+export const store = create<MusicStoreState>((set, get) => ({
 	songs: [],
 	favoriteSongs: [],
 	playingNowSongs: [],
@@ -118,6 +124,7 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	allFavoriteSongsLoaded: false,
 	allPlayingNowSongsLoaded: false,
 	search: undefined,
+	currentPlaylist: PLAYLIST_PLAYING_NOW_NAME,
 
 	refreshSongs: async (limit: number = LIMIT) => {
 		const { songs: loadedSongs, page, allSongsLoaded, search } = get();
@@ -155,14 +162,18 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 
 	refreshPlayingNowSongs: async (limit: number = LIMIT) => {
 		try {
+			const { currentPlaylist } = get();
 			const playlist = await database
 				.get<Playlist>("playlists")
-				.query(Q.where("name", PLAYLIST_PLAYING_NOW_NAME))
+				.query(Q.where("name", currentPlaylist))
 				.fetchIds();
 			const songIds = (
 				await database
 					.get<PlaylistSong>("playlist_songs")
-					.query(Q.where("playlist_id", playlist?.[0]))
+					.query(
+						Q.where("playlist_id", playlist?.[0]),
+						Q.sortBy("position", Q.asc)
+					)
 					.fetch()
 			).map((item) => item.songId);
 
@@ -297,6 +308,21 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 		return res as Artist;
 	},
 
+	createPlaylist: async (playlist: Partial<Playlist>) => {
+		const res = await database.write(async () => {
+			const writtenPlaylist = await database
+				.get<Playlist>("playlists")
+				.create((newPlaylist) => {
+					newPlaylist.name = toSlug(playlist.name || "");
+					newPlaylist.description = playlist.name || "";
+				});
+			return writtenPlaylist;
+		});
+		const { refreshPlaylists } = get();
+		await refreshPlaylists(100_000);
+		return res as Playlist;
+	},
+
 	createAlbum: async (album: Partial<Album>) => {
 		const res = await database.write(async () => {
 			const writtenAlbum = await database.get("albums").create((newAlbum) => {
@@ -365,6 +391,17 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 		});
 	},
 
+	deletePlaylist: async (id) => {
+		await database.write(async () => {
+			const playlist = await database.get<Playlist>("playlists").find(id);
+			await playlist.markAsDeleted();
+			const { playlists } = get();
+			set({
+				playlists: playlists.filter((a) => a.id !== id),
+			});
+		});
+	},
+
 	searchSongs: async (query) => {
 		return await database
 			.get<Song>("songs")
@@ -400,7 +437,7 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 		return await database
 			.get<Song>("songs")
 			.query(
-				Q.where("last_played_at", Q.notEq(null)),
+				// Q.where("last_played_at", Q.notEq(null)),
 				Q.sortBy("last_played_at", Q.desc),
 				Q.take(limit)
 			)
@@ -653,15 +690,19 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 	createPlaylistSong: async (
 		playlistId: string,
 		songId: string,
-		position: number
+		position?: number
 	) => {
+		const lastPosition = await database
+			.get<PlaylistSong>("playlist_songs")
+			.query(Q.where("playlist_id", playlistId))
+			.fetchCount();
 		const res = await database.write(async () => {
 			const pl = await database
 				.get<PlaylistSong>("playlist_songs")
 				.create((playlistsong) => {
 					playlistsong.playlistId = playlistId;
 					playlistsong.songId = songId;
-					playlistsong.position = position;
+					playlistsong.position = position || lastPosition;
 				});
 			return pl;
 		});
@@ -670,13 +711,14 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 
 	getPositionInPlayingNow: async (id: string) => {
 		const nullResult = { position: -1, playlistId: "" };
+		const { currentPlaylist } = get();
 		if (!id) {
 			return nullResult;
 		}
 		try {
 			const playlist = await database
 				.get<Playlist>("playlists")
-				.query(Q.where("name", Q.eq(PLAYLIST_PLAYING_NOW_NAME)))
+				.query(Q.where("name", Q.eq(currentPlaylist)))
 				.fetch();
 			if (!playlist.length) {
 				return nullResult;
@@ -696,7 +738,23 @@ export const useMusicStore = create<MusicStoreState>((set, get) => ({
 		}
 		return nullResult;
 	},
+
+	setCurrentPlaylist: (id) => {
+		set({ currentPlaylist: id });
+	},
+
+	refreshAll: async () => {
+		const {refreshAlbums, refreshArtists, refreshFavoriteSongs, refreshPlayingNowSongs, refreshPlaylists, refreshSongs} = get();
+		await refreshAlbums(100_000);
+		await refreshArtists(100_000);
+		await refreshFavoriteSongs(100_000);
+		await refreshPlayingNowSongs(100_000);
+		await refreshPlaylists(100_000);
+		await refreshSongs(100_000);
+	}
 }));
+
+export const useMusicStore = store;
 
 export const useGetSongs = () => useMusicStore((state) => state.songs);
 export const useGetFavoriteSongs = () =>
@@ -758,10 +816,14 @@ export const useGetDeleteArtist = () =>
 	useMusicStore((state) => state.deleteArtist);
 export const useGetDeleteAlbum = () =>
 	useMusicStore((state) => state.deleteAlbum);
+export const useGetDeletePlaylist = () =>
+	useMusicStore((state) => state.deletePlaylist);
 export const useGetCreateArtist = () =>
 	useMusicStore((state) => state.createArtist);
 export const useGetCreateAlbum = () =>
 	useMusicStore((state) => state.createAlbum);
+export const useGetCreatePlaylist = () =>
+	useMusicStore((state) => state.createPlaylist);
 export const useGetAlbumById = () =>
 	useMusicStore((state) => state.getAlbumById);
 export const useGetGetSongsByAlbum = () =>
@@ -772,3 +834,7 @@ export const useRefreshPlayingNowSongs = () =>
 	useMusicStore((state) => state.refreshPlayingNowSongs);
 export const useGetPlayingNowSongs = () =>
 	useMusicStore((state) => state.playingNowSongs);
+export const useGetCreatePlaylistSong = () =>
+	useMusicStore((state) => state.createPlaylistSong);
+export const useGetSetCurrentPlaylist = () =>
+	useMusicStore((state) => state.setCurrentPlaylist);

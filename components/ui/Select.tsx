@@ -3,11 +3,11 @@ import { LinearGradient } from "@tamagui/linear-gradient";
 import { ReactNode, useMemo } from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import {
-  Adapt,
-  Sheet,
-  Select as TamaguiSelect,
-  SelectProps as TamaguiSelectProps,
-  YStack,
+	Adapt,
+	Sheet,
+	Select as TamaguiSelect,
+	SelectProps as TamaguiSelectProps,
+	YStack,
 } from "tamagui";
 import CheckIcon from "../icons/CheckIcon";
 import ChevronDownIcon from "../icons/ChevronDownIcon";
@@ -62,6 +62,7 @@ const Select = <T,>({
 					snapPointsMode={"fit"}
 					dismissOnSnapToBottom
 					animation="medium"
+					zIndex={2_000_000}
 				>
 					<Sheet.Frame>
 						<Sheet.ScrollView>
@@ -77,7 +78,7 @@ const Select = <T,>({
 				</Sheet>
 			</Adapt>
 
-			<TamaguiSelect.Content zIndex={200_000}>
+			<TamaguiSelect.Content zIndex={2_000_000}>
 				<TamaguiSelect.ScrollUpButton
 					alignItems="center"
 					justifyContent="center"
@@ -99,7 +100,7 @@ const Select = <T,>({
 				</TamaguiSelect.ScrollUpButton>
 
 				<TamaguiSelect.Viewport minWidth={200}>
-					<TamaguiSelect.Group>
+					<TamaguiSelect.Group paddingBottom="$4">
 						<TamaguiSelect.Label>
 							<H2 paddingTop={insets.top}>
 								<Trans>Select an option</Trans>

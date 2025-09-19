@@ -6,6 +6,7 @@ import {
 	useAreSongsLoading,
 	useGetPlayingNowSongs,
 	useGetPlaylists,
+	useGetSetCurrentPlaylist,
 	useRefreshPlayingNowSongs,
 } from "@/store/songsStore";
 import { tamaguiConfig } from "@/tamagui.config";
@@ -22,18 +23,20 @@ import {
 } from "tamagui";
 
 const Tabs = styled(TaTabs, {
-	borderRadius: "$4",
+	borderRadius: 0,
 	maxWidth: "100%",
 });
 
 const TabsList = styled(TaTabs.List, {
-	borderRadius: "$4",
+	borderRadius: 0,
 });
 
 const selectedStyle: Pick<ComponentProps<typeof TaTabs.Tab>, "style">["style"] =
 	{
 		borderBottomColor: tamaguiConfig.tokens.color.primary.val,
 		borderBottomWidth: 2,
+		borderBottomRightRadius: 0,
+		borderBottomLeftRadius: 0,
 	};
 
 const Tab = styled(TaTabs.Tab, {
@@ -46,6 +49,7 @@ const Tab = styled(TaTabs.Tab, {
 		backgroundColor: tamaguiConfig.tokens.color.background.val,
 		borderBottomColor: tamaguiConfig.tokens.color.background.val,
 		borderBottomWidth: 2,
+		borderRadius: 0,
 	},
 });
 
@@ -55,6 +59,7 @@ export default function PlaylistsScreen() {
 	const playingNowSongs = useGetPlayingNowSongs();
 	const refreshPlayingNowSongs = useRefreshPlayingNowSongs();
 	const isLoading = useAreSongsLoading();
+	const setCurrentPlaylist = useGetSetCurrentPlaylist();
 
 	const Loading = (
 		<YStack flex={1} justifyContent="center" alignItems="center">
@@ -85,6 +90,10 @@ export default function PlaylistsScreen() {
 									key={playlist.id}
 									value={playlist.id}
 									style={playlist.id === activeTab ? selectedStyle : {}}
+									onPress={() => {
+										setCurrentPlaylist(playlist.name);
+										refreshPlayingNowSongs();
+									}}
 								>
 									<SizableText>{playlist.description}</SizableText>
 								</Tab>

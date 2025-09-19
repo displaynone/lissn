@@ -23,7 +23,7 @@ export async function pickAndImportDb() {
 		const file = result.assets[0];
 
 		// Llamar a tu importador
-		await importDatabaseJSON(file.uri, "merge");
+		await importDatabaseJSON(file.uri, "replace");
 		setToastData({
 			title: t`Import database`,
 			message: t`Database imported successfully`,

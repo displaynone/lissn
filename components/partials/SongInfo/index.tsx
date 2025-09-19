@@ -1,7 +1,6 @@
 import { useGetArtistAlbumBySong } from "@/hooks/useGetArtistAlbumBySong";
 import { useGetSelectedSong, useGetSetSelectedSong } from "@/store/appStore";
 import {
-	useGetDeleteSong,
 	useGetSetPlayingSongId,
 	useGetToggleFavorite,
 } from "@/store/songsStore";
@@ -14,18 +13,18 @@ import {
 import { Trans, useLingui } from "@lingui/react/macro";
 import { useRouter } from "expo-router";
 import { useEffect, useState } from "react";
-import { Button, Separator, Sheet, styled, XStack, YStack } from "tamagui";
-import EditIcon from "../icons/EditIcon";
-import FavoriteIcon from "../icons/FavoriteIcon";
-import PauseIcon from "../icons/PauseIcon";
-import PlayIcon from "../icons/PlayIcon";
-import PlaylistAddIcon from "../icons/PlaylistAddIcon";
-import TrashIcon from "../icons/TrashIcon";
-import { ActionItem } from "../ui/ActionItem";
-import { H2 } from "../ui/Headings";
-import { Text } from "../ui/Text";
-import Cover from "./Cover";
-import SheetDialog from "./SheetDialog";
+import { Separator, Sheet, styled, XStack, YStack } from "tamagui";
+import EditIcon from "../../icons/EditIcon";
+import FavoriteIcon from "../../icons/FavoriteIcon";
+import PauseIcon from "../../icons/PauseIcon";
+import PlayIcon from "../../icons/PlayIcon";
+import PlaylistAddIcon from "../../icons/PlaylistAddIcon";
+import TrashIcon from "../../icons/TrashIcon";
+import { ActionItem } from "../../ui/ActionItem";
+import { Text } from "../../ui/Text";
+import Cover from "../Cover";
+import AddSongPlaylist from "./AddSongPlaylist";
+import DeleteSongDialog from "./DeleteSong";
 
 export const Label = styled(Text, {
 	fontSize: "$6",
@@ -56,13 +55,13 @@ const SongInfo: React.FC = () => {
 	const playingSong = useGetPlayingSong();
 	const play = useGetPlaySong();
 	const stop = useGetStopSong();
-	const deleteSong = useGetDeleteSong();
 
 	const open = !!song;
 	const isPlayingSong = !isPaused && song?.id === playingSong?.id;
 
 	const [isFavorite, setIsFavorite] = useState(!!song?.isFavorite);
 	const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+	const [addSongDialogOpen, setAddSongDialogOpen] = useState(false);
 
 	useEffect(() => {
 		if (song) {
@@ -158,10 +157,10 @@ const SongInfo: React.FC = () => {
 							/>
 							<ActionItem
 								icon={<PlaylistAddIcon color="white" size={18} />}
-								title={<Text>{t`Add to playlist`}</Text>}
-								onPress={() => {}}
+								title={<Text>{t`Add to a playlist`}</Text>}
+								onPress={() => setAddSongDialogOpen(true)}
 							/>
-							<Separator borderColor="$color.backgroundTransparent02" />
+							<Separator borderColor="$color.backgroundTransparent10" />
 							<ActionItem
 								icon={<EditIcon color="white" size={18} />}
 								title={<Text>{t`Edit details`}</Text>}
@@ -173,52 +172,29 @@ const SongInfo: React.FC = () => {
 							<ActionItem
 								bg="$red9Light"
 								icon={<TrashIcon color="white" size={18} />}
-								title={<Text>{t`Delete song`}</Text>}
+								title={<Text>{t`Hide song`}</Text>}
 								onPress={() => setDeleteDialogOpen(true)}
 							/>
 						</YStack>
 					</YStack>
 				</Sheet.Frame>
 			</Sheet>
-			<SheetDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
-				<YStack gap="$3" p="$4">
-					<H2>
-						<Trans>Delete song</Trans>
-					</H2>
-					<Text>
-						<Trans>Are you sure you want to delete the song?</Trans>
-					</Text>
-					<XStack gap="$4" jc="flex-start" mt="$4">
-						<Button
-							bg="$red9Light"
-							onPress={() => {
-								deleteSong(song?.id || "");
-								setDeleteDialogOpen(false);
-								setSelectedSong(undefined);
-								if (isPlayingSong) {
-									stop();
-									setPlayingSongId(undefined);
-								}
-							}}
-							marginTop="$4"
-						>
-							<Text>
-								<Trans>Delete</Trans>
-							</Text>
-						</Button>
-						<Button
-							bg="$color.backgroundDarkTransparent20"
-							onPress={() => setDeleteDialogOpen(false)}
-							marginTop="$4"
-							color="$color.white"
-						>
-							<Text>
-								<Trans>Cancel</Trans>
-							</Text>
-						</Button>
-					</XStack>
-				</YStack>
-			</SheetDialog>
+			<DeleteSongDialog
+				deleteDialogOpen={deleteDialogOpen}
+				isPlayingSong={isPlayingSong}
+				setDeleteDialogOpen={setDeleteDialogOpen}
+				song={song}
+			/>
+			{song && (
+				<AddSongPlaylist
+					addSongDialogOpen={addSongDialogOpen}
+					setAddSongDialogOpen={(val: boolean) => {
+						setSelectedSong(undefined);
+						setAddSongDialogOpen(val);
+					}}
+					song={song}
+				/>
+			)}
 		</>
 	);
 };
