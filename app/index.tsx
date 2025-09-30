@@ -153,7 +153,6 @@ export default function HomeScreen() {
 					</H2>
 				</View>
 				{showLoading && Loading}
-				<Text>{showLoading ? 'SI':'NO'}</Text>
 				{!showLoading && (
 					<Animated.View
 						style={[
