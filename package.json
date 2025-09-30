@@ -12,7 +12,7 @@
     "dev:client": "expo install expo-dev-client",
     "prebuild": "expo prebuild -p android",
     "build:eas": "eas build --platform android --profile development",
-    "build:local": "eas build --platform android --profile development --local",
+    "build:local": "eas build --platform android --profile preview --local",
     "lingui:extract": "npx lingui extract",
     "lingui:compile": "npx lingui compile",
     "tamagui:check": "npx @tamagui/cli check",
