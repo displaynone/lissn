@@ -59,7 +59,7 @@ type ImportMode = "merge" | "replace";
 
 export async function importDatabaseJSON(
 	fileUri: string,
-	mode: ImportMode = "merge"
+	mode: ImportMode = "replace"
 ) {
 	try {
 		const raw = await FileSystem.readAsStringAsync(fileUri, {
@@ -103,30 +103,25 @@ export async function importDatabaseJSON(
 				for (const part of chunk(ops, BATCH_CHUNK)) {
 					await database.batch(part);
 				}
-
-				console.log("Deleted:", {
-					songs: await songsCol.query().fetchCount(),
-					albums: await albumsCol.query().fetchCount(),
-					artists: await artistsCol.query().fetchCount(),
-					playlists: await playlistsCol.query().fetchCount(),
-					playlistSongs: await playlistSongsCol.query().fetchCount(),
-				});
 			}
+		});
 
-			const artistsById: Record<string, Artist> = {};
+		await database.write(async () => {
+			const artistsById: Record<string, string> = {};
 
-			for (const a of payload.tables.artists ?? []) {
+			for (const a of payload.tables.artists) {
 				const id = a.id ?? "";
-				const name = a.name ?? "";
+				const name = a.name || "";
 				const artworkUri = a.artwork_uri ?? "";
 
 				if (!id && !name) continue;
 
-				let existing: Artist | null = null;
+				let existing: Artist | undefined = undefined;
 				if (id) {
 					const found = await artistsCol.query(Q.where("id", id)).fetch();
 					existing = found[0] ?? null;
-				} else {
+				}
+				if (!existing && name) {
 					const found = await artistsCol.query(Q.where("name", name)).fetch();
 					existing = found[0] ?? null;
 				}
@@ -136,30 +131,30 @@ export async function importDatabaseJSON(
 						rec.name = name || rec.name;
 						rec.artworkUri = artworkUri || rec.artworkUri;
 					});
-					artistsById[id] = existing;
+					artistsById[id] = existing.id;
 				} else {
 					const created = await artistsCol.create((rec) => {
 						rec.name = name;
 						rec.artworkUri = artworkUri;
 					});
-					artistsById[id] = created;
+					artistsById[id] = created.id;
 				}
 			}
-			console.log(Object.values(artistsById).map((a) => a.name));
 
-			const albumsById: Record<string, Album> = {};
+			const albumsById: Record<string, string> = {};
 
-			for (const al of payload.tables.albums ?? []) {
+			for (const al of payload.tables.albums) {
 				const id = al.id ?? "";
 				const title = al.title ?? "";
 				const artistId = al.artist_id ?? "";
 				const artworkUri = al.artwork_uri ?? "";
 
-				let existing: Album | null = null;
+				let existing: Album | undefined = undefined;
 				if (id) {
 					const found = await albumsCol.query(Q.where("id", id)).fetch();
 					existing = found[0] ?? null;
-				} else if (title) {
+				}
+				if (!existing && title) {
 					const found = await albumsCol.query(Q.where("title", title)).fetch();
 					existing = found[0] ?? null;
 				}
@@ -167,44 +162,51 @@ export async function importDatabaseJSON(
 				if (existing) {
 					await existing.update((rec) => {
 						if (title) rec.title = title;
-						if (artistId) rec.artistId = artistsById[artistId]?.id;
+						if (artistId) rec.artistId = artistsById[artistId];
 						if (artworkUri) rec.artworkUri = artworkUri;
 					});
-					albumsById[id] = existing;
+					albumsById[id] = existing.id;
 				} else {
 					const created = await albumsCol.create((rec) => {
-						if (title) rec.title = title;
-						if (artistId) rec.artistId = artistsById[artistId]?.id;
-						if (artworkUri) rec.artworkUri = artworkUri;
-						console.log(rec.title, rec.artistId, rec.artworkUri);
+						rec.title = title;
+						rec.artistId = artistsById[artistId];
+						rec.artworkUri = artworkUri;
 					});
-					albumsById[id] = created;
+					console.log(
+						"Creating album",
+						created.id,
+						created.title,
+						created.artistId
+					);
+					albumsById[id] = created.id;
 				}
 			}
 
-			const songsById: Record<string, Song> = {};
+			const songsById: Record<string, string> = {};
+			console.log({ albumsById, artistsById });
 
-			for (const s of payload.tables.songs ?? []) {
+			for (const s of payload.tables.songs) {
 				const id = s.id ?? "";
-				const title = s.title ?? "";
+				const title = s.title || "";
 				const artistId = s.artist_id ?? "";
 				const albumId = s.album_id ?? "";
 				const coverPath = s.cover_path ?? "";
 				const sourceUri = s.source_uri ?? "";
 				const duration = s.duration ?? 0;
-				const isFavorite = s.is_favorite || false;
+				const isFavorite = s.is_favorite ?? false;
 
-				let existing: Song | null = null;
+				let existing: Song | undefined = undefined;
 				if (sourceUri) {
 					const found = await songsCol
 						.query(Q.where("source_uri", sourceUri))
 						.fetch();
 					existing = found[0] ?? null;
-				} else if (title && artistId) {
+				}
+				if (!existing && title && artistId) {
 					const found = await songsCol
 						.query(
 							Q.where("title", title),
-							Q.where("artist_id", artistsById[artistId].id)
+							Q.where("artist_id", artistsById[artistId])
 						)
 						.fetch();
 					existing = found[0] ?? null;
@@ -213,41 +215,32 @@ export async function importDatabaseJSON(
 				if (existing) {
 					await existing.update((rec) => {
 						if (title) rec.title = title;
-						if (artistId) rec.artistId = artistsById[artistId].id;
-						if (albumId) rec.albumId = albumsById[albumId].id;
+						if (artistId) rec.artistId = artistsById[artistId];
+						if (albumId) rec.albumId = albumsById[albumId];
 						if (s.source_uri) rec.sourceUri = s.source_uri;
 						if (typeof s.cover_path !== "undefined")
-							rec.coverPath = coverPath || s.cover_path || undefined;
+							rec.coverPath = coverPath ?? s.cover_path ?? undefined;
 						if (typeof s.source_uri !== "undefined")
 							rec.sourceUri = sourceUri || s.source_uri;
 						if (typeof s.duration !== "undefined")
-							rec.duration = duration || s.duration || 0;
+							rec.duration = duration ?? s.duration ?? 0;
 						if (typeof s.is_favorite !== "undefined")
 							rec.isFavorite = isFavorite || !!s.is_favorite;
 					});
-					songsById[id] = existing;
+					songsById[id] = existing.id;
 				} else {
 					const created = await songsCol.create((rec) => {
-						if (title) rec.title = title;
-						if (artistId) rec.artistId = artistsById[artistId].id;
-						if (albumId) rec.albumId = albumsById[albumId].id;
-						if (s.source_uri) rec.sourceUri = s.source_uri;
-						if (typeof s.cover_path !== "undefined")
-							rec.coverPath = coverPath || s.cover_path || undefined;
-						if (typeof s.source_uri !== "undefined")
-							rec.sourceUri = sourceUri || s.source_uri;
-						if (typeof s.duration !== "undefined")
-							rec.duration = duration || s.duration || 0;
-						if (typeof s.is_favorite !== "undefined")
-							rec.isFavorite = isFavorite || !!s.is_favorite;
-						if (rec.sourceUri.includes("Lee")) {
-							console.log(rec.title);
-							console.log(rec.sourceUri);
-							console.log(artistsById[artistId].name);
-							console.log(albumsById[albumId].title);
-						}
+						rec.title = title;
+						rec.artistId = artistsById[artistId];
+						rec.albumId = albumsById[albumId];
+						rec.sourceUri = s.source_uri || "";
+						rec.coverPath = coverPath ?? s.cover_path ?? undefined;
+						rec.sourceUri = sourceUri || s.source_uri || "";
+						rec.duration = duration ?? s.duration ?? 0;
+						rec.isFavorite = isFavorite || !!s.is_favorite;
+						console.log("Creating song", rec.title, rec.artistId, rec.albumId);
 					});
-					songsById[id] = created;
+					songsById[id] = created.id;
 				}
 			}
 
@@ -292,7 +285,7 @@ export async function importDatabaseJSON(
 
 			for (const a of payload.tables.playlistSongs ?? []) {
 				const id = a.id ?? "";
-				const playlistId = a.playlist_id ?? "";
+				const playlistId = a.playlist_id || "";
 				const position = a.position ?? 0;
 				const songId = a.song_id ?? false;
 
@@ -307,13 +300,13 @@ export async function importDatabaseJSON(
 				if (existing) {
 					await existing.update((rec) => {
 						rec.playlistId = playlistsById[playlistId]?.id || rec.playlistId;
-						rec.songId = songsById[songId]?.id || rec.songId;
+						rec.songId = songsById[songId] || rec.songId;
 						rec.position = position || rec.position;
 					});
 				} else {
 					await playlistSongsCol.create((rec) => {
 						rec.playlistId = playlistsById[playlistId]?.id || rec.playlistId;
-						rec.songId = songsById[songId]?.id || rec.songId;
+						rec.songId = songsById[songId] || rec.songId;
 						rec.position = position || rec.position;
 					});
 				}
