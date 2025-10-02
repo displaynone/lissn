@@ -13,16 +13,28 @@ msgstr ""
 "X-Generator: @lingui/cli\n"
 "Plural-Forms: \n"
 
-#: components/partials/SongInfo.tsx:151
+#: components/partials/SongInfo/AddSongPlaylist.tsx:77
+msgid "Add"
+msgstr "إضافة"
+
+#: components/partials/SongInfo/AddSongPlaylist.tsx:41
+msgid "Add song to playlist"
+msgstr "إضافة الأغنية إلى قائمة التشغيل"
+
+#: components/partials/SongInfo/index.tsx:160
+msgid "Add to a playlist"
+msgstr "إضافة إلى قائمة تشغيل"
+
+#: components/partials/SongInfo/index.tsx:150
 msgid "Add to favorites"
 msgstr "أضف إلى المفضلة"
 
 #: components/partials/SongInfo.tsx:161
-msgid "Add to playlist"
-msgstr "أضف إلى قائمة التشغيل"
+#~ msgid "Add to playlist"
+#~ msgstr "أضف إلى قائمة التشغيل"
 
 #: app/song/edit/[id].tsx:156
-#: components/partials/SongInfo.tsx:114
+#: components/partials/SongInfo/index.tsx:113
 msgid "Album"
 msgstr "ألبوم"
 
@@ -39,7 +51,7 @@ msgstr "تم حذف الألبوم"
 msgid "Album name"
 msgstr "اسم الألبوم"
 
-#: components/partials/DrawerContent.tsx:44
+#: components/partials/DrawerContent.tsx:45
 msgid "Albums"
 msgstr "الألبومات"
 
@@ -48,11 +60,15 @@ msgid "Albums merged"
 msgstr "تم دمج الألبومات"
 
 #: components/partials/SongInfo.tsx:189
-msgid "Are you sure you want to delete the song?"
-msgstr "هل أنت متأكد أنك تريد حذف الأغنية؟"
+#~ msgid "Are you sure you want to delete the song?"
+#~ msgstr "هل أنت متأكد أنك تريد حذف الأغنية؟"
+
+#: components/partials/SongInfo/DeleteSong.tsx:35
+msgid "Are you sure you want to hide this song? It won’t be visible in your lists anymore."
+msgstr "هل أنت متأكد من رغبتك في إخفاء هذه الأغنية؟ لن تكون مرئية في قوائمك بعد الآن."
 
 #: app/song/edit/[id].tsx:125
-#: components/partials/SongInfo.tsx:108
+#: components/partials/SongInfo/index.tsx:107
 msgid "Artist"
 msgstr "فنان"
 
@@ -92,8 +108,10 @@ msgstr "رابط الصورة"
 #: app/artists/edit/[id].tsx:330
 #: app/artists/edit/[id].tsx:364
 #: app/artists/new.tsx:159
+#: app/playlists/edit.tsx:103
+#: app/playlists/new.tsx:114
 #: app/song/edit/[id].tsx:253
-#: components/partials/SongInfo.tsx:216
+#: components/partials/SongInfo/DeleteSong.tsx:62
 msgid "Cancel"
 msgstr "إلغاء"
 
@@ -105,13 +123,18 @@ msgstr "إنشاء ألبوم جديد"
 msgid "Create new artist"
 msgstr "إنشاء فنان جديد"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:91
+msgid "Create playlist"
+msgstr "إنشاء قائمة تشغيل"
+
 #: utils/pickAndImportDB.ts:29
 msgid "Database imported successfully"
 msgstr "تم استيراد قاعدة البيانات بنجاح"
 
 #: app/albums/edit/[id].tsx:353
 #: app/artists/edit/[id].tsx:354
-#: components/partials/SongInfo.tsx:206
+#: app/playlists/edit.tsx:93
+#: components/partials/SongInfo/DeleteSong.tsx:52
 msgid "Delete"
 msgstr "حذف"
 
@@ -125,10 +148,14 @@ msgstr "حذف الألبوم"
 msgid "Delete artist"
 msgstr "حذف الفنان"
 
+#: app/playlists/edit.tsx:79
+msgid "Delete playlist"
+msgstr "حذف قائمة التشغيل"
+
 #: components/partials/SongInfo.tsx:176
 #: components/partials/SongInfo.tsx:186
-msgid "Delete song"
-msgstr "حذف الأغنية"
+#~ msgid "Delete song"
+#~ msgstr "حذف الأغنية"
 
 #: app/albums/edit/[id].tsx:219
 msgid "Edit album"
@@ -138,9 +165,13 @@ msgstr "تعديل الألبوم"
 msgid "Edit artist"
 msgstr "تعديل الفنان"
 
-#: components/partials/SongInfo.tsx:167
+#: components/partials/SongInfo/index.tsx:166
 msgid "Edit details"
 msgstr "تعديل التفاصيل"
+
+#: components/partials/DrawerContent.tsx:63
+msgid "Edit playlists"
+msgstr "تعديل قوائم التشغيل"
 
 #: app/song/edit/[id].tsx:236
 msgid "Edit song"
@@ -159,9 +190,14 @@ msgstr "تصدير قاعدة بيانات الموسيقى"
 msgid "Favorites"
 msgstr "المفضلة"
 
-#: components/partials/DrawerContent.tsx:72
+#: components/partials/DrawerContent.tsx:82
 msgid "GitHub Project"
 msgstr "مشروع GitHub"
+
+#: components/partials/SongInfo/DeleteSong.tsx:32
+#: components/partials/SongInfo/index.tsx:175
+msgid "Hide song"
+msgstr "إخفاء الأغنية"
 
 #: utils/pickAndImportDB.ts:16
 #: utils/pickAndImportDB.ts:28
@@ -173,7 +209,7 @@ msgstr "استيراد قاعدة البيانات"
 msgid "Import music database"
 msgstr "استيراد قاعدة بيانات الموسيقى"
 
-#: app/index.tsx:150
+#: app/index.tsx:152
 msgid "Last songs"
 msgstr "آخر الأغاني"
 
@@ -204,6 +240,7 @@ msgstr "جارٍ الدمج..."
 #: app/albums/new.tsx:69
 #: app/artists/edit/[id].tsx:78
 #: app/artists/new.tsx:69
+#: app/playlists/new.tsx:49
 msgid "Name"
 msgstr "الاسم"
 
@@ -216,6 +253,10 @@ msgstr "ألبوم جديد"
 #: app/artists/new.tsx:143
 msgid "New artist"
 msgstr "فنان جديد"
+
+#: app/playlists/new.tsx:98
+msgid "New playlist"
+msgstr "قائمة تشغيل جديدة"
 
 #: app/albums/[id].tsx:48
 msgid "No album found"
@@ -233,27 +274,35 @@ msgstr "لم يتم العثور على فنان"
 msgid "Nombre del artista"
 msgstr "اسم الفنان"
 
+#: app/playlists/new.tsx:20
+msgid "Not valid slug"
+msgstr "المعرّف المختصر غير صالح"
+
 #: utils/validations.ts:9
 msgid "Not valid URL"
 msgstr "عنوان URL غير صالح"
 
-#: components/partials/SongInfo.tsx:131
+#: components/partials/SongInfo/index.tsx:130
 msgid "Pause song"
 msgstr "إيقاف الأغنية"
 
-#: components/partials/SongInfo.tsx:131
+#: components/partials/SongInfo/index.tsx:130
 msgid "Play song"
 msgstr "تشغيل الأغنية"
+
+#: components/partials/SongInfo/AddSongPlaylist.tsx:69
+msgid "Playlist"
+msgstr "قائمة تشغيل"
 
 #: components/partials/Heading.tsx:82
 msgid "Playlists"
 msgstr "قوائم التشغيل"
 
-#: app/index.tsx:135
+#: app/index.tsx:137
 msgid "Recently played"
 msgstr "تم التشغيل مؤخراً"
 
-#: components/partials/SongInfo.tsx:150
+#: components/partials/SongInfo/index.tsx:149
 msgid "Remove from favorites"
 msgstr "إزالة من المفضلة"
 
@@ -269,6 +318,7 @@ msgstr "نفس الفنان؟"
 #: app/albums/new.tsx:115
 #: app/artists/edit/[id].tsx:124
 #: app/artists/new.tsx:115
+#: app/playlists/new.tsx:70
 #: app/song/edit/[id].tsx:184
 msgid "Save"
 msgstr "حفظ"
@@ -277,6 +327,7 @@ msgstr "حفظ"
 #: app/albums/new.tsx:115
 #: app/artists/edit/[id].tsx:124
 #: app/artists/new.tsx:115
+#: app/playlists/new.tsx:70
 #: app/song/edit/[id].tsx:184
 msgid "Saving..."
 msgstr "جارٍ الحفظ..."
@@ -297,8 +348,12 @@ msgstr "البحث عن الأغاني المفضلة"
 msgid "Search songs"
 msgstr "البحث عن الأغاني"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:45
+msgid "Select a playlist or create a new one to add this song."
+msgstr "اختر قائمة تشغيل أو أنشئ قائمة جديدة لإضافة هذه الأغنية."
+
 #: components/ui/Select.tsx:54
-#: components/ui/Select.tsx:105
+#: components/ui/Select.tsx:106
 msgid "Select an option"
 msgstr "اختر خيارًا"
 
@@ -306,7 +361,7 @@ msgstr "اختر خيارًا"
 msgid "Selection canceled"
 msgstr "تم إلغاء التحديد"
 
-#: components/partials/DrawerContent.tsx:53
+#: components/partials/DrawerContent.tsx:54
 #: components/partials/Heading.tsx:86
 msgid "Settings"
 msgstr "الإعدادات"
@@ -343,6 +398,7 @@ msgstr "تم دمج الفنانين بنجاح"
 
 #: app/artists/edit/[id].tsx:47
 #: app/artists/new.tsx:30
+#: app/playlists/new.tsx:21
 msgid "The name must have at least 2 characters"
 msgstr "يجب أن يحتوي الاسم على حرفين على الأقل"
 
@@ -350,11 +406,19 @@ msgstr "يجب أن يحتوي الاسم على حرفين على الأقل"
 msgid "The song has been updated correctly"
 msgstr "تم تحديث الأغنية بنجاح"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:70
+msgid "The song have been added successfully"
+msgstr "تمت إضافة الأغنية بنجاح"
+
 #: app/albums/edit/[id].tsx:47
 #: app/albums/new.tsx:30
 #: app/song/edit/[id].tsx:34
 msgid "The title must have at least 2 characters"
 msgstr "يجب أن يحتوي العنوان على حرفين على الأقل"
+
+#: app/playlists/edit.tsx:44
+msgid "There are not playlists yet"
+msgstr "لا توجد قوائم تشغيل بعد"
 
 #: app/albums/edit/[id].tsx:265
 msgid "These albums share the same title because Android reads it from the ID3 tags, which you can edit in Lissn."
@@ -369,7 +433,7 @@ msgstr "يشترك هؤلاء الفنانون في نفس الاسم لأن أ�
 #~ msgstr "لوحة"
 
 #: app/song/edit/[id].tsx:79
-#: components/partials/SongInfo.tsx:104
+#: components/partials/SongInfo/index.tsx:103
 msgid "Title"
 msgstr "العنوان"
 
@@ -377,11 +441,16 @@ msgstr "العنوان"
 #: app/albums/new.tsx:31
 #: app/artists/edit/[id].tsx:48
 #: app/artists/new.tsx:31
+#: app/playlists/new.tsx:22
 #: app/song/edit/[id].tsx:35
 #: utils/validations.ts:6
 msgid "Too long"
 msgstr "طويل جداً"
 
-#: components/partials/DrawerContent.tsx:36
+#: app/playlists/new.tsx:60
+msgid "Use only letters or underscore"
+msgstr "استخدم الأحرف أو الشرطة السفلية فقط"
+
+#: components/partials/DrawerContent.tsx:37
 msgid "Your music app"
 msgstr "تطبيق الموسيقى الخاص بك"

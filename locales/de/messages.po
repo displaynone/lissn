@@ -13,16 +13,28 @@ msgstr ""
 "X-Generator: @lingui/cli\n"
 "Plural-Forms: \n"
 
-#: components/partials/SongInfo.tsx:151
+#: components/partials/SongInfo/AddSongPlaylist.tsx:77
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: components/partials/SongInfo/AddSongPlaylist.tsx:41
+msgid "Add song to playlist"
+msgstr "Song zur Playlist hinzufügen"
+
+#: components/partials/SongInfo/index.tsx:160
+msgid "Add to a playlist"
+msgstr "Zu einer Playlist hinzufügen"
+
+#: components/partials/SongInfo/index.tsx:150
 msgid "Add to favorites"
 msgstr "Zu Favoriten hinzufügen"
 
 #: components/partials/SongInfo.tsx:161
-msgid "Add to playlist"
-msgstr "Zur Playlist hinzufügen"
+#~ msgid "Add to playlist"
+#~ msgstr "Zur Playlist hinzufügen"
 
 #: app/song/edit/[id].tsx:156
-#: components/partials/SongInfo.tsx:114
+#: components/partials/SongInfo/index.tsx:113
 msgid "Album"
 msgstr "Album"
 
@@ -39,7 +51,7 @@ msgstr "Album gelöscht"
 msgid "Album name"
 msgstr "Albumname"
 
-#: components/partials/DrawerContent.tsx:44
+#: components/partials/DrawerContent.tsx:45
 msgid "Albums"
 msgstr "Alben"
 
@@ -48,11 +60,15 @@ msgid "Albums merged"
 msgstr "Alben zusammengeführt"
 
 #: components/partials/SongInfo.tsx:189
-msgid "Are you sure you want to delete the song?"
-msgstr "Bist du sicher, dass du das Lied löschen möchtest?"
+#~ msgid "Are you sure you want to delete the song?"
+#~ msgstr "Bist du sicher, dass du das Lied löschen möchtest?"
+
+#: components/partials/SongInfo/DeleteSong.tsx:35
+msgid "Are you sure you want to hide this song? It won’t be visible in your lists anymore."
+msgstr "Bist du sicher, dass du diesen Song ausblenden möchtest? Er wird in deinen Listen nicht mehr sichtbar sein."
 
 #: app/song/edit/[id].tsx:125
-#: components/partials/SongInfo.tsx:108
+#: components/partials/SongInfo/index.tsx:107
 msgid "Artist"
 msgstr "Künstler"
 
@@ -92,8 +108,10 @@ msgstr "Artwork-URL"
 #: app/artists/edit/[id].tsx:330
 #: app/artists/edit/[id].tsx:364
 #: app/artists/new.tsx:159
+#: app/playlists/edit.tsx:103
+#: app/playlists/new.tsx:114
 #: app/song/edit/[id].tsx:253
-#: components/partials/SongInfo.tsx:216
+#: components/partials/SongInfo/DeleteSong.tsx:62
 msgid "Cancel"
 msgstr "Abbrechen"
 
@@ -105,13 +123,18 @@ msgstr "Neues Album erstellen"
 msgid "Create new artist"
 msgstr "Neuen Künstler erstellen"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:91
+msgid "Create playlist"
+msgstr "Playlist erstellen"
+
 #: utils/pickAndImportDB.ts:29
 msgid "Database imported successfully"
 msgstr "Datenbank erfolgreich importiert"
 
 #: app/albums/edit/[id].tsx:353
 #: app/artists/edit/[id].tsx:354
-#: components/partials/SongInfo.tsx:206
+#: app/playlists/edit.tsx:93
+#: components/partials/SongInfo/DeleteSong.tsx:52
 msgid "Delete"
 msgstr "Löschen"
 
@@ -125,10 +148,14 @@ msgstr "Album löschen"
 msgid "Delete artist"
 msgstr "Künstler löschen"
 
+#: app/playlists/edit.tsx:79
+msgid "Delete playlist"
+msgstr "Playlist löschen"
+
 #: components/partials/SongInfo.tsx:176
 #: components/partials/SongInfo.tsx:186
-msgid "Delete song"
-msgstr "Song löschen"
+#~ msgid "Delete song"
+#~ msgstr "Song löschen"
 
 #: app/albums/edit/[id].tsx:219
 msgid "Edit album"
@@ -138,9 +165,13 @@ msgstr "Album bearbeiten"
 msgid "Edit artist"
 msgstr "Künstler bearbeiten"
 
-#: components/partials/SongInfo.tsx:167
+#: components/partials/SongInfo/index.tsx:166
 msgid "Edit details"
 msgstr "Details bearbeiten"
+
+#: components/partials/DrawerContent.tsx:63
+msgid "Edit playlists"
+msgstr "Playlists bearbeiten"
 
 #: app/song/edit/[id].tsx:236
 msgid "Edit song"
@@ -159,9 +190,14 @@ msgstr "Musikdatenbank exportieren"
 msgid "Favorites"
 msgstr "Favoriten"
 
-#: components/partials/DrawerContent.tsx:72
+#: components/partials/DrawerContent.tsx:82
 msgid "GitHub Project"
 msgstr "GitHub-Projekt"
+
+#: components/partials/SongInfo/DeleteSong.tsx:32
+#: components/partials/SongInfo/index.tsx:175
+msgid "Hide song"
+msgstr "Song ausblenden"
 
 #: utils/pickAndImportDB.ts:16
 #: utils/pickAndImportDB.ts:28
@@ -173,7 +209,7 @@ msgstr "Datenbank importieren"
 msgid "Import music database"
 msgstr "Musikdatenbank importieren"
 
-#: app/index.tsx:150
+#: app/index.tsx:152
 msgid "Last songs"
 msgstr "Letzte Songs"
 
@@ -204,6 +240,7 @@ msgstr "Wird zusammengeführt..."
 #: app/albums/new.tsx:69
 #: app/artists/edit/[id].tsx:78
 #: app/artists/new.tsx:69
+#: app/playlists/new.tsx:49
 msgid "Name"
 msgstr "Name"
 
@@ -216,6 +253,10 @@ msgstr "Neues Album"
 #: app/artists/new.tsx:143
 msgid "New artist"
 msgstr "Neuer Künstler"
+
+#: app/playlists/new.tsx:98
+msgid "New playlist"
+msgstr "Neue Playlist"
 
 #: app/albums/[id].tsx:48
 msgid "No album found"
@@ -233,27 +274,35 @@ msgstr "Kein Künstler gefunden"
 msgid "Nombre del artista"
 msgstr "Name des Künstlers"
 
+#: app/playlists/new.tsx:20
+msgid "Not valid slug"
+msgstr "Ungültiger Slug"
+
 #: utils/validations.ts:9
 msgid "Not valid URL"
 msgstr "Ungültige URL"
 
-#: components/partials/SongInfo.tsx:131
+#: components/partials/SongInfo/index.tsx:130
 msgid "Pause song"
 msgstr "Song pausieren"
 
-#: components/partials/SongInfo.tsx:131
+#: components/partials/SongInfo/index.tsx:130
 msgid "Play song"
 msgstr "Song abspielen"
+
+#: components/partials/SongInfo/AddSongPlaylist.tsx:69
+msgid "Playlist"
+msgstr "Playlist"
 
 #: components/partials/Heading.tsx:82
 msgid "Playlists"
 msgstr "Wiedergabelisten"
 
-#: app/index.tsx:135
+#: app/index.tsx:137
 msgid "Recently played"
 msgstr "Kürzlich gespielt"
 
-#: components/partials/SongInfo.tsx:150
+#: components/partials/SongInfo/index.tsx:149
 msgid "Remove from favorites"
 msgstr "Aus Favoriten entfernen"
 
@@ -269,6 +318,7 @@ msgstr "Gleicher Künstler?"
 #: app/albums/new.tsx:115
 #: app/artists/edit/[id].tsx:124
 #: app/artists/new.tsx:115
+#: app/playlists/new.tsx:70
 #: app/song/edit/[id].tsx:184
 msgid "Save"
 msgstr "Speichern"
@@ -277,6 +327,7 @@ msgstr "Speichern"
 #: app/albums/new.tsx:115
 #: app/artists/edit/[id].tsx:124
 #: app/artists/new.tsx:115
+#: app/playlists/new.tsx:70
 #: app/song/edit/[id].tsx:184
 msgid "Saving..."
 msgstr "Speichern..."
@@ -297,8 +348,12 @@ msgstr "Lieblingssongs suchen"
 msgid "Search songs"
 msgstr "Songs suchen"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:45
+msgid "Select a playlist or create a new one to add this song."
+msgstr "Wähle eine Playlist oder erstelle eine neue, um diesen Song hinzuzufügen."
+
 #: components/ui/Select.tsx:54
-#: components/ui/Select.tsx:105
+#: components/ui/Select.tsx:106
 msgid "Select an option"
 msgstr "Option auswählen"
 
@@ -306,7 +361,7 @@ msgstr "Option auswählen"
 msgid "Selection canceled"
 msgstr "Auswahl abgebrochen"
 
-#: components/partials/DrawerContent.tsx:53
+#: components/partials/DrawerContent.tsx:54
 #: components/partials/Heading.tsx:86
 msgid "Settings"
 msgstr "Einstellungen"
@@ -343,6 +398,7 @@ msgstr "Die Künstler wurden erfolgreich zusammengeführt"
 
 #: app/artists/edit/[id].tsx:47
 #: app/artists/new.tsx:30
+#: app/playlists/new.tsx:21
 msgid "The name must have at least 2 characters"
 msgstr "Der Name muss mindestens 2 Zeichen haben"
 
@@ -350,11 +406,19 @@ msgstr "Der Name muss mindestens 2 Zeichen haben"
 msgid "The song has been updated correctly"
 msgstr "Das Lied wurde erfolgreich aktualisiert"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:70
+msgid "The song have been added successfully"
+msgstr "Der Song wurde erfolgreich hinzugefügt"
+
 #: app/albums/edit/[id].tsx:47
 #: app/albums/new.tsx:30
 #: app/song/edit/[id].tsx:34
 msgid "The title must have at least 2 characters"
 msgstr "Der Titel muss mindestens 2 Zeichen haben"
+
+#: app/playlists/edit.tsx:44
+msgid "There are not playlists yet"
+msgstr "Es gibt noch keine Playlists"
 
 #: app/albums/edit/[id].tsx:265
 msgid "These albums share the same title because Android reads it from the ID3 tags, which you can edit in Lissn."
@@ -369,7 +433,7 @@ msgstr "Diese Künstler teilen sich denselben Namen, weil Android ihn aus den ID
 #~ msgstr "Kachel"
 
 #: app/song/edit/[id].tsx:79
-#: components/partials/SongInfo.tsx:104
+#: components/partials/SongInfo/index.tsx:103
 msgid "Title"
 msgstr "Titel"
 
@@ -377,11 +441,16 @@ msgstr "Titel"
 #: app/albums/new.tsx:31
 #: app/artists/edit/[id].tsx:48
 #: app/artists/new.tsx:31
+#: app/playlists/new.tsx:22
 #: app/song/edit/[id].tsx:35
 #: utils/validations.ts:6
 msgid "Too long"
 msgstr "Zu lang"
 
-#: components/partials/DrawerContent.tsx:36
+#: app/playlists/new.tsx:60
+msgid "Use only letters or underscore"
+msgstr "Verwende nur Buchstaben oder Unterstrich"
+
+#: components/partials/DrawerContent.tsx:37
 msgid "Your music app"
 msgstr "Deine Musik-App"

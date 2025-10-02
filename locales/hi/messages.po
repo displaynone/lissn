@@ -13,16 +13,28 @@ msgstr ""
 "X-Generator: @lingui/cli\n"
 "Plural-Forms: \n"
 
-#: components/partials/SongInfo.tsx:151
+#: components/partials/SongInfo/AddSongPlaylist.tsx:77
+msgid "Add"
+msgstr "जोड़ें"
+
+#: components/partials/SongInfo/AddSongPlaylist.tsx:41
+msgid "Add song to playlist"
+msgstr "गीत को प्लेलिस्ट में जोड़ें"
+
+#: components/partials/SongInfo/index.tsx:160
+msgid "Add to a playlist"
+msgstr "किसी प्लेलिस्ट में जोड़ें"
+
+#: components/partials/SongInfo/index.tsx:150
 msgid "Add to favorites"
 msgstr "पसंदीदा में जोड़ें"
 
 #: components/partials/SongInfo.tsx:161
-msgid "Add to playlist"
-msgstr "प्लेलिस्ट में जोड़ें"
+#~ msgid "Add to playlist"
+#~ msgstr "प्लेलिस्ट में जोड़ें"
 
 #: app/song/edit/[id].tsx:156
-#: components/partials/SongInfo.tsx:114
+#: components/partials/SongInfo/index.tsx:113
 msgid "Album"
 msgstr "एल्बम"
 
@@ -39,7 +51,7 @@ msgstr "एल्बम हटाया गया"
 msgid "Album name"
 msgstr "एल्बम का नाम"
 
-#: components/partials/DrawerContent.tsx:44
+#: components/partials/DrawerContent.tsx:45
 msgid "Albums"
 msgstr "एल्बम"
 
@@ -48,11 +60,15 @@ msgid "Albums merged"
 msgstr "एल्बम मर्ज किए गए"
 
 #: components/partials/SongInfo.tsx:189
-msgid "Are you sure you want to delete the song?"
-msgstr "क्या आप वाकई गाना हटाना चाहते हैं?"
+#~ msgid "Are you sure you want to delete the song?"
+#~ msgstr "क्या आप वाकई गाना हटाना चाहते हैं?"
+
+#: components/partials/SongInfo/DeleteSong.tsx:35
+msgid "Are you sure you want to hide this song? It won’t be visible in your lists anymore."
+msgstr "क्या आप वाकई इस गीत को छिपाना चाहते हैं? यह अब आपकी सूचियों में दिखाई नहीं देगा।"
 
 #: app/song/edit/[id].tsx:125
-#: components/partials/SongInfo.tsx:108
+#: components/partials/SongInfo/index.tsx:107
 msgid "Artist"
 msgstr "कलाकार"
 
@@ -92,8 +108,10 @@ msgstr "कलाकृति URL"
 #: app/artists/edit/[id].tsx:330
 #: app/artists/edit/[id].tsx:364
 #: app/artists/new.tsx:159
+#: app/playlists/edit.tsx:103
+#: app/playlists/new.tsx:114
 #: app/song/edit/[id].tsx:253
-#: components/partials/SongInfo.tsx:216
+#: components/partials/SongInfo/DeleteSong.tsx:62
 msgid "Cancel"
 msgstr "रद्द करें"
 
@@ -105,13 +123,18 @@ msgstr "नया एल्बम बनाएं"
 msgid "Create new artist"
 msgstr "नया कलाकार बनाएं"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:91
+msgid "Create playlist"
+msgstr "प्लेलिस्ट बनाएँ"
+
 #: utils/pickAndImportDB.ts:29
 msgid "Database imported successfully"
 msgstr "डेटाबेस सफलतापूर्वक आयात किया गया"
 
 #: app/albums/edit/[id].tsx:353
 #: app/artists/edit/[id].tsx:354
-#: components/partials/SongInfo.tsx:206
+#: app/playlists/edit.tsx:93
+#: components/partials/SongInfo/DeleteSong.tsx:52
 msgid "Delete"
 msgstr "हटाएं"
 
@@ -125,10 +148,14 @@ msgstr "एल्बम हटाएं"
 msgid "Delete artist"
 msgstr "कलाकार हटाएं"
 
+#: app/playlists/edit.tsx:79
+msgid "Delete playlist"
+msgstr "प्लेलिस्ट हटाएँ"
+
 #: components/partials/SongInfo.tsx:176
 #: components/partials/SongInfo.tsx:186
-msgid "Delete song"
-msgstr "गीत हटाएं"
+#~ msgid "Delete song"
+#~ msgstr "गीत हटाएं"
 
 #: app/albums/edit/[id].tsx:219
 msgid "Edit album"
@@ -138,9 +165,13 @@ msgstr "एल्बम संपादित करें"
 msgid "Edit artist"
 msgstr "कलाकार संपादित करें"
 
-#: components/partials/SongInfo.tsx:167
+#: components/partials/SongInfo/index.tsx:166
 msgid "Edit details"
 msgstr "विवरण संपादित करें"
+
+#: components/partials/DrawerContent.tsx:63
+msgid "Edit playlists"
+msgstr "प्लेलिस्ट संपादित करें"
 
 #: app/song/edit/[id].tsx:236
 msgid "Edit song"
@@ -159,9 +190,14 @@ msgstr "संगीत डेटाबेस निर्यात करें
 msgid "Favorites"
 msgstr "पसंदीदा"
 
-#: components/partials/DrawerContent.tsx:72
+#: components/partials/DrawerContent.tsx:82
 msgid "GitHub Project"
 msgstr "GitHub परियोजना"
+
+#: components/partials/SongInfo/DeleteSong.tsx:32
+#: components/partials/SongInfo/index.tsx:175
+msgid "Hide song"
+msgstr "गीत छिपाएँ"
 
 #: utils/pickAndImportDB.ts:16
 #: utils/pickAndImportDB.ts:28
@@ -173,7 +209,7 @@ msgstr "डेटाबेस आयात करें"
 msgid "Import music database"
 msgstr "संगीत डेटाबेस आयात करें"
 
-#: app/index.tsx:150
+#: app/index.tsx:152
 msgid "Last songs"
 msgstr "आखिरी गीत"
 
@@ -204,6 +240,7 @@ msgstr "मिला रहे हैं..."
 #: app/albums/new.tsx:69
 #: app/artists/edit/[id].tsx:78
 #: app/artists/new.tsx:69
+#: app/playlists/new.tsx:49
 msgid "Name"
 msgstr "नाम"
 
@@ -216,6 +253,10 @@ msgstr "नया एल्बम"
 #: app/artists/new.tsx:143
 msgid "New artist"
 msgstr "नया कलाकार"
+
+#: app/playlists/new.tsx:98
+msgid "New playlist"
+msgstr "नई प्लेलिस्ट"
 
 #: app/albums/[id].tsx:48
 msgid "No album found"
@@ -233,27 +274,35 @@ msgstr "कोई कलाकार नहीं मिला"
 msgid "Nombre del artista"
 msgstr "कलाकार का नाम"
 
+#: app/playlists/new.tsx:20
+msgid "Not valid slug"
+msgstr "अमान्य स्लग"
+
 #: utils/validations.ts:9
 msgid "Not valid URL"
 msgstr "अमान्य URL"
 
-#: components/partials/SongInfo.tsx:131
+#: components/partials/SongInfo/index.tsx:130
 msgid "Pause song"
 msgstr "गीत रोकें"
 
-#: components/partials/SongInfo.tsx:131
+#: components/partials/SongInfo/index.tsx:130
 msgid "Play song"
 msgstr "गीत चलाएं"
+
+#: components/partials/SongInfo/AddSongPlaylist.tsx:69
+msgid "Playlist"
+msgstr "प्लेलिस्ट"
 
 #: components/partials/Heading.tsx:82
 msgid "Playlists"
 msgstr "प्लेलिस्ट"
 
-#: app/index.tsx:135
+#: app/index.tsx:137
 msgid "Recently played"
 msgstr "हाल ही में चलाए गए"
 
-#: components/partials/SongInfo.tsx:150
+#: components/partials/SongInfo/index.tsx:149
 msgid "Remove from favorites"
 msgstr "पसंदीदा से हटाएं"
 
@@ -269,6 +318,7 @@ msgstr "क्या वही कलाकार है?"
 #: app/albums/new.tsx:115
 #: app/artists/edit/[id].tsx:124
 #: app/artists/new.tsx:115
+#: app/playlists/new.tsx:70
 #: app/song/edit/[id].tsx:184
 msgid "Save"
 msgstr "सहेजें"
@@ -277,6 +327,7 @@ msgstr "सहेजें"
 #: app/albums/new.tsx:115
 #: app/artists/edit/[id].tsx:124
 #: app/artists/new.tsx:115
+#: app/playlists/new.tsx:70
 #: app/song/edit/[id].tsx:184
 msgid "Saving..."
 msgstr "सहेजा जा रहा है..."
@@ -297,8 +348,12 @@ msgstr "पसंदीदा गीत खोजें"
 msgid "Search songs"
 msgstr "गीत खोजें"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:45
+msgid "Select a playlist or create a new one to add this song."
+msgstr "इस गीत को जोड़ने के लिए कोई प्लेलिस्ट चुनें या नई प्लेलिस्ट बनाएँ।"
+
 #: components/ui/Select.tsx:54
-#: components/ui/Select.tsx:105
+#: components/ui/Select.tsx:106
 msgid "Select an option"
 msgstr "एक विकल्प चुनें"
 
@@ -306,7 +361,7 @@ msgstr "एक विकल्प चुनें"
 msgid "Selection canceled"
 msgstr "चयन रद्द किया गया"
 
-#: components/partials/DrawerContent.tsx:53
+#: components/partials/DrawerContent.tsx:54
 #: components/partials/Heading.tsx:86
 msgid "Settings"
 msgstr "सेटिंग्स"
@@ -343,6 +398,7 @@ msgstr "कलाकारों को सफलतापूर्वक मि
 
 #: app/artists/edit/[id].tsx:47
 #: app/artists/new.tsx:30
+#: app/playlists/new.tsx:21
 msgid "The name must have at least 2 characters"
 msgstr "नाम में कम से कम 2 अक्षर होने चाहिए"
 
@@ -350,11 +406,19 @@ msgstr "नाम में कम से कम 2 अक्षर होने 
 msgid "The song has been updated correctly"
 msgstr "गाना सफलतापूर्वक अपडेट किया गया है"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:70
+msgid "The song have been added successfully"
+msgstr "गीत सफलतापूर्वक जोड़ा गया है"
+
 #: app/albums/edit/[id].tsx:47
 #: app/albums/new.tsx:30
 #: app/song/edit/[id].tsx:34
 msgid "The title must have at least 2 characters"
 msgstr "शीर्षक में कम से कम 2 अक्षर होने चाहिए"
+
+#: app/playlists/edit.tsx:44
+msgid "There are not playlists yet"
+msgstr "अभी तक कोई प्लेलिस्ट नहीं है"
 
 #: app/albums/edit/[id].tsx:265
 msgid "These albums share the same title because Android reads it from the ID3 tags, which you can edit in Lissn."
@@ -369,7 +433,7 @@ msgstr "इन कलाकारों का नाम समान है क
 #~ msgstr "टाइल"
 
 #: app/song/edit/[id].tsx:79
-#: components/partials/SongInfo.tsx:104
+#: components/partials/SongInfo/index.tsx:103
 msgid "Title"
 msgstr "शीर्षक"
 
@@ -377,11 +441,16 @@ msgstr "शीर्षक"
 #: app/albums/new.tsx:31
 #: app/artists/edit/[id].tsx:48
 #: app/artists/new.tsx:31
+#: app/playlists/new.tsx:22
 #: app/song/edit/[id].tsx:35
 #: utils/validations.ts:6
 msgid "Too long"
 msgstr "बहुत लंबा"
 
-#: components/partials/DrawerContent.tsx:36
+#: app/playlists/new.tsx:60
+msgid "Use only letters or underscore"
+msgstr "केवल अक्षरों या अंडरस्कोर का उपयोग करें"
+
+#: components/partials/DrawerContent.tsx:37
 msgid "Your music app"
 msgstr "आपका संगीत ऐप"

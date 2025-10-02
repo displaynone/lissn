@@ -13,16 +13,28 @@ msgstr ""
 "X-Generator: @lingui/cli\n"
 "Plural-Forms: \n"
 
-#: components/partials/SongInfo.tsx:151
+#: components/partials/SongInfo/AddSongPlaylist.tsx:77
+msgid "Add"
+msgstr "추가"
+
+#: components/partials/SongInfo/AddSongPlaylist.tsx:41
+msgid "Add song to playlist"
+msgstr "노래를 플레이리스트에 추가"
+
+#: components/partials/SongInfo/index.tsx:160
+msgid "Add to a playlist"
+msgstr "플레이리스트에 추가"
+
+#: components/partials/SongInfo/index.tsx:150
 msgid "Add to favorites"
 msgstr "즐겨찾기에 추가"
 
 #: components/partials/SongInfo.tsx:161
-msgid "Add to playlist"
-msgstr "재생목록에 추가"
+#~ msgid "Add to playlist"
+#~ msgstr "재생목록에 추가"
 
 #: app/song/edit/[id].tsx:156
-#: components/partials/SongInfo.tsx:114
+#: components/partials/SongInfo/index.tsx:113
 msgid "Album"
 msgstr "앨범"
 
@@ -39,7 +51,7 @@ msgstr "앨범이 삭제되었습니다"
 msgid "Album name"
 msgstr "앨범 이름"
 
-#: components/partials/DrawerContent.tsx:44
+#: components/partials/DrawerContent.tsx:45
 msgid "Albums"
 msgstr "앨범"
 
@@ -48,11 +60,15 @@ msgid "Albums merged"
 msgstr "앨범이 병합되었습니다"
 
 #: components/partials/SongInfo.tsx:189
-msgid "Are you sure you want to delete the song?"
-msgstr "정말로 이 노래를 삭제하시겠습니까?"
+#~ msgid "Are you sure you want to delete the song?"
+#~ msgstr "정말로 이 노래를 삭제하시겠습니까?"
+
+#: components/partials/SongInfo/DeleteSong.tsx:35
+msgid "Are you sure you want to hide this song? It won’t be visible in your lists anymore."
+msgstr "이 노래를 숨기겠습니까? 더 이상 목록에서 볼 수 없습니다."
 
 #: app/song/edit/[id].tsx:125
-#: components/partials/SongInfo.tsx:108
+#: components/partials/SongInfo/index.tsx:107
 msgid "Artist"
 msgstr "아티스트"
 
@@ -92,8 +108,10 @@ msgstr "아트워크 URL"
 #: app/artists/edit/[id].tsx:330
 #: app/artists/edit/[id].tsx:364
 #: app/artists/new.tsx:159
+#: app/playlists/edit.tsx:103
+#: app/playlists/new.tsx:114
 #: app/song/edit/[id].tsx:253
-#: components/partials/SongInfo.tsx:216
+#: components/partials/SongInfo/DeleteSong.tsx:62
 msgid "Cancel"
 msgstr "취소"
 
@@ -105,13 +123,18 @@ msgstr "새 앨범 만들기"
 msgid "Create new artist"
 msgstr "새 아티스트 만들기"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:91
+msgid "Create playlist"
+msgstr "플레이리스트 만들기"
+
 #: utils/pickAndImportDB.ts:29
 msgid "Database imported successfully"
 msgstr "데이터베이스가 성공적으로 가져와졌습니다"
 
 #: app/albums/edit/[id].tsx:353
 #: app/artists/edit/[id].tsx:354
-#: components/partials/SongInfo.tsx:206
+#: app/playlists/edit.tsx:93
+#: components/partials/SongInfo/DeleteSong.tsx:52
 msgid "Delete"
 msgstr "삭제"
 
@@ -125,10 +148,14 @@ msgstr "앨범 삭제"
 msgid "Delete artist"
 msgstr "아티스트 삭제"
 
+#: app/playlists/edit.tsx:79
+msgid "Delete playlist"
+msgstr "플레이리스트 삭제"
+
 #: components/partials/SongInfo.tsx:176
 #: components/partials/SongInfo.tsx:186
-msgid "Delete song"
-msgstr "노래 삭제"
+#~ msgid "Delete song"
+#~ msgstr "노래 삭제"
 
 #: app/albums/edit/[id].tsx:219
 msgid "Edit album"
@@ -138,9 +165,13 @@ msgstr "앨범 편집"
 msgid "Edit artist"
 msgstr "아티스트 편집"
 
-#: components/partials/SongInfo.tsx:167
+#: components/partials/SongInfo/index.tsx:166
 msgid "Edit details"
 msgstr "세부정보 편집"
+
+#: components/partials/DrawerContent.tsx:63
+msgid "Edit playlists"
+msgstr "플레이리스트 편집"
 
 #: app/song/edit/[id].tsx:236
 msgid "Edit song"
@@ -159,9 +190,14 @@ msgstr "음악 데이터베이스 내보내기"
 msgid "Favorites"
 msgstr "즐겨찾기"
 
-#: components/partials/DrawerContent.tsx:72
+#: components/partials/DrawerContent.tsx:82
 msgid "GitHub Project"
 msgstr "GitHub 프로젝트"
+
+#: components/partials/SongInfo/DeleteSong.tsx:32
+#: components/partials/SongInfo/index.tsx:175
+msgid "Hide song"
+msgstr "노래 숨기기"
 
 #: utils/pickAndImportDB.ts:16
 #: utils/pickAndImportDB.ts:28
@@ -173,7 +209,7 @@ msgstr "데이터베이스 가져오기"
 msgid "Import music database"
 msgstr "음악 데이터베이스 가져오기"
 
-#: app/index.tsx:150
+#: app/index.tsx:152
 msgid "Last songs"
 msgstr "최근 노래"
 
@@ -204,6 +240,7 @@ msgstr "병합 중..."
 #: app/albums/new.tsx:69
 #: app/artists/edit/[id].tsx:78
 #: app/artists/new.tsx:69
+#: app/playlists/new.tsx:49
 msgid "Name"
 msgstr "이름"
 
@@ -216,6 +253,10 @@ msgstr "새 앨범"
 #: app/artists/new.tsx:143
 msgid "New artist"
 msgstr "새 아티스트"
+
+#: app/playlists/new.tsx:98
+msgid "New playlist"
+msgstr "새 플레이리스트"
 
 #: app/albums/[id].tsx:48
 msgid "No album found"
@@ -233,27 +274,35 @@ msgstr "아티스트를 찾을 수 없습니다"
 msgid "Nombre del artista"
 msgstr "아티스트 이름"
 
+#: app/playlists/new.tsx:20
+msgid "Not valid slug"
+msgstr "유효하지 않은 슬러그"
+
 #: utils/validations.ts:9
 msgid "Not valid URL"
 msgstr "유효하지 않은 URL"
 
-#: components/partials/SongInfo.tsx:131
+#: components/partials/SongInfo/index.tsx:130
 msgid "Pause song"
 msgstr "노래 일시중지"
 
-#: components/partials/SongInfo.tsx:131
+#: components/partials/SongInfo/index.tsx:130
 msgid "Play song"
 msgstr "노래 재생"
+
+#: components/partials/SongInfo/AddSongPlaylist.tsx:69
+msgid "Playlist"
+msgstr "플레이리스트"
 
 #: components/partials/Heading.tsx:82
 msgid "Playlists"
 msgstr "재생목록"
 
-#: app/index.tsx:135
+#: app/index.tsx:137
 msgid "Recently played"
 msgstr "최근 재생"
 
-#: components/partials/SongInfo.tsx:150
+#: components/partials/SongInfo/index.tsx:149
 msgid "Remove from favorites"
 msgstr "즐겨찾기에서 제거"
 
@@ -269,6 +318,7 @@ msgstr "같은 아티스트인가요?"
 #: app/albums/new.tsx:115
 #: app/artists/edit/[id].tsx:124
 #: app/artists/new.tsx:115
+#: app/playlists/new.tsx:70
 #: app/song/edit/[id].tsx:184
 msgid "Save"
 msgstr "저장"
@@ -277,6 +327,7 @@ msgstr "저장"
 #: app/albums/new.tsx:115
 #: app/artists/edit/[id].tsx:124
 #: app/artists/new.tsx:115
+#: app/playlists/new.tsx:70
 #: app/song/edit/[id].tsx:184
 msgid "Saving..."
 msgstr "저장 중..."
@@ -297,8 +348,12 @@ msgstr "즐겨찾는 노래 검색"
 msgid "Search songs"
 msgstr "노래 검색"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:45
+msgid "Select a playlist or create a new one to add this song."
+msgstr "이 노래를 추가하려면 플레이리스트를 선택하거나 새로 만드세요."
+
 #: components/ui/Select.tsx:54
-#: components/ui/Select.tsx:105
+#: components/ui/Select.tsx:106
 msgid "Select an option"
 msgstr "옵션을 선택하세요"
 
@@ -306,7 +361,7 @@ msgstr "옵션을 선택하세요"
 msgid "Selection canceled"
 msgstr "선택이 취소되었습니다"
 
-#: components/partials/DrawerContent.tsx:53
+#: components/partials/DrawerContent.tsx:54
 #: components/partials/Heading.tsx:86
 msgid "Settings"
 msgstr "설정"
@@ -343,6 +398,7 @@ msgstr "아티스트가 성공적으로 병합되었습니다"
 
 #: app/artists/edit/[id].tsx:47
 #: app/artists/new.tsx:30
+#: app/playlists/new.tsx:21
 msgid "The name must have at least 2 characters"
 msgstr "이름은 최소 두 글자여야 합니다"
 
@@ -350,11 +406,19 @@ msgstr "이름은 최소 두 글자여야 합니다"
 msgid "The song has been updated correctly"
 msgstr "노래가 성공적으로 업데이트되었습니다"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:70
+msgid "The song have been added successfully"
+msgstr "노래가 성공적으로 추가되었습니다"
+
 #: app/albums/edit/[id].tsx:47
 #: app/albums/new.tsx:30
 #: app/song/edit/[id].tsx:34
 msgid "The title must have at least 2 characters"
 msgstr "제목은 최소 2자 이상이어야 합니다"
+
+#: app/playlists/edit.tsx:44
+msgid "There are not playlists yet"
+msgstr "아직 플레이리스트가 없습니다"
 
 #: app/albums/edit/[id].tsx:265
 msgid "These albums share the same title because Android reads it from the ID3 tags, which you can edit in Lissn."
@@ -369,7 +433,7 @@ msgstr "이 아티스트들은 동일한 이름을 사용합니다. 이는 Andro
 #~ msgstr "타일"
 
 #: app/song/edit/[id].tsx:79
-#: components/partials/SongInfo.tsx:104
+#: components/partials/SongInfo/index.tsx:103
 msgid "Title"
 msgstr "제목"
 
@@ -377,11 +441,16 @@ msgstr "제목"
 #: app/albums/new.tsx:31
 #: app/artists/edit/[id].tsx:48
 #: app/artists/new.tsx:31
+#: app/playlists/new.tsx:22
 #: app/song/edit/[id].tsx:35
 #: utils/validations.ts:6
 msgid "Too long"
 msgstr "너무 깁니다"
 
-#: components/partials/DrawerContent.tsx:36
+#: app/playlists/new.tsx:60
+msgid "Use only letters or underscore"
+msgstr "문자 또는 밑줄만 사용하세요"
+
+#: components/partials/DrawerContent.tsx:37
 msgid "Your music app"
 msgstr "당신의 음악 앱"
