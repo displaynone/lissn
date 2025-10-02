@@ -1,7 +1,7 @@
 {
   "name": "lissn",
   "main": "expo-router/entry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
@@ -19,7 +19,7 @@
     "tamagui:generate": "npx @tamagui/cli generate",
     "typecheck": "tsc --noEmit",
     "prepare": "husky",
-    "release": "semantic-release"
+    "release": "semantic-release --no-ci"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
