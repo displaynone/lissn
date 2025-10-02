@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+set -e
+
+npx lint-staged --no-stash
+
+if git diff --cached --name-only --diff-filter=AM | grep -E '\.(ts|tsx)$' >/dev/null; then
+  npm run typecheck --silent
+fi

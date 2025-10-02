@@ -16,7 +16,9 @@
     "lingui:extract": "npx lingui extract",
     "lingui:compile": "npx lingui compile",
     "tamagui:check": "npx @tamagui/cli check",
-    "tamagui:generate": "npx @tamagui/cli generate"
+    "tamagui:generate": "npx @tamagui/cli generate",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
@@ -86,13 +88,22 @@
     "@lingui/cli": "^5.4.1",
     "@lingui/macro": "^5.4.1",
     "@lingui/metro-transformer": "^5.4.1",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@tamagui/cli": "^1.132.10",
     "@types/react": "~19.0.10",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~9.2.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
     "typescript": "~5.8.3"
   },
   "private": true,
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --max-warnings=0"
+    ]
+  },
   "expo": {
     "doctor": {
       "reactNativeDirectoryCheck": {
