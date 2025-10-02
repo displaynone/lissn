@@ -48,6 +48,15 @@ await MusicLibraryService.getInstance().syncLibrary();
 
 The `android/app/src/main/java` folder includes a native module (`ExpoMusicLibrary`) written in Kotlin. This module is largely copied from [dev-josias/expo-music-library](https://github.com/dev-josias/expo-music-library); the original project had a bug associating album IDs, and that issue remains unresolved here.
 
+## Releases
+
+Releases are automated with semantic-release. Conventional Commits are required (commitlint enforces them). Run `npm run release` in CI or locally with Node.js 18.17+ and set these environment variables before executing:
+
+- `GITHUB_TOKEN`: personal access token with `repo` scope so semantic-release can create tags and GitHub releases.
+- `GH_TOKEN`: optional alias that semantic-release checks if `GITHUB_TOKEN` is not set.
+
+The release pipeline updates `CHANGELOG.md`, bumps the version in `package.json`/`package-lock.json`, and publishes a GitHub release (npm publishing is disabled).
+
 ## License
 
 This project is distributed under the same license as the repository from which the Kotlin module was derived.
