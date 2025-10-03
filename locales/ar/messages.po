@@ -17,6 +17,10 @@ msgstr ""
 msgid "Add"
 msgstr "إضافة"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:82
+msgid "Add new playlist"
+msgstr "إضافة قائمة تشغيل جديدة"
+
 #: components/partials/SongInfo/AddSongPlaylist.tsx:41
 msgid "Add song to playlist"
 msgstr "إضافة الأغنية إلى قائمة التشغيل"

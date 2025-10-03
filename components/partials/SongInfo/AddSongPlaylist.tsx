@@ -79,7 +79,7 @@ const AddSongPlaylist: FC<AddSongPlaylistProps> = ({
 							</Button>
 						</>
 					)}
-					<Text>Add new playlist</Text>
+					<Text><Trans>Add new playlist</Trans></Text>
 					<Button
 						onPress={() => {
 							setAddSongDialogOpen(false);

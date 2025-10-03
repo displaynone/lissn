@@ -17,6 +17,10 @@ msgstr ""
 msgid "Add"
 msgstr "추가"
 
+#: components/partials/SongInfo/AddSongPlaylist.tsx:82
+msgid "Add new playlist"
+msgstr "새 플레이리스트 추가"
+
 #: components/partials/SongInfo/AddSongPlaylist.tsx:41
 msgid "Add song to playlist"
 msgstr "노래를 플레이리스트에 추가"
