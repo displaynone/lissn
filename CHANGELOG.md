@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/displaynone/lissn/compare/v1.0.1...v1.0.2) (2025-10-03)
+
+
+### Bug Fixes
+
+* notification player play-pause icon ([5eb178b](https://github.com/displaynone/lissn/commit/5eb178bb6a9f892f49935cab093ce597b6ab2dc1))
+* stop song when no next or previous song ([1601680](https://github.com/displaynone/lissn/commit/16016803dbf11fa1c6eb79f25d097e66ade0d09e))
+
 ## [1.0.1](https://github.com/displaynone/lissn/compare/v1.0.0...v1.0.1) (2025-10-02)
 
 
