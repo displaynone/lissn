@@ -173,7 +173,7 @@ const SongInfo: React.FC = () => {
 								bg="$red9Light"
 								icon={<TrashIcon color="white" size={18} />}
 								title={<Text>{t`Hide song`}</Text>}
-								onPress={() => setDeleteDialogOpen(true)}
+								onPress={() => {setDeleteDialogOpen(true)}}
 							/>
 						</YStack>
 					</YStack>

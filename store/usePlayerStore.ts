@@ -74,18 +74,20 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 		const { player, isPaused, song } = get();
 		if (!player) return;
 
+		const nextIsPaused = !isPaused;
+
 		if (isPaused) {
 			player.play();
 		} else {
 			player.pause();
 		}
 
-		set({ isPaused: !isPaused });
+		set({ isPaused: nextIsPaused });
 
 		updateNotification({
 			title: song?.title ?? null,
 			artist: (song as any)?.artist?.name ?? null,
-			isPlaying: !isPaused,
+			isPlaying: !nextIsPaused,
 		});
 	},
 
