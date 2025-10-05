@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/displaynone/lissn/compare/v1.0.2...v1.0.3) (2025-10-05)
+
+
+### Bug Fixes
+
+* playlist is properly ordered ([0cbdd95](https://github.com/displaynone/lissn/commit/0cbdd958571a75dd7c7815c62afd938ba4135d23))
+
 ## [1.0.2](https://github.com/displaynone/lissn/compare/v1.0.1...v1.0.2) (2025-10-03)
 
 
