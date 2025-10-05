@@ -184,7 +184,8 @@ export const store = create<MusicStoreState>((set, get) => ({
 					? Q.where("title", Q.like(`%${Q.sanitizeLikeString(s)}%`))
 					: undefined,
 				Q.where("id", Q.oneOf(songIds)),
-				Q.take(limit),
+				// TODO: take only those needed based on current page and limit
+				// Q.take(limit),
 			].filter(Boolean) as Q.Clause[];
 
 			const newSongs = await database
