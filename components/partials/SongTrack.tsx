@@ -22,7 +22,7 @@ const SongTrack: React.FC = () => {
 		const touchX = Math.max(0, Math.min(event.x, waveformWidth));
 		const percentage = touchX / waveformWidth;
 		const seekTime = duration * percentage;
-		runOnJS(seekTo)(seekTime); // <- Llamada segura al JS thread
+		runOnJS(seekTo)(seekTime);
 	});
 
 	if (isLoading || !song) {

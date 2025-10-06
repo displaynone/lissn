@@ -109,7 +109,6 @@ export default function HomeScreen() {
 		}
 	};
 
-	console.log({isLoading, songs: songs.length, initializedListLayout});
 	const showLoading = isLoading || songs.length === 0 || !initializedListLayout;
 
 	const Loading = (
@@ -126,7 +125,6 @@ export default function HomeScreen() {
 		</YStack>
 	);
 
-	console.log({ showLoading });
 	return (
 		<YStack flex={1} gap="$2" onLayout={handleOnLayout} h="100%">
 			<Heading />

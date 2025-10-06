@@ -1,4 +1,6 @@
+import { database } from "@/database";
 import { Song } from "@/models";
+import { Settings, SETTINGS_KEYS } from "@/models/Settings";
 import {
 	startNotification,
 	stopNotification,
@@ -6,6 +8,7 @@ import {
 	UpdateNotificationArgs,
 	wireNotificationEvents,
 } from "@/services/AudioNotificationService";
+import { Q } from "@nozbe/watermelondb";
 import { AudioPlayer, createAudioPlayer } from "expo-audio";
 import { create } from "zustand";
 import { useMusicStore } from "./songsStore";
@@ -15,6 +18,8 @@ interface PlayerStore {
 	player: AudioPlayer | null;
 	isPaused: boolean;
 	isStopped: boolean;
+
+	setSong: (song: Song) => Promise<void>;
 	playSong: (song: Song) => Promise<void>;
 	togglePause: () => Promise<void>;
 	stop: () => void;
@@ -45,6 +50,10 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	isPaused: true,
 	isStopped: false,
 
+	setSong: async (song) => {
+		set({ song });
+	},
+
 	playSong: async (song) => {
 		get().stop();
 
@@ -68,6 +77,25 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 		};
 		updateNotification(meta);
 		await song.incrementPlayCount();
+
+		const lastPlayedAt = await database
+			.get<Settings>("settings")
+			.query([Q.where("key", SETTINGS_KEYS.LAST_SONG_ID), Q.take(1)])
+			.fetch();
+		if (lastPlayedAt.length > 0) {
+			await database.write(async () => {
+				await lastPlayedAt[0].update((setting) => {
+					setting.value = song.id;
+				});
+			});
+		} else {
+			await database.write(async () => {
+				await database.get<Settings>("settings").create((setting) => {
+					setting.key = SETTINGS_KEYS.LAST_SONG_ID;
+					setting.value = song.id;
+				});
+			});
+		}
 	},
 
 	togglePause: async () => {
@@ -146,7 +174,6 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	},
 
 	updateProgress: (currentTime: number, duration: number) => {
-		// Solo actualizar si hay una canción reproduciéndose
 		const { song, isPaused } = get();
 		if (song && !isPaused) {
 			updateNotification({
@@ -174,3 +201,5 @@ export const useGetPlayPreviousSong = () =>
 	usePlayerStore((state) => state.playPreviousSong);
 export const useGetUpdateProgress = () =>
 	usePlayerStore((state) => state.updateProgress);
+export const useGetSetSong = () =>
+	usePlayerStore((state) => state.setSong);

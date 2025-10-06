@@ -183,7 +183,6 @@ export async function importDatabaseJSON(
 			}
 
 			const songsById: Record<string, string> = {};
-			console.log({ albumsById, artistsById });
 
 			for (const s of payload.tables.songs) {
 				const id = s.id ?? "";
