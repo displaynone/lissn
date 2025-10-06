@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/displaynone/lissn/compare/v1.0.3...v1.1.0) (2025-10-06)
+
+
+### Features
+
+* remember song and position ([d5dccf2](https://github.com/displaynone/lissn/commit/d5dccf28b379568e30e13b63e5c0a0c3524cdb4c))
+
 ## [1.0.3](https://github.com/displaynone/lissn/compare/v1.0.2...v1.0.3) (2025-10-05)
 
 
