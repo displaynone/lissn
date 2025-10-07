@@ -3,6 +3,7 @@ import {
 	SHOW_PLAYING_PAGE_SLIDE_TIME,
 } from "@/constants/generic";
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSongAndArtist";
+import useMayRestoreLastSong from "@/hooks/useMayRestoreLastSong";
 import {
 	useGetSetShowDrawer,
 	useGetShowDrawer,
@@ -62,6 +63,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const insets = useSafeAreaInsets();
 	const getArtistById = useGetArtistById();
 	const getAlbumById = useGetAlbumById();
+	const mayRestoreLastSong = useMayRestoreLastSong();
 
 	const [artwork, setArtwork] = useState<string>();
 
@@ -121,6 +123,12 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 			setArtwork(undefined);
 		}
 	}, [getAlbumById, pathname]);
+
+	useEffect(() => {
+		(async () => {
+			await mayRestoreLastSong();
+		})();
+	}, [mayRestoreLastSong]);
 
 	const isDetailedView = pathname === "/song/playing";
 	const showCover = !!song && isDetailedView;

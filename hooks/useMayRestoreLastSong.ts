@@ -1,16 +1,15 @@
 import { database } from "@/database";
 import { Settings } from "@/models";
 import { SETTINGS_KEYS } from "@/models/Settings";
-import { useGetSongById } from "@/store/songsStore";
-import { useGetSeekToSong, useGetSetSong, useGetUpdateProgress } from "@/store/usePlayerStore";
+import { useGetSetPlayingSongId } from "@/store/songsStore";
+import { useGetSeekToSong, useGetUpdateProgress } from "@/store/usePlayerStore";
 import { Q } from "@nozbe/watermelondb";
 import { AudioStatus } from "expo-audio";
 
 const useMayRestoreLastSong = () => {
 	const updateProgressNotification = useGetUpdateProgress();
-	const getSongById = useGetSongById();
+	const setPlayingSongId = useGetSetPlayingSongId();
 	const seekTo = useGetSeekToSong();
-  const setSong = useGetSetSong();
 
 	const mayRestoreLastSong = async () => {
 		const lastPlayedAt = await database
@@ -31,10 +30,7 @@ const useMayRestoreLastSong = () => {
 			.fetch();
 
 		if (lastPlayedSong?.[0].value) {
-			const song = await getSongById(lastPlayedSong[0].value);
-      if (song) {
-        await setSong(song);
-      }
+			setPlayingSongId(lastPlayedSong[0].value);
 		}
 		return true;
 	};
