@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/displaynone/lissn/compare/v1.1.1...v1.1.2) (2025-11-10)
+
+
+### Bug Fixes
+
+* fatal error in android device ([cf60d9a](https://github.com/displaynone/lissn/commit/cf60d9a4b3510d4bfafdab1d7df74ea3da8b2329))
+
 ## [1.1.1](https://github.com/displaynone/lissn/compare/v1.1.0...v1.1.1) (2025-10-07)
 
 
