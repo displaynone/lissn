@@ -1,12 +1,14 @@
 package com.displaynone.lissn
 
-import android.content.Intent
-import android.os.Build
-import com.facebook.react.bridge.*
+import android.app.ForegroundServiceStartNotAllowedException
 import android.content.BroadcastReceiver
 import android.content.Context
+import android.content.Intent
 import android.content.IntentFilter
+import android.os.Build
 import android.util.Log
+import androidx.core.content.ContextCompat
+import com.facebook.react.bridge.*
 import com.facebook.react.modules.core.DeviceEventManagerModule
 
 class AudioNotificationModule(private val reactCtx: ReactApplicationContext) :
@@ -16,11 +18,27 @@ class AudioNotificationModule(private val reactCtx: ReactApplicationContext) :
 
     private var actionReceiver: BroadcastReceiver? = null
 
-    private fun startFg(intent: Intent) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            reactCtx.startForegroundService(intent)
-        } else {
-            reactCtx.startService(intent)
+    private fun dispatchToService(intent: Intent, forceForegroundStart: Boolean) {
+        val serviceRunning = AudioNotificationService.isRunning()
+        val needsForegroundStart = forceForegroundStart || !serviceRunning
+
+        try {
+            if (needsForegroundStart && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                if (canStartForegroundService()) {
+                    ContextCompat.startForegroundService(reactCtx, intent)
+                } else {
+                    Log.w(
+                        "LissnNotif",
+                        "Skipping startForegroundService because the app is backgrounded"
+                    )
+                }
+            } else {
+                reactCtx.startService(intent)
+            }
+        } catch (e: ForegroundServiceStartNotAllowedException) {
+            Log.w("LissnNotif", "System blocked startForegroundService", e)
+        } catch (e: IllegalStateException) {
+            Log.w("LissnNotif", "System blocked startService", e)
         }
     }
 
@@ -34,7 +52,7 @@ class AudioNotificationModule(private val reactCtx: ReactApplicationContext) :
             putExtra(AudioNotificationService.EXTRA_IS_PLAYING, isPlaying)
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
-        startFg(intent)
+        dispatchToService(intent, forceForegroundStart = true)
     }
 
     @ReactMethod
@@ -47,7 +65,7 @@ class AudioNotificationModule(private val reactCtx: ReactApplicationContext) :
             isPlaying?.let { putExtra(AudioNotificationService.EXTRA_IS_PLAYING, it) }
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
-        startFg(intent)
+        dispatchToService(intent, forceForegroundStart = false)
     }
 
     @ReactMethod
@@ -57,7 +75,7 @@ class AudioNotificationModule(private val reactCtx: ReactApplicationContext) :
             putExtra(AudioNotificationService.EXTRA_DURATION, duration.toLong())
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
-        startFg(intent)
+        dispatchToService(intent, forceForegroundStart = false)
     }
 
     @ReactMethod
@@ -80,7 +98,7 @@ class AudioNotificationModule(private val reactCtx: ReactApplicationContext) :
             duration?.let { putExtra(AudioNotificationService.EXTRA_DURATION, it.toLong()) }
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
-        startFg(intent)
+        dispatchToService(intent, forceForegroundStart = false)
     }
 
     @ReactMethod
@@ -143,5 +161,10 @@ class AudioNotificationModule(private val reactCtx: ReactApplicationContext) :
                 Log.e("LissnNotif", "AudioNotificationModule: error unregistering receiver", e)
             }
         }
+    }
+
+    private fun canStartForegroundService(): Boolean {
+        val activity = currentActivity
+        return activity != null && !activity.isFinishing
     }
 }

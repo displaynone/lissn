@@ -21,12 +21,18 @@ import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.util.concurrent.TimeUnit
+import kotlin.jvm.Volatile
 
 class AudioNotificationService : Service() {
 
     companion object {
         const val CHANNEL_ID = "lissn_audio_player_channel"
         const val NOTIFICATION_ID = 1001
+        @Volatile
+        private var serviceRunning = false
+
+        @JvmStatic
+        fun isRunning(): Boolean = serviceRunning
 
         const val ACTION_PLAY_PAUSE = "com.displaynone.lissn.PLAY_PAUSE"
         const val ACTION_NEXT = "com.displaynone.lissn.NEXT"
@@ -59,6 +65,7 @@ class AudioNotificationService : Service() {
 
     override fun onCreate() {
         super.onCreate()
+        serviceRunning = true
         mediaSessionHelper = MediaSessionHelper(this) { action -> handleAction(action) }
         createChannel()
         registerActionReceiver()
@@ -107,6 +114,7 @@ class AudioNotificationService : Service() {
         mediaSessionHelper.release()
         unregisterActionReceiver()
         serviceScope.cancel() // cancela corrutinas en curso
+        serviceRunning = false
     }
 
     private fun createChannel() {
