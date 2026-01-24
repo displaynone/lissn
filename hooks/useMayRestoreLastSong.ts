@@ -16,7 +16,7 @@ const useMayRestoreLastSong = () => {
 			.get<Settings>("settings")
 			.query([Q.where("key", SETTINGS_KEYS.LAST_PLAYED_AT), Q.take(1)])
 			.fetch();
-		if (lastPlayedAt.length === 0 && lastPlayedAt[0].value) {
+		if (lastPlayedAt.length > 0 && lastPlayedAt[0].value) {
 			const { currentTime, duration } = JSON.parse(
 				lastPlayedAt[0].value
 			) as Pick<AudioStatus, "currentTime" | "duration">;

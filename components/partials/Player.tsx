@@ -10,6 +10,7 @@ import { useGetToggleFavorite } from "@/store/songsStore";
 import {
 	useGetIsPausedSong,
 	useGetIsStoppedSong,
+	useGetPlayer,
 	useGetPlayNextSong,
 	useGetPlayPreviousSong,
 	useGetPlaySong,
@@ -50,6 +51,7 @@ const Player: React.FC<PlayerProps> = ({
 	const playPrev = useGetPlayPreviousSong();
 	const isPaused = useGetIsPausedSong();
 	const isStopped = useGetIsStoppedSong();
+	const player = useGetPlayer();
 	const { progress } = usePlayerProgress();
 	const { height } = useWindowDimensions();
 	const toggleFavorite = useGetToggleFavorite();
@@ -122,7 +124,9 @@ const Player: React.FC<PlayerProps> = ({
 						<Button
 							circular
 							backgroundColor={"transparent"}
-							onPress={async () => (isStopped ? play(song) : togglePause())}
+							onPress={async () =>
+								!player || isStopped ? play(song) : togglePause()
+							}
 						>
 							{isPaused ? (
 								<PlayIcon color="white" />
