@@ -1,4 +1,4 @@
-import * as FileSystem from "expo-file-system";
+import * as FileSystem from "expo-file-system/legacy";
 
 export const saveCoverImage = async (base64: string, id: string) => {
 	const dirUri = `${FileSystem.documentDirectory}covers`;

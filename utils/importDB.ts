@@ -3,7 +3,7 @@ import { database } from "@/database";
 import { Album, Artist, Playlist, PlaylistSong, Song } from "@/models";
 import { store } from "@/store/songsStore";
 import { Q } from "@nozbe/watermelondb";
-import * as FileSystem from "expo-file-system";
+import * as FileSystem from "expo-file-system/legacy";
 import { chunk } from "./chunk";
 
 const BATCH_CHUNK = 50;

@@ -92,7 +92,6 @@ export default function PlaylistsScreen() {
 					keyExtractor={(song) => song.id}
 					renderItem={({ item }) => <SongItem song={item} />}
 					ItemSeparatorComponent={() => <View h={12} />}
-					estimatedItemSize={150}
 				/>
 				<Player />
 			</YStack>

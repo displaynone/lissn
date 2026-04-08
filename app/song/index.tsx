@@ -11,7 +11,7 @@ import {
 	useGetSongs,
 	useRefreshSongs,
 } from "@/store/songsStore";
-import { FlashList } from "@shopify/flash-list";
+import { FlashList, type FlashListRef } from "@shopify/flash-list";
 import { useCallback, useEffect, useRef } from "react";
 import { Spinner, Text, View, YStack } from "tamagui";
 
@@ -21,7 +21,7 @@ export default function SongsScreen() {
 	const setSongsListScrollPosition = useGetSetSongsListScrollPosition();
 	const refreshSongs = useRefreshSongs();
 	const offset = useGetSongsListScrollPosition();
-	const listRef = useRef<FlashList<Song>>(null);
+	const listRef = useRef<FlashListRef<Song>>(null);
 
 	const handleRestoreScroll = useCallback(() => {
 		if (listRef.current && offset > 0) {
@@ -59,7 +59,6 @@ export default function SongsScreen() {
 					keyExtractor={(song) => song.id}
 					renderItem={({ item }) => <SongItem song={item} origin="latest" />}
 					ItemSeparatorComponent={() => <View h={18} />}
-					estimatedItemSize={50}
 					ListFooterComponent={<View style={{ height: 40 }} />}
 					showsVerticalScrollIndicator={true}
 					onScroll={(e) =>

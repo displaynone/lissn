@@ -9,6 +9,10 @@ config.transformer = {
 };
 config.resolver = {
 	...resolver,
+	extraNodeModules: {
+		...(resolver.extraNodeModules || {}),
+		"better-sqlite3": require.resolve("./shims/better-sqlite3"),
+	},
 	sourceExts: [...resolver.sourceExts, "po", "pot"],
 };
 

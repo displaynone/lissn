@@ -44,9 +44,23 @@ type AudioNotificationModuleType = {
 	notifyReactNativeReady: () => Promise<void> | void;
 };
 
-const { AudioNotificationModule } = NativeModules as {
-	AudioNotificationModule: AudioNotificationModuleType;
-};
+function getAudioNotificationModule(): AudioNotificationModuleType | null {
+	const { AudioNotificationModule } = NativeModules as {
+		AudioNotificationModule?: AudioNotificationModuleType;
+	};
+
+	if (!AudioNotificationModule) {
+		if (Platform.OS === "web") {
+			return null;
+		}
+
+		throw new Error(
+			`AudioNotificationModule is not available on ${Platform.OS}. Make sure the native module is installed and the app was rebuilt.`
+		);
+	}
+
+	return AudioNotificationModule;
+}
 
 export async function ensureNotificationPermission(): Promise<boolean> {
 	if (Platform.OS === "android" && Platform.Version >= 33) {
@@ -75,8 +89,10 @@ export async function startNotification(
 		isPlaying = true,
 	} = opts;
 	await ensureNotificationPermission();
+	const module = getAudioNotificationModule();
+	if (!module) return;
 
-	await AudioNotificationModule.startService(
+	await module.startService(
 		song.title,
 		artist?.name ?? "",
 		smallIconName,
@@ -105,9 +121,11 @@ export function updateNotification(args: UpdateNotificationArgs): void {
 		currentTime = null,
 		duration = null,
 	} = args;
+	const module = getAudioNotificationModule();
+	if (!module) return;
 
 	if (currentTime !== null || duration !== null) {
-		AudioNotificationModule.updateWithProgress(
+		module.updateWithProgress(
 			title,
 			artist,
 			smallIconName,
@@ -117,7 +135,7 @@ export function updateNotification(args: UpdateNotificationArgs): void {
 			duration
 		);
 	} else {
-		AudioNotificationModule.update(
+		module.update(
 			title,
 			artist,
 			smallIconName,
@@ -128,11 +146,15 @@ export function updateNotification(args: UpdateNotificationArgs): void {
 }
 
 export function updateNotificationProgress(currentTime: number, duration: number): void {
-	AudioNotificationModule.updateProgress(currentTime, duration);
+	const module = getAudioNotificationModule();
+	if (!module) return;
+	module.updateProgress(currentTime, duration);
 }
 
 export function stopNotification(): void {
-	AudioNotificationModule.stop();
+	const module = getAudioNotificationModule();
+	if (!module) return;
+	module.stop();
 }
 
 type WireNotificationEventsArgs = {
@@ -182,12 +204,16 @@ export function wireNotificationEvents({
 	}
 
 	setTimeout(() => {
-		AudioNotificationModule.notifyReactNativeReady();
+		const module = getAudioNotificationModule();
+		if (!module) return;
+		module.notifyReactNativeReady();
 	}, 100);
 
 	return () => subs.forEach((s) => s.remove());
 }
 
 export function notifyReactNativeReady(): void {
-	AudioNotificationModule.notifyReactNativeReady();
+	const module = getAudioNotificationModule();
+	if (!module) return;
+	module.notifyReactNativeReady();
 }

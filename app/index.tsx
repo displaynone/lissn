@@ -18,7 +18,6 @@ import { useEffect, useState } from "react";
 import {
 	LayoutChangeEvent,
 	LayoutRectangle,
-	useWindowDimensions,
 } from "react-native";
 import Animated, {
 	Easing,
@@ -31,7 +30,6 @@ import { Spinner, Text, View, YStack } from "tamagui";
 const INITIAL_SONGS_HEIGHT = 230;
 
 export default function HomeScreen() {
-	const { width } = useWindowDimensions();
 	const songs = useGetSongs();
 	const isLoading = useAreSongsLoading();
 	const refreshSongs = useRefreshSongs();
@@ -65,15 +63,31 @@ export default function HomeScreen() {
 		}),
 	}));
 
-	useState(() => {
-		if (!initialized) {
-			setInitialized(true);
-			getRecentlyPlayed().then((recentSongs) => {
+	useEffect(() => {
+		let cancelled = false;
+
+		if (initialized) {
+			return () => {
+				cancelled = true;
+			};
+		}
+
+		setInitialized(true);
+		getRecentlyPlayed()
+			.then((recentSongs) => {
+				if (cancelled) return;
 				setRecent(recentSongs);
 				setLoadingRecent(false);
+			})
+			.catch(() => {
+				if (cancelled) return;
+				setLoadingRecent(false);
 			});
-		}
-	});
+
+		return () => {
+			cancelled = true;
+		};
+	}, [getRecentlyPlayed, initialized]);
 
 	useEffect(() => {
 		if (listSongInitialLayout) {
@@ -140,7 +154,6 @@ export default function HomeScreen() {
 							keyExtractor={(song) => song.id}
 							renderItem={({ item }) => <SongBlockItem song={item} />}
 							ItemSeparatorComponent={() => <View w={12} />}
-							estimatedItemSize={150}
 						/>
 					</YStack>
 				)}
@@ -169,13 +182,8 @@ export default function HomeScreen() {
 								<SongItem song={item} origin="latest" />
 							)}
 							ItemSeparatorComponent={() => <View h={18} />}
-							estimatedItemSize={50}
 							ListFooterComponent={<View style={{ height: 40 }} />}
 							showsVerticalScrollIndicator={true}
-							estimatedListSize={{
-								width,
-								height: INITIAL_SONGS_HEIGHT,
-							}}
 							onEndReachedThreshold={0.5}
 							onEndReached={() => {
 								refreshSongs();

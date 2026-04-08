@@ -1,11 +1,16 @@
 import { database } from "@/database";
 import { Settings, SETTINGS_KEYS } from "@/models/Settings";
-import { useGetPlayer, useGetUpdateProgress } from "@/store/usePlayerStore";
+import {
+	useGetPlayer,
+	useGetPlayingSong,
+	useGetUpdateProgress,
+} from "@/store/usePlayerStore";
 import { Q } from "@nozbe/watermelondb";
 import { useEffect, useState } from "react";
 
 export const usePlayerProgress = (intervalMs: number = 500) => {
 	const player = useGetPlayer();
+	const song = useGetPlayingSong();
 	const updateProgressNotification = useGetUpdateProgress();
 	const [progress, setProgress] = useState(0);
 	const [currentTime, setCurrentTime] = useState(0);
@@ -19,7 +24,7 @@ export const usePlayerProgress = (intervalMs: number = 500) => {
 			return;
 		}
 
-		let interval: number;
+		let interval: ReturnType<typeof global.setInterval> | undefined;
 
 		const updateProgress = async () => {
 			try {
@@ -41,6 +46,7 @@ export const usePlayerProgress = (intervalMs: number = 500) => {
 						await database.write(async () => {
 							await lastPlayedAt[0].update((setting) => {
 								setting.value = JSON.stringify({
+									songId: song?.id ?? null,
 									currentTime: status.currentTime,
 									duration: status.duration,
 								});
@@ -50,7 +56,11 @@ export const usePlayerProgress = (intervalMs: number = 500) => {
 						await database.write(async () => {
 							await database.get<Settings>("settings").create((setting) => {
 								setting.key = SETTINGS_KEYS.LAST_PLAYED_AT;
-								setting.value = status.currentTime.toString();
+								setting.value = JSON.stringify({
+									songId: song?.id ?? null,
+									currentTime: status.currentTime,
+									duration: status.duration,
+								});
 							});
 						});
 					}
@@ -62,14 +72,14 @@ export const usePlayerProgress = (intervalMs: number = 500) => {
 
 		updateProgress();
 
-		interval = setInterval(updateProgress, intervalMs);
+			interval = global.setInterval(updateProgress, intervalMs);
 
 		return () => {
 			if (interval) {
 				clearInterval(interval);
 			}
 		};
-	}, [player, intervalMs, duration, updateProgressNotification]);
+	}, [player, song?.id, intervalMs, duration, updateProgressNotification]);
 
 	return { progress, currentTime, duration };
 };

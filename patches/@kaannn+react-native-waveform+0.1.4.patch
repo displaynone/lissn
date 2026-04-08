@@ -1,0 +1,13 @@
+diff --git a/node_modules/@kaannn/react-native-waveform/android/src/main/java/com/audiowave/AudioWaveViewManager.kt b/node_modules/@kaannn/react-native-waveform/android/src/main/java/com/audiowave/AudioWaveViewManager.kt
+index 1111111..2222222 100644
+--- a/node_modules/@kaannn/react-native-waveform/android/src/main/java/com/audiowave/AudioWaveViewManager.kt
++++ b/node_modules/@kaannn/react-native-waveform/android/src/main/java/com/audiowave/AudioWaveViewManager.kt
+@@ -210,7 +210,7 @@ class AudioWaveViewManager(reactContext: ReactApplicationContext?) : SimpleViewM
+         }
+         
+         try {
+-            val array = samples.asArray()
++            val array = samples.asArray() ?: return
+             val sampleArray = IntArray(array.size())
+             for (i in 0 until array.size()) {
+                 sampleArray[i] = array.getInt(i)

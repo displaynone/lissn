@@ -11,7 +11,7 @@ import {
 	useGetFavoriteSongs,
 	useRefreshSongs,
 } from "@/store/songsStore";
-import { FlashList } from "@shopify/flash-list";
+import { FlashList, type FlashListRef } from "@shopify/flash-list";
 import { useCallback, useEffect, useRef } from "react";
 import { Spinner, Text, View, YStack } from "tamagui";
 
@@ -22,7 +22,7 @@ export default function FavoritesScreen() {
 
 	const setSongsListScrollPosition = useGetSetSongsListScrollPosition();
 	const offset = useGetSongsFavoriteListScrollPosition();
-	const listRef = useRef<FlashList<Song>>(null);
+	const listRef = useRef<FlashListRef<Song>>(null);
 
 	const handleRestoreScroll = useCallback(() => {
 		if (listRef.current && offset > 0) {
@@ -60,7 +60,6 @@ export default function FavoritesScreen() {
 						<SongItem song={item} origin="/playlists/favorites" />
 					)}
 					ItemSeparatorComponent={() => <View h={12} />}
-					estimatedItemSize={50}
 					ListFooterComponent={<View style={{ height: 40 }} />}
 					showsVerticalScrollIndicator={true}
 					onScroll={(e) =>

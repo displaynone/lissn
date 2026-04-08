@@ -30,7 +30,7 @@ export const BarAnimated: React.FC<BarAnimatedProps> = ({
   }));
 
   useEffect(() => {
-    let intervalId: number;
+    let intervalId: ReturnType<typeof setInterval> | undefined;
 
     if (isPlaying) {
       intervalId = setInterval(() => {
@@ -41,7 +41,9 @@ export const BarAnimated: React.FC<BarAnimatedProps> = ({
     }
 
     return () => {
-      clearInterval(intervalId);
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
     };
   }, [isPlaying, maxHeight, targetHeight]);
 

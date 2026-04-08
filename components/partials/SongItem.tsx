@@ -43,9 +43,9 @@ const SongItem: React.FC<SongItemProps> = ({ song, origin = 'latest'}) => {
 			setPlayingSongId(undefined);
 			stop();
 		} else {
-			generatePlaylist(origin);
+			await generatePlaylist(origin);
 			setPlayingSongId(song.id);
-			play(song);
+			await play(song);
 		}
 	};
 

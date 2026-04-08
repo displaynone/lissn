@@ -1,4 +1,4 @@
-import { NativeModules } from 'react-native';
+import { NativeModules, Platform } from 'react-native';
 
 /**
  * Permission status returned by permission methods
@@ -279,15 +279,31 @@ interface ExpoMusicLibraryModule {
   getFolderAssetsAsync(folderId: string): Promise<Audio[]>;
 }
 
-// Get the native module with type safety
-const { ExpoMusicLibrary } = NativeModules as {
-  ExpoMusicLibrary: ExpoMusicLibraryModule;
-};
+function getNativeModule(): ExpoMusicLibraryModule | null {
+  const { ExpoMusicLibrary } = NativeModules as {
+    ExpoMusicLibrary?: ExpoMusicLibraryModule;
+  };
 
-if (!ExpoMusicLibrary) {
-  throw new Error(
-    'ExpoMusicLibrary native module is not available. Make sure you have installed the native dependencies and rebuilt your app.'
-  );
+  if (!ExpoMusicLibrary) {
+    if (Platform.OS === "web") {
+      return null;
+    }
+
+    throw new Error(
+      `ExpoMusicLibrary native module is not available on ${Platform.OS}. Make sure you have installed the native dependencies and rebuilt your app.`
+    );
+  }
+
+  return ExpoMusicLibrary;
+}
+
+function withNativeModule<T>(callback: (module: ExpoMusicLibraryModule) => Promise<T>, fallback: T): Promise<T> {
+  const module = getNativeModule();
+  if (!module) {
+    return Promise.resolve(fallback);
+  }
+
+  return callback(module);
 }
 
 /**
@@ -309,4 +325,18 @@ if (!ExpoMusicLibrary) {
  * });
  * ```
  */
-export default ExpoMusicLibrary;
+const ExpoMusicLibraryProxy: ExpoMusicLibraryModule = {
+  getPermissionsAsync: () => withNativeModule((module) => module.getPermissionsAsync(), { status: "denied" }),
+  requestPermissionsAsync: () => withNativeModule((module) => module.requestPermissionsAsync(), { status: "denied" }),
+  getAssetsAsync: (options) => withNativeModule((module) => module.getAssetsAsync(options), []),
+  getAlbumsAsync: () => withNativeModule((module) => module.getAlbumsAsync(), []),
+  getAlbumAssetsAsync: (albumName) => withNativeModule((module) => module.getAlbumAssetsAsync(albumName), []),
+  getArtistsAsync: () => withNativeModule((module) => module.getArtistsAsync(), []),
+  getArtistAssetsAsync: (artistId) => withNativeModule((module) => module.getArtistAssetsAsync(artistId), []),
+  getGenresAsync: () => withNativeModule((module) => module.getGenresAsync(), []),
+  getGenreAssetsAsync: (genreId) => withNativeModule((module) => module.getGenreAssetsAsync(genreId), []),
+  getFoldersAsync: () => withNativeModule((module) => module.getFoldersAsync(), []),
+  getFolderAssetsAsync: (folderId) => withNativeModule((module) => module.getFolderAssetsAsync(folderId), []),
+};
+
+export default ExpoMusicLibraryProxy;

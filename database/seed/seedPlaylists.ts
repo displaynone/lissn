@@ -1,6 +1,5 @@
 import { Playlist } from "@/models";
 import { PLAYLIST_PLAYING_NOW_NAME } from "@/models/Playlist";
-import { t } from "@lingui/core/macro";
 import { Database } from "@nozbe/watermelondb";
 
 export const seedIfEmpty = async (database: Database) => {
@@ -11,7 +10,7 @@ export const seedIfEmpty = async (database: Database) => {
 		await database.write(async () => {
 			await playlistCollection.create((playlist) => {
 				playlist.name = PLAYLIST_PLAYING_NOW_NAME;
-				playlist.description = t`Playing Now`;
+				playlist.description = "Playing Now";
 				playlist.isSystem = true;
 			});
 		});

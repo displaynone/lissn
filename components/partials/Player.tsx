@@ -75,7 +75,6 @@ const Player: React.FC<PlayerProps> = ({
 					<BlurView
 						intensity={10}
 						tint="dark"
-						experimentalBlurMethod={isBlurred ? "dimezisBlurView" : "none"}
 						style={styles.blur}
 					/>
 

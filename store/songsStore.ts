@@ -703,7 +703,7 @@ export const store = create<MusicStoreState>((set, get) => ({
 				.create((playlistsong) => {
 					playlistsong.playlistId = playlistId;
 					playlistsong.songId = songId;
-					playlistsong.position = position || lastPosition;
+					playlistsong.position = position ?? lastPosition;
 				});
 			return pl;
 		});

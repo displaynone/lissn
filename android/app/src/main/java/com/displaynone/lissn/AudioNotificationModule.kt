@@ -164,7 +164,7 @@ class AudioNotificationModule(private val reactCtx: ReactApplicationContext) :
     }
 
     private fun canStartForegroundService(): Boolean {
-        val activity = currentActivity
+        val activity = reactApplicationContext.currentActivity
         return activity != null && !activity.isFinishing
     }
 }

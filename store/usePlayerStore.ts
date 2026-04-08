@@ -74,6 +74,8 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 			title: song.title,
 			largeIconPath: (song as any)?.coverPath ?? null,
 			isPlaying: true,
+			currentTime: 0,
+			duration: song.duration ?? 0,
 		};
 		updateNotification(meta);
 		await song.incrementPlayCount();
@@ -93,6 +95,31 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 				await database.get<Settings>("settings").create((setting) => {
 					setting.key = SETTINGS_KEYS.LAST_SONG_ID;
 					setting.value = song.id;
+				});
+			});
+		}
+
+		const lastPlayedProgress = await database
+			.get<Settings>("settings")
+			.query([Q.where("key", SETTINGS_KEYS.LAST_PLAYED_AT), Q.take(1)])
+			.fetch();
+		const nextProgressValue = JSON.stringify({
+			songId: song.id,
+			currentTime: 0,
+			duration: song.duration ?? 0,
+		});
+
+		if (lastPlayedProgress.length > 0) {
+			await database.write(async () => {
+				await lastPlayedProgress[0].update((setting) => {
+					setting.value = nextProgressValue;
+				});
+			});
+		} else {
+			await database.write(async () => {
+				await database.get<Settings>("settings").create((setting) => {
+					setting.key = SETTINGS_KEYS.LAST_PLAYED_AT;
+					setting.value = nextProgressValue;
 				});
 			});
 		}

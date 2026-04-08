@@ -1,3 +1,4 @@
+import { WaveformFakeVisualizer } from "@/components/ui/WaveformFakeVisualizer";
 import { useGetPlayingSongAndArtist } from "@/hooks/useGetPlayingSongAndArtist";
 import { usePlayerProgress } from "@/hooks/usePlayerProgress";
 import { useGetSeekToSong } from "@/store/usePlayerStore";
@@ -38,17 +39,34 @@ const SongTrack: React.FC = () => {
 		>
 			<GestureDetector gesture={panGesture}>
 				<Animated.View>
-					<AudioWaveView
-						style={{ width: waveformWidth, height: 50 }}
-						audioFileUri={song.sourceUri}
-						waveWidth={8}
-						waveGap={2}
-						waveMinHeight={25}
-						waveCornerRadius={0}
-						waveBackgroundColor="#bbbbbb"
-						waveProgressColor="#ffffff"
-						progress={progress}
-					/>
+					{AudioWaveView ? (
+						<AudioWaveView
+							style={{ width: waveformWidth, height: 50 }}
+							audioFileUri={song.sourceUri}
+							waveWidth={8}
+							waveGap={2}
+							waveMinHeight={25}
+							waveCornerRadius={0}
+							waveBackgroundColor="#bbbbbb"
+							waveProgressColor="#ffffff"
+							progress={progress}
+						/>
+					) : (
+						<YStack
+							width={waveformWidth}
+							height={50}
+							alignItems="center"
+							justifyContent="center"
+						>
+							<WaveformFakeVisualizer
+								barCount={24}
+								barWidth={4}
+								barHeight={28}
+								color="#ffffff"
+								isPlaying
+							/>
+						</YStack>
+					)}
 				</Animated.View>
 			</GestureDetector>
 			<XStack justifyContent="space-between">

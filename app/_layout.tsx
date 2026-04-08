@@ -23,7 +23,7 @@ import {
 	SafeAreaView,
 	useSafeAreaInsets,
 } from "react-native-safe-area-context";
-import { PortalProvider, TamaguiProvider } from "tamagui";
+import { TamaguiProvider } from "tamagui";
 import arCatalog from "../locales/ar/messages.js";
 import deCatalog from "../locales/de/messages.js";
 import enCatalog from "../locales/en/messages.js";
@@ -106,34 +106,32 @@ export default function RootLayout() {
 	return (
 		<I18nProvider i18n={i18n}>
 			<TamaguiProvider config={tamaguiConfig} defaultTheme="dark">
-				<PortalProvider shouldAddRootHost>
-					<ToastProvider burntOptions={{ from: "bottom" }}>
-						<AudioLibraryProvider>
-							<GestureHandlerRootView style={{ flex: 1 }}>
-								<AppContainer>
-									<View style={{ height: insets.top, backgroundColor }} />
-									<StatusBar style="light" translucent />
-									<SafeAreaView
-										style={{ flex: 1, width: "100%" }}
-										edges={["left", "right", "bottom"]}
-									>
-										<View style={{ flex: 1 }}>
-											<Slot />
-											<BottomNavigation />
-											<ToastContent />
-										</View>
+				<ToastProvider burntOptions={{ from: "bottom" }}>
+					<AudioLibraryProvider>
+						<GestureHandlerRootView style={{ flex: 1 }}>
+							<AppContainer>
+								<View style={{ height: insets.top, backgroundColor }} />
+								<StatusBar style="light" translucent />
+								<SafeAreaView
+									style={{ flex: 1, width: "100%" }}
+									edges={["left", "right", "bottom"]}
+								>
+									<View style={{ flex: 1 }}>
+										<Slot />
+										<BottomNavigation />
+										<ToastContent />
 										<ToastViewport
 											flexDirection="column"
 											bottom={30}
 											left={0}
 											right={0}
 										/>
-									</SafeAreaView>
-								</AppContainer>
-							</GestureHandlerRootView>
-						</AudioLibraryProvider>
-					</ToastProvider>
-				</PortalProvider>
+									</View>
+								</SafeAreaView>
+							</AppContainer>
+						</GestureHandlerRootView>
+					</AudioLibraryProvider>
+				</ToastProvider>
 			</TamaguiProvider>
 		</I18nProvider>
 	);

@@ -67,7 +67,6 @@ export default function EditPlaylistsScreen() {
 						</XStack>
 					)}
 					ItemSeparatorComponent={() => <View h={18} />}
-					estimatedItemSize={50}
 					ListFooterComponent={<View style={{ height: 40 }} />}
 					showsVerticalScrollIndicator={true}
 					onEndReachedThreshold={0.5}

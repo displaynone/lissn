@@ -34,7 +34,7 @@ class ExpoMusicLibraryModule(private val reactContext: ReactApplicationContext) 
 
   @ReactMethod
   fun requestPermissionsAsync(promise: Promise) {
-    val activity = currentActivity
+    val activity = reactApplicationContext.currentActivity
     if (activity !is PermissionAwareActivity) {
       promise.reject("E_NO_ACTIVITY", "No permission aware activity available")
       return

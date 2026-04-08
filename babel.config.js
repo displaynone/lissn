@@ -3,8 +3,6 @@ module.exports = function (api) {
 	return {
 		presets: ["babel-preset-expo"],
 		plugins: [
-			["@babel/plugin-proposal-decorators", { legacy: true }],
-			["@babel/plugin-proposal-class-properties", { loose: true }],
 			[
 				"@tamagui/babel-plugin",
 				{
@@ -18,6 +16,16 @@ module.exports = function (api) {
 			"@lingui/babel-plugin-lingui-macro",
 			// NOTE: this is only necessary if you are using reanimated for animations
 			"react-native-reanimated/plugin",
+		],
+		overrides: [
+			{
+				test: /\.(ts|tsx)$/,
+				plugins: [
+					["@babel/plugin-transform-typescript", { allowDeclareFields: true }],
+					["@babel/plugin-proposal-decorators", { legacy: true }],
+					["@babel/plugin-proposal-class-properties", { loose: true }],
+				],
+			},
 		],
 	};
 };

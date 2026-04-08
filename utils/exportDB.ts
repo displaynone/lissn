@@ -1,5 +1,5 @@
 import { database } from "@/database";
-import * as FileSystem from "expo-file-system";
+import * as FileSystem from "expo-file-system/legacy";
 import * as Sharing from "expo-sharing";
 
 export async function exportDatabaseJSON() {

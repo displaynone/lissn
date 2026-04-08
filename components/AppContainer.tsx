@@ -208,7 +208,6 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 							backgroundColor:
 								tamaguiConfig.tokens.color.backgroundDarkTransparent20.val,
 						}}
-						experimentalBlurMethod="dimezisBlurView"
 					/>
 				</Animated.View>
 			)}

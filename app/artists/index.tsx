@@ -59,7 +59,6 @@ export default function ArtistsScreen() {
 					</YStack>
 				)}
 				ItemSeparatorComponent={() => <View w={12} h={12} />}
-				estimatedItemSize={150}
 			/>
 			<Player />
 		</YStack>

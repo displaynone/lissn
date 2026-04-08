@@ -60,7 +60,6 @@ export default function AlbumScreen() {
 					</YStack>
 				)}
 				ItemSeparatorComponent={() => <View w={12} h={12} />}
-				estimatedItemSize={150}
 			/>
 			<Player />
 		</YStack>
