@@ -1,3 +1,15 @@
+## [1.1.3](https://github.com/displaynone/lissn/compare/v1.1.2...v1.1.3) (2026-04-08)
+
+
+### Bug Fixes
+
+* resuming song after open app ([b767baf](https://github.com/displaynone/lissn/commit/b767baf9765596a759a03bcf711c5653e45d57d1))
+
+
+### Performance Improvements
+
+* upgraded to expo v55 ([80b7193](https://github.com/displaynone/lissn/commit/80b719349328b6966bd57676b740c9c51cc39539))
+
 ## [1.1.2](https://github.com/displaynone/lissn/compare/v1.1.1...v1.1.2) (2025-11-10)
 
 
