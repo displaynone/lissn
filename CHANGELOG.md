@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/displaynone/lissn/compare/v1.1.3...v1.1.4) (2026-04-09)
+
+
+### Bug Fixes
+
+* loading song after switching apps ([3030795](https://github.com/displaynone/lissn/commit/3030795f88e3572974b8a558cc85d899b2d00b19))
+
 ## [1.1.3](https://github.com/displaynone/lissn/compare/v1.1.2...v1.1.3) (2026-04-08)
 
 
