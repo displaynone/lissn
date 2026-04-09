@@ -26,7 +26,7 @@ import { tamaguiConfig } from "@/tamagui.config";
 import { BlurView } from "expo-blur";
 import * as NavigationBar from "expo-navigation-bar";
 import { usePathname } from "expo-router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Pressable, StyleSheet, useWindowDimensions } from "react-native";
 import Animated, {
 	useAnimatedStyle,
@@ -64,6 +64,7 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	const getArtistById = useGetArtistById();
 	const getAlbumById = useGetAlbumById();
 	const mayRestoreLastSong = useMayRestoreLastSong();
+	const hasRestoredLastSong = useRef(false);
 
 	const [artwork, setArtwork] = useState<string>();
 
@@ -125,6 +126,9 @@ const AppContainer: React.FC<{ children: React.ReactNode }> = ({
 	}, [getAlbumById, pathname]);
 
 	useEffect(() => {
+		if (hasRestoredLastSong.current) return;
+		hasRestoredLastSong.current = true;
+
 		(async () => {
 			await mayRestoreLastSong();
 		})();

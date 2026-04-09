@@ -3,12 +3,14 @@ import { Settings } from "@/models";
 import { SETTINGS_KEYS } from "@/models/Settings";
 import { useGetSetPlayingSongId } from "@/store/songsStore";
 import {
+	useGetPlayer,
 	useGetPlayingSong,
 	useGetSeekToSong,
 	useGetUpdateProgress,
 } from "@/store/usePlayerStore";
 import { Q } from "@nozbe/watermelondb";
 import { AudioStatus } from "expo-audio";
+import { useCallback } from "react";
 
 type StoredPlaybackProgress = Pick<AudioStatus, "currentTime" | "duration"> & {
 	songId?: string | null;
@@ -19,8 +21,9 @@ const useMayRestoreLastSong = () => {
 	const setPlayingSongId = useGetSetPlayingSongId();
 	const seekTo = useGetSeekToSong();
 	const playingSong = useGetPlayingSong();
+	const player = useGetPlayer();
 
-	const mayRestoreLastSong = async () => {
+	const mayRestoreLastSong = useCallback(async () => {
 		const lastPlayedAt = await database
 			.get<Settings>("settings")
 			.query([Q.where("key", SETTINGS_KEYS.LAST_PLAYED_AT), Q.take(1)])
@@ -28,14 +31,24 @@ const useMayRestoreLastSong = () => {
 		const lastPlayedAtValue = lastPlayedAt[0]?.value;
 		if (lastPlayedAtValue) {
 			const { currentTime, duration, songId } = JSON.parse(
-				lastPlayedAtValue
+				lastPlayedAtValue,
 			) as StoredPlaybackProgress;
 			const shouldRestoreCurrentSong =
 				!!playingSong?.id && !!songId && playingSong.id === songId;
+			const liveCurrentTime = player?.currentStatus?.isLoaded
+				? player.currentStatus.currentTime
+				: null;
+			const shouldSeekToStoredTime =
+				shouldRestoreCurrentSong &&
+				typeof liveCurrentTime === "number" &&
+				currentTime > 0 &&
+				liveCurrentTime <= 1;
 
 			if (shouldRestoreCurrentSong) {
 				updateProgressNotification(currentTime, duration);
-				seekTo(currentTime);
+				if (shouldSeekToStoredTime) {
+					seekTo(currentTime);
+				}
 			}
 		}
 
@@ -49,7 +62,13 @@ const useMayRestoreLastSong = () => {
 			setPlayingSongId(lastPlayedSongId);
 		}
 		return true;
-	};
+	}, [
+		player,
+		playingSong?.id,
+		seekTo,
+		setPlayingSongId,
+		updateProgressNotification,
+	]);
 
 	return mayRestoreLastSong;
 };

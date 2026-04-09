@@ -12,7 +12,6 @@ import {
 	useGetArtists,
 	useGetSongById,
 	useGetUpdateSong,
-	useRefreshSongs
 } from "@/store/songsStore";
 import { isValidUrl } from "@/utils/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -194,30 +193,38 @@ export default function PlaylistsScreen() {
 	const router = useRouter();
 	const [song, setSong] = useState<Song>();
 	const [loading, setLoading] = useState(true);
-
-	const refreshSongs = useRefreshSongs();
+	const songId = Array.isArray(id) ? id[0] : id;
 
 	useEffect(() => {
+		let cancelled = false;
+
+		if (!songId) {
+			setSong(undefined);
+			setLoading(false);
+			return () => {
+				cancelled = true;
+			};
+		}
+
 		setLoading(true);
-		getSongById(id).then((s) => {
-			if (s) {
-				setSong(s);
-			}
+		getSongById(songId).then((s) => {
+			if (cancelled) return;
+			setSong(s ?? undefined);
 			setLoading(false);
 		});
-	}, [getSongById, id, refreshSongs]);
+
+		return () => {
+			cancelled = true;
+		};
+	}, [getSongById, songId]);
 
 	if (loading) {
 		return <Loading />;
 	}
 
 	if (!song) {
-		return <></>;
-	}
-
-	return (
-		<>
-			<YStack flex={1} p="$4" gap="$4">
+		return (
+			<YStack flex={1} p="$4" gap="$4" bg="$background">
 				<XStack
 					gap={"$6"}
 					ai="center"
@@ -237,7 +244,38 @@ export default function PlaylistsScreen() {
 					</H1>
 					<View w={42} />
 				</XStack>
-				<ScrollView>
+				<YStack flex={1} justifyContent="center" alignItems="center" p="$4">
+					<Text>
+						<Trans>Song not found</Trans>
+					</Text>
+				</YStack>
+			</YStack>
+		);
+	}
+
+	return (
+		<>
+			<YStack flex={1} p="$4" gap="$4" bg="$background">
+				<XStack
+					gap={"$6"}
+					ai="center"
+					m={"$2"}
+					marginBottom={0}
+					jc="space-between"
+				>
+					<Button
+						circular
+						backgroundColor={"transparent"}
+						onPress={() => router.back()}
+					>
+						<ArrowLeftIcon color="white" />
+					</Button>
+					<H1>
+						<Trans>Edit song</Trans>
+					</H1>
+					<View w={42} />
+				</XStack>
+				<ScrollView flex={1} contentContainerStyle={{ paddingBottom: 32 }}>
 					<YStack gap="$4">
 						<YStack paddingHorizontal="$4">
 							{!song && <Loading />}

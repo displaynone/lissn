@@ -37,7 +37,16 @@ const selectedStyle: Pick<ComponentProps<typeof TaTabs.Tab>, "style">["style"] =
 		borderBottomWidth: 2,
 		borderBottomRightRadius: 0,
 		borderBottomLeftRadius: 0,
+		backgroundColor: "transparent",
+		color: tamaguiConfig.tokens.color.primary.val,
 	};
+
+const notSelectedStyle: Pick<
+	ComponentProps<typeof TaTabs.Tab>,
+	"style"
+>["style"] = {
+		backgroundColor: tamaguiConfig.tokens.color.background.val,
+};
 
 const Tab = styled(TaTabs.Tab, {
 	px: "$4",
@@ -46,7 +55,6 @@ const Tab = styled(TaTabs.Tab, {
 		backgroundColor: tamaguiConfig.tokens.color.backgroundDarkTransparent10.val,
 	},
 	style: {
-		backgroundColor: tamaguiConfig.tokens.color.background.val,
 		borderBottomColor: tamaguiConfig.tokens.color.background.val,
 		borderBottomWidth: 2,
 		borderRadius: 0,
@@ -89,13 +97,17 @@ export default function PlaylistsScreen() {
 								<Tab
 									key={playlist.id}
 									value={playlist.id}
-									style={playlist.id === activeTab ? selectedStyle : {}}
+									style={
+										playlist.id === activeTab ? selectedStyle : notSelectedStyle
+									}
 									onPress={() => {
 										setCurrentPlaylist(playlist.name);
 										refreshPlayingNowSongs();
 									}}
 								>
-									<SizableText>{playlist.description}</SizableText>
+									<SizableText bg="transparent">
+										{playlist.description}
+									</SizableText>
 								</Tab>
 							))}
 						</TabsList>
