@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/displaynone/lissn/compare/v1.1.4...v1.2.0) (2026-04-10)
+
+
+### Features
+
+* new expo version ([0504497](https://github.com/displaynone/lissn/commit/0504497ea30928b6c973ed1ce33814b24a2bf749))
+
 ## [1.1.4](https://github.com/displaynone/lissn/compare/v1.1.3...v1.1.4) (2026-04-09)
 
 
