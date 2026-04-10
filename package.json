@@ -101,6 +101,7 @@
     "@tamagui/theme-builder": "^1.144.4",
     "@tamagui/toast": "^1.144.4",
     "@types/react": "~19.2.10",
+    "eas-cli": "^18.5.0",
     "eslint": "^9.25.0",
     "eslint-config-expo": "~55.0.0",
     "husky": "^9.1.7",
