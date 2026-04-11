@@ -7,61 +7,28 @@ import { Song } from "@/models";
 import {
 	useAreSongsLoading,
 	useGetGetRecentlyPlayed,
-	useGetSearch,
 	useGetSongs,
 	useRefreshSongs,
 } from "@/store/songsStore";
-import { tamaguiConfig } from "@/tamagui.config";
+import { useGetPlayingSong } from "@/store/usePlayerStore";
 import { Trans } from "@lingui/react/macro";
 import { FlashList } from "@shopify/flash-list";
 import { useEffect, useState } from "react";
-import {
-	LayoutChangeEvent,
-	LayoutRectangle,
-} from "react-native";
-import Animated, {
-	Easing,
-	useAnimatedStyle,
-	useSharedValue,
-	withTiming,
-} from "react-native-reanimated";
 import { Spinner, Text, View, YStack } from "tamagui";
 
 const INITIAL_SONGS_HEIGHT = 230;
+const RECENT_LIST_HEIGHT = 164;
+const SONG_LIST_BOTTOM_SPACING = 140;
 
 export default function HomeScreen() {
 	const songs = useGetSongs();
 	const isLoading = useAreSongsLoading();
 	const refreshSongs = useRefreshSongs();
-	const search = useGetSearch();
 	const getRecentlyPlayed = useGetGetRecentlyPlayed();
+	const playingSong = useGetPlayingSong();
 	const [recent, setRecent] = useState<Song[]>([]);
 	const [loadingRecent, setLoadingRecent] = useState(true);
 	const [initialized, setInitialized] = useState(false);
-	const [initializedListLayout, setInitializedListLayout] = useState(false);
-	const listSongLayoutVals = useSharedValue({
-		top: 0,
-		left: 0,
-		height: INITIAL_SONGS_HEIGHT,
-	});
-	const layoutHeight = useSharedValue(0);
-	const [listSongInitialLayout, setListSongInitialLayout] =
-		useState<LayoutRectangle>();
-
-	const animatedStyle = useAnimatedStyle(() => ({
-		height: withTiming(listSongLayoutVals.value.height, {
-			duration: 300,
-			easing: Easing.linear,
-		}),
-		top: withTiming(listSongLayoutVals.value.top, {
-			duration: 300,
-			easing: Easing.linear,
-		}),
-		left: withTiming(listSongLayoutVals.value.left, {
-			duration: 300,
-			easing: Easing.linear,
-		}),
-	}));
 
 	useEffect(() => {
 		let cancelled = false;
@@ -90,40 +57,15 @@ export default function HomeScreen() {
 	}, [getRecentlyPlayed, initialized]);
 
 	useEffect(() => {
-		if (listSongInitialLayout) {
-			if (search) {
-				listSongLayoutVals.value = {
-					height: layoutHeight.value,
-					top: 16,
-					left: 0,
-				};
-			} else {
-				listSongLayoutVals.value = {
-					height: INITIAL_SONGS_HEIGHT,
-					top: listSongInitialLayout.y + listSongInitialLayout.height,
-					left: listSongInitialLayout.x,
-				};
-			}
-		}
-	}, [listSongInitialLayout, listSongLayoutVals, layoutHeight, search]);
+		if (!playingSong?.id) return;
 
-	const handleOnLayout = (e: LayoutChangeEvent) => {
-		layoutHeight.value = e.nativeEvent.layout.height;
-	};
+		getRecentlyPlayed().then((recentSongs) => {
+			setRecent(recentSongs);
+			setLoadingRecent(false);
+		});
+	}, [getRecentlyPlayed, playingSong?.id]);
 
-	const handleSongListLayout = (e: LayoutChangeEvent) => {
-		if (!!e.nativeEvent.layout) {
-			setListSongInitialLayout(e.nativeEvent.layout);
-			listSongLayoutVals.value = {
-				height: e.nativeEvent.layout.height,
-				top: e.nativeEvent.layout.y,
-				left: e.nativeEvent.layout.x,
-			};
-			setInitializedListLayout(true);
-		}
-	};
-
-	const showLoading = isLoading || songs.length === 0 || !initializedListLayout;
+	const showLoading = isLoading || songs.length === 0;
 
 	const Loading = (
 		<YStack
@@ -140,57 +82,62 @@ export default function HomeScreen() {
 	);
 
 	return (
-		<YStack flex={1} gap="$2" onLayout={handleOnLayout} h="100%">
+		<YStack flex={1} gap="$2" h="100%">
 			<Heading />
-			<YStack gap="$4">
-				{!loadingRecent && !!recent.length && (
+			<YStack flex={1} gap="$4">
+				{!loadingRecent && (
 					<YStack p="$4" gap="$4">
 						<H2>
 							<Trans>Recently played</Trans>
 						</H2>
-						<FlashList
-							data={recent}
-							horizontal
-							keyExtractor={(song) => song.id}
-							renderItem={({ item }) => <SongBlockItem song={item} />}
-							ItemSeparatorComponent={() => <View w={12} />}
-						/>
+						{!!recent.length ? (
+							<FlashList
+								data={recent}
+								horizontal
+								style={{ height: RECENT_LIST_HEIGHT }}
+								keyExtractor={(song) => song.id}
+								renderItem={({ item }) => <SongBlockItem song={item} />}
+								ItemSeparatorComponent={() => <View w={12} />}
+							/>
+						) : (
+							<YStack
+								h={RECENT_LIST_HEIGHT}
+								justifyContent="center"
+								alignItems="center"
+							>
+								<Text color="$gray11">
+									<Trans>No recently played songs yet</Trans>
+								</Text>
+							</YStack>
+						)}
 					</YStack>
 				)}
 
-				<View onLayout={handleSongListLayout}>
+				<YStack flex={1} minHeight={INITIAL_SONGS_HEIGHT}>
 					<H2 paddingHorizontal="$4" paddingBottom="$4">
 						<Trans>Last songs</Trans>
 					</H2>
-				</View>
-				{showLoading && Loading}
-				{!showLoading && (
-					<Animated.View
-						style={[
-							animatedStyle,
-							{
-								width: "100%",
-								position: "absolute",
-								backgroundColor: tamaguiConfig.tokens.color.background.val,
-							},
-						]}
-					>
+					{showLoading && Loading}
+					{!showLoading && (
 						<FlashList
 							data={songs}
+							style={{ flex: 1 }}
+							contentContainerStyle={{
+								paddingBottom: SONG_LIST_BOTTOM_SPACING,
+							}}
 							keyExtractor={(song) => song.id}
 							renderItem={({ item }) => (
 								<SongItem song={item} origin="latest" />
 							)}
 							ItemSeparatorComponent={() => <View h={18} />}
-							ListFooterComponent={<View style={{ height: 40 }} />}
 							showsVerticalScrollIndicator={true}
 							onEndReachedThreshold={0.5}
 							onEndReached={() => {
 								refreshSongs();
 							}}
 						/>
-					</Animated.View>
-				)}
+					)}
+				</YStack>
 			</YStack>
 			<Player />
 		</YStack>

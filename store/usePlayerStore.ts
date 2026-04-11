@@ -1,17 +1,18 @@
 import { database } from "@/database";
 import { Song } from "@/models";
 import { Settings, SETTINGS_KEYS } from "@/models/Settings";
-import {
-	startNotification,
-	stopNotification,
-	updateNotification,
-	UpdateNotificationArgs,
-	wireNotificationEvents,
-} from "@/services/AudioNotificationService";
 import { Q } from "@nozbe/watermelondb";
 import { AudioPlayer, createAudioPlayer } from "expo-audio";
 import { create } from "zustand";
 import { useMusicStore } from "./songsStore";
+
+const getLockScreenArtworkUrl = (coverPath?: string | null) => {
+	if (!coverPath) return undefined;
+	if (coverPath.startsWith("http://") || coverPath.startsWith("https://")) {
+		return coverPath;
+	}
+	return undefined;
+};
 
 interface PlayerStore {
 	song: Song | null;
@@ -30,20 +31,6 @@ interface PlayerStore {
 	updateProgress: (currentTime: number, duration: number) => void;
 }
 
-export const initPlayerNotificationBridge = () => {
-	return wireNotificationEvents({
-		onPlayPause: () => {
-			usePlayerStore.getState().togglePause();
-		},
-		onNext: () => usePlayerStore.getState().playNextSong(),
-		onPrev: () => usePlayerStore.getState().playPreviousSong(),
-		onStop: () => usePlayerStore.getState().stop(),
-		onSeekTo: (position: number) => {
-			usePlayerStore.getState().seekTo(position);
-		},
-	});
-};
-
 export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	song: null,
 	player: null,
@@ -58,26 +45,37 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 		get().stop();
 
 		const player = createAudioPlayer(song.sourceUri);
-		player.play();
 		player.addListener("playbackStatusUpdate", async (status) => {
+			if (get().player?.id !== player.id) {
+				return;
+			}
+
+			set({
+				isPaused: !status.playing,
+				isStopped: false,
+			});
+
 			if (status.didJustFinish) {
 				get().playNextSong();
 			}
 		});
 
 		const artist = await useMusicStore.getState().getArtistById(song.artistId);
-
-		startNotification(song, artist);
+		player.setActiveForLockScreen(
+			true,
+			{
+				title: song.title,
+				artist: artist?.name ?? "",
+				artworkUrl: getLockScreenArtworkUrl(song.coverPath),
+			},
+			{
+				showSeekBackward: true,
+				showSeekForward: true,
+			}
+		);
+		player.play();
 
 		set({ song, player, isPaused: false, isStopped: false });
-		const meta: UpdateNotificationArgs = {
-			title: song.title,
-			largeIconPath: (song as any)?.coverPath ?? null,
-			isPlaying: true,
-			currentTime: 0,
-			duration: song.duration ?? 0,
-		};
-		updateNotification(meta);
 		await song.incrementPlayCount();
 
 		const lastPlayedAt = await database
@@ -126,7 +124,7 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	},
 
 	togglePause: async () => {
-		const { player, isPaused, song } = get();
+		const { player, isPaused } = get();
 		if (!player) return;
 
 		const nextIsPaused = !isPaused;
@@ -138,25 +136,20 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 		}
 
 		set({ isPaused: nextIsPaused });
-
-		updateNotification({
-			title: song?.title ?? null,
-			artist: (song as any)?.artist?.name ?? null,
-			isPlaying: !nextIsPaused,
-		});
 	},
 
 	stop: () => {
 		const { player, forceStop } = get();
 		if (player) {
 			player.pause();
+			player.clearLockScreenControls();
+			player.remove();
 		}
 		forceStop();
-		stopNotification();
 	},
 
 	forceStop: () => {
-		set({ player: null, song: null, isPaused: true });
+		set({ player: null, song: null, isPaused: true, isStopped: true });
 	},
 
 	seekTo: (time: number) => {
@@ -201,13 +194,8 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	},
 
 	updateProgress: (currentTime: number, duration: number) => {
-		const { song, isPaused } = get();
-		if (song && !isPaused) {
-			updateNotification({
-				currentTime,
-				duration,
-			});
-		}
+		void currentTime;
+		void duration;
 	},
 }));
 

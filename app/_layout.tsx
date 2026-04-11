@@ -7,7 +7,6 @@ import AppContainer from "@/components/AppContainer";
 import BottomNavigation from "@/components/partials/BottomNavigation";
 import ToastContent from "@/components/ui/ToastContent";
 import { AudioLibraryProvider } from "@/hooks/providers/MediaLibraryProvider";
-import { initPlayerNotificationBridge } from "@/store/usePlayerStore";
 import { tamaguiConfig } from "@/tamagui.config";
 import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
@@ -81,11 +80,6 @@ export default function RootLayout() {
 	}, [backgroundColor]);
 
 	useEffect(() => {
-		const unsub = initPlayerNotificationBridge();
-		return () => unsub();
-	}, []);
-
-	useEffect(() => {
 		if (loaded) {
 			SplashScreen.hide();
 		}
@@ -94,7 +88,7 @@ export default function RootLayout() {
 	useEffect(() => {
 		const setAudioMode = async () => {
 			await setAudioModeAsync({
-				interruptionModeAndroid: "doNotMix",
+				interruptionMode: "doNotMix",
 				shouldPlayInBackground: true,
 			});
 		};

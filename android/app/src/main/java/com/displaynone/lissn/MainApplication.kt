@@ -18,7 +18,6 @@ import expo.modules.ApplicationLifecycleDispatcher
 import expo.modules.ExpoModulesPackage
 
 import com.displaynone.lissn.ExpoMusicLibraryPackage
-import com.displaynone.lissn.AudioNotificationPackage
 
 class MainApplication : Application(), ReactApplication {
 
@@ -28,7 +27,6 @@ class MainApplication : Application(), ReactApplication {
           val packages = PackageList(this).packages.toMutableList()
           packages.add(ExpoModulesPackage())
           packages.add(ExpoMusicLibraryPackage())
-          packages.add(AudioNotificationPackage())
           return packages
         }
 
