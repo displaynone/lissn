@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/displaynone/lissn/compare/v1.2.0...v2.0.0) (2026-04-11)
+
+
+### Features
+
+* removing kotlin for playing songs ([2e50188](https://github.com/displaynone/lissn/commit/2e501883ffcf84ab59a6c2e913e1f36dc428c985))
+
+
+### BREAKING CHANGES
+
+* using expo-audio
+
 # [1.2.0](https://github.com/displaynone/lissn/compare/v1.1.4...v1.2.0) (2026-04-10)
 
 
