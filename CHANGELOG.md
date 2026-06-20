@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/displaynone/lissn/compare/v2.0.0...v2.0.1) (2026-06-20)
+
+
+### Bug Fixes
+
+* playing more than 2 songs ([0a8e031](https://github.com/displaynone/lissn/commit/0a8e031babea2c63c3a6c0f2c75092fbe7fbc476))
+
 # [2.0.0](https://github.com/displaynone/lissn/compare/v1.2.0...v2.0.0) (2026-04-11)
 
 
