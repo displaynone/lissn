@@ -31,6 +31,14 @@ interface PlayerStore {
 	updateProgress: (currentTime: number, duration: number) => void;
 }
 
+const releasePlayer = (player: AudioPlayer | null) => {
+	if (!player) return;
+
+	player.pause();
+	player.clearLockScreenControls();
+	player.remove();
+};
+
 export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	song: null,
 	player: null,
@@ -42,9 +50,13 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	},
 
 	playSong: async (song) => {
-		get().stop();
+		const currentPlayer = get().player;
+		set({ player: null, isPaused: true });
+		releasePlayer(currentPlayer);
 
 		const player = createAudioPlayer(song.sourceUri);
+		let finishHandled = false;
+
 		player.addListener("playbackStatusUpdate", async (status) => {
 			if (get().player?.id !== player.id) {
 				return;
@@ -56,9 +68,15 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 			});
 
 			if (status.didJustFinish) {
-				get().playNextSong();
+				if (finishHandled) {
+					return;
+				}
+				finishHandled = true;
+				await get().playNextSong();
 			}
 		});
+
+		set({ song, player, isPaused: false, isStopped: false });
 
 		const artist = await useMusicStore.getState().getArtistById(song.artistId);
 		player.setActiveForLockScreen(
@@ -75,7 +93,6 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 		);
 		player.play();
 
-		set({ song, player, isPaused: false, isStopped: false });
 		await song.incrementPlayCount();
 
 		const lastPlayedAt = await database
@@ -139,13 +156,8 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	},
 
 	stop: () => {
-		const { player, forceStop } = get();
-		if (player) {
-			player.pause();
-			player.clearLockScreenControls();
-			player.remove();
-		}
-		forceStop();
+		releasePlayer(get().player);
+		get().forceStop();
 	},
 
 	forceStop: () => {
@@ -160,6 +172,8 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	},
 
 	playNextSong: async () => {
+		if (!get().player) return;
+
 		const currentSongId = get().song?.id;
 		if (!currentSongId) return;
 
@@ -177,6 +191,8 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
 	},
 
 	playPreviousSong: async () => {
+		if (!get().player) return;
+
 		const currentSongId = get().song?.id;
 		if (!currentSongId) return;
 
