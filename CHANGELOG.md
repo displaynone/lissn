@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/displaynone/lissn/compare/v2.0.1...v2.0.2) (2026-06-21)
+
+
+### Bug Fixes
+
+* songs played in a row ([5b55634](https://github.com/displaynone/lissn/commit/5b55634a3b74b7c53901b002153d05105115f3c9))
+
 ## [2.0.1](https://github.com/displaynone/lissn/compare/v2.0.0...v2.0.1) (2026-06-20)
 
 
