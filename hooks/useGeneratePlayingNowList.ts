@@ -12,10 +12,16 @@ const useGeneratePlayingNowList = () => {
 		createPlaylistSong,
 		getFavoriteSongs,
 		refreshPlayingNowSongs,
+		setCurrentPlaylist,
 	} = useMusicStore();
 	const generatePlaylist = async (origin: PlaylistType) => {
 		try {
 			setLoading(true);
+			if (origin === "playing_now") {
+				await refreshPlayingNowSongs();
+				return;
+			}
+
 			const playlist = playlists.find(
 				(pl) => pl.name === PLAYLIST_PLAYING_NOW_NAME
 			);
@@ -23,6 +29,8 @@ const useGeneratePlayingNowList = () => {
 			if (!playlist) {
 				return;
 			}
+
+			setCurrentPlaylist(PLAYLIST_PLAYING_NOW_NAME);
 			await deletePlaylistSongs(playlist);
 			if (origin === "latest") {
 				const ids = await getAllSongIds();
@@ -37,9 +45,10 @@ const useGeneratePlayingNowList = () => {
 				}
 				await refreshPlayingNowSongs();
 			}
-			setLoading(false);
 		} catch (e) {
 			console.log(e);
+		} finally {
+			setLoading(false);
 		}
 	};
 

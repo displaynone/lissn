@@ -1,3 +1,4 @@
+import useGeneratePlayingNowList from "@/hooks/useGeneratePlayingNowList";
 import { useGetArtistAlbumBySong } from "@/hooks/useGetArtistAlbumBySong";
 import { Song } from "@/models";
 import { useGetSetPlayingSongId } from "@/store/songsStore";
@@ -26,14 +27,16 @@ const SongBlockItem: React.FC<SongItemProps> = ({ song }) => {
 	const playingSongId = useGetPlayingSong();
 	const isPaused = useGetIsPausedSong();
 	const isPlaying = playingSongId?.id === song.id && !isPaused;
+	const { generatePlaylist } = useGeneratePlayingNowList();
 
 	const handlePlay = async () => {
 		if (isPlaying) {
 			setPlayingSongId(undefined);
 			stop();
 		} else {
+			await generatePlaylist("latest");
 			setPlayingSongId(song.id);
-			play(song);
+			await play(song);
 		}
 	};
 
